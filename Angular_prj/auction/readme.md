@@ -20,5 +20,5 @@ $ npm install @types/jquery --save-dev
 $ npm install @types/bootstrap --save-dev  
 
 ### Bootstrap 樣式  
-<#nav class="navbar navbar-inverse navbar-fixed-top"></nav>
+<#nav class="navbar navbar-inverse navbar-fixed-top"></#nav>
 
