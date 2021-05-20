@@ -2,6 +2,7 @@
 [Angular DOC](https://angular.cn/docs)  
 [Youtube Angular Vedio](https://www.youtube.com/watch?v=csE6ue9w7YM&list=PLA0YHwTjkRztyUo4L6594L7ifAeWUoug7&ab_channel=%E8%B7%9F%E5%B1%B1%E5%9C%B0%E4%BA%BA%E5%AD%A6%E5%89%8D%E7%AB%AF)  
 
+
 01. 安裝環境  
 $ npm install -g @angular/cli  
 $ ng (HELP)功能  
