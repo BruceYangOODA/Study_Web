@@ -10,6 +10,7 @@ $ ng g component [組件名稱] 建立網頁組件
 
 
 ### 使用外部API  
+$ npm install --save rxjs-compat 
 $ npm install jquery --save  自動安裝到 node_modules 資料夾內  
 $ npm install bootstrap --save  
 $ npm install bootstrap@3 新版
@@ -24,11 +25,6 @@ $ npm install bootstrap@3 新版
 讓 typescript 認識外部API方法  
 $ npm install @types/jquery --save-dev  
 $ npm install @types/bootstrap --save-dev  
-
-
-### 單向數據綁定  
-父組件html的子組件選擇器增添  
-[子組件 物件名稱] = "父組件物件" or "父組件物件.屬性"  
 
 
 ### 路由  
@@ -73,3 +69,47 @@ this.routeInfo.params.subscribe((params: Params) => this.數組 = params["名稱
 在 routers 標註 使用路由守衛  
 {path: "home", component: HomeComponent, canActivate [一個class]},  
  
+### 依賴注入  
+依賴注入  Dependency Injection  
+@NgModule({providers: [依賴注入的類]})  
+
+export class Component { constructor(名稱: 依賴注入的類) { this.物件 = 依賴注入的類.實例方法;}}  
+
+在組件中聲明 專為組件使用  
+@Component({  
+  providers:[{ provide:依賴注入的類, useClass:依賴注入的類或子類}]  
+})  
+
+
+## 數據綁定  
+### 單向數據綁定  
+父 to 子  
+父組件html的子組件選擇器增添  
+[子組件 物件名稱] = "父組件物件" or "父組件物件.屬性"  
+
+子 to 父  
+父組件html的子組件選擇器增添  
+(子組件 物件名稱) = "父組件方法" 
+子組件物件是 EventEmitter  
+
+### 雙向數據綁定  
+[(ngModel)]="物件名稱"  
+
+[(子組件物件名稱)]="子組物件名稱"  
+子組物件名稱 是子組件Input()加Change 才能使用
+
+### 輸入輸出屬性  
+
+
+
+### 事件綁定  
+<#標籤 (事件名稱)="執行的方法($event)">  $event瀏覽器事件對象=標籤    
+
+### HTML屬性綁定  
+[class] = "樣式名稱"  
+[class.屬性] = "樣式屬性"  
+[ngClass] = "{樣式名稱:是否顯示布林值,樣式名稱:是否顯示布林值}"  
+[style.值] = "樣式布林值 ? '值A':'值B'"  
+[ngStyle] = "{樣式值:樣式布林值 ? '值A':'值B'}"  
+
+### 觀察者模式  
