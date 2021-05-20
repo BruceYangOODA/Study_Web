@@ -1,18 +1,11 @@
 [Youtube Angular 4.0从入门到实战 打造股票管理网站 ](https://www.youtube.com/watch?v=xb48nEqLAq8&list=PLnzrgyM1SBsaErGITq0_5QjLmExWU8KQJ&index=3&ab_channel=MrCottonlion)  
 [Bootstrap 教程](https://www.runoob.com/bootstrap/bootstrap-tutorial.html)
-[Youtube Angular视频教程](https://youtu.be/HC3ZmIftriU?list=PLNON4AAjjLJEzuf1XnS4rlUvKbfb3NgXS)  
+
 
 ### Angular-CLI 命令列  
-安裝環境
-$ npm install -g @angular/cli  安裝angular 命令列  
 $ ng new [項目名稱]  建立網站項目  
 $ ng new [項目名稱] --routing  建立網站項目  附加路由模塊  
 $ ng g component [組件名稱] 建立網頁組件  
-
-VSCode 安裝插件  
-Angular 7 Snippets  
-Angular Language Service  
-Angular 10 Snippets  
 
 
 
@@ -89,6 +82,10 @@ export class Component { constructor(名稱: 依賴注入的類) { this.物件 =
 
 
 ## 數據綁定  
+### 綁定屬性  
+[標籤屬性] = "屬性的值"  
+[innerHTML] = "插入的html code"  
+
 ### 單向數據綁定  
 父 to 子  
 父組件html的子組件選擇器增添  
@@ -120,3 +117,19 @@ export class Component { constructor(名稱: 依賴注入的類) { this.物件 =
 [ngStyle] = "{樣式值:樣式布林值 ? '值A':'值B'}"  
 
 ### 觀察者模式  
+
+### 表單處理  
+ngSubmit  
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">  使用ngSubmit接管傳統表單的 submit  
+
+ngModel
+表單標籤命名  <#input ngModel name="命名名稱" type="text">  
+標記標籤  <#input #phone="ngModel" type="text">  
+    使用 phone.value 可以得到該標籤的值  
+
+ngModelGroup  表單群組  
+<#div ngModelGroup="命名">表單內容</#div>  
+div 標籤下面的表單成為  命名的屬性  
+
+### 響應式表單  
+
