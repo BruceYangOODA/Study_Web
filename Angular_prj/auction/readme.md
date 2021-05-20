@@ -1,8 +1,10 @@
 [Youtube Angular 4.0从入门到实战 打造股票管理网站 ](https://www.youtube.com/watch?v=xb48nEqLAq8&list=PLnzrgyM1SBsaErGITq0_5QjLmExWU8KQJ&index=3&ab_channel=MrCottonlion)  
+[Youtube Angular视频教程](https://www.youtube.com/watch?v=HC3ZmIftriU&list=PLNON4AAjjLJEzuf1XnS4rlUvKbfb3NgXS&ab_channel=TL)  
 [Bootstrap 教程](https://www.runoob.com/bootstrap/bootstrap-tutorial.html)
 
 
 ### Angular-CLI 命令列  
+$ npm install -g @angular/cli  
 $ ng new [項目名稱]  建立網站項目  
 $ ng new [項目名稱] --routing  建立網站項目  附加路由模塊  
 $ ng g component [組件名稱] 建立網頁組件  
