@@ -1,11 +1,18 @@
 [Youtube Angular 4.0从入门到实战 打造股票管理网站 ](https://www.youtube.com/watch?v=xb48nEqLAq8&list=PLnzrgyM1SBsaErGITq0_5QjLmExWU8KQJ&index=3&ab_channel=MrCottonlion)  
 [Bootstrap 教程](https://www.runoob.com/bootstrap/bootstrap-tutorial.html)
-
+[Youtube Angular视频教程](https://youtu.be/HC3ZmIftriU?list=PLNON4AAjjLJEzuf1XnS4rlUvKbfb3NgXS)  
 
 ### Angular-CLI 命令列  
+安裝環境
+$ npm install -g @angular/cli  安裝angular 命令列  
 $ ng new [項目名稱]  建立網站項目  
 $ ng new [項目名稱] --routing  建立網站項目  附加路由模塊  
 $ ng g component [組件名稱] 建立網頁組件  
+
+VSCode 安裝插件  
+Angular 7 Snippets  
+Angular Language Service  
+Angular 10 Snippets  
 
 
 
