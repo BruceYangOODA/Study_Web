@@ -15,10 +15,10 @@ $ ng serve --port 4200  開始網站服務
 
 
 ### 使用外部API  
-$ npm install --save rxjs-compat 
+$ npm install --save rxjs-compat rxjs前面版本的方法 
 $ npm install jquery --save  自動安裝到 node_modules 資料夾內  
 $ npm install bootstrap --save  
-$ npm install bootstrap@3 新版
+$ npm install bootstrap@3 新版  
 在 package.json 檔案內的 dependencies 屬性 可以看到安裝API的版本  
 
 % 在 angular.json 檔案內的 stripts 屬性 註明 API的位址  
@@ -31,6 +31,8 @@ $ npm install bootstrap@3 新版
 $ npm install @types/jquery --save-dev  
 $ npm install @types/bootstrap --save-dev  
 
+在 index.html 加入  
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">    
 
 ### 服務  
 $ ng g service [服務名稱] 建立服務  
@@ -46,7 +48,8 @@ RouterLink  Html中使用
 ActivatedRouted  
 
 在 app-routing.module.ts 檔案中 routers配置路徑  
-  {path: "[路徑]", component:[組件名稱]}
+  {path: "[路徑]", component:[組件名稱]},  
+  {path: "**", redirectTo:'home'}  
   
 在 html 放置 路由佔位符  
 <#router-outlet><#/router-outlet>  
@@ -158,5 +161,47 @@ ngModelGroup  表單群組
 <#div ngModelGroup="命名">表單內容</#div>  
 div 標籤下面的表單成為  命名的屬性  
 
-### 響應式表單  
+## 異步編程  
+### 1. 回調函數  
+方法參數傳入方法，待原方法跑完最終數據，用參數方法傳回數據  
+getCallBackData( functionA )  
+### 2. Promise  
+promiseData =  
+    return new Promise((resolve) =>{  
+        resolve( data );  })  
+promiseData.then( (data)=> { console.log(data)})    
+### 3. RxJS  
+RxJS 優點: 可以取消訂閱  用setInterval可以持續執行  
+1. Observable  
+  import { Observable} from 'rxjs';  
+  rxjsData =   
+    return new Obvervable((observer)=>{  
+      observer.next( data );})  
+  rxjsData.subscribe(( data )=>{ console.log(data)})  
+2. map, filter  
+  import {map, filter} from 'rxjs/operators';  
+
+### 網路功能  
+1. 在模塊當中宣告  
+  import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';  
+  imports: [ HttpClientModule, HttpClientJsonpModule ]  
+2. 在用到的地方構造函數注入依賴  
+  import { HttpClient } from '@angular/common/http';  
+  constructor( http:HttpClient ) {}  
+3. 用 get, Jsonp 取數據   
+
+### 網路第三方模塊  
+$ npm install axios --save  
+import axios from 'axios'
+
+### Angular 組件生命週期  
+ngOnChange  綁定數據產生改變時  
+ngOnInit  在第一次ngOnChange 後調用  
+ngDoCheck  在ngOnInit 和 ngOnChange 後調用  
+ngAfterContentInit  在第一次ngDoCheck 後調用  
+ngAfterContentChecked  在ngAfterContentInit 和  ngDoCheck 後調用  
+ngAfterViewInit  在第一次 ngAfterContentChecked 後調用  
+ngAfterViewChecked  在 ngAfterViewInit 和 ngAfterContentChecked 後調用
+ngOnDestroy  
+
 
