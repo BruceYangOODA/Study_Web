@@ -1,5 +1,6 @@
 [Youtube Angular 4.0从入门到实战 打造股票管理网站 ](https://www.youtube.com/watch?v=xb48nEqLAq8&list=PLnzrgyM1SBsaErGITq0_5QjLmExWU8KQJ&index=3&ab_channel=MrCottonlion)  
 [Youtube Angular视频教程](https://www.youtube.com/watch?v=HC3ZmIftriU&list=PLNON4AAjjLJEzuf1XnS4rlUvKbfb3NgXS&ab_channel=TL)  
+[Youtube 千锋Web前端教程 angular](https://www.youtube.com/watch?v=EiDewOIGLfc&list=PLwDQt7s1o9J4b2zjOo3flmVFOqEV0H1Pz&ab_channel=%E5%8D%83%E9%94%8B%E6%95%99%E8%82%B2)  
 [Bootstrap 教程](https://www.runoob.com/bootstrap/bootstrap-tutorial.html)
 
 
@@ -8,6 +9,8 @@ $ npm install -g @angular/cli
 $ ng new [項目名稱]  建立網站項目  
 $ ng new [項目名稱] --routing  建立網站項目  附加路由模塊  
 $ ng g component [組件名稱] 建立網頁組件  
+$ ng g service [服務名稱] 建立服務  
+$ ng serve --port 4200  開始網站服務      
 
 
 
@@ -28,6 +31,12 @@ $ npm install bootstrap@3 新版
 $ npm install @types/jquery --save-dev  
 $ npm install @types/bootstrap --save-dev  
 
+
+### 服務  
+$ ng g service [服務名稱] 建立服務  
+在 app.module.ts 文件內 import 服務  
+並 在providers 宣告服務  
+localStorage  物件 是 service 的NoSQL物件  
 
 ### 路由  
 Routes  
