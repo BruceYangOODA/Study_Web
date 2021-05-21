@@ -144,3 +144,9 @@ div 標籤下面的表單成為  命名的屬性
 
 ### 響應式表單  
 
+### ViewChild  
+1. html標籤  #myBox 功能類似標記id  
+2. import ViewChild from '@angular/core'  
+3. @ViewChild('myBox') myBox:any;  
+   this.myBox.nativeElement.innerHtML  可以操作這個Dom節點  
+4. 獲取的生命週期時機點為 ngAfterViewInit  
