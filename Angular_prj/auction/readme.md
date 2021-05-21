@@ -97,16 +97,31 @@ export class Component { constructor(名稱: 依賴注入的類) { this.物件 =
 [標籤屬性] = "屬性的值"  
 [innerHTML] = "插入的html code"  
 
-### 單向數據綁定  
+## 單向數據綁定  
 父 to 子  
-父組件html的子組件選擇器增添  
-[子組件 物件名稱] = "父組件物件" or "父組件物件.屬性"  
+### Input()  
+1. 子組件 接收容器 裝飾 @Input()  
+2. 父組件html 加載子組件  <#app-子組件><#/app-子組件>  
+   並在html宣告  [子組件 接收容器] = "父組件物件 or 方法 or this"  
 
-子 to 父  
-父組件html的子組件選擇器增添  
-(子組件 物件名稱) = "父組件方法" 
-子組件物件是 EventEmitter  
+子 to 父 方法一   
+### Output()  
+1. 子組件 EventEmitter 裝飾 @Output()  
+   @Output()  
+   forParent = new EventEmitter();  
+2. this.forParent.emit(子組件物件);  
+3. 父組件html <#app-子組件 (forParent)="父組件物件" ><#/app-子組件>  
 
+子 to 父 方法二  
+### ViewChild  
+1. html標籤  #命名myBox 功能類似標記id  
+2. import ViewChild from '@angular/core'  
+3. @ViewChild('myBox') myBox:any;  
+   this.myBox.nativeElement.innerHtML  可以操作這個Dom節點  
+4. 獲取的生命週期時機點為 ngAfterViewInit  
+5. <#app-子組件 #命名><#/app-子組件>  
+   可以這樣call 子組件
+   
 ### 雙向數據綁定  
 [(ngModel)]="物件名稱"  
 
@@ -115,6 +130,7 @@ export class Component { constructor(名稱: 依賴注入的類) { this.物件 =
 
 ### 輸入輸出屬性  
 
+  
 
 
 ### 事件綁定  
@@ -144,9 +160,3 @@ div 標籤下面的表單成為  命名的屬性
 
 ### 響應式表單  
 
-### ViewChild  
-1. html標籤  #myBox 功能類似標記id  
-2. import ViewChild from '@angular/core'  
-3. @ViewChild('myBox') myBox:any;  
-   this.myBox.nativeElement.innerHtML  可以操作這個Dom節點  
-4. 獲取的生命週期時機點為 ngAfterViewInit  
