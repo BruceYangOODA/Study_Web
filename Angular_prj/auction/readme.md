@@ -4,7 +4,7 @@
 [Bootstrap 教程](https://www.runoob.com/bootstrap/bootstrap-tutorial.html)
 
 
-### Angular-CLI 命令列  
+# Angular-CLI 命令列  
 $ npm install -g @angular/cli  
 $ ng new [項目名稱]  建立網站項目  
 $ ng new [項目名稱] --routing  建立網站項目  附加路由模塊  
