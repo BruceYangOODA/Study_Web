@@ -2,7 +2,7 @@
 [Youtube Angular视频教程](https://www.youtube.com/watch?v=HC3ZmIftriU&list=PLNON4AAjjLJEzuf1XnS4rlUvKbfb3NgXS&ab_channel=TL)  
 [Youtube 千锋Web前端教程 angular](https://www.youtube.com/watch?v=EiDewOIGLfc&list=PLwDQt7s1o9J4b2zjOo3flmVFOqEV0H1Pz&ab_channel=%E5%8D%83%E9%94%8B%E6%95%99%E8%82%B2)  
 [Bootstrap 教程](https://www.runoob.com/bootstrap/bootstrap-tutorial.html)
-
+[Bootstrap Glyphicons](https://getbootstrap.com/docs/3.3/components/)  
 
 # Angular-CLI 命令列  
 $ npm install -g @angular/cli  
