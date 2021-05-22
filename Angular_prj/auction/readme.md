@@ -11,7 +11,7 @@ $ ng new [項目名稱] --routing  建立網站項目  附加路由模塊
 $ ng g component [組件名稱] 建立網頁組件  
 $ ng g service [服務名稱] 建立服務  
 $ ng serve --port 4200  開始網站服務      
-
+$ ng g module [模塊名稱]  
 
 
 ### 使用外部API  
@@ -41,41 +41,47 @@ $ ng g service [服務名稱] 建立服務
 localStorage  物件 是 service 的NoSQL物件  
 
 ### 路由  
-Routes  
-RouterOutlet  佔位符指令  
-Router  由 navigate() navigateByUrl() 導航  
-RouterLink  Html中使用
-ActivatedRouted  
-
-在 app-routing.module.ts 檔案中 routers配置路徑  
-  {path: "[路徑]", component:[組件名稱]},  
-  {path: "**", redirectTo:'home'}  
-  
-在 html 放置 路由佔位符  
-<#router-outlet><#/router-outlet>  
-以 routerLink 屬性 導航至 routers的組件  
-<#a [routerLink]="['/路徑']">連結名稱</#a>  
-
-使用 控制器控制路由  
-在組件內部宣告  
-constructor(private router:Router) {}  
-撰寫導航方法  
-toDetail() { this.router.navigate(['/路徑'])};  
-
-### 在路由傳遞數據  
-在連結內放置 查詢參數 queryParams  
-<#a [routerLink]="['/路徑'] [queryParams]="{名稱:1}">連結名稱</#a>  
-在組件內部宣告  
-constructor(private routeInfo: ActivatedRoute) {}  
-ngOnInit() {this.數組 = this.routeInfo.snapshot.queryParams["名稱"];}  
-ngOnInit() {this.數組 = this.routeInfo.snapshot.params["名稱"];}  從URL模式分析取出  
-
-### 訂閱路由當中的數據  
-ngOnInit() {  
-this.routeInfo.params.subscribe((params: Params) => this.數組 = params["名稱"]);}  
-
-重定向路由  redirectTo  
-{path: "", redirectTo: "/home", pathMatch:"full"},  
+1. 路由配置  
+   在 app-routing.module.ts 檔案中 routers 配置路徑  
+     {path: "[路徑]", component:[組件名稱]},  
+     {path: "**", redirectTo:'home'}  
+   在 html 放置 路由佔位符  
+     <#router-outlet><#/router-outlet>  
+2. 路由傳值  
+   <#a [routerLink]="['/配置路徑']" [queryParams]="{參數名稱:參數數值,參數名稱2:參數數值2}" ><#a> 
+3. 解析路由傳值  
+   import { ActivatedRoute } from '@angular/router';  
+   constructor(route:ActivatedRoute) {}  
+   this.route.queryParams.subscribe((data) => console.log(data) );  
+4. 解析路由傳值2  
+   constructor(private route: ActivatedRoute) {}  
+   ngOnInit() {this.物件 = this.route.snapshot.queryParams["名稱"];}  
+   ngOnInit() {this.物件 = this.route.snapshot.params["名稱"];}  從URL模式分析取出  
+6. 動態路由  
+   {path: "[路徑/:動態參數]", component:[組件名稱]}
+   HTML
+     <#a [routerLink]="['/路徑/', 動態參數]"></#a>  
+6. 動態路由 JS 跳轉  
+   import { Router } from '@angular/router'  
+   constructor(router:Router){}  
+   this.router.navigate(['/路徑/', 動態參數])  
+7. get傳值 JS 跳轉  
+   import { NavigationExtras } from '@angular/router'  
+   let queryParams : NavigationExtras = { queryParams:{'參數':值} }  
+   this.router.navigate(['/路徑'], queryParams)  
+8. 靜態位址跳轉  
+   this.router.navigateByUrl( url )  
+### 父子路由  
+1. {path:'父路徑', component:父組件,  
+   children:[  
+     {path:'子路徑',component:子組件},  
+     {path:'子路徑2',component:子組件2},  
+     {path:'**', component: 父組件要展示的default子組件}]  }  
+2. [routerLink]="['/父路徑/子路徑']"  
+3. 顯示目前選中的子路徑  
+   routerLinkActive="active"  
+   .active { color:red;}
+   
 
 ### 路由守衛  
 創建一個class implements CanActivate  
