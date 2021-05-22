@@ -18,10 +18,10 @@ $ ng g module [模塊名稱]
 $ npm install --save rxjs-compat rxjs前面版本的方法 
 $ npm install jquery --save  自動安裝到 node_modules 資料夾內  
 $ npm install bootstrap --save  
-$ npm install bootstrap@3 新版  
+$ npm install bootstrap@3 --save 新版  
 在 package.json 檔案內的 dependencies 屬性 可以看到安裝API的版本  
 
-% 在 angular.json 檔案內的 stripts 屬性 註明 API的位址  
+% 在 angular.json 檔案內的 scripts 屬性 註明 API的位址  
 "./node_modules/jquery/dist/jquery.js"  
 "./node_modules/bootstrap/dist/js/bootstrap.js"  
 % 在 angular.json 檔案內的 styles 屬性 註明 API的位址  
