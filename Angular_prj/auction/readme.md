@@ -214,4 +214,17 @@ ngAfterViewInit  在第一次 ngAfterContentChecked 後調用
 ngAfterViewChecked  在 ngAfterViewInit 和 ngAfterContentChecked 後調用
 ngOnDestroy  
 
-
+## 讀取本地資料  
+### JSON  
+1.修改 tsconfig.json 文件  
+  "compilerOptions": {  
+    ...  
+    "resolveJsonModule": true,  
+    ...  }  
+2. import * as data from '路徑/檔名.json'  
+3. mydata:any = (data as any).default;  
+### TXT  
+fetch(this.url).then(response => response.text()).then(data =>{  
+    this.mydata = data; })  
+## 寫入本地資料  
+Node  
