@@ -102,6 +102,10 @@ export class Component { constructor(名稱: 依賴注入的類) { this.物件 =
 
 
 ## 數據綁定  
+[property] = "data"  
+(event) = "expression"  
+[(ngModel)] = "data"  
+
 ### 綁定屬性  
 [標籤屬性] = "屬性的值"  
 [innerHTML] = "插入的html code"  
