@@ -138,8 +138,9 @@ export class Component { constructor(名稱: 依賴注入的類) { this.物件 =
 ### 雙向數據綁定  
 [(ngModel)]="物件名稱"  
 
-[(子組件物件名稱)]="子組物件名稱"  
-子組物件名稱 是子組件Input()加Change 才能使用
+(ngModelChange)="子組物件改變事件"  
+子組物件改變事件 { EventEmitter.emit(<type>)}  
+
 
 ### 輸入輸出屬性  
 
