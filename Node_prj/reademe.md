@@ -5,14 +5,18 @@
 
 ## [Node Doc 官方API文件](https://nodejs.org/api/)  
 ## [NPM 模塊清單](https://www.npmjs.com/)  
+### [API 文件說明](https://npm.taobao.org/package/formidable)  
 [MIME 参考手册](https://www.w3school.com.cn/media/media_mimeref.asp)  
 
 ## [index]  
 CLI命令  
 CMD命令  
 file system  
-HTTP  
-URL, Path, QueryString  
+http  
+url, path, queryString  
+GET, POST  
+finalhandler, serve-static  
+formidable  
 路由引擎  
 作用域暴露 exports  
 
@@ -27,6 +31,12 @@ URL, Path, QueryString
 7. 當省略文件名時,會自動引入 index.js  
 8. 依賴: package.json 文件中 'denpendencies' 屬性表示依賴外部 模塊  
 <hr>
+Node.js 缺點:  
+1. 路由不方便
+2. 靜態資源服務不方便
+3. 頁面呈遞不方便
+SOLUTION : Express.js  
+
 
 ## CLI命令      
 1. 安裝 Node.js [Node 官網](https://nodejs.org/en/download/)   
@@ -40,7 +50,7 @@ fs.readFile('./路徑'),function(err,data){ console.log(data); })
 fs.writeFile('./路徑', data, function(err, data){  
   if (err){ res.end('CODE 404');} else { res.end(''); } });  
 
-### HTTP  
+### http  
 var http = require('http');  
 var server = http.createServer(function(req,res){ res.end(''); });  
 server.listen(3333);  
@@ -48,7 +58,7 @@ req對象封裝了 HTTP上行請求的所有信息
 res對象是服務器給出的下行響應  
 req.connection.remoteAddress  #USER IP 位址  
 
-### URL, Path, QueryString  
+### url, path, queryString  
 var url = require('url');  
 var path = require('path');  
 var querystring = require('querystring');  
@@ -56,12 +66,42 @@ var querystring = require('querystring');
 var pathname = url.pase(req.url).pathname;  
 // 得到檔名  
 var extname = path.extname(pathname);  
-var urljson = url.parse( req.url, true ); console.log(urljson);  
-// 2nd參數 true 會把 query 自動變為物件  
 
+// 2nd參數 true 會把 query 自動變為物件  
+var urljson = url.parse( req.url, true ); console.log(urljson);  
 得到查詢字符串  
 var qs = urljson.query;  
 var qsjson = querystring.parse(qs);  
+
+### GET, POST  
+//拿到GET 請求參數    
+var queryJSON = url.parse(req.url, true).query;  
+//拿到POST  
+req.on("data", function(chunk){ content += chunk; });  
+req.on("end", function(){ content = querystring.parse(content); res.end(""); })  
+## content傳回 any ,可以輸出文字,但是 無法辨識內部屬性  
+
+### finalhandler, serve-static  
+$ npm install serve-static --save  
+$ npm install finalhandler --save  
+var finalhandler = require('finalhandler');
+var serveStatic = require('serve-static');  
+// 配置靜態資源服務器 與 首頁位址  
+var serve = serveStatic('資料夾', {'index':['index.html', 'index.htm']});  
+serve(req, res, finnalhandler(req, res));  
+
+### formidable  
+用來處理 POST 請求  
+$ npm install formidable --save 
+var formidable = require("formidable");  
+// 使用 formidable  uploadDir 上傳文件存放資料夾  
+var form = new formidable.IncomingForm();  
+form.uploadDir = "./mydata/uploads";  
+//處理表單, fields 表示普通控件, files 表示文件控件  
+form.parse(req, function(err,fields,files){  console.log(files.表單名稱);  
+var extname = path.extname(files.表單名稱.name);  
+fs.rename(files.表單名稱.path, files.表單名稱.path + extname, function(){ res.end('upload success');});  
+});  
 
 ### 路由引擎  
 var server = http.createServer((req,res)=>{  
