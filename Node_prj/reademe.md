@@ -22,6 +22,7 @@ formidable
 
 
 <hr>
+
 1. Node 適合處理大量IO任務的網路服務  
 2. Node 沒有跟目錄的概念,沒有URL和物理文件一一對應的關係,必須自己設計路由引擎    
 3. 異步函數不能通過 return 返回,不能通過 = 接收數據,必須通過 回調函數 傳輸數據   
@@ -30,12 +31,14 @@ formidable
    install package -g 會安裝在全局,即此位址  
 7. 當省略文件名時,會自動引入 index.js  
 8. 依賴: package.json 文件中 'denpendencies' 屬性表示依賴外部 模塊  
-<hr>
+
+<hr>  
+
 Node.js 缺點:  
-1. 路由不方便
-2. 靜態資源服務不方便
-3. 頁面呈遞不方便
-SOLUTION : Express.js  
+1. 路由不方便  
+2. 靜態資源服務不方便  
+3. 頁面呈遞不方便  
+SOLUTION : Express.js   
 
 
 ## CLI命令      
