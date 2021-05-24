@@ -6,22 +6,26 @@
 ## [Node Doc 官方API文件](https://nodejs.org/api/)  
 [MIME 参考手册](https://www.w3school.com.cn/media/media_mimeref.asp)  
 
-[index]  
+## [index]  
 CLI命令  
+CMD命令  
 API  
 HTTP  
 URL, Path, QueryString  
 路由引擎  
 
+<hr>
 Node 適合處理大量IO任務的網路服務  
 Node 沒有跟目錄的概念,沒有URL和物理文件一一對應的關係,必須自己設計路由引擎    
-
+異步函數不能通過 return 返回,不能通過 = 接收數據,必須通過 回調函數 傳輸數據  
+<hr>
 
 ## CLI命令      
 1. 安裝 Node.js [官網](https://nodejs.org/en/download/)   
    $ node -v 確認安裝版本  
    安裝資料夾 Program Files/nodejs  
 
+## CMD命令  
 ### API  
 var fs = require('fs');  
 fs.readFile('./路徑'),function(err,data){ console.log(data); })   
@@ -30,6 +34,8 @@ fs.readFile('./路徑'),function(err,data){ console.log(data); })
 var http = require('http');  
 var server = http.createServer(function(req,res){ res.end(''); });  
 server.listen(3333);  
+req對象封裝了 HTTP上行請求的所有信息  
+res對象是服務器給出的下行響應  
 req.connection.remoteAddress  #USER IP 位址  
 
 ### URL, Path, QueryString  
@@ -60,7 +66,7 @@ var qsjson = querystring.parse(qs);
          pathname += '/index.html';  
     }  
     fs.readFile('./路徑' + pathname, function(err,data){  
-        if (err){ res.end('404 Not Found'); return; }  
+    if (err){ res.end('404 Not Found'); return; }  
         if (mime.hasOwnProperty(extname)){  
             res.setHeader('content-type',mime[extname]);  
         }  
