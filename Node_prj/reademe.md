@@ -54,8 +54,8 @@ var qs = urljson.query;
 var qsjson = querystring.parse(qs);  
 
 ### 路由引擎  
-1. var server = http.createServer((req,res)=>{  
-    var pathname = url.parse(req.url).pathname;  
+var server = http.createServer((req,res)=>{  
+&nbsp;&nbsp; var pathname = url.parse(req.url).pathname;  
     // 得到url 的檔名  
     var extname = path.extname(pathname);  
     //  url沒有檔名 , 自動添加 index.html  
