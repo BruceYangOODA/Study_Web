@@ -4,31 +4,41 @@
 [Youtube 千锋Web前端教程 NodeJS](https://www.youtube.com/watch?v=jxMvFxOqd24&list=PLwDQt7s1o9J6v1bYUF_mgOXd_C5saqh22&ab_channel=%E5%8D%83%E9%94%8B%E6%95%99%E8%82%B2)  
 
 ## [Node Doc 官方API文件](https://nodejs.org/api/)  
+## [NPM 模塊清單](https://www.npmjs.com/)  
 [MIME 参考手册](https://www.w3school.com.cn/media/media_mimeref.asp)  
 
 ## [index]  
 CLI命令  
 CMD命令  
-API  
+file system  
 HTTP  
 URL, Path, QueryString  
 路由引擎  
+作用域暴露 exports  
+
 
 <hr>
-Node 適合處理大量IO任務的網路服務  
-Node 沒有跟目錄的概念,沒有URL和物理文件一一對應的關係,必須自己設計路由引擎    
-異步函數不能通過 return 返回,不能通過 = 接收數據,必須通過 回調函數 傳輸數據  
+1. Node 適合處理大量IO任務的網路服務  
+2. Node 沒有跟目錄的概念,沒有URL和物理文件一一對應的關係,必須自己設計路由引擎    
+3. 異步函數不能通過 return 返回,不能通過 = 接收數據,必須通過 回調函數 傳輸數據   
+4. 如果 require引用 沒有加相對路徑 './', 會自動去 node_modules 文件夾去尋找  
+5. C:\Users\電腦名\AppData\Roaming\npm\node_modules  是系統環境路徑 會自動尋找內部 js檔案  
+   install package -g 會安裝在全局,即此位址  
+7. 當省略文件名時,會自動引入 index.js  
+8. 依賴: package.json 文件中 'denpendencies' 屬性表示依賴外部 模塊  
 <hr>
 
 ## CLI命令      
-1. 安裝 Node.js [官網](https://nodejs.org/en/download/)   
+1. 安裝 Node.js [Node 官網](https://nodejs.org/en/download/)   
    $ node -v 確認安裝版本  
    安裝資料夾 Program Files/nodejs  
 
 ## CMD命令  
-### API  
+### file system    
 var fs = require('fs');  
 fs.readFile('./路徑'),function(err,data){ console.log(data); })   
+fs.writeFile('./路徑', data, function(err, data){  
+  if (err){ res.end('CODE 404');} else { res.end(''); } });  
 
 ### HTTP  
 var http = require('http');  
@@ -55,7 +65,7 @@ var qsjson = querystring.parse(qs);
 
 ### 路由引擎  
 var server = http.createServer((req,res)=>{  
-&nbsp;&nbsp; var pathname = url.parse(req.url).pathname;  
+    var pathname = url.parse(req.url).pathname;  
     // 得到url 的檔名  
     var extname = path.extname(pathname);  
     //  url沒有檔名 , 自動添加 index.html  
@@ -83,5 +93,19 @@ var server = http.createServer((req,res)=>{
     '.mp3':'audio/mpeg',  
     };  
 
+### 作用域暴露 exports  
+test.js { var a =100; exports.a = a; }  
+01.js { var s = require('./test.js');  console.log( s.a );}  //印出 100  
+
+暴露方法  
+function sum(){ return Math.max.apply(null, arguments);}  
+exports.sum = sum;  // arguments 
+02.js { var fuc = require('./test.js');   
+fuc.sum([3,4,5,6]) }  // [3,4,5,6] = arguments  
+
+暴露模塊  
+module.exports = sum;  
+var sum = require('./test.js');  
+var result = new sum([3,4,5,6]);  
 
 ### 事件驅動  
