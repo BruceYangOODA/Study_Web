@@ -55,7 +55,7 @@ var server = http.createServer((req,res)=>{
     //  url沒有檔名 , 自動添加 index.html  
     if (!extname){  
         if(pathname.substr(-1) != '/'){  
-            res.writeHead(302, {'Location': pathname+'/'})  
+            res.writeHead( 302 , { 'Location' : pathname+'/'})  
         }
          pathname += '/index.html';  
     }  
