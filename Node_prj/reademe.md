@@ -48,7 +48,7 @@ var qs = urljson.query;
 var qsjson = querystring.parse(qs);  
 
 ### 路由引擎  
-var server = http.createServer((req,res)=>{  
+ var server = http.createServer((req,res)=>{  
     var pathname = url.parse(req.url).pathname;  
     // 得到url 的檔名  
     var extname = path.extname(pathname);  
@@ -66,7 +66,7 @@ var server = http.createServer((req,res)=>{
         }  
         res.end(data);  });  
     });  
-var mime = {  
+ var mime = {  
     '.jpg':'image/jpeg',  
     '.jpeg':'image/jpeg',  
     '.gif':'image/gif',  
