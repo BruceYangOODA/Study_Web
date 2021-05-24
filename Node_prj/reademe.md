@@ -6,18 +6,23 @@
 ## [Node Doc 官方API文件](https://nodejs.org/api/)  
 [MIME 参考手册](https://www.w3school.com.cn/media/media_mimeref.asp)  
 
-
+[index]  
+CLI命令  
+API  
+HTTP  
+URL, Path, QueryString  
+路由引擎  
 
 Node 適合處理大量IO任務的網路服務  
 Node 沒有跟目錄的概念,沒有URL和物理文件一一對應的關係,必須自己設計路由引擎    
 
 
-### CLI命令      
+## CLI命令      
 1. 安裝 Node.js [官網](https://nodejs.org/en/download/)   
    $ node -v 確認安裝版本  
    安裝資料夾 Program Files/nodejs  
 
-## API  
+### API  
 var fs = require('fs');  
 fs.readFile('./路徑'),function(err,data){ console.log(data); })   
 
@@ -33,7 +38,7 @@ var path = require('path');
 var querystring = require('querystring');  
 
 var pathname = url.pase(req.url).pathname;  
-// 得到檔名
+// 得到檔名  
 var extname = path.extname(pathname);  
 var urljson = url.parse( req.url, true ); console.log(urljson);  
 // 2nd參數 true 會把 query 自動變為物件  
@@ -45,9 +50,32 @@ var qsjson = querystring.parse(qs);
 ### 路由引擎  
 var server = http.createServer((req,res)=>{  
     var pathname = url.parse(req.url).pathname;  
+    // 得到url 的檔名  
+    var extname = path.extname(pathname);  
+    //  url沒有檔名 , 自動添加 index.html  
+    if (!extname){  
+        if(pathname.substr(-1) != '/'){  
+            res.writeHead(302, {'Location': pathname+'/'})  
+        }
+         pathname += '/index.html';  
+    }  
     fs.readFile('./路徑' + pathname, function(err,data){  
-        if(err){ res.end('404 Not Found'); return; }  
-        res.end(data);  });
-    });
+        if (err){ res.end('404 Not Found'); return; }  
+        if (mime.hasOwnProperty(extname)){  
+            res.setHeader('content-type',mime[extname]);  
+        }  
+        res.end(data);  });  
+    });  
+var mime = {  
+    '.jpg':'image/jpeg',  
+    '.jpeg':'image/jpeg',  
+    '.gif':'image/gif',  
+    '.png':'image/png',  
+    '.html':'text/html;charset=UTF-8',  
+    '.css':'text/css',  
+    '.js':'application/x-javascript',  
+    '.mp3':'audio/mpeg',  
+    };  
+
 
 ### 事件驅動  
