@@ -2,7 +2,11 @@
 [Youtuve Node.js 从零开发个人博客项目](https://www.youtube.com/watch?v=ABz5f1aVeO4&list=PL9nxfq1tlKKlhV1UzUmElRkxmjkoO3mtH&ab_channel=JomyKing)  
 [Youtube Node.js教學](https://www.youtube.com/watch?v=J9PfvdtkFLg&list=PLzKtnppOmiXCPlnd8dDmI8tVxjAUClcmV&ab_channel=AngusChang) 
 [Youtube 千锋Web前端教程 NodeJS](https://www.youtube.com/watch?v=jxMvFxOqd24&list=PLwDQt7s1o9J6v1bYUF_mgOXd_C5saqh22&ab_channel=%E5%8D%83%E9%94%8B%E6%95%99%E8%82%B2)  
-## [Node Doc 官方API文件](https://nodejs.org/zh-cn/docs/)  
+
+## [Node Doc 官方API文件](https://nodejs.org/api/)  
+[MIME 参考手册](https://www.w3school.com.cn/media/media_mimeref.asp)  
+
+
 
 Node 適合處理大量IO任務的網路服務  
 Node 沒有跟目錄的概念,沒有URL和物理文件一一對應的關係,必須自己設計路由引擎    
@@ -28,6 +32,9 @@ var url = require('url');
 var path = require('path');  
 var querystring = require('querystring');  
 
+var pathname = url.pase(req.url).pathname;  
+// 得到檔名
+var extname = path.extname(pathname);  
 var urljson = url.parse( req.url, true ); console.log(urljson);  
 // 2nd參數 true 會把 query 自動變為物件  
 
@@ -35,5 +42,12 @@ var urljson = url.parse( req.url, true ); console.log(urljson);
 var qs = urljson.query;  
 var qsjson = querystring.parse(qs);  
 
+### 路由引擎  
+var server = http.createServer((req,res)=>{  
+    var pathname = url.parse(req.url).pathname;  
+    fs.readFile('./路徑' + pathname, function(err,data){  
+        if(err){ res.end('404 Not Found'); return; }  
+        res.end(data);  });
+    });
 
 ### 事件驅動  
