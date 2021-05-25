@@ -19,6 +19,7 @@ finalhandler, serve-static
 formidable  
 express  
 ejs模板引擎  
+MongoDB  
 路由引擎  
 作用域暴露 exports  
 
@@ -143,6 +144,20 @@ app.set("view engine","ejs");
 第一參數 路由, 第二參數模板檔名 .ejs  
 app.get("/ejs", function(req,res){ res.render("whatever",{"thing":"八手機","spend":100*3})});  
 app.get("/index", function(req,res){ res.render("index")});  
+
+### MongoDB  
+NoSQL  Not Only SQL 非關係型數據庫  
+[MongoDB 官網下載頁](https://www.mongodb.com/try/download/community)  
+[MongoDB API說明](http://mongodb.github.io/node-mongodb-native/2.2/)  
+$ mongod --dbpath c:\Data\db  
+$ mongod  
+$ mongo  
+進入REPL環境  
+> use student  創建 student數據庫, 沒有此數據庫會自動創建    
+> db.school.insert({"姓名":"小明","age":12,});
+> db.school.find({})  空查詢,找所有數據  
+
+$ npm install mongodb --save  
 
 ### 路由引擎  
 var server = http.createServer((req,res)=>{  
