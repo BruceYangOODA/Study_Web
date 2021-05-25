@@ -51,9 +51,12 @@ SOLUTION : Express.js
 ## CMD命令  
 ### file system    
 var fs = require('fs');  
+fs.reaname('./路徑'), 新檔名, function(err){});  
 fs.readFile('./路徑'),function(err,data){ console.log(data); })   
 fs.writeFile('./路徑', data, function(err, data){  
   if (err){ res.end('CODE 404');} else { res.end(''); } });  
+fs.appendFile("./路徑", JSON.stringify(fields), function(err){});  
+fs.readdir("./路徑", function(err,filenameArray){});  讀取資料夾內檔名  
 
 ### http  
 var http = require('http');  
@@ -120,8 +123,13 @@ res.sendFile(__dirname + "/mydata/index.html");
 });  
 app.get("/music",function(req,res){ res.send("音樂頻道")}); 
 app.get("/news/:id", function(req,res){ res.send("第"+ req.params.id+"新聞")});  
+app.post("/music",function(req,res){ res.render("模板.ejs")});  
+// 使用 Controller  
+var 控制器 = require("./路徑/控制器.js");  
+app.post("/music", 控制器.exports方法);  
 
 //使用靜態路由  
+app.use(express.static("./"));  
 app.use("/mydata", express.static("mydata"));  第一參數路由 , 第二參數 local 資料夾位址  
 app.listen(3333);  
 
