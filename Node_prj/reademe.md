@@ -7,6 +7,7 @@
 ## [NPM 模塊清單](https://www.npmjs.com/)  
 ### [API 文件說明](https://npm.taobao.org/package/formidable)  
 [MIME 参考手册](https://www.w3school.com.cn/media/media_mimeref.asp)  
+[underscore-min.js](https://underscorejs.org/underscore-min.js)  
 
 ## [index]  
 CLI命令  
@@ -20,6 +21,7 @@ formidable
 express  
 ejs模板引擎  
 MongoDB  
+Mongoose  
 路由引擎  
 作用域暴露 exports  
 
@@ -145,19 +147,77 @@ app.set("view engine","ejs");
 app.get("/ejs", function(req,res){ res.render("whatever",{"thing":"八手機","spend":100*3})});  
 app.get("/index", function(req,res){ res.render("index")});  
 
-### MongoDB  
+### MongoDB 2.2/4.0  
 NoSQL  Not Only SQL 非關係型數據庫  
 [MongoDB 官網下載頁](https://www.mongodb.com/try/download/community)  
 [MongoDB API說明](http://mongodb.github.io/node-mongodb-native/2.2/)  
-$ mongod --dbpath c:\Data\db  
+[MongoDB CRUD增刪改查說明](http://mongodb.github.io/node-mongodb-native/2.2/reference/ecmascript6/crud/)  
+設置環境變量 C:/Program Files/MongoDB/Server/版本/bin  
+$ mongod --dbpath c:\Data\db  設置資料存儲資料夾  
 $ mongod  
 $ mongo  
-進入REPL環境  
+進入REPL環境  Read Eval Print Loop  
 > use student  創建 student數據庫, 沒有此數據庫會自動創建    
 > db.school.insert({"姓名":"小明","age":12,});
 > db.school.find({})  空查詢,找所有數據  
+> show dbs  
+> show collections  
 
 $ npm install mongodb --save  
+var MongoClient = require("mongodb").MongoClient;  
+var dburl = "mongodb://localhost:27017"; 
+var dbName = "student";  
+MongoClient.connect(dburl, function(err,client){ if(err){}  
+var col = client.db(dbName).collection("school");  
+r 所有數據庫變動訊息  
+col.insertOne({"姓名":"小李","age":13}, function(err,r){});   
+col.find({}).toArray(function(err,items){ console.log(items);});  
+});  
+col.deleteOne({"姓名":"小李","age":13}, function(err,r){});   
+col.updateOne({尋找數據},{$set:修改數據},function(err,r){});  
+col.drop();  刪除集合   
+db.dropDatabase();  刪除數據庫    
+
+### Mongoose  
+[Mongoose 官網](https://mongoosejs.com/)  
+$ npm install mongoose --save  
+var mongoose = require("mongoose");  
+mongoose.connect("mongodb://localhost/Cats");  
+var Cat = mongoose.model("Cat",{ name:String,sex:String,age:Number});  
+var kity = new Cat({name:"小名",sex:"男",age:12});  
+kity.save();  
+
+1. Schema 模型架構  
+var peopleSchema = new mongoose.Schema({
+    name:String,
+    sex:String,
+    age:Number,
+    hobby:[String],
+    scores:[{subject:String,score:Number}]
+});  
+
+2. 靜態方法
+CRUD  自定義靜態方法,在 mongoose.model 方法後, 就成自定義的 CRUD  
+靜態方法中 this 表示整個數據表  
+peopleSchema.statics.findByName = function(name, callback){  
+this.find({"name":name}, function(err,results){ callback(results); });};  
+
+var People = mongoose.model("People",peopleSchema);  
+var kity = new People({......});   
+kity.save();  
+kity.remove();  
+
+3. 動態方法   
+動用動態方法時,外層一訂有一個靜態方法, 因為需要返回的實例  
+peopleSchema.methods.sayHello = function(){ console.log(this); }  
+使用實際例子:  
+PeoPle.findByName("AAA",function(results){ results[0].sayHello();});   
+
+4. 多個類的關係  
+多對多的關係, 採用儲存對方的id  
+Student = { "courses":[number]};   
+Course = {"students":[number]};  
+
 
 ### 路由引擎  
 var server = http.createServer((req,res)=>{  
