@@ -9,6 +9,10 @@
 ### [Bootstrap 中文官網](https://getbootstrap.net/)  
 [MIME 参考手册](https://www.w3school.com.cn/media/media_mimeref.asp)  
 [underscore-min.js](https://underscorejs.org/underscore-min.js)  
+[jquery grid](https://www.jqwidgets.com/jquery-widgets-demo/demos/jqxgrid/index.htm)  
+[jquery grid demo](http://www.trirand.com/blog/?page_id=5)  
+[前端分頁神器 jquery grid](https://www.itread01.com/content/1541832486.html)  
+[jqGrid 中文](http://blog.mn886.net/jqGrid/)  
 
 ## [index]  
 CLI命令  
@@ -16,6 +20,8 @@ CMD命令
 file system  
 http  
 url, path, queryString  
+cookie-parser  
+express-session  
 GET, POST  
 finalhandler, serve-static  
 formidable  
@@ -23,6 +29,8 @@ express
 ejs模板引擎  
 MongoDB  
 Mongoose  
+node-xlsx    
+crypto  md5加密  
 路由引擎  
 作用域暴露 exports  
 
@@ -61,6 +69,7 @@ fs.writeFile('./路徑', data, function(err, data){
   if (err){ res.end('CODE 404');} else { res.end(''); } });  
 fs.appendFile("./路徑", JSON.stringify(fields), function(err){});  
 fs.readdir("./路徑", function(err,filenameArray){});  讀取資料夾內檔名  
+fs.unlink("./"+ files.FILE物件.path, functions(err){});  刪除文件  
 
 ### http  
 var http = require('http');  
@@ -84,6 +93,27 @@ var urljson = url.parse( req.url, true ); console.log(urljson);
 得到查詢字符串  
 var qs = urljson.query;  
 var qsjson = querystring.parse(qs);  
+
+### cookie-parser  
+$ npm install cookie-parser --save  
+var cookieParser = require("cookie-parser");  
+// cookieParser() 是一個中間件  
+app.use(cookieParser());  
+讀取  
+var cook = req.cookies.名稱  
+if(!cook) { cook=[]; }  
+改變  
+cook.push(值);  
+設定  
+res.cookie("cook",cook);  
+
+### express-session  
+$ npm install express-session --save  
+var session = require("express-session");  
+app.set("trust proxy", 1); //trust first proxy  
+app.use(session({ secret:"AAA", resave:false, saveUnitialized:true, cookie:{ maxAge:60000}}));  
+設置 session  
+if(!req.session.a){ req.session.a= parseInt(Math.random()*10000);}  
 
 ### GET, POST  
 //拿到GET 請求參數    
@@ -218,6 +248,27 @@ PeoPle.findByName("AAA",function(results){ results[0].sayHello();});
 多對多的關係, 採用儲存對方的id  
 Student = { "courses":[number]};   
 Course = {"students":[number]};  
+
+###  node-xlsx  
+$ npm install node-xlsx --save  
+var xlsx = require("node-xlsx");  
+var workSheetFromFile = xlsx.parse(__dirname + "a.xlsx");  
+console.log(workSheetFromFile.length);  //6 六個表   
+console.log(workSheetFromFile[0]);  //顯示第一個表 屬性 name, data   
+
+寫入  
+var data1 = [[表頭],[第一行數據],[第二行數據]];  
+var data2 = [[表頭],[第一行數據],[第二行數據]];  
+var buffer = xlsx.build([  
+{name:"表名稱", data:data1},  
+{name:"表名稱", data:data2}]);  
+fs.writeFile("路徑"+"檔案名"+".xlsx", buffer, function(err){});  
+
+### crypto md5加密  
+$ npm install crypto --save  
+var crypto = require("crypto");  
+var str = crypto.createHash("md5").update("密碼").digest("hex");  
+var str1 = crypto.createHash("md5").update(str).digest("hex");  
 
 
 ### 路由引擎  
