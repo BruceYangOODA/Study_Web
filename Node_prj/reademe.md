@@ -26,7 +26,6 @@ GET, POST
 finalhandler, serve-static  
 formidable  
 express  
-ejs模板引擎  
 MongoDB  
 Mongoose  
 node-xlsx    
@@ -146,10 +145,18 @@ fs.rename(files.表單名稱.path, files.表單名稱.path + extname, function()
 });  
 
 ### express  
+[API](https://npm.taobao.org/package/ejs)  
 [express 中文網站](https://www.expressjs.com.cn/)   
 $ npm install express --save  
 var express = require("express");  
 var app = express();  
+//設置默認的模板引擎  
+app.set("view engine","ejs");  
+新增資料夾 views  新增檔案 index.ejs 使用HTML編碼  
+第一參數 路由, 第二參數模板檔名 .ejs  
+app.get("/ejs", function(req,res){ res.render("whatever",{"thing":"八手機","spend":100*3})});  
+app.get("/index", function(req,res){ res.render("index")});  
+
 app.get("/", function(req,res){  
 __dirname 表示當時這個js文件的絕對路徑  
 必須使用絕對路徑當作參數  
@@ -167,16 +174,6 @@ app.use(express.static("./"));
 app.use("/mydata", express.static("mydata"));  第一參數路由 , 第二參數 local 資料夾位址  
 app.listen(3333);  
 
-### ejs模板引擎  
-Embedded JavaScript templates  
-[API](https://npm.taobao.org/package/ejs)  
-$ npm install ejs --save  
-//設置默認的模板引擎  
-app.set("view engine","ejs");  
-新增資料夾 views  新增檔案 index.ejs 使用HTML編碼  
-第一參數 路由, 第二參數模板檔名 .ejs  
-app.get("/ejs", function(req,res){ res.render("whatever",{"thing":"八手機","spend":100*3})});  
-app.get("/index", function(req,res){ res.render("index")});  
 
 ### MongoDB 2.2/4.0  
 NoSQL  Not Only SQL 非關係型數據庫  
