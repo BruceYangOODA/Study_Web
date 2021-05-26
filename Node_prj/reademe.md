@@ -7,6 +7,7 @@
 ## [NPM 模塊清單](https://www.npmjs.com/)  
 ### [API 文件說明](https://npm.taobao.org/package/formidable)  
 ### [Bootstrap 中文官網](https://getbootstrap.net/)  
+### [Bootstrap 3 中文](https://v3.bootcss.com/css/)  
 [MIME 参考手册](https://www.w3school.com.cn/media/media_mimeref.asp)  
 [underscore-min.js](https://underscorejs.org/underscore-min.js)  
 [jquery grid](https://www.jqwidgets.com/jquery-widgets-demo/demos/jqxgrid/index.htm)  
