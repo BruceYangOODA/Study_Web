@@ -33,7 +33,7 @@ node-xlsx
 crypto  md5加密  
 路由引擎  
 作用域暴露 exports  
-
+正則  
 
 <hr>
 
@@ -314,4 +314,6 @@ module.exports = sum;
 var sum = require('./test.js');  
 var result = new sum([3,4,5,6]);  
 
-### 事件驅動  
+### 正則  
+var regexp = new RegExp(keyword, "g");  
+Student.find({"name": regexp}).limit(rows).toArray(function(err,r){});  
