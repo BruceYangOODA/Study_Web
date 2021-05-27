@@ -5,6 +5,7 @@
 [Youtube Learn Node.js - Full Tutorial for Beginners](https://www.youtube.com/watch?v=RLtyhwFtXQA&ab_channel=%EC%95%84%EB%85%B9%EB%8A%94%EB%8B%A4a-melts%EC%95%84%EB%85%B9%EB%8A%94%EB%8B%A4a-melts)  
 
 ## [Node Doc 官方API文件](https://nodejs.org/docs/latest-v12.x/api/index.html)  
+## [Node API 中文](http://nodejs.cn/api/)  
 ## [NPM 模塊清單](https://www.npmjs.com/)  
 ### [API 文件說明](https://npm.taobao.org/package/formidable)  
 ### [Bootstrap 中文官網](https://getbootstrap.net/)  
@@ -21,9 +22,10 @@
 
 ## [index]  
 CLI命令  
-res req  
 file system  
+mine  
 http  
+res req  
 url, path, queryString  
 cookie-parser  
 express-session  
@@ -31,6 +33,7 @@ GET, POST
 finalhandler, serve-static  
 formidable  
 express  
+underscore  
 MongoDB  
 Mongoose  
 node-xlsx    
@@ -51,6 +54,8 @@ crypto  md5加密
 8. 依賴: package.json 文件中 'denpendencies' 屬性表示依賴外部 模塊  
 9. __dirname node 執行的js(main)的資料夾位址  
 10. __filename node 執行的js(main)的 URL  
+11. err.code == "ENOENT"  文件不存在  
+
 
 <hr>  
 
@@ -66,11 +71,8 @@ SOLUTION : Express.js
    $ node -v 確認安裝版本  
    安裝資料夾 Program Files/nodejs  
 
-### res req  
-res.setHeader("Content-Type","text/plain; charset=utf-8");  text/plain記事本 text/html網頁  
-
 ### file system    
-[file system API](https://nodejs.org/docs/latest-v12.x/api/fs.html)  
+[file system API](http://nodejs.cn/api/fs.html)  
 var fs = require('fs');  
 fs.reaname('./路徑'), 新檔名, function(err){});  
 // 有傳參數 UTF8, data 會被默認為 string  
@@ -81,8 +83,17 @@ fs.appendFile("./路徑", JSON.stringify(fields), function(err){});
 fs.readdir("./路徑", function(err,filenameArray){});  讀取資料夾內檔名  
 fs.unlink("./"+ files.FILE物件.path, functions(err){});  刪除文件  
 
+同步讀取文件  
+fs.readFileSync();  
+
+### mine  
+根據檔名 確定檔案類型  
+$ npm install mine --save  
+var mine = require("mine");   
+res.setHeader("Content-Type", mine.getType(filename));  
+
 ### http  
-[http API](https://nodejs.org/docs/latest-v12.x/api/http.html)  
+[http API](http://nodejs.cn/api/http.html)  
 var http = require('http');  
 var server = http.createServer(function(req,res){ res.end(''); });  
 server.on("request", function(req,res){});  
@@ -91,8 +102,25 @@ req對象封裝了 HTTP上行請求的所有信息
 res對象是服務器給出的下行響應  
 req.connection.remoteAddress  #USER IP 位址  
 
+### res req  
+[request API](http://nodejs.cn/api/http.html#http_class_http_clientrequest)  
+[response API](http://nodejs.cn/api/http.html#http_class_http_serverresponse)  
+res.setHeader("Content-Type","text/plain; charset=utf-8");  text/plain記事本 text/html網頁   
+跳轉,重定向 首頁   
+res.setHeader("Location",'/');  
+res.end();  
+
+req 常用屬性  
+request.headers  
+request.rawHeaders  
+request.httpVersion  
+request.method  
+request.url  
+
 ### url, path, queryString  
-[path API](https://nodejs.org/docs/latest-v12.x/api/path.html)  
+[url API](http://nodejs.cn/api/url.html)  
+[path API](http://nodejs.cn/api/path.html)  
+[querystring API](http://nodejs.cn/api/querystring.html)  
 var url = require('url');  
 var path = require('path');  
 var querystring = require('querystring');  
@@ -134,7 +162,7 @@ var queryJSON = url.parse(req.url, true).query;
 //拿到POST  
 req.on("data", function(chunk){ content += chunk; });  
 req.on("end", function(){ content = querystring.parse(content); res.end(""); })  
-## content傳回 any ,可以輸出文字,但是 無法辨識內部屬性  
+
 
 ### finalhandler, serve-static  
 $ npm install serve-static --save  
@@ -188,6 +216,8 @@ app.use(express.static("./"));
 app.use("/mydata", express.static("mydata"));  第一參數路由 , 第二參數 local 資料夾位址  
 app.listen(3333);  
 
+### underscore  
+[中文 API](https://www.bootcss.com/p/underscore)  
 
 ### MongoDB 2.2/4.0  
 NoSQL  Not Only SQL 非關係型數據庫  
