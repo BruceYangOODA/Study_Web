@@ -1,9 +1,10 @@
 [Youtube 爱前端从入门到深入Node js开发实战](https://www.youtube.com/watch?v=sq3FAlPQEyM&list=PLE4XbebCbtzFwGFTalZIRkRgGTXoKfW-1&ab_channel=Program)   
+[Youtube Node.js教學](https://www.youtube.com/watch?v=J9PfvdtkFLg&list=PLzKtnppOmiXCPlnd8dDmI8tVxjAUClcmV&ab_channel=AngusChang)    
 [Youtuve Node.js 从零开发个人博客项目](https://www.youtube.com/watch?v=ABz5f1aVeO4&list=PL9nxfq1tlKKlhV1UzUmElRkxmjkoO3mtH&ab_channel=JomyKing)   
-[Youtube Node.js教學](https://www.youtube.com/watch?v=J9PfvdtkFLg&list=PLzKtnppOmiXCPlnd8dDmI8tVxjAUClcmV&ab_channel=AngusChang)   
 [Youtube 千锋Web前端教程 NodeJS](https://www.youtube.com/watch?v=jxMvFxOqd24&list=PLwDQt7s1o9J6v1bYUF_mgOXd_C5saqh22&ab_channel=%E5%8D%83%E9%94%8B%E6%95%99%E8%82%B2)  
+[Youtube Learn Node.js - Full Tutorial for Beginners](https://www.youtube.com/watch?v=RLtyhwFtXQA&ab_channel=%EC%95%84%EB%85%B9%EB%8A%94%EB%8B%A4a-melts%EC%95%84%EB%85%B9%EB%8A%94%EB%8B%A4a-melts)  
 
-## [Node Doc 官方API文件](https://nodejs.org/api/)  
+## [Node Doc 官方API文件](https://nodejs.org/docs/latest-v12.x/api/index.html)  
 ## [NPM 模塊清單](https://www.npmjs.com/)  
 ### [API 文件說明](https://npm.taobao.org/package/formidable)  
 ### [Bootstrap 中文官網](https://getbootstrap.net/)  
@@ -15,9 +16,12 @@
 [前端分頁神器 jquery grid](https://www.itread01.com/content/1541832486.html)  
 [jqGrid 中文](http://blog.mn886.net/jqGrid/)  
 
+[NVM](https://github.com/nvm-sh/nvm)  
+[NVM-Window](https://github.com/coreybutler/nvm-windows)  
+
 ## [index]  
 CLI命令  
-CMD命令  
+res req  
 file system  
 http  
 url, path, queryString  
@@ -45,6 +49,8 @@ crypto  md5加密
    install package -g 會安裝在全局,即此位址  
 7. 當省略文件名時,會自動引入 index.js  
 8. 依賴: package.json 文件中 'denpendencies' 屬性表示依賴外部 模塊  
+9. __dirname node 執行的js(main)的資料夾位址  
+10. __filename node 執行的js(main)的 URL  
 
 <hr>  
 
@@ -60,26 +66,33 @@ SOLUTION : Express.js
    $ node -v 確認安裝版本  
    安裝資料夾 Program Files/nodejs  
 
-## CMD命令  
+### res req  
+res.setHeader("Content-Type","text/plain; charset=utf-8");  text/plain記事本 text/html網頁  
+
 ### file system    
+[file system API](https://nodejs.org/docs/latest-v12.x/api/fs.html)  
 var fs = require('fs');  
 fs.reaname('./路徑'), 新檔名, function(err){});  
-fs.readFile('./路徑'),function(err,data){ console.log(data); })   
+// 有傳參數 UTF8, data 會被默認為 string  
+fs.readFile('./路徑'),"utf8", function(err,data){ console.log(data); })   
 fs.writeFile('./路徑', data, function(err, data){  
-  if (err){ res.end('CODE 404');} else { res.end(''); } });  
+  if (err){ res.end('CODE 404');} else { res.end(data.toString()); } });  
 fs.appendFile("./路徑", JSON.stringify(fields), function(err){});  
 fs.readdir("./路徑", function(err,filenameArray){});  讀取資料夾內檔名  
 fs.unlink("./"+ files.FILE物件.path, functions(err){});  刪除文件  
 
 ### http  
+[http API](https://nodejs.org/docs/latest-v12.x/api/http.html)  
 var http = require('http');  
 var server = http.createServer(function(req,res){ res.end(''); });  
+server.on("request", function(req,res){});  
 server.listen(3333);  
 req對象封裝了 HTTP上行請求的所有信息  
 res對象是服務器給出的下行響應  
 req.connection.remoteAddress  #USER IP 位址  
 
 ### url, path, queryString  
+[path API](https://nodejs.org/docs/latest-v12.x/api/path.html)  
 var url = require('url');  
 var path = require('path');  
 var querystring = require('querystring');  
