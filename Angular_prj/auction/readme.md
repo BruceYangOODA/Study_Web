@@ -5,6 +5,7 @@
 [Bootstrap Glyphicons](https://getbootstrap.com/docs/3.3/components/)  
 [w3schools CSS](https://www.w3schools.com/css/)  
 
+[自製DB In Memory Web API](https://www.youtube.com/watch?v=0vNcYT6e99c&ab_channel=LyradDigital)  
 ## [index]   
 
 ng-bootstrap  
@@ -242,3 +243,15 @@ Node
 // Installation for Angular CLI  
 ng add @ng-bootstrap/ng-bootstrap  
 [Bootstrap widgets ](https://ng-bootstrap.github.io/#/home)  
+
+
+### 自製DB In Memory Web API  
+[Introducing the Angular In-memory Web API](https://blog.logrocket.com/angular-in-memory-web-api-tutorial-mocking-crud-apis-in-angular/)  
+$ npm install angular-in-memory-web-api --save
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';  
+import { InMemoryDataService } from './in-memory-data.service';  
+在 module imports:[HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)]    
+$ ng generate service InMemoryData  
+在 InMemoryData.ts 文件中 
+import { InMemoryDbService } from 'angular-in-memory-web-api';
+export class InMemoryDataService implements InMemoryDbService { createDb(){} }  
