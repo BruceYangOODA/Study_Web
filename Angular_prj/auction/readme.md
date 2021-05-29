@@ -3,6 +3,12 @@
 [Youtube 千锋Web前端教程 angular](https://www.youtube.com/watch?v=EiDewOIGLfc&list=PLwDQt7s1o9J4b2zjOo3flmVFOqEV0H1Pz&ab_channel=%E5%8D%83%E9%94%8B%E6%95%99%E8%82%B2)  
 [Bootstrap 教程](https://www.runoob.com/bootstrap/bootstrap-tutorial.html)
 [Bootstrap Glyphicons](https://getbootstrap.com/docs/3.3/components/)  
+[w3schools CSS](https://www.w3schools.com/css/)  
+
+## [index]   
+
+ng-bootstrap  
+
 
 # Angular-CLI 命令列  
 $ npm install -g @angular/cli  
@@ -229,3 +235,10 @@ fetch(this.url).then(response => response.text()).then(data =>{
     this.mydata = data; })  
 ## 寫入本地資料  
 Node  
+
+
+
+### ng-bootstrap   
+// Installation for Angular CLI  
+ng add @ng-bootstrap/ng-bootstrap  
+[Bootstrap widgets ](https://ng-bootstrap.github.io/#/home)  
