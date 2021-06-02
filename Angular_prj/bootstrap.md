@@ -1,8 +1,8 @@
 
 
-< div class="panel panel-primary">
-< div class="panel-heading">
-</ </
+< div class="panel panel-primary">  
+< div class="panel-heading">  
+</ </  
 
 
 
