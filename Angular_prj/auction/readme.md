@@ -255,3 +255,39 @@ $ ng generate service InMemoryData
 在 InMemoryData.ts 文件中 
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService { createDb(){} }  
+
+### 表單驗證 Validation  
+[Validating form input](https://angular.io/guide/form-validation)  
+[Youtube Angular password and confirm password validation](https://www.youtube.com/watch?v=YhazkQd59Hk&ab_channel=kudvenkat)  
+1.新增檔案 檔名.directive.ts    
+  import { Validator, NG_VALIDATORS, AbstractControl } from"@angular/forms";  
+  import { Directive, Input } from"@angular/core";   
+  @Directive({  
+      selector: '[app命名Validator]',  
+      providers: [{  
+          provide: NG_VALIDATORS,  
+          useExisting: 命名Directive,   
+         multi: true}]})  
+  export class 命名Directive implements Validator {  
+   @Input() app命名Validator:string;  
+    validate(control: AbstractControl): {[key:string]: any} | null{  
+        var controlToCompare = control.parent.get(this.appConfirmEqualValidator);  
+        if (controlToCompare && controlToCompare.value !== control.value){  
+            return {"notEqual":true};  
+        }  
+        return null;  
+    }  
+   }  
+   
+2.html標籤  
+ <input app命名Validator="驗證input的name屬性名稱(可以是其他的Input名稱)">  
+ <span *ngIf="input的name屬性名稱.touched && input的name屬性名稱.errors?.required">警告訊息</span>  
+ <span *ngIf="input的name屬性名稱.touched && input的name屬性名稱.errors?.驗證器返回字串">警告訊息2</span>    
+   
+3.在 app.module.ts 宣告 驗證器  
+    declarations: [命名Directive]  
+   
+   
+   
+Angular form validation  
+https://www.youtube.com/watch?v=d8XONHXTv_4&ab_channel=kudvenkat  
