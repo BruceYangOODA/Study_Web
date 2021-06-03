@@ -2,6 +2,10 @@
 ### panel  
 ### navbar  
 ### form-group   
+### ngx-bootstrap bsDatepicker  
+
+
+
 
 ### panel  
 [影片 panel](https://youtu.be/tPySwBVmGvg?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
@@ -22,15 +26,30 @@
 < /nav>  
 
 ### form-group   
+在 app.module.ts   
+imports { FormsModule } from"@angular/forms";  
+imports: [ FormsModule ]  
+
+ts文件  
+import { ngForm } from "@angularForm";  
+方法A(命名Form: ngForm): void {}  
+
 [影片 input](https://youtu.be/pwQ3L3UFEjk?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
-<form #命名Form="ngForm" (ngSubmit)="方法A(命名Form)">  #命名Form以後可以直接用這個 [命名Form]指向這個物件  
+<form #命名Form="ngForm" (ngSubmit)="方法A(命名Form)">  
+#命名Form以後可以直接用這個 [命名Form]指向這個物件  
 有"ngForm"這個屬性,才能使用 驗證器  
 button類型是submit, 點擊方法委託給 ngSubmit  
 < div class="form-group">  
-< label for="OOO"> XXX < /label>   label的for屬性指定點擊對象,點到label等於點到點擊對象  
+< label for="OOO"> XXX < /label>   
+label的for屬性指定點擊對象,點到label等於點到點擊對象  
 < input id="OOO" type="text" class="form-control" [(ngModel)]="OOO" name="AAA">    
 [(ngModel)]為 OOO 物件建立資料連結  這個物件沒有名字會報錯,所以加 name屬性  
 "form-control"宣告為ngModel物件  
+< button type="submit">    
+< /div> 
+< /form>    
+{{ #命名Form.value | json }}  
+當這個命名Form的input有值時, 資料連結就會顯示 { "OOO":"A" }
 
 [影片 radioButton](https://youtu.be/IjEWmoOHHvM?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
 < div class="form-group">  
@@ -62,26 +81,37 @@ button類型是submit, 點擊方法委託給 ngSubmit
 < select id="OOO" name="OOO" [(ngModel)]="OOO" class="form-control">  
 < option value="A"> XXX < /option>  
 < option value="B"> XXX < /option>  
+
+[影片 select list2](https://youtu.be/4fKa13TTn7E?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+< option *ngFor="let item of AAA" [value]="item.屬性"  > item.XXX < /option>  
 < /select>  
 < /div>  
 [(ngModel)]為 OOO 物件建立資料連結  這個物件沒有名字會報錯,所以加 name屬性  
 將會顯示為  {"OOO":"A"}  
 如果要設預設值 就在ts文件上寫 OOO ="A";  
 
-< button type="submit">    
-< /div> 
-< /form>    
-{{ #命名Form.value | json }}  
-當這個命名Form的input有值時, 資料連結就會顯示 { "OOO":"A" }
+### ngx-bootstrap bsDatepicker    
+[影片 ](https://youtu.be/edaN6iCcqP4?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+1. $ npm install ngx-bootstrap --save  
+2. $ npm install bootstrap@3 --save  
+3. 標明樣式表路徑,在 .angular.json  
+  "styles":[  
+  "../node_modules/bootstrap/dist/css/bootstrap.min.css",  
+  "../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"]  
 
-import { ngForm } from "@angularForm";  
-方法A(命名Form: ngForm): void {}  
+使用 ngx-bootstrap 的 package  
+在 app.module.ts  
+import { BsDatepickerModule } from "ngx-bootstrap/datapicker";  
+imports: [ BsDatepickerModule.forRoot() ]  
 
-在 app.module.ts   
-imports { FormsModule } from"@angular/forms";  
-imports: [ FormsModule ]  
+< div class="form-group">  
+< label for="OOO"> XXX < /label>  
+< input class="form-control" id="OOO" name="OOO" [(ngModel)]="OOO" type="text"  bsDatepicker>  
+< /div>  
+將會顯示為  {"OOO":"2018-01-16T13:23:32.000Z"}   
 
-  
+bsDaterangepicker 會出現兩個日曆,返回 [Date(), Date()]  
+將會顯示為  {"OOO":["2018-01-16T13:23:32.000Z","2019-06-37T13:23:32.000Z"]}   
  
   
 
