@@ -1,8 +1,23 @@
 ## [index]   
 panel  
 navbar  
-form-group   
-ngx-bootstrap bsDatepicker  
+form-group     
+--input  
+--radioButton  
+--checkbox   
+--select  
+ngx-bootstrap Datepicker  
+--bsDaterangepicker  
+--Datapicker 模板樣式修改   
+form validataion   
+--email 驗證器  
+--pattern 正則表達式 驗證器  
+--動態添加 驗證器  
+--select 預設值   
+自定義驗證器  
+--confirm-password 驗證器  
+Service  
+Switch Case  
 
 
 
@@ -34,6 +49,7 @@ ts文件
 import { ngForm } from "@angularForm";  
 方法A(命名Form: ngForm): void {}  
 
+#### input  
 [影片 input](https://youtu.be/pwQ3L3UFEjk?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)   
 < form #命名Form="ngForm" (ngSubmit)="方法A(命名Form)">   
 #命名Form以後可以直接用這個 [命名Form]指向這個物件   
@@ -42,7 +58,7 @@ button類型是submit, 點擊方法委託給 ngSubmit
 < div class="form-group">   
 < label for="OOO"> XXX < /label>    
 label的for屬性指定點擊對象,點到label等於點到點擊對象   
-< input id="OOO" type="text" class="form-control" [(ngModel)]="OOO" name="AAA">     
+< input class="form-control" id="OOO" type="text" [(ngModel)]="OOO" name="OOO">     
 [(ngModel)]為 OOO 物件建立資料連結  這個物件沒有名字會報錯,所以加 name屬性   
 "form-control"宣告為ngModel物件   
 < button type="submit">     
@@ -51,6 +67,7 @@ label的for屬性指定點擊對象,點到label等於點到點擊對象
 {{ #命名Form.value | json }}   
 當這個命名Form的input有值時, 資料連結就會顯示 { "OOO":"A" }   
 
+#### radioButton  
 [影片 radioButton](https://youtu.be/IjEWmoOHHvM?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
 < div class="form-group">  
 < div class="form-control">  
@@ -64,6 +81,7 @@ label的for屬性指定點擊對象,點到label等於點到點擊對象
 如果要設預設值 就在ts文件上寫 OOO = 'male';  
 < /div>  < /div>  
 
+#### checkbox  
 [影片 checkbox](https://youtu.be/3qfzuZBoThI?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
 < div class="form-group">  
 < div class="form-control">    
@@ -75,6 +93,7 @@ label的for屬性指定點擊對象,點到label等於點到點擊對象
 如果要設預設值 就在ts文件上寫 OOO = true;  
 < /div>  < /div>  
 
+#### select  
 [影片 select list](https://youtu.be/HMK4P_jx0y8?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
 < div class="form-group">  
 < label for="OOO"> XXX < /label>  
@@ -90,8 +109,9 @@ label的for屬性指定點擊對象,點到label等於點到點擊對象
 將會顯示為  {"OOO":"A"}  
 如果要設預設值 就在ts文件上寫 OOO ="A";  
 
-### ngx-bootstrap bsDatepicker    
+### ngx-bootstrap Datepicker    
 [影片 ](https://youtu.be/edaN6iCcqP4?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+[Datepicker 官網API](https://valor-software.com/ngx-bootstrap/datepicker)  
 1. $ npm install ngx-bootstrap --save  
 2. $ npm install bootstrap@3 --save  
 3. 標明樣式表路徑,在 .angular.json  
@@ -110,10 +130,232 @@ imports: [ BsDatepickerModule.forRoot() ]
 < /div>  
 將會顯示為  {"OOO":"2018-01-16T13:23:32.000Z"}   
 
+#### bsDaterangepicker  
 bsDaterangepicker 會出現兩個日曆,返回 [Date(), Date()]  
 將會顯示為  {"OOO":["2018-01-16T13:23:32.000Z","2019-06-37T13:23:32.000Z"]}   
  
-  
+#### Datapicker 模板樣式修改  
+[BsDatepickerConfig API](https://valor-software.com/ngx-bootstrap/datepicker)  
+[bsConfig] 在BsDatepickerInlineDirective 說明為 Config object for datepicker  
 
+< input bsDatepicker [bsConfig]="datePickerConfig" placement="right">   
+placement 跳出的日曆的位置  
+
+import { BsDatepickerConfig } from "ngx-bootstrap/datepicker";  
+datePickerConfig : Partial<BsDatepickerConfig>;  Partial局部  
+constructor(){  
+  this.datePickerConfig : Object.assign({}, {  
+   containerClass: "theme-dark-blue",  
+   showWeekNumbers: false,  
+   minDate: new Date(2018,1,1),  
+   maxDate: new Date(2018,12,31),  
+   dateInputFormat: "YYYY/MM/DD"  }) }  
+containerClass 外觀主色 ;  showWeekNumbers 顯示第幾周 ; minDate,maxDate 日曆起始點,終止點   
+dateInputFormat 日期表示樣式    
+Themes 的值有6種 theme-default, theme-green, theme-blue, theme-dark-blue, theme-red, theme-orange  
+
+### form validataion  
+[影片 驗證錯誤 訊息](https://www.youtube.com/watch?v=Vh6estB9kqk&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=17&ab_channel=kudvenkat)  
+novalidate nfForm預設不允許 html的 validate指定  
+< form ngNativeValidate ></ form>   
+  
+ngNativeValidate 允許 html5的 validate指令 例如  
+required  
+maxlength  
+pattern   正則表達式驗證器  
+min   
+max    
+email  郵件驗證器  
+  
+Angular Form Validation Properyies  
+touched untouched   當點擊並blur後,修改其布林值  
+pristine dirty   當 值 經過改變後,修改其布林值  
+valid invalid  驗證 值 是否合格  
+
+< div class="form-group" [class.has_error]="OOOControl.invalid && OOOControl.touched"  
+     [class.has-success]="OOOControl.valid">     
+< label for="OOO" class="control-label"> XXX < /label>    
+< input class="form-control" id="OOO" name="OOO" type="text" [(ngModel)]="OOO"  
+       #OOOControl="ngModel">       
+#OOOControl="ngModel" 為了要驗證資料,新增另一個 ngModel參照, 由於已經有 OOO 名稱的資料,  
+所以加上 Control,讓系統進行區別   
+< span class="help-block" *ngIf="OOOControl.invalid && OOOControl.touched"> XXX < /span>  
+< /div>   
+< button type="submit" class="btn btn-primary" [disable]="命名Form.invalid"> XXX < /button>  
+  
+[class.has_error]  class="control-label"  class="help-block"  驗證沒過,字體顏色會變成紅色  
+[class.has-success]   驗證通過,字體顏色會變成綠色  
+[disable]  驗證通過,才可以點擊  
+  
+{{ OOOControl.touched }} {{ 命名Form.touched }}  
+顯示為  "OOOControl": true   "命名Form":true  
+因為 #命名Form="ngForm" #OOOControl="ngModel" , 宣告建立 ngModel物件參照他們的值  
+所以可以在 html得到這個物件的值  
+
+當 [(ngModel)] 綁定其他物件的名稱時, ngModel綁定的name 就可以跟id 同樣  
+< input class="form-control" id="OOO" name="OOO" type="text" [(ngModel)]="Object.OOO"  
+       #OOO="ngModel">    
+
+#### email 驗證器   
+[影片 Html5 email 驗證器](https://youtu.be/DNqZ7Du_64Y?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+< div class="form-group" [class.has_error]="OOO.invalid && OOO.touched"  
+     [class.has-success]="OOO.valid">     
+< label for="OOO" class="control-label"> XXX < /label>    
+< input class="form-control" required [email]="Object.OOO!=''" id="OOO" name="OOO" type="text" [(ngModel)]="Object.OOO"    
+#OOO="ngModel">       
+< span class="help-block" *ngIf="OOO.errors && OOO.errors.required && OOO.touched"> XXX < /span>  
+< span class="help-block" *ngIf="OOO.errors?.required && OOO.touched"> XXX < /span>  
+< span class="help-block" *ngIf="OOO.errors?.email && OOO.touched"> XXX < /span>  
+< /div>   
+
+class="form-control" required email     
+OOO.errors && OOO.errors.required  
+當 required錯誤 不存在時, OOO.errors.required沒有這個屬性, 所以前面用 OOO.errors 跳掉後面的判斷    
+OOO.errors?.required  效果同等於  OOO.errors && OOO.errors.required  
+
+class="form-control" required [email]="Object.OOO!=''"    
+*ngIf="OOO.errors?.email && OOO.touched"  
+當 input 是 空字串時, email 驗證器不存在, 這樣在觸發 errors.required 時,不會一併觸發 html5 email驗證器   
+  
+#### pattern 正則表達式 驗證器     
+[影片 正則表達式 驗證器](https://youtu.be/V8GVKAVkTVc?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+< input class="form-control" required   
+pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"  
+       id="OOO" name="OOO" type="text" [(ngModel)]="Object.OOO"    
+#OOO="ngModel">       
+< span class="help-block" *ngIf="OOO.errors?.pettern && OOO.touched"> XXX < /span>  
+
+"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"  
+XXX@XXX.XXX   
+  
+#### 動態添加 驗證器  
+[影片 動態添加 驗證器](https://youtu.be/Qi6tV2M2QfQ?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+< input type="radio" required name="OOO" value="AAA" [(ngModel)]="Object.OOO" #OOO="ngModel" >   
+< input type="radio" required name="OOO" value="BBB" [(ngModel)]="Object.OOO" #OOO="ngModel" >  
+  
+< input type="text" name="AAA" [required]="OOO.value=='AAA'">   
+< input type="text" name="BBB" [required]="OOO.value=='BBB'">    
+  
+#### select 預設值  
+[影片 select](https://youtu.be/dyif1Xy9GY8?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+< select #OOO="ngModel" [(ngModel)]="Object.OOO" required >  
+< option disabled [ngVale]="null"> XXX < /option>  
+< option *ngFor="let item of CCC" [value]=item.AAA> {{ item.BBB }} < /option>  
+< /select>  
+  
+[ngVale]="null" [value]="null" 的差異   
+[ngVale]的null 是null， 但[value]的null是字串  
+required 驗測會認定 字串null 是有值 而認定 驗證通過    
+
+### 自定義驗證器 
+[影片 自定義驗證器](https://youtu.be/2AAUf32pKy8?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+新增檔案  命名-validator.directive.ts  
+
+import { Validator, AbstractControl, NG_VALIDATORS } from "@angular/forms";  
+import { Directive, Input } from "@angular/core";  
+@Directive({  
+  selector: "[app命名Validator]",  在HTML上面的標示器  
+  providers: [{  
+  provide: NG_VALIDATORS,  宣告這個是NG 驗證器  
+  useExisting: 命名ValidatorDirective,  使用這個class進行驗證   
+  multi:true  }]    
+  })  
+  
+export class 命名ValidatorDirective implements Validator {   
+  // tslint:disable-next-line:no-input-rename  讓 app命名Validator標示器 化名為 CCC 可以編碼成功  
+  @Input("app命名Validator")  CCC: string;  
+  validate(control: AbstractControl): {[key:string]:any} | null  
+  { control.value === this.CCC ? { "AAA":true }  : null ;}  
+  }  
+HTML  
+< select ...... app命名Validator="BBB" >  
+  < option value="BBB"> XXX < /option>  
+< /select>    
+< span class="help-block" *ngIF="OOO.touched && OOO.errors?.AAA"> XXX< /span>  
+由於 control.value傳來 option的值 BBB, 在html標記 app命名Validator的值是 "BBB"  
+所以驗證器就會傳回  { "AAA":true } , 結果驗證不通過   
+  
+在 app.module.ts 宣告 自定義驗證器  
+import { 命名ValidatorDirective }   from"檔案位址";  
+declarations: [ 命名ValidatorDirective ]    
+  
+#### confirm-password 驗證器    
+[影片 confirm-password 驗證](https://youtu.be/YhazkQd59Hk?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)   
+  
+< div ngModelGroup="CCC"   
+[class.has-error]="AAA.touched && AAA.invalid && !AAA.errors?.required">  
+< input name="OOO" #OOO="ngModel" (change)="AAA.control.updateValueAndValidity()">  
+< input name="AAA" #AAA="ngModel" app命名Validator="OOO">    
+< /div>  
+  
+@Input() app命名Validator: string;    
+validate(control: AbstractControl): {[key:string]:any} | null {   
+  const controlToCompare = control.parent.get(this.app命名Validator);  
+  if (controlToCompare && controlToCompare.value !== control.value) { return { "BBB":true } };   
+  else { return null; }    }  
+control 是 OOO 因為標示器 app命名Validator 的值指向 OOO  
+controlToCompare 是 AAA => 由 OOO的parent,就是rootForm找到有 app命名Validator 的控制項就是 AAA  
+control.parent.get(this.app命名Validator);    
+  
+AAA.control.updateValueAndValidity()  
+由於 OOO 沒有標示器 不會自動驗證, 所以呼叫 AAA模板功能取代    
+  
+#### [影片 confirm-password 進化版]([加強版](https://youtu.be/lhl3w5rH7A8?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)    
+HTML  
+< div ngModelGroup="CCC" app命名Validator #CCC="ngModelGroup"   
+[class.has-error]="CCC.errors?BBB && !AAA.errors?required">  
+< /div>  
+validate(CCC: AbstractControl): { [ key:string ]: any} | null  {  
+  const OOOField = CCC.get("OOO");  
+  const AAAField = CCC.get("AAA");  
+  if ( OOOField && AAAField &&   
+  OOOField.value !== AAAField.value ){ .....}  }   
+  
+### Service    
+[影片 Angular Service](https://youtu.be/4lSvgj8ohAI?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)    
+新增檔案 命名.service.ts    
+import { Injectable } from "@angular/core";  
+import { 資料類別 } from "檔案位址";  
+
+@Injectable()  
+export class 命名Service {  
+  private 資料物件: 資料類別[] = [{....},{....}]  
+  get方法(): 資料類別[] { return this.資料物件 }  
+  add方法( AAA : 資料類別 ): void { this.資料物件.push(AAA); }  }   
+ 
+在app.module.ts 宣告  所有組件都可以用  
+import { 命名Service } from "檔案位址";  
+providers: [ 命名Service ]    
+  
+在使用服務的組件.ts    
+import { 命名Service } from "檔案位址";  
+constructor( private OOO: 命名Service ) {}    
+ngOnInit(){ this.網頁資料物件 = this.OOO.get方法() }    
+  
+### Switch Case      
+[影片 Switch Case](https://youtu.be/IlKIuP-5SKA?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
