@@ -12,18 +12,20 @@ ngx-bootstrap Datepicker
 form validataion   
 --email 驗證器  
 --pattern 正則表達式 驗證器  
---動態添加 驗證器  
+--動態添加驗證器  
 --select 預設值   
 自定義驗證器  
 --confirm-password 驗證器  
 Service  
-Switch Case  
-
-
+ngSwitch  
+ngChanges  
+--ngChanges Property  
+property setter  
+EventEmitter    
 
 
 ### panel  
-[影片 panel](https://youtu.be/tPySwBVmGvg?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+[影片 panel](https://www.youtube.com/watch?v=tPySwBVmGvg&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=2&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 < div class="panel panel-primary">  
 < div class="panel-heading"> < div class="panel-title">< /div></ div>  
 < div class="panel-body"></ div>  
@@ -31,7 +33,7 @@ Switch Case
 </ div>  
 
 ### navbar  
-[影片 navbar](https://youtu.be/pcOaAU_iaD4?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+[影片 navbar](https://www.youtube.com/watch?v=pcOaAU_iaD4&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=3&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 < nav class="navbar navbar-default">  
 < ul class="nav navbar-nav">  
 < li class="nav-item">  
@@ -50,7 +52,7 @@ import { ngForm } from "@angularForm";
 方法A(命名Form: ngForm): void {}  
 
 #### input  
-[影片 input](https://youtu.be/pwQ3L3UFEjk?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)   
+[影片 input](https://www.youtube.com/watch?v=pwQ3L3UFEjk&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=5&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)   
 < form #命名Form="ngForm" (ngSubmit)="方法A(命名Form)">   
 #命名Form以後可以直接用這個 [命名Form]指向這個物件   
 有"ngForm"這個屬性,才能使用 驗證器   
@@ -68,7 +70,7 @@ label的for屬性指定點擊對象,點到label等於點到點擊對象
 當這個命名Form的input有值時, 資料連結就會顯示 { "OOO":"A" }   
 
 #### radioButton  
-[影片 radioButton](https://youtu.be/IjEWmoOHHvM?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+[影片 radioButton](https://www.youtube.com/watch?v=IjEWmoOHHvM&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=6&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 < div class="form-group">  
 < div class="form-control">  
 < label class="radio-inline">  
@@ -82,7 +84,7 @@ label的for屬性指定點擊對象,點到label等於點到點擊對象
 < /div>  < /div>  
 
 #### checkbox  
-[影片 checkbox](https://youtu.be/3qfzuZBoThI?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+[影片 checkbox](https://www.youtube.com/watch?v=er8FD9V3FEU&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=7&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 < div class="form-group">  
 < div class="form-control">    
 < label class="checkbox-inline">    
@@ -94,14 +96,14 @@ label的for屬性指定點擊對象,點到label等於點到點擊對象
 < /div>  < /div>  
 
 #### select  
-[影片 select list](https://youtu.be/HMK4P_jx0y8?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+[影片 select list](https://www.youtube.com/watch?v=HMK4P_jx0y8&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=9&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 < div class="form-group">  
 < label for="OOO"> XXX < /label>  
 < select id="OOO" name="OOO" [(ngModel)]="OOO" class="form-control">  
 < option value="A"> XXX < /option>  
 < option value="B"> XXX < /option>  
 
-[影片 select list2](https://youtu.be/4fKa13TTn7E?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+[影片 select list2](https://www.youtube.com/watch?v=4fKa13TTn7E&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=10&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 < option *ngFor="let item of AAA" [value]="item.屬性"  > item.XXX < /option>  
 < /select>  
 < /div>  
@@ -110,7 +112,7 @@ label的for屬性指定點擊對象,點到label等於點到點擊對象
 如果要設預設值 就在ts文件上寫 OOO ="A";  
 
 ### ngx-bootstrap Datepicker    
-[影片 ](https://youtu.be/edaN6iCcqP4?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+[影片 Datepicker](https://www.youtube.com/watch?v=edaN6iCcqP4&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=11&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 [Datepicker 官網API](https://valor-software.com/ngx-bootstrap/datepicker)  
 1. $ npm install ngx-bootstrap --save  
 2. $ npm install bootstrap@3 --save  
@@ -197,7 +199,7 @@ valid invalid  驗證 值 是否合格
        #OOO="ngModel">    
 
 #### email 驗證器   
-[影片 Html5 email 驗證器](https://youtu.be/DNqZ7Du_64Y?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+[影片 Html5 email 驗證器](https://www.youtube.com/watch?v=DNqZ7Du_64Y&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=18&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 < div class="form-group" [class.has_error]="OOO.invalid && OOO.touched"  
      [class.has-success]="OOO.valid">     
 < label for="OOO" class="control-label"> XXX < /label>    
@@ -218,7 +220,7 @@ class="form-control" required [email]="Object.OOO!=''"
 當 input 是 空字串時, email 驗證器不存在, 這樣在觸發 errors.required 時,不會一併觸發 html5 email驗證器   
   
 #### pattern 正則表達式 驗證器     
-[影片 正則表達式 驗證器](https://youtu.be/V8GVKAVkTVc?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+[影片 正則表達式 驗證器](https://www.youtube.com/watch?v=V8GVKAVkTVc&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=19&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 < input class="form-control" required   
 pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"  
        id="OOO" name="OOO" type="text" [(ngModel)]="Object.OOO"    
@@ -228,8 +230,8 @@ pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
 "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"  
 XXX@XXX.XXX   
   
-#### 動態添加 驗證器  
-[影片 動態添加 驗證器](https://youtu.be/Qi6tV2M2QfQ?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+#### 動態添加驗證器  
+[影片 動態添加驗證器](https://www.youtube.com/watch?v=6QUkIS6vvEI&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=20&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 < input type="radio" required name="OOO" value="AAA" [(ngModel)]="Object.OOO" #OOO="ngModel" >   
 < input type="radio" required name="OOO" value="BBB" [(ngModel)]="Object.OOO" #OOO="ngModel" >  
   
@@ -237,7 +239,7 @@ XXX@XXX.XXX
 < input type="text" name="BBB" [required]="OOO.value=='BBB'">    
   
 #### select 預設值  
-[影片 select](https://youtu.be/dyif1Xy9GY8?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+[影片 select](https://www.youtube.com/watch?v=dyif1Xy9GY8&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=24&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 < select #OOO="ngModel" [(ngModel)]="Object.OOO" required >  
 < option disabled [ngVale]="null"> XXX < /option>  
 < option *ngFor="let item of CCC" [value]=item.AAA> {{ item.BBB }} < /option>  
@@ -248,7 +250,7 @@ XXX@XXX.XXX
 required 驗測會認定 字串null 是有值 而認定 驗證通過    
 
 ### 自定義驗證器 
-[影片 自定義驗證器](https://youtu.be/2AAUf32pKy8?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+[影片 自定義驗證器](https://www.youtube.com/watch?v=2AAUf32pKy8&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=25&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 新增檔案  命名-validator.directive.ts  
 
 import { Validator, AbstractControl, NG_VALIDATORS } from "@angular/forms";  
@@ -280,7 +282,7 @@ import { 命名ValidatorDirective }   from"檔案位址";
 declarations: [ 命名ValidatorDirective ]    
   
 #### confirm-password 驗證器    
-[影片 confirm-password 驗證](https://youtu.be/YhazkQd59Hk?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)   
+[影片 confirm-password 驗證](https://www.youtube.com/watch?v=2AAUf32pKy8&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=25&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)   
   
 < div ngModelGroup="CCC"   
 [class.has-error]="AAA.touched && AAA.invalid && !AAA.errors?.required">  
@@ -300,7 +302,7 @@ control.parent.get(this.app命名Validator);
 AAA.control.updateValueAndValidity()  
 由於 OOO 沒有標示器 不會自動驗證, 所以呼叫 AAA模板功能取代    
   
-#### [影片 confirm-password 進化版]([加強版](https://youtu.be/lhl3w5rH7A8?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)    
+#### [影片 confirm-password 進化版]([加強版](https://www.youtube.com/watch?v=YhazkQd59Hk&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=27&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)    
 HTML  
 < div ngModelGroup="CCC" app命名Validator #CCC="ngModelGroup"   
 [class.has-error]="CCC.errors?BBB && !AAA.errors?required">  
@@ -312,7 +314,7 @@ validate(CCC: AbstractControl): { [ key:string ]: any} | null  {
   OOOField.value !== AAAField.value ){ .....}  }   
   
 ### Service    
-[影片 Angular Service](https://youtu.be/4lSvgj8ohAI?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)    
+[影片 Angular Service](https://www.youtube.com/watch?v=4lSvgj8ohAI&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=30&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)    
 新增檔案 命名.service.ts    
 import { Injectable } from "@angular/core";  
 import { 資料類別 } from "檔案位址";  
@@ -332,24 +334,66 @@ import { 命名Service } from "檔案位址";
 constructor( private OOO: 命名Service ) {}    
 ngOnInit(){ this.網頁資料物件 = this.OOO.get方法() }    
   
-### Switch Case      
-[影片 Switch Case](https://youtu.be/IlKIuP-5SKA?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+### ngSwitch      
+[影片 Switch Case](https://www.youtube.com/watch?v=IlKIuP-5SKA&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=32&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+< div class="col-xs-6" [ngSwitch]="Object.OOO">  
+< span *ngSwitchCase="1"> 111 < /span>  
+< span *ngSwitchCase="2"> 222 < /span>  
+< span *ngSwitchCase="3"> 333 < /span>  
+< span *ngSwitchDefault> N/A < /span>  
+< /div>  
 
+### ngChanges  
+[影片 ngChanges](https://www.youtube.com/watch?v=E9wqQw3JLvM&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=34&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)    
+import { OnChanges,SimpleChanges } from "@angular/core";  
+export class 命名Component implements OnChanges {  
+  @Input 資料物件: 資料類別;
+  ngOnChanges(changes : SimpleChanges ) { console.log( changes ); }  }    
+log => 
+{ 資料物件 : SimpleChange }    
+展開 =>  
+currentValue : { 資料物件b }  
+previousValue : { 資料物件a }  
 
+#### ngChanges Property    
+[影片 ngChanges Property](https://www.youtube.com/watch?v=_En0KBHQKZI&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=35&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+ngOnChanges(changes : SimpleChanges ) {  
+  for (const propertyName of Object.keys(changes)) {  
+  const change = changes[propertyName];  
+  const from = JSON.stringify(change.previousValue);  
+  const to = JSON.stringify(change.currentValue);  
+  console.log( propertyName + " changed from " + from + " to " + to);  
+  } }    
+  
+### property setter  
+[影片 property setter](https://www.youtube.com/watch?v=BYwfrSlJFfY&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=36&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)   
+import { Input } from "@angular/core";  
+private _資料物件 : 資料類別;  
+@Input()  
+set 資料物件( val: 資料類別 ) { this._資料物件 = val; }  
+get 資料物件(): 資料類別 { return this._資料物件; }    
+  
+set 資料物件( val: 資料類別) {  
+  console.log( " change.previousValue " + JSON.stringify( this._資料物件; ));
+  console.log( " change.currentValue " + JSON.stringify( val; ));  
+  this._資料物件 = val;  }  
+上面這個就是 ngChanges Property 的原理    
+  
+### EventEmitter  
+[影片 EventEmitter](https://www.youtube.com/watch?v=-zJVea9DPb8&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=37&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)    
+子組件    
+import { Output, EventEmitter } from "@angular/core";   
+@Input AAA: 資料類別;    
+@Output OOO: EventEmitter<資料類別> = new EventEmitter<資料類別>();  
+方法() { this.OOO.emit(this.資料物件); }  
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+父HTML 
+< 子組件選擇器 [子組件AAA]="父組件BBB" (子組件事件OOO)="父組件接收方法CCC($event)">  
+父組件    
+父組件BBB : 資料類別;  
+父組件接收方法( XXX: 資料類別) { this.父組件物件 = XXX; }   
+當子組件emit資料物件出來後,this.父組件物件就會改變    
+
   
   
   
