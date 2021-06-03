@@ -34,22 +34,22 @@ ts文件
 import { ngForm } from "@angularForm";  
 方法A(命名Form: ngForm): void {}  
 
-[影片 input](https://youtu.be/pwQ3L3UFEjk?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
-<form #命名Form="ngForm" (ngSubmit)="方法A(命名Form)">  
-#命名Form以後可以直接用這個 [命名Form]指向這個物件  
-有"ngForm"這個屬性,才能使用 驗證器  
-button類型是submit, 點擊方法委託給 ngSubmit  
-< div class="form-group">  
-< label for="OOO"> XXX < /label>   
-label的for屬性指定點擊對象,點到label等於點到點擊對象  
-< input id="OOO" type="text" class="form-control" [(ngModel)]="OOO" name="AAA">    
-[(ngModel)]為 OOO 物件建立資料連結  這個物件沒有名字會報錯,所以加 name屬性  
-"form-control"宣告為ngModel物件  
-< button type="submit">    
-< /div> 
-< /form>    
-{{ #命名Form.value | json }}  
-當這個命名Form的input有值時, 資料連結就會顯示 { "OOO":"A" }
+[影片 input](https://youtu.be/pwQ3L3UFEjk?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)   
+<form #命名Form="ngForm" (ngSubmit)="方法A(命名Form)">   
+#命名Form以後可以直接用這個 [命名Form]指向這個物件   
+有"ngForm"這個屬性,才能使用 驗證器   
+button類型是submit, 點擊方法委託給 ngSubmit   
+< div class="form-group">   
+< label for="OOO"> XXX < /label>    
+label的for屬性指定點擊對象,點到label等於點到點擊對象   
+< input id="OOO" type="text" class="form-control" [(ngModel)]="OOO" name="AAA">     
+[(ngModel)]為 OOO 物件建立資料連結  這個物件沒有名字會報錯,所以加 name屬性   
+"form-control"宣告為ngModel物件   
+< button type="submit">     
+< /div>   
+< /form>     
+{{ #命名Form.value | json }}   
+當這個命名Form的input有值時, 資料連結就會顯示 { "OOO":"A" }   
 
 [影片 radioButton](https://youtu.be/IjEWmoOHHvM?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
 < div class="form-group">  
