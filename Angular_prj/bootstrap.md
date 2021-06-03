@@ -35,7 +35,7 @@ import { ngForm } from "@angularForm";
 方法A(命名Form: ngForm): void {}  
 
 [影片 input](https://youtu.be/pwQ3L3UFEjk?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)   
-<form #命名Form="ngForm" (ngSubmit)="方法A(命名Form)">   
+< form #命名Form="ngForm" (ngSubmit)="方法A(命名Form)">   
 #命名Form以後可以直接用這個 [命名Form]指向這個物件   
 有"ngForm"這個屬性,才能使用 驗證器   
 button類型是submit, 點擊方法委託給 ngSubmit   
