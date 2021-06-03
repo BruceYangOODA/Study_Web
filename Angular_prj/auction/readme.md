@@ -1,14 +1,25 @@
 [Youtube Angular 4.0从入门到实战 打造股票管理网站 ](https://www.youtube.com/watch?v=xb48nEqLAq8&list=PLnzrgyM1SBsaErGITq0_5QjLmExWU8KQJ&index=3&ab_channel=MrCottonlion)  
 [Youtube Angular视频教程](https://www.youtube.com/watch?v=HC3ZmIftriU&list=PLNON4AAjjLJEzuf1XnS4rlUvKbfb3NgXS&ab_channel=TL)  
 [Youtube 千锋Web前端教程 angular](https://www.youtube.com/watch?v=EiDewOIGLfc&list=PLwDQt7s1o9J4b2zjOo3flmVFOqEV0H1Pz&ab_channel=%E5%8D%83%E9%94%8B%E6%95%99%E8%82%B2)  
-[YAngular 6 tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj)  
+[Youtube Angular CLI tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWUcq5Pc16uf8YKXoZ87Vh_)  
+[Youtube Angular CRUD tutorial](https://www.youtube.com/playlist?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
+[Youtube Angular 6 tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj)  
+
 [Bootstrap 教程](https://www.runoob.com/bootstrap/bootstrap-tutorial.html)
 [Bootstrap Glyphicons](https://getbootstrap.com/docs/3.3/components/)  
 [w3schools CSS](https://www.w3schools.com/css/)  
 
 [自製DB In Memory Web API](https://www.youtube.com/watch?v=0vNcYT6e99c&ab_channel=LyradDigital)  
-## [index]   
 
+### [Angular 中文官網](https://angular.cn/)  
+
+## [index]   
+### Angular-CLI 命令列  
+### 使用外部API  
+
+### 路由  
+### 父子路由  
+### 服務  
 ng-bootstrap  
 
 
@@ -16,10 +27,15 @@ ng-bootstrap
 $ npm install -g @angular/cli  
 $ ng new [項目名稱]  建立網站項目  
 $ ng new [項目名稱] --routing  建立網站項目  附加路由模塊  
-$ ng g component [組件名稱] 建立網頁組件  
+$ ng new [項目名稱] --skip-tests  建立網站項目  不要为应用程序创建 “spec.ts” 测试文件。    
+$ ng g component [組件名稱] 建立網頁組件  g 縮寫generate  
+--spec false不創建"spec.ts"  
+--flat不創建[組件名稱]資料夾  
 $ ng g service [服務名稱] 建立服務  
-$ ng serve --port 4200  開始網站服務      
+$ ng serve --port 4200  以port 4200 開始網站服務      
+$ ng serve --open  以預設模式開始服務    
 $ ng g module [模塊名稱]  
+$ ng build -prod  在dist資料夾建立產品網站  
 
 
 ### 使用外部API  
@@ -42,17 +58,20 @@ $ npm install @types/bootstrap --save-dev
 在 index.html 加入  
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">    
 
-### 服務  
-$ ng g service [服務名稱] 建立服務  
-在 app.module.ts 文件內 import 服務  
-並 在providers 宣告服務  
-localStorage  物件 是 service 的NoSQL物件  
 
 ### 路由  
-1. 路由配置  
+1. 宣告路由模組  
+ 在 app.module.ts  
+ import { RouterModule, Routes } from "@angular/router";  
+ imports:[ RouterModule.forRoot(appRoutes) ]  宣告路徑配置資料  
+ const appRoutes: Routes = [  
+ {path: "[路徑]", component:[組件名稱]},  
+ {path: "**", redirectTo:"/home", pathMatch: "full"}  ]  
+ 或者如下 使用另一個ts檔宣告路徑  
+2. 路由配置  
    在 app-routing.module.ts 檔案中 routers 配置路徑  
      {path: "[路徑]", component:[組件名稱]},  
-     {path: "**", redirectTo:'home'}  
+     {path: "**", redirectTo:"/home", pathMatch: "full"}  
    在 html 放置 路由佔位符  
      <#router-outlet><#/router-outlet>  
 2. 路由傳值  
@@ -79,6 +98,10 @@ localStorage  物件 是 service 的NoSQL物件
    this.router.navigate(['/路徑'], queryParams)  
 8. 靜態位址跳轉  
    this.router.navigateByUrl( url )  
+9. 基礎路由  
+ 在 html宣告  
+ < base href="/">  <a href="/list">實際是  http: //serverName/list  
+ < base href="/emp/">  <a href="/list">實際是 http: //serverName/emp/list  
 ### 父子路由  
 1. {path:'父路徑', component:父組件,  
    children:[  
@@ -96,6 +119,13 @@ localStorage  物件 是 service 的NoSQL物件
 介面方法  canActivate()  
 在 routers 標註 使用路由守衛  
 {path: "home", component: HomeComponent, canActivate [一個class]},  
+ 
+### 服務  
+$ ng g service [服務名稱] 建立服務  
+在 app.module.ts 文件內 import 服務  
+並 在providers 宣告服務  
+localStorage  物件 是 service 的NoSQL物件  
+
  
 ### 依賴注入  
 依賴注入  Dependency Injection  
