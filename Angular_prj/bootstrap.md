@@ -1,3 +1,6 @@
+
+
+
 ## [index]   
 panel  
 navbar  
@@ -22,7 +25,8 @@ ngChanges
 --ngChanges Property  
 property setter  
 EventEmitter    
-
+路由守衛  
+路由取值 ActivatedRoute  
 
 ### panel  
 [影片 panel](https://www.youtube.com/watch?v=tPySwBVmGvg&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=2&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
@@ -394,9 +398,53 @@ import { Output, EventEmitter } from "@angular/core";
 父組件接收方法( XXX: 資料類別) { this.父組件物件 = XXX; }   
 當子組件emit資料物件出來後,this.父組件物件就會改變    
 
+### 路由守衛      
+[影片 路由守衛](https://www.youtube.com/watch?v=WveRq-tlb6I&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=39&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
   
+路由守衛命名規則  
+CanDeactivate    可以離該當前URL  
+CanActivate    可以進入此URL  
+CanActivateChild  可以觸發子路由  
+CanLoad    可以載入同步資料  
+Resolve  
+
+新增檔案 命名-can-deactivate-guard.service.ts    
+import { Injectable } from "@angular/core";    
+import { CanDeactivate } from"@angular/router";  
+@Injectable()    
+export class 命名CanDeactivateGuardService implemts CanDeactivate<組件類別> {  
+  canDeactivate( component: 組件類別) : boolean {  
+  if ( component.AAAForm.dirty ) { return confirm("你確定要離開?"); }
+  return true;  }   }   
   
+組件類別  
+HTML  
+< form #OOO="ngForm" >    
+組件    
+@ViewChild("OOO") public AAAForm: NgForm;  
   
+在 app.module.ts 宣告  
+import { 命名CanDeactivateGuardService } from "檔案位址";   
+  
+在 appRoutes: Routes 宣告路由守衛    
+{ path: "路徑",  
+  conponent: 組件類別,  
+  canDeactivate: [命名CanDeactivateGuardService],    
+  activate: []  }  
+ 
+### 路由取值 ActivatedRoute  
+[影片 路由取值 ActivatedRoute](https://www.youtube.com/watch?v=3r43-VITWrU&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=41&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)    
+路由模式    
+{ path: "list/:id",  
+  component: 組件類別 }   
+  
+import { ActivatedRoute } from "@angular/router";  
+資料物件 : 資料類別;  
+constructor( private _route: ActivateRoute, private _service: 服務類別 ) {}    
+ngOnInit() {  
+  const OOO = this._route.snapshot.params["id"];  
+  this.資料物件 = this._service.get方法( OOO ); }    
+
   
   
   
