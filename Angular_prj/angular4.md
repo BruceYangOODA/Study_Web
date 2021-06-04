@@ -27,6 +27,9 @@ property setter
 EventEmitter    
 路由守衛  
 路由取值 ActivatedRoute  
+動態修改路由  
+
+
 
 ### panel  
 [影片 panel](https://www.youtube.com/watch?v=tPySwBVmGvg&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=2&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
@@ -442,12 +445,33 @@ import { ActivatedRoute } from "@angular/router";
 資料物件 : 資料類別;  
 constructor( private _route: ActivateRoute, private _service: 服務類別 ) {}    
 ngOnInit() {  
-  const OOO = this._route.snapshot.params["id"];  
+  const OOO = +this._route.snapshot.params["id"];    Angular2  
+  const OOO = +this._route.snapshot.paramMap.get("id");   Angular4  
   this.資料物件 = this._service.get方法( OOO ); }    
 
+### 動態修改路由  
+[影片 動態修改路由](https://www.youtube.com/watch?v=jZJY70PY10w&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=42&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+HTML  
+< a class="btn btn-primary" [routerLink]="['/list']"> 回到list < /a>  
+< button class="btn btn-primary pull-right" (click)="方法A()" > 下一位 < /button>  
+組件    
+private _id : number;   
+資料物件 : 資料類別;     
   
+constructor (  
+  private _route: ActivatedRoute,  
+  private _service: 服務類別,  
+  private _router: Router) {}   
   
+ngOnInit() {    
+  this._id = +this._route.snapshot.paramMap.get("id");   方法A 動態修改路由,但靜照snapshot不能處理  
+  this._route.paramMap.subscribe( params => {  
+  this._id = params.get("id");  
+  this.資料物件 = this._service.get方法( this._id );  });  }   
   
-  
-  
-  
+方法A() {  
+  if(this._id < 3) { this_id = this._id + 1 ; }  
+  else { this._id = 1; }  
+  this._router.navigate(["/位址", this._id]);  路由模式是 /位址/:id    }  
+## 123
+                  
