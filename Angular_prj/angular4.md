@@ -1,4 +1,4 @@
-
+# [Youtube Angular CRUD tutorial](https://www.youtube.com/playlist?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
 
 
 ## [index]   
@@ -6,6 +6,7 @@ panel
 navbar  
 form-group     
 --input  
+--form.reset  
 --radioButton  
 --checkbox   
 --select  
@@ -26,10 +27,21 @@ ngChanges
 property setter  
 EventEmitter    
 路由守衛  
-路由取值 ActivatedRoute  
+ActivatedRoute 路由取值  
 --動態修改路由  
 --路由上一頁取值  
-
+PipeTransform 資料過濾器   
+routerLink queryParams  
+--query string parameters  
+Observable  
+Resolve  
+Navigation  
+--NavigationGuard 路由守衛  
+資料物件新增  
+--資料物件刪除 
+NgContent  
+HttpClient  
+catchError  
 
 
 ### panel  
@@ -76,6 +88,17 @@ label的for屬性指定點擊對象,點到label等於點到點擊對象
 < /form>     
 {{ #命名Form.value | json }}   
 當這個命名Form的input有值時, 資料連結就會顯示 { "OOO":"A" }   
+
+#### form.reset  
+[影片 form.reset](https://www.youtube.com/watch?v=KNI66wZcaf8&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=46&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+方法A( form: NgForm) {  
+const 資料物件B : 資料類別 = Object.assign({}, this.資料物件A);  
+因為 命名form 在 reset 的時候, 資料會清空,傳過去給 service的資料會參照到空物件  
+用 Object.assign() 複製一個物件,解決這個問題  
+this.service.save( 資料物件B );  
+this.命名Form.reset();   重填Form時，之前的dirty資料還在,需要 reset  
+}  
 
 #### radioButton  
 [影片 radioButton](https://www.youtube.com/watch?v=IjEWmoOHHvM&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=6&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
@@ -159,7 +182,9 @@ constructor(){
    showWeekNumbers: false,  
    minDate: new Date(2018,1,1),  
    maxDate: new Date(2018,12,31),  
-   dateInputFormat: "YYYY/MM/DD"  }) }  
+   dateInputFormat: "YYYY/MM/DD"  })  
+}  
+
 containerClass 外觀主色 ;  showWeekNumbers 顯示第幾周 ; minDate,maxDate 日曆起始點,終止點   
 dateInputFormat 日期表示樣式    
 Themes 的值有6種 theme-default, theme-green, theme-blue, theme-dark-blue, theme-red, theme-orange  
@@ -277,6 +302,7 @@ export class 命名ValidatorDirective implements Validator {
   validate(control: AbstractControl): {[key:string]:any} | null  
   { control.value === this.CCC ? { "AAA":true }  : null ;}  
   }  
+
 HTML  
 < select ...... app命名Validator="BBB" >  
   < option value="BBB"> XXX < /option>  
@@ -319,7 +345,8 @@ validate(CCC: AbstractControl): { [ key:string ]: any} | null  {
   const OOOField = CCC.get("OOO");  
   const AAAField = CCC.get("AAA");  
   if ( OOOField && AAAField &&   
-  OOOField.value !== AAAField.value ){ .....}  }   
+  OOOField.value !== AAAField.value ){ .....}  
+}   
   
 ### Service    
 [影片 Angular Service](https://www.youtube.com/watch?v=4lSvgj8ohAI&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=30&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)    
@@ -331,7 +358,8 @@ import { 資料類別 } from "檔案位址";
 export class 命名Service {  
   private 資料物件: 資料類別[] = [{....},{....}]  
   get方法(): 資料類別[] { return this.資料物件 }  
-  add方法( AAA : 資料類別 ): void { this.資料物件.push(AAA); }  }   
+  add方法( AAA : 資料類別 ): void { this.資料物件.push(AAA); }  
+}   
  
 在app.module.ts 宣告  所有組件都可以用  
 import { 命名Service } from "檔案位址";  
@@ -340,7 +368,8 @@ providers: [ 命名Service ]
 在使用服務的組件.ts    
 import { 命名Service } from "檔案位址";  
 constructor( private OOO: 命名Service ) {}    
-ngOnInit(){ this.網頁資料物件 = this.OOO.get方法() }    
+ngOnInit(){ this.網頁資料物件 = this.OOO.get方法()  
+}    
   
 ### ngSwitch      
 [影片 Switch Case](https://www.youtube.com/watch?v=IlKIuP-5SKA&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=32&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
@@ -356,7 +385,8 @@ ngOnInit(){ this.網頁資料物件 = this.OOO.get方法() }
 import { OnChanges,SimpleChanges } from "@angular/core";  
 export class 命名Component implements OnChanges {  
   @Input 資料物件: 資料類別;
-  ngOnChanges(changes : SimpleChanges ) { console.log( changes ); }  }    
+  ngOnChanges(changes : SimpleChanges ) { console.log( changes ); }  
+}    
 log => 
 { 資料物件 : SimpleChange }    
 展開 =>  
@@ -365,16 +395,19 @@ previousValue : { 資料物件a }
 
 #### ngChanges Property    
 [影片 ngChanges Property](https://www.youtube.com/watch?v=_En0KBHQKZI&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=35&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
 ngOnChanges(changes : SimpleChanges ) {  
   for (const propertyName of Object.keys(changes)) {  
   const change = changes[propertyName];  
   const from = JSON.stringify(change.previousValue);  
   const to = JSON.stringify(change.currentValue);  
   console.log( propertyName + " changed from " + from + " to " + to);  
-  } }    
+  }  
+}    
   
 ### property setter  
 [影片 property setter](https://www.youtube.com/watch?v=BYwfrSlJFfY&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=36&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)   
+
 import { Input } from "@angular/core";  
 private _資料物件 : 資料類別;  
 @Input()  
@@ -384,11 +417,13 @@ get 資料物件(): 資料類別 { return this._資料物件; }
 set 資料物件( val: 資料類別) {  
   console.log( " change.previousValue " + JSON.stringify( this._資料物件; ));
   console.log( " change.currentValue " + JSON.stringify( val; ));  
-  this._資料物件 = val;  }  
+  this._資料物件 = val;  
+}  
 上面這個就是 ngChanges Property 的原理    
   
 ### EventEmitter  
 [影片 EventEmitter](https://www.youtube.com/watch?v=-zJVea9DPb8&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=37&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)    
+
 子組件    
 import { Output, EventEmitter } from "@angular/core";   
 @Input AAA: 資料類別;    
@@ -419,7 +454,8 @@ import { CanDeactivate } from"@angular/router";
 export class 命名CanDeactivateGuardService implemts CanDeactivate<組件類別> {  
   canDeactivate( component: 組件類別) : boolean {  
   if ( component.AAAForm.dirty ) { return confirm("你確定要離開?"); }
-  return true;  }   }   
+  return true;  }   
+}   
   
 組件類別  
 HTML  
@@ -436,8 +472,9 @@ import { 命名CanDeactivateGuardService } from "檔案位址";
   canDeactivate: [命名CanDeactivateGuardService],    
   activate: []  }  
  
-### 路由取值 ActivatedRoute  
-[影片 路由取值 ActivatedRoute](https://www.youtube.com/watch?v=3r43-VITWrU&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=41&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)    
+### ActivatedRoute 路由取值   
+[影片 ActivatedRoute 路由取值](https://www.youtube.com/watch?v=3r43-VITWrU&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=41&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)    
+
 路由模式    
 { path: "list/:id",  
   component: 組件類別 }   
@@ -452,6 +489,7 @@ ngOnInit() {
 
 #### 動態修改路由  
 [影片 動態修改路由](https://www.youtube.com/watch?v=jZJY70PY10w&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=42&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
 HTML  
 < a class="btn btn-primary" [routerLink]="['/list']"> 回到list < /a>  
 < button class="btn btn-primary pull-right" (click)="方法A()" > 下一位 < /button>  
@@ -468,48 +506,295 @@ ngOnInit() {
   this._id = +this._route.snapshot.paramMap.get("id");   方法A 動態修改路由,但靜照snapshot不能處理  
   this._route.paramMap.subscribe( params => {  
   this._id = params.get("id");  
-  this.資料物件 = this._service.get方法( this._id );  });  }   
+  this.資料物件 = this._service.get方法( this._id );  });  
+}   
 
 方法A() {  
   if(this._id < 3) { this_id = this._id + 1 ; }  
   else { this._id = 1; }  
-  this._router.navigate(["/位址", this._id]);  路由模式是 /位址/:id    }  
+  this._router.navigate(["/位址", this._id]);  路由模式是 /位址/:id  
+}   
 
 #### 路由上一頁取值  
 [影片 路由上一頁取值](https://www.youtube.com/watch?v=vy0zhvCH-RM&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=43&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
 < a class="btn btn-primary" [routerLink]="['/list']"> 回到list < /a>  
 < a class="btn btn-primary" [routerLink]="['/list', {id:employee.id}]"> 回到list < /a>  
 回到list 路由回上一頁變成  /list:id=2  
 在組件取值  
 private OOOId: number;  
 ngOnInit() {  
-  this.OOOId = +this._route.snapshot.paramMap.get("id");  }   
+  this.OOOId = +this._route.snapshot.paramMap.get("id");  
+}   
+
 HTML  
 < div class="panel panel-primary" [class.panel-success]="OOOId === OOO.id">
 < /div>  
 由路由取值,付給 OOOId, 就知道上一頁點的是什麼物件, 修改該物件樣式, 方便使用者    
 
+### PipeTransform 資料過濾器   
+[影片 PipeTransform 資料過濾器](https://www.youtube.com/watch?v=1TFSibbnkj0&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=47&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)   
+[影片 pure impure pipe](https://www.youtube.com/watch?v=G7WaP-yoiQg&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=48&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)   
+[影片 使用過濾器 與 pure模式 過濾資料](https://www.youtube.com/watch?v=IvASSPQMrUE&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=50&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
+pure change  基礎類型改變 string to number ...etc or 物件參照改變
+impure change  物件資料改變 例如 "JHON" to "ADAM"  
+ 
+新增檔案 命名-filter.pipe.ts  
+import { PipeTransform, Pipe } from "@angular/core";  
+@Pipe({   
+name: "命名Filter",  
+pure: true    false=>物件資料改變時,會再進行一次過濾,不過過濾本身含整個網頁文件,  
+所以滑鼠移動的時候,也會過濾一次,官方不建議用 impure      
+})  
+export class 命名FilterPipe implememts PipeTransform {  
+transform( 資料物件: 資料類別[], 過濾Tag: string ) : 資料類別[] {  
+if ( !資料物件 || !過濾Tag ) { return 資料物件; }  
+return 資料物件.filter( element =>  
+element.屬性.toLowerCase().indexOf(過濾Tag..toLowerCase()) !== -1);  }  
+}  
 
+在 app.module.ts 宣告  
+declarations: [ 命名FilterPipe ]  
 
+HTML  
+< div class="form-group">  
+< input type="text" class="form-control" placeholder="XXX" [(ngModel)]="過濾Tag"< /div>  
+< div *ngFor="let item of OOO | 命名Filter:過濾Tag">  
+< div (click)="onClick(item.id)" >  
+< 子組件 [子組件OOO]="父組件OOO" #子組件代號 >< /子組件>  
+< /div>  
 
+組件   
+資料物件 : 資料類別[];  
+過濾後的資料物件: 資料類別[];  
+private _過濾Tag: string;  
+get 過濾Tag(): string { return this._過濾Tag; }  
+set 過濾Tag( value: string ) {  
+this._過濾Tag = value;  
+this.過濾後的資料物件 = this.過濾方法(value);  
+this.資料物件 = this.過濾後的資料物件;  }  
 
+過濾方法( XXX: string) {  
+return this.資料物件.filter( element =>  
+element.屬性.toLowerCase().indexOf(XXX過濾Tag..toLowerCase()) !== -1);  } }  
 
+ngOnInit() {  
+this.資料物件 = this._服務.get方法();  
+this.過濾後的資料物件 = this.資料物件;  }  
+  
+### routerLink queryParams   
+[影片 routerLink queryParams](https://www.youtube.com/watch?v=KefdTtsoKjY&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=51&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
+HTML  
+< a class="btn btn-primary" [routerLik]="['/路徑', {id:OOO.id}]"  
+queryParamsHandling="merge" [queryParams]="{'newParam':'newValue'}"> 回列表 < /a>  
+< button class="btn btn-primary pull-right" (click)="方法A()" > 下一位 < /button>  
 
+queryParamsHandling="preserve"  
+"preserve" 跟 "merge" 的差異,  
+merge 會把目前的值混入之前的 queryParams  
+preserve 則取代之前的 queryParams  
 
+方法A() {  
+this._router.navigate(['/路徑',this._id], { queryParamsHandling: "preserve"} ); }  
+按下一位時, queryParams 會被保存下來  
 
+#### query string parameters  
+[影片 query string parameters](https://www.youtube.com/watch?v=pptThum4lf8&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=52&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
+組件    
+ngOnInit(){  
+console.log(this._route.snapshot.queryParamMap.has("過濾Tag"));  
+console.log(this._route.snapshot.queryParamMap.get("過濾Tag"));  
+console.log(this._route.snapshot.queryParamMap.getAll("過濾Tag"));  
+console.log(this._route.snapshot.queryParamMap.keys);  
+console.log(this._route.snapshot.paramMap.keys);  
+}  
+URL => localhost:4200/list;id=3;name=XXX?過濾Tag=John&testParam=testValue&newParam=newValue  
+LOG =>  
+true  
+John  
+Array(1)  => [0:"John"]  
+Array(3)  => [0:"過濾Tag",1:"testParam",2:"newParam" ]  
+Array(2)  => [0:"id", 1:"name"]  
 
+### Observable  
+[影片 Observable](https://www.youtube.com/watch?v=OxPBwniYzjs&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=53&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
+import { Observable } from "rxjs/Observable";  
+import "rxjs/add/obsrevable/of";   
+import "rxjs/add/operator/delay";  
 
+服務類別  
+get方法(): Observable<資料類別[]> {  
+return Observable.of(this.資料物件).delay(2000);  延遲2秒,為了實驗rxjs用  
+}  
 
+組件 改寫   
+ngOnInit() {  
+this.資料物件 = this._服務.get方法();  
+if() {}  
+else{}  
+}  
 
-
-
-
-
-
-
+RXJS 寫法
+ngOnInit() {  
+this._服務.get方法().subscribe( (XXX) => {    
+this.資料物件 = XXX ;   
+if() {}  
+else{}  });  
+}  
                   
+### Resolve  
+[影片 Resolve](https://www.youtube.com/watch?v=Dm1OpX42Aho&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=54&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+新增檔案  命名-resolver.service.ts  
+import { Resolve } from "@angular/router";   
+@Injectable()  
+export class 命名ResolverService implements Resolve<資料類別[]> {  
+constructor(private _service: 服務類別) {}  
+resolve( route: ActivateRouteSnapshot, state: RouterStateSnapshot) : Observable<資料類別[]> {  
+retrun this._service.get方法();  }    
+}  
+
+在 app.module.ts 宣告  
+appRoutes: Routes = [{   
+path: "路徑",  
+component: 組件,  
+resolve: {  資料物件: 命名ResolverService }  
+}]  
+
+在組件中宣告  
+constructor(private _router: Router, private _route: ActivatedRoute ) {  
+this.資料物件 = this._route.snapshot.data["資料物件"];   
+if (this._route.snapshot.queryParamMap.has("過濾Tag")) {  
+this.過濾Tag = this._route.snapshot.queryParamMap.get("過濾Tag"); }  
+else { this.過濾後的資料物件 = this.資料物件;  }  
+}
+
+由於在resolve 宣告 {資料物件: 命名ResolverService}   
+命名ResolverService 取代原有組件 _service.get()方法功能  
+以 {"資料物件": 資料物件 } 的 key-value 形式存有 資料物件
+
+### Navigation  
+[影片 Navigation](https://www.youtube.com/watch?v=N5SoykcChvU&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=55&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+[影片 loading indicator](https://www.youtube.com/watch?v=V_64FqedqW0&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=56&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+Navigation 流程  
+NavigationStart  
+NavigationEnd  
+RoutesRecognized  
+GuardsCheckStar  
+GuardsChekEnd  
+NavigationCancel  
+NavigationError  
+ChildActivationStart  
+ChildActivationEnd  
+ActivationStart  
+ActivationEnd  
+ResolveStart  
+ResolveEnd  
+
+#### NavigationGuard 路由守衛  
+[影片 NavigationGuard 路由守衛](https://www.youtube.com/watch?v=mt0VFlqrW6k&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=57&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+新增檔案 命名-guard.service.ts  
+import { CanActive, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from "@angular/router";  
+@Injectable()  
+export class 命名GuardService implements CanActive {  
+constructor( private _service : 服務類別, private _router:Router ) {}   
+
+canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean {  
+const AExists = !!this._service.get方法(+route.paraMap.get("id"));  
+if (AExists){ return true; }  
+else { this._router.navigate(['notfound']);  return false; }  
+}}  
+
+在 app.module.ts 宣告 命名GuardService  
+providers: [ 命名GuardService ]  
+
+在 appRoutes 宣告  
+{  
+path : "路徑/:id",  
+component : 組件類別,  
+canActivate: [ 命名GuardService ]  
+}
+
+### 資料物件新增  
+[影片 資料物件新增](https://www.youtube.com/watch?v=pkTAFaR5LRM&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=59&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+服務方法  
+save( 傳入資料物件: 資料類別 ) {  
+if ( 傳入資料物件.id === null ) {  由於是新增的資料,表單填寫上面並沒有id 這項資料  
+const maxid = this.資料物件.reduce( function(e1, e2){ return (e1.id > e2.id) ? e1: e2; }).id;  
+傳入資料物件.id = maxid + 1;  
+this.資料物件.push( 傳入資料物件 );  }    沒有id屬性的物件,是 物件新增  
+else {  
+const foundIndex = this.資料物件.findIndex( e => e.id === 傳入資料物件.id);  
+this.資料物件[foundIndex] = 傳入資料物件;   是有id屬性的物件,是 物件修改  
+} }  
+
+#### 資料物件刪除  
+[影片 資料物件刪除](https://www.youtube.com/watch?v=u9mZjneMm1o&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=60&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+使用 EventEmitter 通知  
+
+### NgContent  
+[影片 NgContent](https://www.youtube.com/watch?v=2SJ9Ch8jX3A&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=62&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+### HttpClient  
+[影片 HttpClient](https://www.youtube.com/watch?v=7_a-ROt8z_4&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=64&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+[影片 POST](https://www.youtube.com/watch?v=B1LRD7oMYDo&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=68&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+[影片 PUT](https://www.youtube.com/watch?v=mG7pE4UByXM&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=69&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+[影片 DELETE](https://www.youtube.com/watch?v=XqXPyYs9fyI&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=70&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+在 app.module.ts 宣告    
+import { HttpClientModule } from "@angular/common/http";  
+imports: [ HttpClientModule ]  
+
+import { Http } from "@angular/http";  
+import { HttpClient } from "@angular/common/http";  
+
+服務類別  
+constructor(private httpClient: HttpClient) {}  
+get方法() : Observable<資料類別[]> {  
+return this.httpClient.get<資料類別[]>("網址");
+}  
+save方法(傳入資料物件: 資料類別) {    
+if (傳入資料物件.id === null) {  
+this.httpClient.post<資料類別>("網址", 傳入資料物件,   
+{headers: new HttpHeaders({"Content-Type":"application/json"})  
+.pipe(catchError(this.handleError)); }  
+else { ..... }
+}    
+
+使用服務的類別    
+resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : Observable<資料類別[]> {  
+return this._服務.get方法();  }
+
+save資料物件方法() {  
+this._service.save(傳入資料物件).subscribe(  
+(data: 資料類別) => {  
+this.表單物件.reset();  
+}, 
+(err:any) => console.log(error));  
+}  
+
+  
+### catchError  
+[影片 catchError](https://www.youtube.com/watch?v=X8hLraWnVhw&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=66&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+import { catchError } from "rxjs/operators";  
+import { ErrorObervable } from "rxjs/observable/ErrorObservable";  
+get方法() : Observable<資料類別[]> {  
+return this.httpClient.get<資料類別[]>("網址").pipe(catchError(this.handleError));  
+}  
+
+private handleError(errorResponse: HttpErrorResponse) {  
+if (errorResponse.error instanceof ErrorEvent){  
+console.error("Client Error:" + errorResponse.error.message); }  
+else { console.error("Server Error: " + errorResponse); }  
+return new ErrorObservable("錯誤訊息如下");  
+}
 
