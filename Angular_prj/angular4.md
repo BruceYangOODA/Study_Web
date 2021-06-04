@@ -27,7 +27,8 @@ property setter
 EventEmitter    
 路由守衛  
 路由取值 ActivatedRoute  
-動態修改路由  
+--動態修改路由  
+--路由上一頁取值  
 
 
 
@@ -449,7 +450,7 @@ ngOnInit() {
   const OOO = +this._route.snapshot.paramMap.get("id");   Angular4  
   this.資料物件 = this._service.get方法( OOO ); }    
 
-### 動態修改路由  
+#### 動態修改路由  
 [影片 動態修改路由](https://www.youtube.com/watch?v=jZJY70PY10w&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=42&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 HTML  
 < a class="btn btn-primary" [routerLink]="['/list']"> 回到list < /a>  
@@ -457,7 +458,7 @@ HTML
 組件    
 private _id : number;   
 資料物件 : 資料類別;     
-  
+
 constructor (  
   private _route: ActivatedRoute,  
   private _service: 服務類別,  
@@ -468,10 +469,47 @@ ngOnInit() {
   this._route.paramMap.subscribe( params => {  
   this._id = params.get("id");  
   this.資料物件 = this._service.get方法( this._id );  });  }   
-  
+
 方法A() {  
   if(this._id < 3) { this_id = this._id + 1 ; }  
   else { this._id = 1; }  
   this._router.navigate(["/位址", this._id]);  路由模式是 /位址/:id    }  
-## 123
+
+#### 路由上一頁取值  
+[影片 路由上一頁取值](https://www.youtube.com/watch?v=vy0zhvCH-RM&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=43&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+< a class="btn btn-primary" [routerLink]="['/list']"> 回到list < /a>  
+< a class="btn btn-primary" [routerLink]="['/list', {id:employee.id}]"> 回到list < /a>  
+回到list 路由回上一頁變成  /list:id=2  
+在組件取值  
+private OOOId: number;  
+ngOnInit() {  
+  this.OOOId = +this._route.snapshot.paramMap.get("id");  }   
+HTML  
+< div class="panel panel-primary" [class.panel-success]="OOOId === OOO.id">
+< /div>  
+由路由取值,付給 OOOId, 就知道上一頁點的是什麼物件, 修改該物件樣式, 方便使用者    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                   
+
