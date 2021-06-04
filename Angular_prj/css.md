@@ -3,13 +3,13 @@
 
 
 ##[index]  
-### 物件置中  
-
+物件置中  
+改變滑鼠指標樣式  
 
 
 ### 物件置中  
 { display:flex; align-items:center;}  
 
-
-
+### 改變滑鼠指標樣式  
+{ cursor: pointer; }  
 
