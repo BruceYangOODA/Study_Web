@@ -1,5 +1,5 @@
 # [Youtube Angular CRUD tutorial](https://www.youtube.com/playlist?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
-
+### [Angular CLI tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWUcq5Pc16uf8YKXoZ87Vh_)  
 
 ## [index]   
 panel  
