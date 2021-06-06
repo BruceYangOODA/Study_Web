@@ -7,7 +7,7 @@ img
 visible, hidden  
 font  
 blockquotes and lists  
-
+--list-group  
 
 
 text-primary  
@@ -79,6 +79,7 @@ nowrap  < text-nowrap >  不斷行
 ### blockquotes and lists  
 [影片 blockquotes and lists](https://www.youtube.com/watch?v=4MZg5mupiJI&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=11&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
+
 < blockquote class="blockquote-reverse">< /blockquote >  區塊段落  
 --blockquote-reverse 讓區塊靠右  
 
@@ -92,12 +93,22 @@ nowrap  < text-nowrap >  不斷行
 < /dl>
 --dl-horizontal  讓 dt dd 橫排  
 
+#### list-group   
+[影片 list groups](https://www.youtube.com/watch?v=sMMqPuBo2tw&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=12&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
+< div class="list-group" >  
+< a class="list-group-item list-group-item-danger">danger< /a >  
+< button class="list-group-item list-group-item-info">info< /button >  
+< button class="list-group-item list-group-item-success">success< /button >  
+< span>< div class="list-group-item list-group-item-warning badge">warning< /div>< /span>
+< /div>    
 
-
-
-
-
+< div class="list-group" >  
+< a class="list-group-item">  
+< h4 class="list-group-item-heading"> XXX < /h4>
+< p class="list-group-item-text"> XXX < /p>
+< /a >  
+< /div>    
 
 
 
