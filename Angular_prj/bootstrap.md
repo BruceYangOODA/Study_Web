@@ -21,10 +21,15 @@ forms
 --radio  
 --select  
 --form-control-static  
-
-
-
-
+nav  
+navbar  
+breadcrumbs  
+pager and pagination  
+panel  
+label and badge  
+progress  
+jumbotron  
+media  
 
 
 ### [Bootstrap Icons](https://icons.getbootstrap.com/)  
@@ -105,11 +110,11 @@ text alignment 字段對齊
 --list-inline  讓li橫排  
 --list-unstyled  不帶基本樣式  
 
-< dl class="dl-horizontal">
-< dt >< /dt > 標題
-< dd >< /dd > 描述
-< /dl>
---dl-horizontal  讓 dt dd 橫排  
+< dl class="dl-horizontal">  
+< dt >< /dt > 標題  
+< dd >< /dd > 描述  
+< /dl>  
+--dl-horizontal  讓 dt dd 橫排   
 
 #### list-group   
 [影片 list groups](https://www.youtube.com/watch?v=sMMqPuBo2tw&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=12&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
@@ -118,15 +123,15 @@ List Group
 < div class="list-group" >  
 < a class="list-group-item list-group-item-danger">danger< /a >  
 < button class="list-group-item list-group-item-info">info< /button >  
-< button class="list-group-item list-group-item-success">success< /button >  
-< span>< div class="list-group-item list-group-item-warning badge">warning< /div>< /span>
+< button class="list-group-item list-group-item-success">success< /button >   
+< span>< div class="list-group-item list-group-item-warning badge">warning< /div>< /span>  
 < /div>    
 
 標題 - 描述  
 < div class="list-group" >  
 < a class="list-group-item">  
-< h4 class="list-group-item-heading"> XXX < /h4>
-< p class="list-group-item-text"> XXX < /p>
+< h4 class="list-group-item-heading"> XXX < /h4>  
+< p class="list-group-item-text"> XXX < /p>  
 < /a >  
 < /div>    
 
@@ -318,14 +323,169 @@ multiple  複選
 
 --form-control-static  與前面的 label 自動標齊  
 
+### nav  
+[影片 nav](https://www.youtube.com/watch?v=vom5dZKCBeM&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=27&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
+< div class="container">< form>< div class="row">< /div class="col-xs-12">  
+< ul class="nav nav-tabs">  
+< li class="active">< a href="#"> XXX < /a>< /li>  
+< li >< a href="#"> XXX < /a>< /li>  
+< li >< a href="#"> XXX < /a>< /li>  
+< /ul>  
+< /div>< /form>< /div>< /div>  
 
+--nav nav-tabs  標籤式導航  
+--nav nav-pills  按鈕式導航  
+--nav-stacked  填滿整個區塊  
+--nav-justified   自動調整大小  
 
+### navbar  
+[影片 navbar](https://www.youtube.com/watch?v=KRsSSpMaaKg&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=28&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
+< nav class="navbar navbar-default">  
+< div class="navbar-header">  
+< button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">  
+< span class="icon-bar">< /span>< span class="icon-bar">< /span>< span class="icon-bar">< /span>  
+< /button>
+< /div> 
 
+< div class="navbar-collapse collapse" id="mainNavbar">  
+< ul class="nav navbar-nav">  
+< li class="active"><a href="#"> XXX < /a>< /li>  
+< li><a href="#"> XXX < /a>< /li>  
+< /ul>  
 
+< form class="navbar-form navbar-left" role="search">  
+< div class="form-group">  
+< input type="text" class="form-control"/>  
+< btton type="submit"> 確認 < /button>  
+< /div>  
+< /form>
 
+< ul class="nav navbar navbar-right">  
+< li>< a href="#"> XXX < /li>  
+< /ul>  
+< /div>  ==> class="navbar-collapse collapse"  
+< /nav>  
 
+< nav>  NAV標籤  
+data-target  觸發器展開的範圍  
+data-toggle  展開模式  collapse 
+--navbar  
+--navbar-inverse  黑底白字  
+--navbar-fixed-top  固定頂部  
+--navbar-fixed-bottom  固定底部    
+--navbar-header  標題區 不會塌縮  
+--navbar-toogle  觸發器  
+--navbar-nav  
+--navbar-form   
+--navbar-left  置左  
+--navbar-right  置右  
 
+### breadcrumb  
+[影片 breadcrumb](https://www.youtube.com/watch?v=KOmTrgwhFyc&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=29&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
+< ol class="breadcrumb">  
+< li>< a href="#"> XXX < /a>< /li>
+< li>< a href="#"> XXX < /a>< /li>
+< /ol>  
+
+--breadcrumb  
+
+### pager and pagination  
+[影片 pager and pagination](https://www.youtube.com/watch?v=FmtxKqf0eJQ&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=30&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+< ul class="pager">
+< li class="previous"><a href="#">< /a>< /li>  
+< li class="next"><a href="#">< /a>< /li>  
+< /ul>
+
+--pager  
+--previous  上一頁  
+--next  下一頁  
+
+< ul class="pagination">  
+< li>< a href="#"> & laquo; < /a>< /li>  
+< li>< a href="#"> 1 < /a>< /li>  
+< li>< a href="#"> 2 < /a>< /li>  
+< li>< a href="#"> 3 < /a>< /li>  
+< li>< a href="#"> & raquo; < /a>< /li>  
+< /ul>
+
+--pagination  
+--pagination-lg  --sm  
+
+### panel  
+[影片 panel](https://www.youtube.com/watch?v=TX2hSFlx2nA&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=31&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+< div class="panel panel-prmary">  
+< div class="panel-heading">  < h3 class="panel-title"> XXX < /h3>  < /div>  
+< div class="panel-body">  XXX < /div>  
+< div class="panel-footer"> XXX < /div>   
+< /div>  
+
+--panel  
+--panel-primary  基礎樣式  
+--panel-heading  頭部  
+--panel-body  體部  
+--panel-footer  腳部  
+--panel-title  標題樣式  
+
+### label and badge  
+[影片 label and badge](https://www.youtube.com/watch?v=je3g47_Dhlg&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=34&ab_channel=kudvenkat)  
+
+--label  
+--label-default  --primary  --info  --success  --warning  --danger  
+
+Badge  
+< div class="row">< div class="col-xs-12">  
+<button> XXX <span class="badge">2< /span>< /button>  
+<button> XXX <span class="badge">13< /span>< /button>  
+< /div>< /div>  
+
+--badge  
+
+### progress  
+[影片 progress](https://www.youtube.com/watch?v=5orSF-FOi3U&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=34&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+< div class="progress">  
+< div class="progress-bar progress-bar-striped active"   
+style="width:60%; min-width:20%"> XXX < /div>  
+< /div>  
+
+--progress
+--progress-bar  進度條  
+--progress-bar-success  --info  --warning  --danger  
+--progress-bar-striped  加上斜紋    
+
+### jumbotron  
+[影片 jumbotron](https://www.youtube.com/watch?v=iADTkqM4o2M&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=35&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+< div class="jumbotron">< /div>
+
+-- jumbotron  占滿畫面橫幅的大螢幕  
+
+### media  
+[影片 media](https://www.youtube.com/watch?v=V_EJBKDRFw4&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=36&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+< div class="media">  
+< div class="media-left">< img src="XXX" class="media-object" alt="XXX"/>< div/>  
+< div class="media-body">< h4 class="media-heading">< /h4>< /div>  
+< /div>  
+
+巢狀結構  
+< ul class="media-list">  
+< div class="media">  
+< ul calss="media-list"><div class="media">< /div>< /ul>  
+< /div>  
+< /ul>  
+
+--media  圖文區塊  
+--media-onject  
+--media-heading  標題  
+--media-left  左區塊  
+--media-body  主區塊  
+--media-right 右區塊  
+--media-top  --middle  --bottom  靠上中下  
+--media-list  
 
