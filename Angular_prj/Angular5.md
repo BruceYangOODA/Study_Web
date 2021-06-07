@@ -48,7 +48,8 @@ AbstractControl Methods
 --setvalue patchvalue  
 FormBuilder  
 Validators  
---Validation messages  
+--validation messages  
+--setValidators clearValidators   
 valueChanges  
 AbstractControl  
 
@@ -912,8 +913,9 @@ HTML
 < /span>  
 < /div>  
 
-#### Validation messages  
-[影片 Validation messages](https://www.youtube.com/watch?v=AvqP3FblMA8&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=12&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+#### validation messages  
+[影片 validation messages](https://www.youtube.com/watch?v=AvqP3FblMA8&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=12&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+[影片 validation messages2](https://www.youtube.com/watch?v=2V50gFV-BEE&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=13&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
 自定義 key:value 物件 validationMessages  
 validationMessages = { "AAA": {  
@@ -922,10 +924,18 @@ validationMessages = { "AAA": {
 "maxlength": "XXX"
 }}  
 自定義 key:value 物件 formErrors    
-formErrors = {"AAA": ""};  
+formErrors = { };  
+
+當 validationMessages 加進去後 就會變成  
+formErrors = { "AAA": { "required": "XXX"}} ;  
+
+註冊 監聽方法  
+ngOnInit() {  
+this.OOO.valueChanges.subscribe( (data) => { this.logValidationErrors(); });  
+}  
 
 遞迴方法  因為 FormGroup 可以 巢狀設置  
-logValidationErrors(group: FormGroup): void {  
+logValidationErrors(group: FormGroup = this.OOO): void {  用預設值方法,不用在HTML傳參數  
 Object.keys(group.controls).forEach( (key:string) => {  
 const abstractControl = group.get(key);  
 if (abstractControl instanceof FormGroup) {  是巢狀FormGroup  
@@ -945,6 +955,35 @@ click方法() : void {
 this.logValidationErrors( this.OOO );  
 }  
 
+HTML  
+< div [ngClass]="{'has-error': formErrors.AAA }">  
+< input formControlName="AAA" type="text" (blur)="logValidationErrors()">  
+< span *ngIf="formErrors.AAA"> {{ formErrors.AAA }} < /span>  
+< /div>  
+
+#### setValidators clearValidators  
+[影片 setValidators clearValidators](https://www.youtube.com/watch?v=BP6E4rW5EPA&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=14&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+組件  
+ngOnInit(){  this.OOO = this.fb.group({ FFF: ["AAA"] }, ......); 預設值 AAA => AAA checked  
+this.OOO.get("FFF").valueChanges.subscribe( 
+(data:string) => { this.fffChange(data); });  註冊監聽  
+}  
+
+fffChange(selectedValue : string) : void {  
+const aaaControl = this.OOO.get("AAA");  
+const bbbControl = this.OOO.get("BBB");  
+if (selectedValue === "AAA") { aaaControl.setValidators(  Validators.required ); }  
+else { aaaControl.clearValidators(); }  
+if (selectedValue === "BBB") { bbbControl.setValidators(  Validators.required ); }  
+else { bbbControl.clearValidators(); }
+aaaControl.updateValueAndValidity();    
+bbbControl.updateValueAndValidity();  
+}  
+
+HTML  
+< input formControlName="FFF" type="radio" value="AAA">  
+< input formControlName="FFF" type="radio" value="BBB">  
 
 
 ### valueChanges  
