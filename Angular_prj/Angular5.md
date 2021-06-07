@@ -48,8 +48,9 @@ AbstractControl Methods
 --setvalue patchvalue  
 FormBuilder  
 Validators  
-
-
+--Validation messages  
+valueChanges  
+AbstractControl  
 
 
 
@@ -902,10 +903,88 @@ AAA: ["", [Validators.required, Validators.minLength(2), Validators.maxLength(10
 }  
 
 HTML  
-< div class="form-group"  [ngClass]="{'has-error': OOO.get('AAA').errors &&   
-(OOO.get("AAA").touched || OOO.get("AAA").dirty)}">  
-< input controlName="AAA">  
+< div class="form-group"  [ngClass]="{'has-error': ((OOO.get('AAA').errors &&   
+(OOO.get("AAA").touched || OOO.get("AAA").dirty))}">  
+< input formControlName="AAA">  
+< span *ngIf="((OOO.get('AAA').errors && (OOO.get("AAA").touched || OOO.get("AAA").dirty))">  
+< span *ngIf="OOO.get('AAA').errors.required"> XXX < /span>  
+< span *ngIf="OOO.get('AAA').errors.minlength || OOO.get('AAA').errors.maxlength"> XXX < /span>  
+< /span>  
 < /div>  
+
+#### Validation messages  
+[影片 Validation messages](https://www.youtube.com/watch?v=AvqP3FblMA8&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=12&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+自定義 key:value 物件 validationMessages  
+validationMessages = { "AAA": {  
+"required": "XXX",  
+"minlength": "XXX",  
+"maxlength": "XXX"
+}}  
+自定義 key:value 物件 formErrors    
+formErrors = {"AAA": ""};  
+
+遞迴方法  因為 FormGroup 可以 巢狀設置  
+logValidationErrors(group: FormGroup): void {  
+Object.keys(group.controls).forEach( (key:string) => {  
+const abstractControl = group.get(key);  
+if (abstractControl instanceof FormGroup) {  是巢狀FormGroup  
+this.logValidationErrors( abstractControl );  
+} else {  
+&nbsp this.formErrors[key] = "";  
+&nbsp if (abstractControl && !abstractControl.valid) {  
+&nbsp &nbsp const messages = this.validationMessages[key];  
+&nbsp &nbsp for(const errorKey in abstractControl.errors) {  
+&nbsp &nbsp &nbsp this.formErrors[key] += messages[errorKey] +" ";}  
+&nbsp &nbsp }    
+&nbsp }  
+});    
+}  
+
+click方法() : void {  
+this.logValidationErrors( this.OOO );  
+}  
+
+
+
+### valueChanges  
+[影片 valueChanges](https://www.youtube.com/watch?v=qaVHCnqMASw&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=10&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+在組件  
+ngOnInit() {  
+this.OOO.get("AAA").valueChanges.subscribe( (value:any) => {  
+console.log(JSON.stringify(value));  
+});  
+}  
+
+
+### AbstractControl  
+[影片 AbstractControl](https://www.youtube.com/watch?v=nXV9Fz1rTeM&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=11&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)   
+
+遞迴方法  因為 FormGroup 可以 巢狀設置  
+logKeyValuePairs(group: FormGroup): void {  
+Object.keys(group.controls).forEach( (key:string) => {  
+const abstractControl = group.get(key);  
+if (abstractControl instanceof FormGroup) {  是巢狀FormGroup  
+this.logKeyValuePairs( abstractControl );  
+} else {  
+console.log("key = " + key + " value = " + abstractControl.value);  
+}
+});  
+}
+
+click方法() : void {  
+this.logKeyValuePairs( this.OOO );  
+}  
+
+
+
+
+
+
+
+
+
 
 
 
