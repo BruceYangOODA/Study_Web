@@ -444,8 +444,8 @@ fade
 [影片 pager and pagination](https://www.youtube.com/watch?v=FmtxKqf0eJQ&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=30&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
 < ul class="pager">
-< li class="previous"><a href="#">< /a>< /li>  
-< li class="next"><a href="#">< /a>< /li>  
+< li class="previous">< a href="#">< /a>< /li>  
+< li class="next">< a href="#">< /a>< /li>  
 < /ul>
 
 --pager  
