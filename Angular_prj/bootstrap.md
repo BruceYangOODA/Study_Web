@@ -370,8 +370,8 @@ multiple  複選
 
 < div class="navbar-collapse collapse" id="mainNavbar">  
 < ul class="nav navbar-nav">  
-< li class="active"><a href="#"> XXX < /a>< /li>  
-< li><a href="#"> XXX < /a>< /li>  
+< li class="active">< a href="#"> XXX < /a>< /li>  
+< li>< a href="#"> XXX < /a>< /li>  
 < /ul>  
 
 < form class="navbar-form navbar-left" role="search">  
