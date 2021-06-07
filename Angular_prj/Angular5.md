@@ -1,5 +1,5 @@
 ## [Youtube Angular CRUD tutorial](https://www.youtube.com/playlist?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
-
+## [Youtube Angular 6 tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj)  
 ## [index]   
 form-group     
 --input  
@@ -50,9 +50,10 @@ FormBuilder
 Validators  
 --validation messages  
 --setValidators clearValidators   
+Custom Validator  
 valueChanges  
 AbstractControl  
-
+FormArray  
 
 
 ## [Angular CLI 官網](https://angular.cn/cli)  
@@ -61,7 +62,6 @@ AbstractControl
 ### [Youtube Angular2 Tutorials](https://www.youtube.com/watch?v=C8JcGqQdcPI&list=PL6n9fhu94yhVm7BcSWpGpRFQc1AikjP8h&index=2&ab_channel=kudvenkat)  
 ### [Youtube Angular CLI tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWUcq5Pc16uf8YKXoZ87Vh_)  
 ### [Youtube Angular5 Tutorials](https://www.youtube.com/watch?v=P1mlC8Ar0_k&list=PL6n9fhu94yhVm7BcSWpGpRFQc1AikjP8h&index=2&ab_channel=kudvenkatkudvenkat)  
-### [Youtube Angular 6 tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj)  
 ### [Youtube 在ISS部署 Angular](https://www.youtube.com/watch?v=VkGmaVm6-IQ&list=PL6n9fhu94yhWUcq5Pc16uf8YKXoZ87Vh_&index=26&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
 
@@ -986,6 +986,41 @@ HTML
 < input formControlName="FFF" type="radio" value="BBB">  
 
 
+### Custom Validator  
+[影片 Custom Validator](https://www.youtube.com/watch?v=pa9S8_3Rs8A&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=15&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)   
+[影片 Custom Validator2](https://www.youtube.com/watch?v=2PfMVL0OIGg&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=16&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+[影片 Custom Validator3](https://www.youtube.com/watch?v=MWJ3s3uls4c&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=17&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)
+
+組件   
+import { XXXValidators } from "檔案位址";  
+validationMessages = { "AAA": {  
+"aaaXXX": "XXX" }}  
+validString = "XXX";  
+
+ngOnInit(){  this.OOO = this.fb.group(  
+{ AAA: ["", [Validators.required,  
+XXXValidators.aaaXXX( this.validString )]],......});  註冊 Validator  
+
+新建檔案 xxx.validators.ts  
+import { AbstractControl } from "@angular/forms";  
+export class XxxValidators {  
+static function aaaXXX(validString: string) {  
+return (control: AbstractControl) : { [key: string]: any} | null => {
+&nbsp; const aaa: string = control.value;  
+&nbsp; const XXX = aaaa.substring(aaa.lastIndexOf("@")+1);  
+&nbsp; if (aaa === "" || XXX.toLowerCase() === "abc.com") { reutrn null; } 驗證通過   
+&nbsp; else { return { "aaaXXX": true }; }  
+&nbsp; }  
+}
+}  
+
+HTML  
+< input formControlName="AAA" type="text" (blur)="logValidationErrors()">  
+< span *ngIf="formErrors.AAA"> {{ formErrors.AAA }} < /span>  
+< span *ngIf="formErrors.aaaXXX"> {{ formErrors.aaaXXX }} < /span>  
+< /div>  
+
+
 ### valueChanges  
 [影片 valueChanges](https://www.youtube.com/watch?v=qaVHCnqMASw&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=10&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
@@ -1017,9 +1052,8 @@ this.logKeyValuePairs( this.OOO );
 }  
 
 
-
-
-
+### FormArray  
+[影片 FormArray](https://www.youtube.com/watch?v=eHBOQsqTDXw&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=19&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
 
 
