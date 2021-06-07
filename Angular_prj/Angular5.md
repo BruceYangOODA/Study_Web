@@ -931,13 +931,13 @@ const abstractControl = group.get(key);
 if (abstractControl instanceof FormGroup) {  是巢狀FormGroup  
 this.logValidationErrors( abstractControl );  
 } else {  
-&nbsp this.formErrors[key] = "";  
-&nbsp if (abstractControl && !abstractControl.valid) {  
-&nbsp &nbsp const messages = this.validationMessages[key];  
-&nbsp &nbsp for(const errorKey in abstractControl.errors) {  
-&nbsp &nbsp &nbsp this.formErrors[key] += messages[errorKey] +" ";}  
-&nbsp &nbsp }    
-&nbsp }  
+&nbsp; this.formErrors[key] = "";  
+&nbsp; if (abstractControl && !abstractControl.valid) {  
+&nbsp; &nbsp; const messages = this.validationMessages[key];  
+&nbsp; &nbsp; for(const errorKey in abstractControl.errors) {  
+&nbsp; &nbsp; &nbsp; this.formErrors[key] += messages[errorKey] +" ";}  
+&nbsp; &nbsp; }    
+&nbsp; }  
 });    
 }  
 
