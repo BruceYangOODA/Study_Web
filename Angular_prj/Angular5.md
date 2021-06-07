@@ -42,8 +42,11 @@ catchError
 
 ## [Angular CLI 官網](https://angular.cn/cli)  
 ### [[Angular 深入淺出三十天] Day 10 - Angular CLI 常用指令說明](https://ithelp.ithome.com.tw/articles/10205484)  
+### [Youtube Angular 2 tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWqGD8BuKuX-VTKqlNBj-m6)  
+### [Youtube Angular2 Tutorials](https://www.youtube.com/watch?v=C8JcGqQdcPI&list=PL6n9fhu94yhVm7BcSWpGpRFQc1AikjP8h&index=2&ab_channel=kudvenkat)  
 ### [Youtube Angular CLI tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWUcq5Pc16uf8YKXoZ87Vh_)  
-## [Youtube Angular5 Tutorials](https://www.youtube.com/watch?v=P1mlC8Ar0_k&list=PL6n9fhu94yhVm7BcSWpGpRFQc1AikjP8h&index=2&ab_channel=kudvenkatkudvenkat)  
+### [Youtube Angular5 Tutorials](https://www.youtube.com/watch?v=P1mlC8Ar0_k&list=PL6n9fhu94yhVm7BcSWpGpRFQc1AikjP8h&index=2&ab_channel=kudvenkatkudvenkat)  
+### [Youtube Angular6 Tutorials](https://www.youtube.com/playlist?list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj)  
 ### [Youtube 在ISS部署 Angular](https://www.youtube.com/watch?v=VkGmaVm6-IQ&list=PL6n9fhu94yhWUcq5Pc16uf8YKXoZ87Vh_&index=26&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
 
