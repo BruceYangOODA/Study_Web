@@ -26,10 +26,14 @@ navbar
 breadcrumbs  
 pager and pagination  
 panel  
+panel-group  
 label and badge  
 progress  
 jumbotron  
 media  
+collapse  
+modal  
+
 
 
 ### [Bootstrap Icons](https://icons.getbootstrap.com/)  
@@ -49,6 +53,7 @@ media
 offset  
 --col-md-6 col-md-offset-3  物件佔6,左右空白佔3  
 
+
 ### pull位置  
 [影片 pull位置](https://www.youtube.com/watch?v=2-tHexxFixA&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=8&ab_channel=kudvenkat)  
 
@@ -62,6 +67,7 @@ offset
 
 --img-responsive  圖片隨外框縮放  
 
+
 ### visible, hidden  
 [影片visible, hidden](https://www.youtube.com/watch?v=3AW-txuBByI&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=8&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
@@ -74,6 +80,7 @@ offset
 
 --visible-print  列印時出現  
 --hidden-print  列印時隱藏  
+
 
 ### font  
 [影片 font](https://www.youtube.com/watch?v=TueaztnRkAQ&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=10&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
@@ -116,6 +123,7 @@ text alignment 字段對齊
 < /dl>  
 --dl-horizontal  讓 dt dd 橫排   
 
+
 #### list-group   
 [影片 list groups](https://www.youtube.com/watch?v=sMMqPuBo2tw&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=12&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
@@ -140,6 +148,7 @@ List Group
 --list-group-item-heading  子組件標題  
 --list-group-item-text  子組件描述  
 
+
 ### table  
 [影片 table](https://www.youtube.com/watch?v=67_FboS47qc&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=15&ab_channel=kudvenkat)  
 
@@ -154,6 +163,7 @@ table
 tr 樣式  
 --active  --danger  --info  --success  --warning  
 
+
 ### button  
 [影片 button](https://www.youtube.com/watch?v=klFyW05p7EY&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=15&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
@@ -164,6 +174,7 @@ Button樣式
 
 大小樣式  
 --btn-lg  --btn-md  --btn-sm  
+
 
 #### button-group  
 [影片 button-group](https://www.youtube.com/watch?v=CKGQu8Hz2bY&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=18&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
@@ -190,6 +201,7 @@ Button樣式
 
 在標籤內部加上 < span class="ICON樣式">< /span>  
 
+
 ### dropdown  
 [影片 dropdown](https://www.youtube.com/watch?v=okGRZB_0SfI&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=17&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
@@ -212,6 +224,7 @@ Menu向上展開
 < div class="dropup">  
 < div class="dropdown">< /div>  
 < /div>  
+
 
 ### forms  
 [影片 forms](https://www.youtube.com/watch?v=-avU9Crq45U&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=20&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
@@ -323,6 +336,7 @@ multiple  複選
 
 --form-control-static  與前面的 label 自動標齊  
 
+
 ### nav  
 [影片 nav](https://www.youtube.com/watch?v=vom5dZKCBeM&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=27&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
@@ -338,6 +352,7 @@ multiple  複選
 --nav nav-pills  按鈕式導航  
 --nav-stacked  填滿整個區塊  
 --nav-justified   自動調整大小  
+
 
 ### navbar  
 [影片 navbar](https://www.youtube.com/watch?v=KRsSSpMaaKg&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=28&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
@@ -382,6 +397,7 @@ data-toggle  展開模式  collapse
 --navbar-left  置左  
 --navbar-right  置右  
 
+
 ### breadcrumb  
 [影片 breadcrumb](https://www.youtube.com/watch?v=KOmTrgwhFyc&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=29&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
@@ -391,6 +407,7 @@ data-toggle  展開模式  collapse
 < /ol>  
 
 --breadcrumb  
+
 
 ### pager and pagination  
 [影片 pager and pagination](https://www.youtube.com/watch?v=FmtxKqf0eJQ&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=30&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
@@ -415,6 +432,7 @@ data-toggle  展開模式  collapse
 --pagination  
 --pagination-lg  --sm  
 
+
 ### panel  
 [影片 panel](https://www.youtube.com/watch?v=TX2hSFlx2nA&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=31&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
@@ -431,6 +449,36 @@ data-toggle  展開模式  collapse
 --panel-footer  腳部  
 --panel-title  標題樣式  
 
+
+### panel-group  
+[影片 panel-group](https://www.youtube.com/watch?v=LxUACFT8QEY&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=38&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+< div id="OOO" class="panel-group">  
+
+< div class="panel panel-primary">  
+< div class="panle-heading"><h4 class="panle-title">  
+< a href="#AAA" data-toogle="collapse" data-parent="#OOO"> XXX < /a>< /h4>
+< /div>  
+< div class="panel-body panel-collapse collapse" id="AAA">  
+< ul>< li> 1 < /li>< li> 2 < /li>< /ul>  
+< /div>  
+
+< div class="panel panel-primary">  
+< div class="panle-heading"><h4 class="panle-title">  
+< a href="#BBB" data-toogle="collapse" data-parent="#OOO"> XXX < /a>< /h4>
+< /div>  
+< div class="panel-body panel-collapse collapse" id="BBB">  
+< ul>< li> 1 < /li>< li> 2 < /li>< /ul>  
+< /div> 
+< /div>  
+
+< /div>  
+
+--panel-group  
+--data-parent  有複數的塌縮,所以指定父DOM  
+--panel-collapse  
+
+
 ### label and badge  
 [影片 label and badge](https://www.youtube.com/watch?v=je3g47_Dhlg&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=34&ab_channel=kudvenkat)  
 
@@ -445,6 +493,7 @@ Badge
 
 --badge  
 
+
 ### progress  
 [影片 progress](https://www.youtube.com/watch?v=5orSF-FOi3U&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=34&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
@@ -458,12 +507,14 @@ style="width:60%; min-width:20%"> XXX < /div>
 --progress-bar-success  --info  --warning  --danger  
 --progress-bar-striped  加上斜紋    
 
+
 ### jumbotron  
 [影片 jumbotron](https://www.youtube.com/watch?v=iADTkqM4o2M&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=35&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
 < div class="jumbotron">< /div>
 
 -- jumbotron  占滿畫面橫幅的大螢幕  
+
 
 ### media  
 [影片 media](https://www.youtube.com/watch?v=V_EJBKDRFw4&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=36&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
@@ -488,4 +539,67 @@ style="width:60%; min-width:20%"> XXX < /div>
 --media-right 右區塊  
 --media-top  --middle  --bottom  靠上中下  
 --media-list  
+
+
+### collapse  
+[影片 collapse](https://www.youtube.com/watch?v=_LvbDxs92ds&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=37&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+< div class="panel panel-default">  
+< div class="panel-heading">  
+< a class="btn btn-primary" href="#imageGallery" data-toggle="collapse"> XXX < /a>  
+< /div>  
+< div class="panel-body collapse" id="imageGallery">< div>......< /div>< /div>
+
+< /div>  
+
+--collapse in 初始出現  
+--collapse  初始塌縮  
+href="#id" 指定塌縮區域  等於button 的 data-target="#id"  
+
+
+### modal  
+[影片 modal](https://www.youtube.com/watch?v=bT9Tta7xWdo&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=40&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+< button data-target="#OOO" data-toggle="modal"> XXX < /button>  
+
+< div class="modal fade" id="OOO" tabindex="-1" data-keyboard="false" data-backdrop="static">  
+< div class="modal-dialog modal-lg">  
+< div class="modal-content">  
+
+< div class="modal-header">  
+< button class="close" data-dismiss="modal">  
+< h4 class="modal-title"> XXX < /h4>  
+< /div>  
+
+< div class="modal-body">......< /div>   
+< div class="modal-footer">......< /div>   
+
+< /div>  
+< /div>  
+
+data-toggle="modal"  toggle模式 modal  
+data-dismiss="modal"  關閉modal  
+data-keyboard="false"  ESC跳出modal失效  
+data-backdrop="static"  點選modal以外的區域失效  
+--modal  
+--modla-dialog   
+--modal-content    
+--modal-header    
+--modal-body  
+--modal-footer  
+
+--fade  淡入淡出  
+--modal-title  
+--modal-lg  --sm  樣式大小  
+
+
+
+
+
+
+
+
+
+
+
 
