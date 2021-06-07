@@ -327,7 +327,7 @@ Menu向上展開
 
 #### select  
 
-<select multiple class="form-control">  
+< select multiple class="form-control">  
 < option> XXX < /option>  
 < /select>  
 
