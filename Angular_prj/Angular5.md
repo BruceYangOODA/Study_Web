@@ -40,13 +40,26 @@ NgContent
 HttpClient  
 catchError  
 
+</br>  
+### Angular 6 tutorial for beginners
+</br>  
+reactive forms  
+AbstractControl Methods  
+--setvalue patchvalue  
+FormBuilder  
+Validators  
+
+
+
+
+
 ## [Angular CLI 官網](https://angular.cn/cli)  
 ### [[Angular 深入淺出三十天] Day 10 - Angular CLI 常用指令說明](https://ithelp.ithome.com.tw/articles/10205484)  
 ### [Youtube Angular 2 tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWqGD8BuKuX-VTKqlNBj-m6)  
 ### [Youtube Angular2 Tutorials](https://www.youtube.com/watch?v=C8JcGqQdcPI&list=PL6n9fhu94yhVm7BcSWpGpRFQc1AikjP8h&index=2&ab_channel=kudvenkat)  
 ### [Youtube Angular CLI tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWUcq5Pc16uf8YKXoZ87Vh_)  
 ### [Youtube Angular5 Tutorials](https://www.youtube.com/watch?v=P1mlC8Ar0_k&list=PL6n9fhu94yhVm7BcSWpGpRFQc1AikjP8h&index=2&ab_channel=kudvenkatkudvenkat)  
-### [Youtube Angular6 Tutorials](https://www.youtube.com/playlist?list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj)  
+### [Youtube Angular 6 tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj)  
 ### [Youtube 在ISS部署 Angular](https://www.youtube.com/watch?v=VkGmaVm6-IQ&list=PL6n9fhu94yhWUcq5Pc16uf8YKXoZ87Vh_&index=26&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
 
@@ -786,4 +799,120 @@ console.error("Client Error:" + errorResponse.error.message); }
 else { console.error("Server Error: " + errorResponse); }  
 return new ErrorObservable("錯誤訊息如下");  
 }
+
+<br/>
+<br/>
+<br/>
+
+### reactive forms  
+[影片 reactive forms](https://www.youtube.com/watch?v=VLYc3ACWL-E&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=4&ab_channel=kudvenkatkudvenkat)  
+[影片 nested form groups](https://www.youtube.com/watch?v=XKwct01QdoI&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=6&ab_channel=kudvenkat)  
+
+組件   
+import { FormGroup, FormControl } from "@angular/forms";  
+
+OOO : FormGroup;  
+ngOnInit() {  
+this.OOO = new FormGroup({  
+AAA: new FormControl();  
+BBB: new FormControl();  
+CCC: new FormGroup({ DDD: new FormControl(), EEE: new FormControl() });  
+});  
+}  
+onSubmit() {  
+console.log(this.OOO.value);  
+console.log(this.OOO.AAA.vaule);  
+console.log(this.OOO.get("BBB").value);  
+}  
+
+HTML  
+< form [formGroup]="OOO" (ngSubmit)="onSubmit()">  
+< input formControlName="AAA" type="text">  
+< input formControlName="BBB" type="text">  
+
+< div formGroupName="CCC">  
+< input id="DDD" formControlName="DDD" type="text">  
+< div class="form-group">  
+< input formControlName="EEE" type="radio" value="13">  
+< input formControlName="EEE" type="radio" value="9">  
+< /div>  
+< /div>  
+
+< /form>  
+
+app.module.ts  
+import { ReactiveFormsModule } from"@angular/forms";  
+imports: [ ReactiveFormsModule ]  
+
+
+### AbstractControl Methods  
+[影片 ](https://www.youtube.com/watch?v=TOyXHqL3MoM&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=5&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+setValidators()  
+clearValidators()  
+updateValueAndValidity()  
+
+setValue()  
+patchValue()  
+Reset()  
+
+#### setvalue patchvalue  
+[影片 setvalue patchvalue](https://www.youtube.com/watch?v=BRdhAPozNlI&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=7&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+setValue  設定所有資料  
+patchValue  設定部分資料  
+
+click方法(): void {  
+this.OOO.setValue(  
+AAA: "XXX",  BBB: "XXX", CCC:{ DDD: "XXX", EEE: 13}  
+);  
+}  
+
+
+### FormBuilder  
+[影片 FormBuilder](https://www.youtube.com/watch?v=AiNfK36Xn1s&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=8&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+組件   
+import { FormBuilder } from"@angular/forms";  
+constructor(private fb: FormBuilder) {}  
+ngOnInit() {  
+this.OOO = this.fb.group({  
+AAA: [""], BBB: [""], CCC: this.fb.group({ DDD: [""], EEE:[""]})  
+});  
+}  
+
+
+### Validators  
+[影片 Validators](https://www.youtube.com/watch?v=MPuXl1DS1vU&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=9&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+組件  
+import { Validators } from "@angular/forms";  
+
+Validators 預設類別  
+required  
+requiredTrue  
+email  
+pattern  
+min  max  
+minLength  maxLength  
+
+ngOnInit() {  
+this.OOO = this.fb.group({  
+AAA: ["", [Validators.required, Validators.minLength(2), Validators.maxLength(10)]]  
+})  
+}  
+
+HTML  
+< div class="form-group"  [ngClass]="{'has-error': OOO.get('AAA').errors &&   
+(OOO.get("AAA").touched || OOO.get("AAA").dirty)}">  
+< input controlName="AAA">  
+< /div>  
+
+
+
+
+
+
+
+
+
 
