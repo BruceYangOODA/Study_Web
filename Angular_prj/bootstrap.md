@@ -23,6 +23,7 @@ forms
 --form-control-static  
 nav  
 navbar  
+tab  
 breadcrumbs  
 pager and pagination  
 panel  
@@ -33,7 +34,10 @@ jumbotron
 media  
 collapse  
 modal  
-
+tooltip  
+popover  
+data-spy  
+carousel  
 
 
 ### [Bootstrap Icons](https://icons.getbootstrap.com/)  
@@ -398,6 +402,33 @@ data-toggle  展開模式  collapse
 --navbar-right  置右  
 
 
+### tab  
+[影片 tab](https://www.youtube.com/watch?v=RUd3TMZ-Xqg&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=42&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+< ul class="nav nav-tabs">  
+< li class="active">< a href="#AAA" data-toggle="tab"> XXX < /a>< /li>  
+< li>< a href="#BBB" data-toggle="tab"> XXX < /a>< /li>  
+< li class="dropdown">
+< a href="#" data-toggle="dropdown" class="dropdown-toogle"> XXX < /a>
+< ul class="dropdown-menu">< li>< a href="#CCC" data-toggle="tab">< /a>< /li>< /ul>  
+< /li>  
+< /ul>  
+
+< div class="tab-content">  
+< div class="tab-pane active fade in" id="AAA"> XXX < /div>  
+< div class="tab-pane fade" id="BBB"> XXX < /div>  
+< div class="tab-pane fade" id="CCC"> XXX < /div>  
+< /div>  
+
+data-toggle="tab"  
+fade in  
+fade  
+--nav  
+--nav-tabs  
+--tab-content  分頁區域  
+--tab-pane  分頁頁面  
+
+
 ### breadcrumb  
 [影片 breadcrumb](https://www.youtube.com/watch?v=KOmTrgwhFyc&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=29&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
@@ -593,13 +624,69 @@ data-backdrop="static"  點選modal以外的區域失效
 --modal-lg  --sm  樣式大小  
 
 
+### tooltip  
+[影片 tooltip](https://www.youtube.com/watch?v=_vjWJu5OGCE&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=43&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+<button title="XXX" data-toggle="tooltip">< /button>  
+
+tooltip  觸發機制 default是 hover  
+data-toggle="tooltip"  
+title  tooltip顯示的訊息  
 
 
+### popover  
+[影片 popover](https://www.youtube.com/watch?v=7AcQqaSIV8c&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=45&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+<button title="XXX" data-content="XXX" data-toggle="popover" data-trigger="hover">< /button>  
+data-content="<img src='assets/XXX.jpg'">"  data-html="true"  
+
+popover  觸發機制 default是 hover  
+data-toggle="popover"  
+title  popover顯示的標題  
+data-content  popover顯示的訊息  
+data-trigger="hover"  
+data-html="true"  把data-content內容 以innerHtml形式呈現  
+
+data-content="XXX"
 
 
+### data-spy   
+[影片 data-spy](https://www.youtube.com/watch?v=K2qjgCRkmt8&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=47&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+body { position:relative; }  
+
+< body data-spy="scroll" data-target="#AAA" data-offset="10">   
+< nav id="AAA" class="navbar">......< /nav>  
+< div class="container">.....< /div>  
+< /body>  
+
+data-spy="scroll"  
 
 
+### carousel  
+[影片 carousel](https://www.youtube.com/watch?v=JegnLxG_xCQ&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=51&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+< div class="carousel slide" data-ride="carousel"  data-interval="2000">
+< div class="carousel-inner">
+
+< div class="item">  
+< img src="XXX" />  
+< div class="carousel-caption"> XXX   
+< /div>  < /div>  
+
+< div class="item">  
+< img src="XXX" />  
+< div class="carousel-caption"> XXX 
+< /div>  < /div>  
+
+< /div>  
+< /div>  
 
 
-
+--carouse slide  
+data-interval="2000"  
+data-ride="carousel"  輪播啟動  
+--carousel-inner  圖片區塊  
+--item  輪放區塊  
+--carousel-caption  圖片標題  
 
