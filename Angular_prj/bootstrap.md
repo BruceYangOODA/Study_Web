@@ -478,7 +478,7 @@ fade
 --panel-heading  頭部  
 --panel-body  體部  
 --panel-footer  腳部  
---panel-title  標題樣式  
+--panel-title  標題樣式   
 
 
 ### panel-group  
@@ -487,7 +487,7 @@ fade
 < div id="OOO" class="panel-group">  
 
 < div class="panel panel-primary">  
-< div class="panle-heading"><h4 class="panle-title">  
+< div class="panle-heading">< h4 class="panle-title">  
 < a href="#AAA" data-toogle="collapse" data-parent="#OOO"> XXX < /a>< /h4>
 < /div>  
 < div class="panel-body panel-collapse collapse" id="AAA">  
@@ -495,7 +495,7 @@ fade
 < /div>  
 
 < div class="panel panel-primary">  
-< div class="panle-heading"><h4 class="panle-title">  
+< div class="panle-heading">< h4 class="panle-title">  
 < a href="#BBB" data-toogle="collapse" data-parent="#OOO"> XXX < /a>< /h4>
 < /div>  
 < div class="panel-body panel-collapse collapse" id="BBB">  
@@ -518,8 +518,8 @@ fade
 
 Badge  
 < div class="row">< div class="col-xs-12">  
-<button> XXX <span class="badge">2< /span>< /button>  
-<button> XXX <span class="badge">13< /span>< /button>  
+< button> XXX < span class="badge">2< /span>< /button>  
+< button> XXX < span class="badge">13< /span>< /button>  
 < /div>< /div>  
 
 --badge  
@@ -558,7 +558,7 @@ style="width:60%; min-width:20%"> XXX < /div>
 巢狀結構  
 < ul class="media-list">  
 < div class="media">  
-< ul calss="media-list"><div class="media">< /div>< /ul>  
+< ul calss="media-list">< div class="media">< /div>< /ul>  
 < /div>  
 < /ul>  
 
