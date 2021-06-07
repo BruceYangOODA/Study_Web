@@ -1,12 +1,6 @@
 ## [Youtube Angular CRUD tutorial](https://www.youtube.com/playlist?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5)  
-### [Youtube Angular CLI tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWUcq5Pc16uf8YKXoZ87Vh_)  
-### [Youtube 在ISS部署 Angular](https://www.youtube.com/watch?v=VkGmaVm6-IQ&list=PL6n9fhu94yhWUcq5Pc16uf8YKXoZ87Vh_&index=26&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
-## [Angular CLI 官網](https://angular.cn/cli)  
-### [[Angular 深入淺出三十天] Day 10 - Angular CLI 常用指令說明](https://ithelp.ithome.com.tw/articles/10205484)  
 
 ## [index]   
-panel  
-navbar  
 form-group     
 --input  
 --form.reset  
@@ -46,24 +40,13 @@ NgContent
 HttpClient  
 catchError  
 
+## [Angular CLI 官網](https://angular.cn/cli)  
+### [[Angular 深入淺出三十天] Day 10 - Angular CLI 常用指令說明](https://ithelp.ithome.com.tw/articles/10205484)  
+### [Youtube Angular CLI tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWUcq5Pc16uf8YKXoZ87Vh_)  
+## [Youtube Angular5 Tutorials](https://www.youtube.com/watch?v=P1mlC8Ar0_k&list=PL6n9fhu94yhVm7BcSWpGpRFQc1AikjP8h&index=2&ab_channel=kudvenkatkudvenkat)  
+### [Youtube 在ISS部署 Angular](https://www.youtube.com/watch?v=VkGmaVm6-IQ&list=PL6n9fhu94yhWUcq5Pc16uf8YKXoZ87Vh_&index=26&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
-### panel  
-[影片 panel](https://www.youtube.com/watch?v=tPySwBVmGvg&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=2&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
-< div class="panel panel-primary">  
-< div class="panel-heading"> < div class="panel-title">< /div></ div>  
-< div class="panel-body"></ div>  
-< div class="panel-footer"></ div>  
-</ div>  
 
-### navbar  
-[影片 navbar](https://www.youtube.com/watch?v=pcOaAU_iaD4&list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5&index=3&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
-< nav class="navbar navbar-default">  
-< ul class="nav navbar-nav">  
-< li class="nav-item">  
-< a routerLink="/list"> XXX < /a>  routerLink是angular屬性  
-< /li>  
-< /ul>  
-< /nav>  
 
 ### form-group   
 在 app.module.ts   
