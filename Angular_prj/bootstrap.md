@@ -69,7 +69,7 @@ offset
 ### img  
 [影片 畫廊](https://www.youtube.com/watch?v=2-tHexxFixA&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V&index=8&ab_channel=kudvenkat)  
 
---img-responsive  圖片隨外框縮放  
+--img-fluid  --img-thumbnail  圖片隨外框縮放  
 
 
 ### visible, hidden  
