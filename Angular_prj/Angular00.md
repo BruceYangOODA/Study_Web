@@ -54,6 +54,11 @@ Custom Validator
 valueChanges  
 AbstractControl  
 FormArray  
+add FormGroup  
+reactive forms put example  
+reactive forms post example  
+Grouping routes and creating component less route in angular  
+
 
 
 ## [Angular CLI 官網](https://angular.cn/cli)  
@@ -1055,16 +1060,85 @@ this.logKeyValuePairs( this.OOO );
 ### FormArray  
 [影片 FormArray](https://www.youtube.com/watch?v=eHBOQsqTDXw&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=19&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
+FormArray Properties  
+touched  untouched  
+valid  invalid  
+dirty  pristine  
+
+FormArray Methods   
+push  
+insert  
+removeAt  
+setControl  
+at  
+
+組件  
+click方法() : void {  
+第一種寫法  
+const formArray = new FormArray([  
+new FormControl("AAA", Validators.required),  
+new FormGroup({ BBB: new FormControl("", Validators.required)}),  
+new FormArray([])  
+]);  
+
+第二種寫法  
+const formArray2 = this.fb.array([  
+new FormControl("AAA"),  
+new FormGroup({ BBB: new FormControl("", Validators.required)}),  
+new FormArray([])  
+]);  
+
+for (const control of formArray.controls) {  
+if (control instanceof FormControl) { console.log("FormControl"); }  
+if (control instanceof FormGroup) { console.log("FormGroup"); }  
+if (control instanceof FormArray) { console.log("FormArray"); }  
+}  
+}  
+
+
+### add FormGroup  
+[影片 add FormGroup](https://www.youtube.com/watch?v=qNsFvwlzhDs&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=20&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+[影片 add FormGroup2](https://www.youtube.com/watch?v=aUD-hoFTnLI&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=22&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+[影片 dynamic forms validation](https://www.youtube.com/watch?v=lBi8cLsdNFA&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=23&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+[影片 formarray validation](https://www.youtube.com/watch?v=4YNAU9egQkc&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=24&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+
+組件  
+ngOnInit() {  
+this.OOO = this.fb.group({......,  
+CCC : this.fb.array([  this.add方法()  ]);  
+})  
+}  
+
+add方法() : FormGroup {  
+return this.fb.group({  
+DDD : ["", Validators.required],  
+EEE : ["", Validators.required]  
+});  
+}  
+
+click方法() : void {  
+(<FormArray>this.OOO.get("CCC")).push(this.add方法());  
+}  
+
+< div formArrayName="CCC" *ngFor="let item of OOO.get("CCC").controls; let i=index">    
+< div formGroupName="i">  
+< input formControlName="'DDD'+i" type="text">  
+< input formControlName="'EEE'+i" type="text">  
+< /div>   
+< /div>  
+
+
+### reactive forms put example  
+[影片 reactive forms put example](https://www.youtube.com/watch?v=FakCQJA2nOg&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=29&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+
+### reactive forms post example  
+[影片 reactive forms post example](https://www.youtube.com/watch?v=H344QgNPoLo&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=30&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
 
 
-
-
-
-
-
-
-
-
+### Grouping routes and creating component less route in angular  
+[影片 Grouping routes and creating component less route in angular](https://www.youtube.com/watch?v=BkLqyr4VHmw&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=35&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
 
 
