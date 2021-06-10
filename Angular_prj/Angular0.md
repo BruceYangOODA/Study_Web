@@ -18,10 +18,24 @@ index.html
 可以改變網站基礎 URI  
 
 
+$ ng add @ng-bootstrap/ng-bootstrap
+$ ng add @ng-bootstrap/ng-bootstrap --project myProject
+
+https://www.youtube.com/watch?v=xgc1vnEcPCw&ab_channel=TechieOcean
 
 
 
 
+popup  
+https://www.youtube.com/watch?v=aqCMlI6Wq64&t=242s&ab_channel=dotsway
+$ npm install ng2-opd-popup
 
+import { PopupModule } from "ng2-opd-popup";
+imports: [ PopupModule.forRoot()]  
+
+
+TS  
+import { Popup } from"ng2-opd-popup";  
+constructor (private popup:Popup)   
 
 
