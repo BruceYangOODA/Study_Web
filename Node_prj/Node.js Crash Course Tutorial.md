@@ -1,6 +1,6 @@
 
 [Youtube Node.js Crash Course Tutorial](https://www.youtube.com/watch?v=zb3Qk8SG5Ms&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&ab_channel=TheNetNinja)  
-
+[http-video-stream](https://github.com/Abdisalan/blog-code-examples/tree/master/http-video-stream)  
 
 ## [Index]
 基礎 method  
