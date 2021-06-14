@@ -9,8 +9,9 @@
 
 [Youtube How To Code A Video Stream using MongoDB](https://www.youtube.com/watch?v=y6Z-SZt-Xvw&list=PL7XcC35Z6WFB3L2xLVV3S4bG_Z37MqcRe&index=2&ab_channel=AbdisalanCodesAbdisalanCodes)  
 
-const mongodb = require('mongodb');
+const mongodb = require('mongodb');  
 const url = 'mongodb://user:password@db:27017';  
+const url = 'mongodb://localhost:27017';    
 
 影片檔案注入資料庫  
 mongodb.MongoClient.connect(url, function(err,client){  
