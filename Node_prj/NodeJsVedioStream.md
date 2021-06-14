@@ -41,7 +41,7 @@ mongodb.MongoClient.connect(url, function(err,client){
 &nbsp; &nbsp; const end = videoSize -1;  
 &nbsp; &nbsp; const contentLength = end - start +1;  
 &nbsp; &nbsp; const headers = {  
-&nbsp; &nbsp; &nbsp; "Content-Range": /`bytes ${start}-${end}/${videoSize}/`,  
+&nbsp; &nbsp; &nbsp; "Content-Range": \`bytes ${start}-${end}/${videoSize}\`,  
 &nbsp; &nbsp; &nbsp; "Accept-Ranges": "bytes",  
 &nbsp; &nbsp; &nbsp; "Content-Length": contentLength,  
 &nbsp; &nbsp; &nbsp; "Content-Type": "video/mp4",  
