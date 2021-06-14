@@ -24,9 +24,9 @@ mongodb.MongoClient.connect(url, function(err,client){
 });
 
 $ mongo  
-/> use videos  
-/> db.fs.files.count()  查閱db資料   
-/> db.fs.chunks.count()  查閱db資料  
+\> use videos  
+\> db.fs.files.count()  查閱db資料   
+\> db.fs.chunks.count()  查閱db資料  
 
 讀取資料庫檔案  
 mongodb.MongoClient.connect(url, function(err,client){  
