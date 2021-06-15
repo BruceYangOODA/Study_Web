@@ -1,6 +1,6 @@
 
 ### [Youtube ](https://www.youtube.com/playlist?list=PL7XcC35Z6WFB3L2xLVV3S4bG_Z37MqcRe)  
-
+### [Youtube How To Create A Video Chat App With WebRTC](https://www.youtube.com/watch?v=DvlyzDZDEq4&ab_channel=WebDevSimplified)  
 
 
 
@@ -55,6 +55,25 @@ mongodb.MongoClient.connect(url, function(err,client){
 &nbsp; &nbsp; downloadStream.pipe(res);  
 &nbsp; });  
 });  
+
+
+
+[Youtube How To Create A Video Chat App With WebRTC](https://www.youtube.com/watch?v=DvlyzDZDEq4&ab_channel=WebDevSimplified)  
+
+$ npm init -y  
+$ npm i express ejs socket.io --save  
+$ npm i uuid --save  
+$ npm i --save-dev nodemon  
+$ npm i peer --save  
+$ npm i -g peer  
+$ peerjs --port 3001  
+
+
+創建 ./server.js  
+
+編輯 package.json  
+"scripts" : {"devStart": "nodemon server.js"}  
+
 
 
 
