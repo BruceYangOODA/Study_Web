@@ -68,6 +68,7 @@ $ npm i peer --save
 $ npm i -g peer  
 $ peerjs --port 3001  
 
+[PEER JS 官網](https://peerjs.com/)  
 
 創建 ./server.js  
 
