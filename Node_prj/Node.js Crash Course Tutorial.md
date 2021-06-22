@@ -161,10 +161,10 @@ const server = app.listen(SERVER_PORT, function(){ console.log("Serve On ",PORT)
 var io = socket(server);  
 
 io.on("connection", function(socket){  
-nbsp; console.log(socket.id);  
-nbsp; socket.on("some_key_word", fucntion( some_data ){ console.log(some_data);  });  
-nbsp; socket.emit("your_id", socket.id);  
-nbsp; });  
+&nbsp; console.log(socket.id);  
+&nbsp; socket.on("some_key_word", fucntion( some_data ){ console.log(some_data);  });  
+&nbsp; socket.emit("your_id", socket.id);  
+&nbsp; });  
 
 #### CLIENT_SIDE  
 
