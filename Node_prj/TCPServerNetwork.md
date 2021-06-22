@@ -46,6 +46,46 @@ const SERVER_PORT = 9000;
 
 var client = null;  
 
+fucntion OpenConnection() {  
+&nbsp; if(client)  { console.log("--Connection is already open--".red);  
+&nbsp; &nbsp; setTimeout( () => { menu(); },0);  
+&nbsp; &nbsp; return;  }   
+&nbsp; client = new net.Socket();  
+
+&nbsp; client.on("data", (data) => {  
+&nbsp; &nbsp; console.log("Received: %s".cyan, data);  
+&nbsp; &nbsp; setTimeout( () => { menu(); }, 0);
+&nbsp; &nbsp; return;  });  
+
+&nbsp; client.on("error", (err) => {  
+&nbsp; &nbsp; client.destroy();  
+&nbsp; &nbsp; client = null;  
+&nbsp; &nbsp; console.log("ERROR: Connection err. Msg: $s".red, err.message);   
+&nbsp; &nbsp; setTimeout( () => { menu(); }, 0);  
+&nbsp; &nbsp; return;  });  
+&nbsp; setTimeout( () => { menu(); }, 0);  
+}  
+
+function SendData(data) {  
+&nbsp; if(!client) {  
+&nbsp; &nbsp; console.log("--Connection is closed--".red);  
+&nbsp; &nbsp; setTimeout( () => { menu(); },0);  
+&nbsp; &nbsp; return;  }  
+&nbsp; client.write(data);  
+}  
+
+function CloseConnection() {  
+&nbsp; if(!client) {  
+&nbsp; &nbsp; console.log("--Connection is closed--".red);  
+&nbsp; &nbsp; setTimeout( () => { menu(); }, 0);  
+&nbsp; &nbsp; return; }  
+
+&nbsp; client.destroy();  
+&nbsp; client = null;  
+&nbsp; console.log("Connection closed!".yellow);  
+&nbsp; setTimeout( () => { menu(); },0);  
+}  
+
 fucntion menu() {  
 &nbsp; var lineRead = readlineSync.question("\n\nEnter Option (1-Open, 2-Send, 3-Close, 4-Quit): ");  
 &nbsp; switch (lineRead) {  
