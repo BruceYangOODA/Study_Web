@@ -1,8 +1,12 @@
 
-[Youtube Node.js Crash Course Tutorial](https://www.youtube.com/watch?v=zb3Qk8SG5Ms&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&ab_channel=TheNetNinja)  
-[http-video-stream](https://github.com/Abdisalan/blog-code-examples/tree/master/http-video-stream)  
+## [Youtube Node.js Crash Course Tutorial](https://www.youtube.com/watch?v=zb3Qk8SG5Ms&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&ab_channel=TheNetNinja)  
+## [Youtube Node JS Tutorial for Beginners](https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp&index=2&ab_channel=TheNetNinja)  
+## [Youtube WebSockets Tutorial (Node & Socket.io Chat App)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9i4V-_ZVwLmOusj8YAUhj_9)  
 
-## [Index]
+
+[http-video-stream](https://github.com/Abdisalan/blog-code-examples/tree/master/http-video-stream)  
+## [index] 
+
 基礎 method  
 fs  
 http  
@@ -10,11 +14,8 @@ request, response
 express  
 ejs  
 online-mongo-db  
-
-
-
-
-
+EventEmitter  
+WebSockets  
 
 
 
@@ -43,15 +44,20 @@ const {AAA,BBB} = require("./XXX")
 
 ### fs  
 [Youtube fs](https://youtu.be/OIBIXYLJjsI?list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&t=1269)  
+[影片](https://youtu.be/U57kU311-nE?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp&t=266)  
 const fs = require("fs");  
 
 fs.readFile(url,(err,data)=>{})  
+var file = fs.readFileSync(url, 'utf-8');  
 fs.writeFile(url, dataObj, callback)  
+fs.writeFileSync(url, dataObj);  
 fs.unlink(url, (err)=>{})  刪除檔案  
 fs.mkdir(url, (err)=>{})  
+fs.mkdirSync('name')  
 fs.rmdir(url, (err)=>{})  
 fs.existsSync(url) : boolean  
 
+[影片](https://youtu.be/E3tTzx0Qoj0?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp&t=233)  
 const readStream = fs.createReadStream(url, { encoding:"utf8" });  
 const writeStream = fs.createWriteStream(url);  
 readStream.on("data",(chunk)=>{  
@@ -87,6 +93,8 @@ res.redirect('/home');
 
 ### express  
 [Youtube express](https://youtu.be/Lr9WUkeYSA8?list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&t=139)  
+[影片](https://youtu.be/oZGmHNZv7Sc?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp&t=543)  
+
 const express = require('express');  
 const app = express();  
 
@@ -106,6 +114,7 @@ app.post('/blogs',(req,res)=>{
 
 ### ejs  
 [Youtube ejs](https://youtu.be/yXEesONd_54?list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&t=101)
+[影片 Partials](https://youtu.be/CdvSVkF9m_Y?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp&t=143)  
 
 $ npm install ejs --save  
 app.set('view engine','ejs');  
@@ -117,6 +126,76 @@ HTML  匯入通用網頁模塊
 
 ### online-mongo-db  
 [Youtube online-mongo-db](https://youtu.be/bxsemcrY4gQ?list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&t=336)  
+
+
+### EventEmitter  
+[影片](https://youtu.be/NtrnaTKqFPQ?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp&t=509)  
+
+var util = require('util');  
+var Person = function(name) { this.name=name; }  
+utils.inherits(Person, events.EventEmitter);  繼承  
+var a = new Person('a');  
+var b = new Person('b');  
+var c = new Person('c');  
+var people = [a, b, c];  
+
+people.forEach(function(person){  
+person.on('speak', function(msg){ console.log(person.name + msg); });  
+});  
+
+a.emit('speak', 'say hello');  
+輸出  a say hello  
+
+
+### WebSockets  
+[影片](https://youtu.be/UwS3wJoi7fY?list=PL4cUxeGkcC9i4V-_ZVwLmOusj8YAUhj_9&t=138)   
+
+$ npm install --save socket.io socket.io-client  
+
+#### SERVER-SIDE  
+const express = require("express");  
+const socket = require("socket.io");   
+const app = express();  
+const server = app.listen(SERVER_PORT, function(){ console.log("Serve On ",PORT); });  
+
+var io = socket(server);  
+
+io.on("connection", function(socket){  
+nbsp; console.log(socket.id);  
+nbsp; socket.on("some_key_word", fucntion( some_data ){ console.log(some_data);  });  
+nbsp; socket.emit("your_id", socket.id);  
+nbsp; });  
+
+#### CLIENT_SIDE  
+
+const io = require("socket.io-client");  
+const socket = io.connect("http://localhost" + SERVER_PORT);  
+const socket_id;  
+
+socket.emit("some_key_word", some_data );  
+soket.on("your_id", (id) => socket_id = id );  
+
+#### broadcast event  
+[影片](https://youtu.be/FvArk8-qgCk?list=PL4cUxeGkcC9i4V-_ZVwLmOusj8YAUhj_9&t=56)  
+
+server_side
+
+socket.join(group_name);
+socket.to(group_name).brocast.emit("bro_event", () => {} );  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
