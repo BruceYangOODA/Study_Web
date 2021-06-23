@@ -64,6 +64,10 @@ fucntion OpenConnection() {
 &nbsp; &nbsp; setTimeout( () => { menu(); }, 0);  
 &nbsp; &nbsp; return;  });  
 &nbsp; setTimeout( () => { menu(); }, 0);  
+
+&nbsp; client.connect(SERVER_PORT, HOST, () => {  
+&nbsp; &nbsp; console.log("Connection opened successfully".green);   
+&nbsp; &nbsp; setTimeout( () => { menu(); }, 0);  });
 }  
 
 function SendData(data) {  
