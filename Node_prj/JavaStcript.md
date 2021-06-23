@@ -1,14 +1,17 @@
 
-## 
+
+## [Youtube JavaScript Programming - Full Course](https://www.youtube.com/watch?v=jS4aFq5-91M&ab_channel=freeCodeCamp.org)  
+## [Youtube Advanced JavaScript Tutorial - Complete Series](https://www.youtube.com/playlist?list=PLvZkOAgBYrsSZiL0L7T-CBGdiBUaHok4x)  
+
 
 
 [index]
-JavaScript Programming - Full Course  
+Basic  
+Object  
 WebSocket  
 
 
-### JavaScript Programming - Full Course  
-[Youtube JavaScript Programming - Full Course](https://www.youtube.com/watch?v=jS4aFq5-91M&ab_channel=freeCodeCamp.org)  
+### Basic
 
 getElementById(id_name)  
 addEventListener(event_type, function(){})   
@@ -28,13 +31,35 @@ localStroage.getItem(key)
 [影片](https://youtu.be/jS4aFq5-91M?t=21474)  
 
 
+### Object  
+[影片](https://youtu.be/OGQUls0s0A4?list=PLvZkOAgBYrsSZiL0L7T-CBGdiBUaHok4x&t=139)   
+[影片 property.function](https://youtu.be/5Yeu1Xv6VC8?list=PLvZkOAgBYrsSZiL0L7T-CBGdiBUaHok4x&t=646)  
 
 
+var obj1 = new Object();  
+obj1.name = "a";  obj1.age = 16;  
 
+var obj2 = {};  
+obj2.name= "b";  obj2.age = 16;  
 
+[影片 function return object](https://youtu.be/8C9Zh3RwPqk?list=PLvZkOAgBYrsSZiL0L7T-CBGdiBUaHok4x&t=241)  
 
+var obj3 = {  
+&nbsp; name:"c", age: 16, fucntion_name = () => {}  };  
 
+Object.keys(obj1).forEach( key => { console.log(obj1[key]);  });  
 
+var obj = function () { this.say = (params) => {  console.log(params); return this; } }  
+
+obj3 = hew obj();
+obj3.say('Hellow ').say('World');  
+
+[影片 public and private members](https://youtu.be/PxKHmwUdEss?list=PLvZkOAgBYrsSZiL0L7T-CBGdiBUaHok4x&t=87)  
+
+this.XX => Public  
+var xx => Private  
+
+[影片 Nested Objects](https://youtu.be/YriClnrLK_s?list=PLvZkOAgBYrsSZiL0L7T-CBGdiBUaHok4x&t=39)  
 
 
 
