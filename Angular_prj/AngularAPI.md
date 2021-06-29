@@ -40,6 +40,7 @@ http://localhost:4200/opendata/aaa 就會自動轉發到  http://localhost:3333/
 
 
 ### Socket.io-client
+[Youtube Building a chat application with Angular, Node js and Socket.IO](https://www.youtube.com/watch?v=h39ZhR7PUts&t=1826s&ab_channel=TheSwagCoder)  
 [Youtube Angular Socket.IO Tutorial](https://www.youtube.com/watch?v=n7OKfVwClE4&ab_channel=TutorialEdge)  
 [Youtube Socket.io - Angular :: How to connect to a Socket.io Server with Angular](https://youtu.be/66T2A2dvplY?t=123)  
 
@@ -81,6 +82,8 @@ private create(url): Rx.Subject<MessageEvent> {
 &nbsp; return Rx.Subject.creat(observer, observable);  
 }
 
-
+constructor() {  
+&nbsp; &nbsp; this.socket = io(this.url, {transports: ['websocket', 'polling', 'flashsocket']});
+}  
 
 
