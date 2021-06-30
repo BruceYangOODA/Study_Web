@@ -10,7 +10,7 @@
 
 [index]
 install
-
+MaterailModule  
 
 
 
@@ -23,24 +23,29 @@ $ ng add @angular/material
 
 
 
-@app.module.ts  
+
+### MaterailModule  
+[Material Module](https://youtu.be/4ZugNBFA2mA?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=49)  
+
+$ ng g m material  
+
+@material.module.ts  
 
 import { MatButtonModule } from '@angular/material/button';  
-imports : [ MatButtonModule, ]  
 
-@app.component.html  
+const MaterailComponents = [  
+&nbsp; MatButtonModule,  
+];
 
-< button mat-button>XXX< /button>
-< button mat-raised-button>XXX< /button>
+@NgModule({  
+&nbsp; imports:[ MaterailComponents ],  
+&nbsp; exports:[ MaterailComponents ]  
+})
 
+@app.module.ts  
 
-
-
-
-
-
-
-
+import { MaterialModule } from './material/material.module'; 
+imports: [ MaterialModule, ]  
 
 
 
