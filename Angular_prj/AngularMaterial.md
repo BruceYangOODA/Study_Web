@@ -23,6 +23,12 @@ mat-menu
 mat-list  
 mat-grid-list  
 mat-expansion-panel  
+mat-card  
+mat-tab  
+mat-step  
+matInput  
+met-select  
+
 
 
 
@@ -243,8 +249,8 @@ mode="side" 往右擠
 
 綁定開啟關閉事件  
 < mat-sidenav #ZZZ mode="side" [(opened)]="isOpen"   
-&nbsp; &nbsp; (opened)="log('AAA')" (closed)="log('BBB')"  
-> XXX < /mat-sidenav>  
+&nbsp; &nbsp; (opened)="log('AAA')" (closed)="log('BBB')"> XXX 
+< /mat-sidenav>  
 
 .ts  
 log(msg) { console.log(msg);  }  
@@ -367,6 +373,157 @@ hideToggle 隱藏 ^ TAG
 < mat-expansion-panel>  ......  
 < /mat-expansion-panel> 
 < mat-accordion>  
+
+
+### mat-card  
+
+[影片 Cards](https://youtu.be/8C1NuYxAA0k?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=76)  
+[官方 API](https://material.angular.io/components/card/api)  
+
+import { MatCardModule } from '@angular/material/card';  
+const MaterailComponents = [ MatCardModule ]  
+
+< mat-card>  
+&nbsp; < mat-card-title>  AAA  
+&nbsp; < /mat-card-title>  
+&nbsp; < mat-card-content>  BBB  
+&nbsp; < /mat-card-content>  
+&nbsp; < mat-card-actions align="end"> < button> CCC < /button>  置右按鈕  
+&nbsp; < /mat-card-actions>  
+< /mat-card>  
+
+
+### mat-tab  
+
+[影片 Tabs](https://youtu.be/74Ds_YB24pw?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=38)  
+[官方 API](https://material.angular.io/components/tabs/api)  
+
+import { MatTabsModule } from '@angular/material/tabs';  
+const MaterailComponents = [ MatTabsModule ]   
+
+< mat-tab-group #ZZZ (selectedTabChange)="logChange(ZZZ.selectedIndex)">  
+&nbsp; < mat-tab label="AAA"> AAA內容區  
+&nbsp; < /mat-tab>  
+&nbsp; < mat-tab label="BBB"> BBB內容區  
+&nbsp; < /mat-tab>  
+&nbsp; < mat-tab label="CCC"> CCC內容區  
+&nbsp; < /mat-tab>  
+< /mat-tab-group>  
+
+{{ ZZZ.selectedIndex }}  顯示 0-2 代表 AAA-CCC  
+
+logChange(index) { console.log(index); }  
+
+
+### mat-step  
+
+[影片 Stepper](https://youtu.be/uo5VhgloOpI?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=83)  
+[官方 API](https://material.angular.io/components/stepper/api)  
+
+import { MatStepperModule } from '@angular/material/stepper';  
+const MaterailComponents = [ MatStepperModule ]   
+
+< mat-horizontal-stepper linear>  linear屬性,限制階段不能跳階  
+&nbsp; < mat-step label="階段一" completed="isNext">  < p> 階段一內容 < /p>  
+&nbsp; < /mat-step>  
+&nbsp; < mat-step label="階段二" completed="isNext2">  < p> 階段二內容 < /p>  
+&nbsp; &nbsp; &nbsp; < button matStepperPrevious> BACK < /button>  上一階段  
+&nbsp; &nbsp; &nbsp; < button matStepperNext> NEXT < /button>  下一階段  
+&nbsp; < /mat-step>  
+&nbsp; < mat-step label="階段三" completed="isNext3" optional>  < p> 階段三內容 < /p>  
+&nbsp; < /mat-step>  
+< /mat-horizontal-stepper>  
+
+optional屬性,不受linear屬性限制  
+< mat-vertical-stepper>  直線式stepper  
+< /mat-vertical-stepper>  
+
+
+### matInput  
+
+[影片 Input](https://youtu.be/RFbPLKUhpqE?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=70)  
+[官方 API Input](https://material.angular.io/components/input/api)  
+[官方 API form-field](https://material.angular.io/components/form-field/api)  
+
+import { MatInputModule } from '@angular/material/input';    
+import { MatFormFieldModule } from '@angular/material/form-field';  
+const MaterailComponents = [ MatInputModule, MatFormFieldModule ]    
+
+floatLabel 預設mat-label會浮動,改成消失  
+mat-lable 效果為 placeholder  
+
+< mat-form-field floatLabel="never" hideRequiredMarker apperance="standard">  
+&nbsp; < mat-label> NAME < /mat-label>  
+&nbsp; < input matInput required>  
+&nbsp; < mat-hint align="end"> required條件 < /mat-hint>  
+< /mat-form-field>  
+
+apperance  
+-- standard  
+-- legacy  
+-- fill  有背景色  
+-- outline  有外框  
+
+
+### mat-select  
+
+[影片 Select](https://youtu.be/xD3ilT11U3E?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=52)  
+[官方 API](https://material.angular.io/components/select/api)  
+
+import { MatSelectModule } from '@angular/material/select';  
+import { MatFormFieldModule } from '@angular/material/form-field';  
+const MaterailComponents = [ MatSelectModule, MatFormFieldModule ]    
+
+< mat-form-field>  < mat-select [(value)]="VVV">  
+&nbsp; < mat-label floatLabel="never"> ZZZ < /mat-lable>  
+&nbsp; < mat-option> NONE < /mat-option>  
+&nbsp; < mat-option value="AAA"> AAA < /mat-option>  
+&nbsp; < mat-option value="BBB"> BBB < /mat-option>  
+&nbsp; < mat-option value="CCC"> CCC < /mat-option>  
+< /mat-select> < /mat-form-field>  
+
+.ts  
+VVV: string;  
+
+multiple 屬性 可複選  
+< mat-form-field>  < mat-select [(value)]="VVV" multiple>  
+< mat-optgroup label="ZZZ">  
+&nbsp; < mat-option value="AAA"> AAA < /mat-option>  
+&nbsp; < mat-option value="BBB"> BBB < /mat-option>  
+< /mat-optgroup>  
+< mat-optgroup label="WWW">  
+&nbsp; < mat-option value="CCC"> CCC < /mat-option>  
+&nbsp; < mat-option value="DDD"> DDD < /mat-option>  
+< /mat-optgroup>  
+< /mat-select> < /mat-form-field>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
