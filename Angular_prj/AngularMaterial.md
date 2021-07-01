@@ -1,6 +1,6 @@
 
-## [Youtube Learn Angular Material - Full Tutorial](https://www.youtube.com/watch?v=jUfEn032IL8&ab_channel=freeCodeCamp.org)  
-## [Youtube Angular Material Tutorial](https://www.youtube.com/watch?v=bV8emCBmFHk&list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&ab_channel=Codevolution)  
+## [Youtube Angular Material Tutorial](https://www.youtube.com/watch?v=bV8emCBmFHk&list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&ab_channel=Codevolution) 
+## [Youtube Learn Angular Material - Full Tutorial](https://www.youtube.com/watch?v=jUfEn032IL8&ab_channel=freeCodeCamp.org)   
 ## [Angular Material Doc](https://material.angular.io/)  
 
 
@@ -27,11 +27,14 @@ mat-card
 mat-tab  
 mat-step  
 matInput  
-met-select  
-
-
-
-
+mat-select  
+mat-autocomplete   
+mat-checkbox mat-radio-button  
+mat-datepicker-toggle  
+matTooltip  
+MatSnackBar  
+dialog  
+mat-table  
 
 
 ### install  
@@ -454,7 +457,7 @@ mat-lable 效果為 placeholder
 
 < mat-form-field floatLabel="never" hideRequiredMarker apperance="standard">  
 &nbsp; < mat-label> NAME < /mat-label>  
-&nbsp; < input matInput required>  
+&nbsp; < input matInput required />  
 &nbsp; < mat-hint align="end"> required條件 < /mat-hint>  
 < /mat-form-field>  
 
@@ -498,27 +501,178 @@ multiple 屬性 可複選
 < /mat-select> < /mat-form-field>  
 
 
+### mat-autocomplete  
+
+[影片 Autocomplete](https://youtu.be/zxaSPGDXAqo?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=93)  
+[官方 API](https://material.angular.io/components/autocomplete/overview)  
+
+import { MatAutocompleteModule } from '@angular/material/autocomplete';  
+import { MatFormFieldModule } from '@angular/material/form-field';  
+const MaterailComponents = [ MatAutocompleteModule, MatFormFieldModule ]    
+
+.app.module.ts  
+import { ReactiveFormsModule } from '@angular/forms';  
+imports: [ ReactiveFormsModule, ]   
+
+< form>  
+< mat-form-field>  
+&nbsp; < input type="text" matInput [matAutocomplet]="ZZZ" [formControl]="myControl" />  
+&nbsp; < mat-autocomplete #ZZZ="matAutoconplete">  
+&nbsp; < mat-option *ngFor="let item of filteredOptions | async" [value]="item">  
+&nbsp; {{ itme }}  
+&nbsp; < /mat-option>  
+&nbsp; < /mat-autocomplete>  
+< /mat-form-field>  
+< /form>   
+
+.ts  
+import { FormControl } from '@angular/forms';  
+import { Observable } from 'rxjs';   
+import { map, startWith } from 'rxjs/operators';  
+
+options: string[] = ['AAA','BBB','CCC'];  
+
+myControl = new FormControl();  
+filteredOptions: Observable<string[]>;  
+
+ngOnInit() {  
+this.filteredOptions = this.myControl.valueChanges.pipe(  
+&nbsp; &nbsp; startWith(''), map(value => this._filter(value));  
+);  
+}  
+
+private _filter(value: string): string[] {  
+&nbsp; &nbsp; const filterValue = value.toLowerCase();   
+&nbsp; &nbsp; return this.options.filter(option => {option.toLowerCase().includes(filterValue)});  
+}  
+
+
+### mat-checkbox mat-radio-button  
+
+[影片 Checkbox and Radio Button](https://youtu.be/G73PWSFDlmw?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=73)  
+[官方 API Checkbox](https://material.angular.io/components/checkbox/api)  
+[官方 API Radio Button](https://material.angular.io/components/radio/api)  
+
+import { MatCheckboxModule } from '@angular/material/checkbox';  
+import { MatRadioModule } from '@angular/material/radio';  
+const MaterailComponents = [ MatCheckboxModule, MatRadioModule ]    
+
+< mat-checkbox labelPosition="before"> AAA < /mat-checkbox>  
+< mat-checkbox color="primary"> AAA < /mat-checkbox>  
+
+< mat-radio-group>  
+< mat-radio-button value="AAA" color="warn"> AAA < /mat-radio-button>  
+< mat-radio-button value="BBB" > BBB < /mat-radio-button>  
+< mat-radio-button value="CCC" > CCC < /mat-radio-button>  
+< /mat-radio-group>  
+
+
+### mat-datepicker-toggle  
+
+[影片 Date Picker](https://youtu.be/l7iDFzW0jl0?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=71)  
+[官方 API](https://material.angular.io/components/datepicker/overview)  
+
+import { MatDatepickerModule } from '@angular/material/datepicker';  
+import { MatFormFieldModule } from '@angular/material/form-field';  
+const MaterailComponents = [ MatDatepickerModule, MatFormFieldModule ]    
+
+< mat-form-field>  
+< input matInput [matDatePicker]="myDatePicker" [min]="minDate" [max]="maxDate">  
+< input matInput [matDatePicker]="myDatePicker" [matDatePickerFilter]"dateFilter"=>  
+< mat-datepicker-toggle [for]="myDatePicker" matSuffix>< /mat-datepicker-toggle>  
+< mat-datepicker #myDatePicker>< /mat-datepicker>  
+< /mat-form-field>  
+
+.ts  
+minDate = new Date();  
+maxDate = new Date(2020,02,20);  
+
+dateFilter = date => {  
+const day = date.getDay();  
+return day !== 0 && day !== 6;  排除禮拜六日    
+}  
+
+
+### matTooltip  
+
+[影片 Tooltip](https://youtu.be/qjQ3uenJV6M?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=82)
+[官方 API](https://material.angular.io/components/tooltip/api)  
+
+import { MatTooltipModule } from '@angular/material/tooltip';  
+const MaterailComponents = [ MatTooltipModule ]  
+
+< button matTooltip="AAA"   
+matTooltipPosition="before"  
+matTooltipShowDelay="2000"  
+matTooltipHideDelay="2000"  > BUTTON < /button>  
 
 
 
 
+[影片 Snackbar](https://youtu.be/jR3foHtmOvY?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=97)  
+[官方 API](https://material.angular.io/components/snack-bar/api)  
+
+import { MatSnackBarModule } from '@angular/material/snack-bar';  
+const MaterailComponents = [ MatTooltipModule ]  
+
+< button (click)="btnFun('msg', 'Dismiss')">  BUTTON  
+< /button>  
+
+action  
+-- Dismiss  
+-- Undo  
+
+.ts  
+import { MatSnackBar } from '@angular/material/snack-bar';  
+constructor(private snackBar: MatSnackBar) {}  
+
+btnFun(msg, action) {  
+let snackBarRef = this.snackBar.open(msg, action, { duration: 2000});  
+let snackBarRef = this.snackBar.openFromComponent(SNACKBAR_COMPONENT, { duration: 2000});  
+snackBarRef.afterDismissed().subscribe(() => { console.log('SNACKBAR DISMISS'); });  
+snackBarRef.onAction().subscribe(() => { console.log('SNACKBAR TRIGGERED'); });  
+}  
 
 
+### dialog  
+
+[影片 Dialog](https://youtu.be/lrVpUVydZwM?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=173)  
+[官方 API](https://material.angular.io/components/dialog/api)  
+
+import { MatDialogModule } from '@angular/material/dialog';  
+const MaterailComponents = [ MatDialogModule ]  
+
+.ts  
+import { MatDialog } '@angular/material/dialog';  
+constructor(public dialog: MatDialog)  {}  
+
+openDialog() {  
+let dialogRef = this.dialog.open(DIALOG_COMPONENT, { data: {name:'ZZZ'}});    
+dialogRef.afterClosed().subscribe((result) => { console.log('XXX',result); });  WWW OR VVV  
+}  
+
+< h2 mat-dialog-tilte> AAA < /h2>  
+< mat-dialog-content> BBB < /mat-dialog-content>  
+< mat-dialog-actions>  
+&nbsp; &nbsp; < button mat-dialog-close mat-dialog-close="WWW"> WWW < /button>  
+&nbsp; &nbsp; < button mat-dialog-close mat-dialog-close="VVV"> VVV < /button>  
+< /mat-dialog-actions>  
+
+-- DIALOG_COMPONENT  
+
+import { Inject } from '@angular/core';  
+import { MAT_DIALOG_DATA } from'@angular/material/dialog';  
+
+constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}  
 
 
+### mat-table  
 
+[影片 Data Table](https://youtu.be/7XjsP17rv4M?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=105)  
+[官方 API](https://material.angular.io/components/table/api)  
 
-
-
-
-
-
-
-
-
-
-
-
+import { MatTableModule } from '@angular/material/table';  
+const MaterailComponents = [ MatTableModule ]  
 
 
 
