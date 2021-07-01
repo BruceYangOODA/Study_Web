@@ -211,7 +211,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 const MaterailComponents = [ MatSidenavModule, ]   
 
 < mat-sidenab-container>  
-&nbsp; < mat-sidenav [(opened)]="isOpen" mode="over"> XXX < /mat-sidenav>  
+&nbsp; < mat-sidenav mode="over" [(opened)]="isOpen"> XXX < /mat-sidenav>  
 &nbsp; < mat-sidenav-content> AAA < /mat-sidenav-conten>   
 < /mat-sidenab-container>  
 < button (click)="isOpen=!isOpen"> TOGGLE < /button>  
@@ -225,15 +225,21 @@ mode="over" 蓋過背景
 mode="push" 往右推  
 mode="side" 往右擠  
 
+開啟關閉 的方法  
+< mat-sidenav #ZZZ mode="side" [(opened)]="isOpen" > XXX < /mat-sidenav>  
 
+< button (click)="ZZZ.open()"> OPEN < /button>  
+< button (click)="ZZZ.close()"> CLOSE < /button>  
 
+< button (click)="ZZZ.toggle()"> TOGGLE < /button>  
 
+綁定開啟關閉事件  
+< mat-sidenav #ZZZ mode="side" [(opened)]="isOpen"   
+&nbsp; &nbsp; (opened)="log('AAA')" (closed)="log('BBB')"  
+> XXX < /mat-sidenav>  
 
-
-
-
-
-
+.ts  
+log(msg) { console.log(msg);  }  
 
 
 
