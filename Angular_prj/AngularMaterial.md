@@ -19,6 +19,13 @@ matBadge
 mat-progress-spinner  
 mat-toolbar  
 mat-sidenav  
+mat-menu  
+mat-list  
+mat-grid-list  
+mat-expansion-panel  
+
+
+
 
 
 ### install  
@@ -70,6 +77,7 @@ imports: [ MaterialModule, ]
 < div class="mat-body-1"> XXX < /div>  
 < div class="mat-body-2">粗體字< /div>  
 < div class="mat-caption">副標說明< /div>  
+
 
 
 ### mat-button  
@@ -242,24 +250,126 @@ mode="side" 往右擠
 log(msg) { console.log(msg);  }  
 
 
+### mat-menu  
+
+[影片 Menu](https://youtu.be/08svzu9JGNM?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=25)
+[官方 API](https://material.angular.io/components/menu/overview)  
+
+import { MatMenuModule } from '@angular/material/menu';  
+const MaterailComponents = [ MatMenuModule, ]   
+
+< mat-menu #ZZZ="matMenu" xPosition="after" yPosition="above">  
+&nbsp; < button mat-menu-item [matMenuTriggerFor]="YYY"> AAA < button>  
+&nbsp; < button mat-menu-item> BBB < button>  
+< /mat-menu>  
+
+< button [matMenuTriggerFor]="ZZZ"> XXX < /button>  
+
+< mat-menu #YYY="matMenu">  次選單的寫法  matMenuTriggerFor  
+&nbsp; < button mat-menu-item> CCC < button>  
+&nbsp; < button mat-menu-item> DDD < button>  
+&nbsp; < button mat-menu-item> EEE < button>  
+< /mat-menu>  
+
+--帶資料的選單--  
+< mat-menu #WWW="matMenu">  
+&nbsp; < ng-template matMenuContent let-name="name">  
+&nbsp; &nbsp; < button mat-menu-item> FFF < button>  
+&nbsp; &nbsp; < button mat-menu-item> GGG{{ name }} < button>  
+&nbsp; < /ng-template>  
+< /mat-menu>  
+
+< button [matMenuTriggerData]="{name: 'XXX'}" [matMenuTriggerFor]="WWW"> XXX < /button>  
+< button [matMenuTriggerData]="{name: 'VVV'}" [matMenuTriggerFor]="WWW"> VVV < /button>  
+
+
+### mat-list
+
+[影片 List](https://youtu.be/u9cAb_4o8OM?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=24)  
+[官方 API](https://material.angular.io/components/list/api)  
+
+
+import { MatListModule } from '@angular/material/list';  
+const MaterailComponents = [ MatListModule, ]   
+
+< mat-list>  
+&nbsp;  < mat-list-item> AAA < /mat-list-item>  
+&nbsp;  < mat-list-item> BBB < /mat-list-item>  
+&nbsp;  < mat-list-item> CCC < /mat-list-item>  
+< /mat-list>  
+
+< mat-nav-list>  
+&nbsp;  < a mat-list-item href="#"> AAA < /a>  
+&nbsp;  < a mat-list-item href="#"> BBB < /a>  
+&nbsp;  < a mat-list-item href="#"> CCC < /a>  
+< /mat-nav-list>  
+
+
+組合式  
+< mat-list>  
+&nbsp;  < mat-list-item>  
+&nbsp;  &nbsp;  < mat-icon matListIcon> iconTag < /mat-icon>  
+&nbsp;  &nbsp;  < h3 matLine> AA < /3>   兩行並列  
+&nbsp;  &nbsp;  < p matLine> AAA < /p>   兩行並列  
+&nbsp;  < /mat-list-item>  
+< /mat-list>  
+
+
+### mat-grid-list  
+
+[影片 Grid List](https://youtu.be/zzKfWrLkE0w?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=24)  
+[官方 API](https://material.angular.io/components/grid-list/api)  
+
+import { MatGridListModule } from '@angular/material/grid-list';  
+import { MatDividerModule } from '@angular/material/divider';  
+const MaterailComponents = [ MatListModule, MatDividerModule ]   
+
+< mat-grid-list cols="2" rowHeight="2:1">  分兩格  
+&nbsp;  < mat-grid-tile colspan="2"> AAA < /mat-grid-tile>  這一個tile佔領兩格    
+&nbsp;  < mat-grid-tile> BBB < /mat-grid-tile>  
+&nbsp;  < mat-grid-tile rowspan="2"> CCC < /mat-grid-tile>  這一個tile 佔領兩格(直線)  
+&nbsp;  < mat-grid-tile> DDD < /mat-grid-tile>  
+< /mat-grid-list>  
+
+
+< mat-grid-list cols="2" rowHeight="2:1">    
+< mat-grid-list cols="2" rowHeight="fit" style="height: 200px" gutterSize="10px">   
+
+gutterSize tile中間分隔線  
+
+.css  
+mat-grid-tile { background-color: aqua }  
+
+
+### mat-expansion-panel  
+
+[影片 Panel](https://youtu.be/PZbyzooEQC0?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=33)  
+[官方 API](https://material.angular.io/components/expansion/api)  
+
+import { MatExpansionModule } from '@angular/material/expansion';  
+const MaterailComponents = [ MatListModule, MatDividerModule ]   
+
+mat-accordion 自動塌縮其他 Panel  
+multi屬性,不自動塌縮其他Panel  
+hideToggle 隱藏 ^ TAG  
+
+< mat-accordion multi="true" hideToggle>   
+< mat-expansion-panel>  
+&nbsp;  < mat-expansion-panel-header>  
+&nbsp; &nbsp; < mat-panel-title> AAA < /mat-panel-title>   
+&nbsp; &nbsp; < mat-panel-decription> BBB < /mat-panel-description>   
+&nbsp;  < /mat-expansion-panel-header>   
+&nbsp;  PANEL BODY內容區  
+&nbsp;  PANEL BODY內容區  
+&nbsp; < mat-action-row> < button> YYY < /button> < /mat-action-row>  相當於 FOOTER  
+< /mat-expansion-panel>  
+
+< mat-expansion-panel>  ......  
+< /mat-expansion-panel> 
+< mat-accordion>  
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+< mat-divider>< /mat-divider> 等同於 hr  
