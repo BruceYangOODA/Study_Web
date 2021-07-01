@@ -15,9 +15,10 @@ mat-typography  字型大小
 mat-button   
 mat-button-toggle    
 mat-icon    
-mat-badge  
-
-
+matBadge  
+mat-progress-spinner  
+mat-toolbar  
+mat-sidenav  
 
 
 ### install  
@@ -132,16 +133,120 @@ const MaterailComponents = [ MatButtonToggleModule, ];
 < link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
 < /head>  
 
-import { MatIconModule } from '@angular/material/icon' 
-const MaterailComponents = [ MatIconModule, ]  
+import { MatIconModule } from '@angular/material/icon'   
+const MaterailComponents = [ MatIconModule, ]   
 
-< mat-icon color="primary">icon代號Tag< /mat-icon>  
+< mat-icon color="primary">icon代號Tag< /mat-icon>   
 
 
-### mat-badge  
+### matBadge  
 
 [影片 Badges](https://youtu.be/SiIPlZAOnQ4?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU)  
 [官方 API](https://material.angular.io/components/badge/overview)  
+
+import { MatBadgeModule } from '@angular/material/badge'  
+const MaterailComponents = [ MatBadgeModule, ]   
+
+< span matBadge="5"> XXX < /sapn>  
+< span matBadge="5" matBadgePosition="below before"> XXX < /sapn>  
+< span matBadge="5" matBadgePosition="below after"> XXX < /sapn>  
+< span matBadge="5" matBadgePosition="above before"> XXX < /sapn>  
+
+< span matBadge="5" matBadgeSize="small"> XXX < /sapn>  
+< span matBadge="5" matBadgeSize="medium"> XXX < /sapn>  
+< span matBadge="5" matBadgeSize="large"> XXX < /sapn>  
+
+< span matBadge="5" color="primary"> XXX < /sapn>  
+< span matBadge="5" color="accent"> XXX < /sapn>  
+< span matBadge="5" color="warn"> XXX < /sapn>  
+
+< span matBadge="5" matBadgeOverlap="false"> XXX < /sapn>  badge不會蓋到字  
+
+< span [matBadge]="ZZZ"> XXX < /sapn>  資料綁定  
+< span [matBadge]="ZZZ" [matBadgeHidden]="ZZZ === 0"> XXX < /sapn>  隱藏badge  
+
+
+### mat-progress-spinner  
+
+[影片 Progress Spinner](https://youtu.be/cj42D7waOoU?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=36)  
+[官方 API](https://material.angular.io/components/progress-spinner/overview)   
+
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';   
+const MaterailComponents = [ MatProgressSpinnerModule, ]   
+
+< mat-progress-spinner value="ZZZ">< /mat-progress-spinner>  
+< mat-spinner *ngIf="isShowSpinner" color="primary">< /mat-spinner>  
+
+ZZZ = 0-100;  
+
+
+### mat-toolbar  
+
+[影片 Navbar](https://youtu.be/3gtczOujFV0?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=31)  
+[官方 API](https://material.angular.io/components/toolbar/overview)  
+
+import { MatToolbarModule } from '@angular/material/toolbar';  
+const MaterailComponents = [ MatToolbarModule, ]   
+
+< mat-toolbar color="primary" class="navbar">  
+&nbsp; < div> XXX < /div>  
+&nbsp; < div>  
+&nbsp; &nbsp; < span> AAA < /span>  
+&nbsp; &nbsp; < span> BBB < /span>  
+&nbsp; &nbsp; < span> CCC < /span>  
+&nbsp; < /div>  
+< /mat-toolbar>    
+
+css_style
+.navbar { justify-content: space-between; }   
+span { padding-right: 1rem; }  
+
+
+### mat-sidenav  
+
+[影片 Sidenav](https://youtu.be/v8NpQYH2O5M?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=43)  
+[官方 API](https://material.angular.io/components/sidenav/api)  
+
+import { MatSidenavModule } from '@angular/material/sidenav';  
+const MaterailComponents = [ MatSidenavModule, ]   
+
+< mat-sidenab-container>  
+&nbsp; < mat-sidenav [(opened)]="isOpen" mode="over"> XXX < /mat-sidenav>  
+&nbsp; < mat-sidenav-content> AAA < /mat-sidenav-conten>   
+< /mat-sidenab-container>  
+< button (click)="isOpen=!isOpen"> TOGGLE < /button>  
+
+css_style  
+mat-sidenab-container { height: 100%; }  
+mat-sidenav, mat-sidenav-content { padding:16px; }  
+mat-sidenav { width: 200px; background-color: aqua; }  
+
+mode="over" 蓋過背景  
+mode="push" 往右推  
+mode="side" 往右擠  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
