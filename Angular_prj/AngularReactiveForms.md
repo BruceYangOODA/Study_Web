@@ -296,7 +296,7 @@ funB() { this._service.sendMessage('CCC');  }
 子組件  
 constructor(private _service: Service) { }   
 
-ogOnInit() {  
+ngOnInit() {  
 &nbsp; this._service.AAA.subscribe((msg) => {  
 &nbsp; &nbsp; console.log(msg);  
 });  
