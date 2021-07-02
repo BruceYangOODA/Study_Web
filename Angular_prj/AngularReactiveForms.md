@@ -7,7 +7,7 @@ index
 ngForm  
 ngModel  
 ng-valid    
-
+select validation
 
 
 
@@ -73,9 +73,11 @@ ng-valid ng-invalid
 class.d-none 效果跟 hidden一樣  
 
 
+### select validation  
 
+[影片 Select validation](https://youtu.be/Ikn9eWLw3ys?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi&t=338)  
 
-
+#命名 (blur) (change) 傳入 命名.value 控制 isSelectValid 
 
 
 
