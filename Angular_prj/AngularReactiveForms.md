@@ -27,12 +27,14 @@ Subject
 ### backend express  
 
 [影片 Express Server](https://youtu.be/zclGgvQKmq4?list=PLC3y8-rFHvwg2RBz6UplKTGIXREj9dV0G&t=70)  
+[影片 Mongoose DB](https://youtu.be/sWRlX8qG-wQ?list=PLC3y8-rFHvwg2RBz6UplKTGIXREj9dV0G&t=216)  
 
 $ cd backend  
 $ npm init -y  
-$ npm install --save express ejs nodemon   
+$ npm install --save express ejs nodemon mongoose    
 $ echo '' >> ./server.js  
 $ echo '' >> ./api.js  
+$ echo '' >> ./user.js  
 
 package.json ->  
 "scripts": { "start": "nodemon server.js" },   
@@ -50,10 +52,47 @@ app.listen(SERVER_PORT, () => { console.log('Server on ',SERVER_PORT)});
 api.js ->  
 const express = require('express');  
 const router = express.Router();  
+const User = require('./user');  
+
+const mongoose = require('mongoose');  
+const _url = 'mongodb://localhost:27017';  
+mongoose.connect(_url, err => {   
+&nbsp; &nbsp; if(err) console.log('DB Err! ', err);  
+&nbsp; &nbsp; else console.log('DB connected');  
+});  
 
 router.get('/', (req, res) => { res.send('From API route')});  
 
+router.post('/register', (req, res) => {  
+&nbsp; let userData = req.body;    
+&nbsp; let user = new User(userData);  
+&nbsp; user.save((err, registeredUser) => {  
+&nbsp; &nbsp; if(err) console.log(err);  
+&nbsp; &nbsp; else res.status(200).send(registeredUser);  
+&nbsp; });  
+});  
+
+router.post('login', (req, res) => {  
+&nbsp; let userData = req.body;  
+&nbsp; User.findOne({email: userData.email}, (err, user) =>{  
+&nbsp; &nbsp; if(err) console.log(err);   
+&nbsp; &nbsp; else {  
+&nbsp; &nbsp; &nbsp; if (!user) res.status(401).send('Invalid email');  
+&nbsp; &nbsp; &nbsp; else {  
+&nbsp; &nbsp; &nbsp; &nbsp; if(user.password != userData.password) res.status(401).send('Invalid password');   
+&nbsp; &nbsp; &nbsp; &nbsp; else res.status(200).send(user);  
+&nbsp; } &nbsp; } &nbsp; });  
+});
+
 module.exports = router;  
+
+user.js ->  
+const mongoose = require('mongoose');  
+
+const Schema = mongoose.Schema;  
+const userSchema = new Schema({ email: String, password: String });  
+
+module.exports = mongoose.model('user', userSchema, 'users');  
 
 
 ### ngForm  
