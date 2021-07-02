@@ -8,11 +8,11 @@ ngForm
 ngModel  
 ng-valid    
 select validation
-
-
-
-
-
+FormGroup  
+FormBuilder  
+AbstractControl  
+valueChanges.subscribe()  
+FormArray  
 
 
 
@@ -23,9 +23,9 @@ select validation
 
 < form #ZZZ="ngForm">  
 < div ngModelGroup="ZZZ">  
-< input type='text' ngModel name="AAA"/>  
-< input type='tel' ngModel name="BBB"/>  
-< input type='email' ngModel name="CCC"/>  
+&nbsp; < input type='text' ngModel name="AAA"/>  
+&nbsp; < input type='tel' ngModel name="BBB"/>  
+&nbsp; < input type='email' ngModel name="CCC"/>  
 < /div>  
 < /form>   
 
@@ -45,9 +45,9 @@ ngModelGroup  將group下面的ngModel組成一個物件
 
 < form #ZZZ="ngForm">  
 < div ngModelGroup="ZZZ">  
-< input type='text' ngModel name="AAA"/>  
-< input type='tel' [ngModel]="OOO.XXX" name="BBB"/>  單向綁定, input不會改變ngModel資料  
-< input type='email' [(ngModel)]="OOO.YYY" name="CCC"/>   雙向綁定, input會改變ngModel與ngForm資料  
+&nbsp; < input type='text' ngModel name="AAA"/>  
+&nbsp; < input type='tel' [ngModel]="OOO.XXX" name="BBB"/>  單向綁定, input不會改變ngModel資料  
+&nbsp; < input type='email' [(ngModel)]="OOO.YYY" name="CCC"/>   雙向綁定, input會改變ngModel與ngForm資料  
 < /div>  
 < /form>   
 
@@ -80,12 +80,105 @@ class.d-none 效果跟 hidden一樣
 #命名 (blur) (change) 傳入 命名.value 控制 isSelectValid 
 
 
+### FormGroup    
+ 
+[影片 FormGroup](https://youtu.be/-7hS1mZKT2Y?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi&t=202)  
+[影片 FormGroup2](https://youtu.be/B0a3IIQckBw?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi&t=112)  
+
+app.module.ts  
+import { MgModule } from'@angular/core';  
+import { ReactiveFormsModule } from'@angular/forms';  
+imports: [ ReactiveFormsModule ]  
+
+[官方 API](https://angular.io/api/forms/ReactiveFormsModule)
+
+綁定 FormGroup [formGroup]="registrationForm"  
+TAG FormControl name  formControlName="userName"  
+TAG FormGroup name formGroupName="adress"  
+
+< div [formGroup]="ZZZ">  
+&nbsp; < input type='text' formControlName="userName"/>  
+&nbsp; < input type='password' formControlName="password"/>  
+&nbsp; < input type='password' formControlName="confirmPassword"/>  
+&nbsp; < div formGroupName="adress">   
+&nbsp; &nbsp; < input type='text' formControlName="city">  
+&nbsp; &nbsp; < input type='text' formControlName="state">  
+&nbsp; &nbsp; < input type='text' formControlName="postalCode">  
+< /div>  
+< /div>  
+
+.ts  
+
+import { FormGroup, FormControl } from'@angular/forms';  
+
+registrationForm = new FormGroup(  
+&nbsp; userName: new FormControl('AAA'),   
+&nbsp; password: new FormControl(''),  
+&nbsp; confirmPassword: new FormControl(''),  
+&nbsp; adress: new FormGroup({  
+&nbsp; &nbsp; city: new FormControl('');  
+&nbsp; &nbsp; state: new FormControl('');  
+&nbsp; &nbsp; postalCode: new FormControl('');  
+})  
+);  
 
 
+### FormBuilder  
+
+[影片 FormBuilder](https://youtu.be/3_dFnULt3FA?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi&t=59)  
+[影片 Validators](https://youtu.be/ZQroyD2rLzY?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi&t=95)  
+[官方 API](https://angular.io/api/forms/FormBuilder)  
+
+.ts  
+import { FormBuilder, Validators } from '@angular/forms';  
+constructor(private fb: FormBuilder) {}  
+
+registrationForm = this.fb.group({  
+&nbsp; userName: ['AAA', Validators.required],  
+&nbsp; password: [''],  
+&nbsp; confirmPassword: [''],  
+&nbsp; adress: this.fb.group({  
+&nbsp; &nbsp; city: [''],  
+&nbsp; &nbsp; state: [''],  
+&nbsp; &nbsp; postalCode: [''],  
+}),  
+});  
 
 
+### AbstractControl  
+
+[影片 AbstractControl](https://youtu.be/nm-x8gsqB2E?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi&t=121) 
+[官方 API](https://angular.io/api/forms/AbstractControl)  
+
+import { AbstractControl } from'@angular/forms';  
+
+ForbiddenNameValidator.ts
+export function AAAValidator(control: AbstractControl): {[key: string]: any} | null {  
+&nbsp; const forbidden = /admin/.test(control.value);  
+&nbsp; return forbidden ? { 'forbiddenName': {value: control.value}} : null;  
+}  
+
+registrationForm = this.fb.group({  
+&nbsp; userName: ['AAA', Validators.required], forbiddenNameValidator.AAAValidator,  
+});  
+
+[影片 Validator2](https://youtu.be/dlVVYmntDnE?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi&t=237)  
+
+把 Validator放在 FormGroup 層級,就可以Call 下面兩個 FormControl pw && confirmPW  
 
 
+### valueChanges.subscribe()  
+
+[影片 valueChanges.subscribe()](https://youtu.be/7y6GV3EeMHE?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi&t=263)  
+
+
+### FormArray  
+
+[影片 Dynamic Form Control](https://youtu.be/4nJJQMxZkF0?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi&t=58)  
+[官方 API](https://angular.io/api/forms/FormArray)  
+
+import { FormArray,FormBuilder } from'@angular/forms';  
+constructor(private fg: FormBuilder) {}  
 
 
 
