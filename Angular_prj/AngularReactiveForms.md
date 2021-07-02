@@ -1,6 +1,6 @@
 
 ## [Youtube Angular Forms Tutorial](https://www.youtube.com/playlist?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi)  
-
+## [Youtube Angular Component Interaction Tutorial](https://www.youtube.com/playlist?list=PLC3y8-rFHvwgKhaLU8GTyF-5Bb8qT-wzV)  
 
 index  
 
@@ -13,6 +13,15 @@ FormBuilder
 AbstractControl  
 valueChanges.subscribe()  
 FormArray  
+ElementRef  
+getter and setter   
+Input Decorator  父組件to子組件  
+ngOnChange  
+ViewChild  修飾子組件,直接取得ts實例  
+Output Decorator  子組件to父組件  
+Sunject  
+
+
 
 
 
@@ -86,8 +95,8 @@ class.d-none 效果跟 hidden一樣
 [影片 FormGroup2](https://youtu.be/B0a3IIQckBw?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi&t=112)  
 
 app.module.ts  
-import { MgModule } from'@angular/core';  
-import { ReactiveFormsModule } from'@angular/forms';  
+import { MgModule } from '@angular/core';  
+import { ReactiveFormsModule } from '@angular/forms';  
 imports: [ ReactiveFormsModule ]  
 
 [官方 API](https://angular.io/api/forms/ReactiveFormsModule)
@@ -109,7 +118,7 @@ TAG FormGroup name formGroupName="adress"
 
 .ts  
 
-import { FormGroup, FormControl } from'@angular/forms';  
+import { FormGroup, FormControl } from '@angular/forms';  
 
 registrationForm = new FormGroup(  
 &nbsp; userName: new FormControl('AAA'),   
@@ -150,7 +159,7 @@ registrationForm = this.fb.group({
 [影片 AbstractControl](https://youtu.be/nm-x8gsqB2E?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi&t=121) 
 [官方 API](https://angular.io/api/forms/AbstractControl)  
 
-import { AbstractControl } from'@angular/forms';  
+import { AbstractControl } from '@angular/forms';  
 
 ForbiddenNameValidator.ts
 export function AAAValidator(control: AbstractControl): {[key: string]: any} | null {  
@@ -177,19 +186,121 @@ registrationForm = this.fb.group({
 [影片 Dynamic Form Control](https://youtu.be/4nJJQMxZkF0?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi&t=58)  
 [官方 API](https://angular.io/api/forms/FormArray)  
 
-import { FormArray,FormBuilder } from'@angular/forms';  
+import { FormArray,FormBuilder } from '@angular/forms';  
 constructor(private fg: FormBuilder) {}  
 
 
+### ElementRef  
+
+[影片 ElementRef](https://youtu.be/lreYTcPxPRk?list=PLC3y8-rFHvwgKhaLU8GTyF-5Bb8qT-wzV&t=88)  
+[官方 API](https://angular.io/api/core/ElementRef)  
+< input #AAA_Ref type='text'>
+
+.ts  
+import { ElementRef, ViewChild } from '@angular/core';  
+
+Ref綁定 html元素  
+@ViewChild('AAA_Ref') AAA_ElementRef: ElementRef;  
+
+輸入框載入時,focus, 必須在 AfterViewInit 時才能 focus    
+ngAfterViewInit() { this.AAA_ElementRef.nativeElement.focus();  }     
+
+### getter ans setter  
+
+[影片 getter ans setter](https://youtu.be/132VfEETYvs?list=PLC3y8-rFHvwgKhaLU8GTyF-5Bb8qT-wzV&t=88)  
+
+private _AAA: string;  
+get AAA(): string { return this._AAA; }  
+set AAA(value: string) { this._AAA = value; } 
 
 
+### Input Decorator  
+
+[影片 Input Decorator](https://youtu.be/mUd_4ASfnog?list=PLC3y8-rFHvwgKhaLU8GTyF-5Bb8qT-wzV&t=461)  
+.子組件ts  
+@Input() 子組件物件名稱: 類別  
+
+.父組件html  
+<app-child [子組件物件名稱]="父組件物件名稱"></app-child>  
+
+.子組件ts  這樣也可以  
+@Input('子組件物件名稱') 另外取名子: 類別  
+
+用Input Decorator 裝飾 setter()  
+從父組件灌注資料進 子組件物件名稱 seteter  
 
 
+### ngOnChange  
+
+[影片 ngOnChange](https://youtu.be/ZZYo-YkixTA?list=PLC3y8-rFHvwgKhaLU8GTyF-5Bb8qT-wzV&t=65)  
+
+import { OnChanges, SimpleChanges } from '@angular/core';  
+
+ngOnChanges(changes: SimpleChanges) {  
+&nbsp; console.log(changes);  
+&nbsp; const AAA_Value = changes['AAA'];  
+console.log(AAA_Value);  
+}  
+
+SimpleChanges { previousValue: any, currentValue: any, firstChange: boolean};  
 
 
+### ViewChild  
+
+[影片 ViewChild Decorator](https://youtu.be/YnSyi7BIIUs?list=PLC3y8-rFHvwgKhaLU8GTyF-5Bb8qT-wzV&t=62)  
+
+除了ngModel 資料綁定,  
+使用 ViewChild 修飾器,也可以從父組件灌注資料  
+用 @ViewChild 修飾 Component 取得子組件,直接操作子組件 ts    
 
 
+### Output Decorator  
 
+[影片 Output Decorator](https://youtu.be/QQ4gYIeZQrs?list=PLC3y8-rFHvwgKhaLU8GTyF-5Bb8qT-wzV&t=251)  
+ 
+子組件.ts  
+import { Output , EventEmitter } from '@angular/core';  
+
+@Output() greetEvent = new EventEmitter();  
+
+callParentGreet() { this.greetEvent.emit('AAA');  }  
+
+父組件.html  
+<app-child (greetEvent)='greet($event)'></app-child>
+
+父組件.ts  
+greet(event: string) { console.log(event); }  
+
+
+### Subject  
+
+[影片 Subject](https://youtu.be/oj6Tae2oSo0?list=PLC3y8-rFHvwgKhaLU8GTyF-5Bb8qT-wzV&t=331)  
+
+.sevice.ts  
+Import { Subject } from 'rxjs';  
+
+private _AAA = new Subject<string>();
+AAA = this._AAA.asObservable();  
+ 
+sendMessage(msg: string) {  
+&nbsp;  this._AAA.next(msg);
+}  
+
+父組件  
+constructor(private _service: Service) { }  
+ 
+funA() { this._service.sendMessage('BBB');  }  
+ 
+funB() { this._service.sendMessage('CCC');  }   
+
+子組件  
+constructor(private _service: Service) { }   
+
+ogOnInit() {  
+&nbsp; this._service.AAA.subscribe((msg) => {  
+&nbsp; &nbsp; console.log(msg);  
+});  
+}
 
 
 
