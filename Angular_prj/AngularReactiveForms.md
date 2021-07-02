@@ -1,9 +1,11 @@
 
 ## [Youtube Angular Forms Tutorial](https://www.youtube.com/playlist?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi)  
 ## [Youtube Angular Component Interaction Tutorial](https://www.youtube.com/playlist?list=PLC3y8-rFHvwgKhaLU8GTyF-5Bb8qT-wzV)  
+### [Youtube Angular Authentication Tutorial](https://www.youtube.com/playlist?list=PLC3y8-rFHvwg2RBz6UplKTGIXREj9dV0G)  
 
-index  
 
+[index]  
+backend express  
 ngForm  
 ngModel  
 ng-valid    
@@ -19,10 +21,39 @@ Input Decorator  父組件to子組件
 ngOnChange  
 ViewChild  修飾子組件,直接取得ts實例  
 Output Decorator  子組件to父組件  
-Sunject  
+Subject  
 
 
+### backend express  
 
+[影片 Express Server](https://youtu.be/zclGgvQKmq4?list=PLC3y8-rFHvwg2RBz6UplKTGIXREj9dV0G&t=70)  
+
+$ cd backend  
+$ npm init -y  
+$ npm install --save express ejs nodemon   
+$ echo '' >> ./server.js  
+$ echo '' >> ./api.js  
+
+package.json ->  
+"scripts": { "start": "nodemon server.js" },   
+
+server.js ->  
+const express = require('express');  
+const app = express();  
+const api = require('./api');  
+const SERVER_PORT = process.env.PORT || 3000;  
+
+app.use('/api', api);  
+app.get('/', (req, res) => { res.send('hellow form server'); });  
+app.listen(SERVER_PORT, () => { console.log('Server on ',SERVER_PORT)});  
+
+api.js ->  
+const express = require('express');  
+const router = express.Router();  
+
+router.get('/', (req, res) => { res.send('From API route')});  
+
+module.exports = router;  
 
 
 ### ngForm  
