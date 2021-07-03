@@ -6,6 +6,8 @@
 
 [index]  
 backend express  
+proxy  
+cors  
 ngForm  
 ngModel  
 ng-valid    
@@ -31,7 +33,7 @@ Subject
 
 $ cd backend  
 $ npm init -y  
-$ npm install --save express ejs nodemon mongoose    
+$ npm install --save express ejs nodemon mongoose body-parser cors     
 $ echo '' >> ./server.js  
 $ echo '' >> ./api.js  
 $ echo '' >> ./user.js  
@@ -44,6 +46,9 @@ const express = require('express');
 const app = express();  
 const api = require('./api');  
 const SERVER_PORT = process.env.PORT || 3000;  
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 app.use('/api', api);  
 app.get('/', (req, res) => { res.send('hellow form server'); });  
@@ -95,10 +100,38 @@ const userSchema = new Schema({ email: String, password: String });
 module.exports = mongoose.model('user', userSchema, 'users');  
 
 
+### proxy  
+
+package.json ->  
+"start": "ng serve --proxy-config proxy.config.json"  
+
+proxy.config.json ->  
+{ /api': {  
+'target': 'http://locahost:3000/api',   
+'secure': false,   
+'changeOrigin': true,   
+'pathRewrite': {'^/api': ''}  
+}}    
+
+
+### cors  
+效果沒有 proxy 好  
+
+[影片 ](https://youtu.be/6n8T_rXXWQg?list=PLC3y8-rFHvwg2RBz6UplKTGIXREj9dV0G&t=331)  
+
+$ npm install --save cors  
+
+const cors = require('cors');  
+app.use(cors());
+
+
 ### ngForm  
 
 [影片 ngForm](https://youtu.be/iyabqUWYsz4?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi&t=124)  
 [官方 API](https://angular.io/api/forms/NgForm)  
+
+import { FormModule } from '@angular/forms';  
+imports: [ FormModule ]  
 
 < form #ZZZ="ngForm">  
 < div ngModelGroup="ZZZ">  
