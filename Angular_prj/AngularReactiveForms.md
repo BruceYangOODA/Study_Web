@@ -116,6 +116,7 @@ proxy.config.json ->
 
 ### cors  
 效果沒有 proxy 好  
+[影片 Learn CORS In 6 Minutes](https://youtu.be/PNtFSVU-YTI?t=211)  
 
 [影片 ](https://youtu.be/6n8T_rXXWQg?list=PLC3y8-rFHvwg2RBz6UplKTGIXREj9dV0G&t=331)  
 
