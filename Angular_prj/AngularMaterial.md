@@ -361,9 +361,10 @@ hideToggle 隱藏 ^ TAG
 
 < mat-accordion multi="true" hideToggle>   
 < mat-expansion-panel>  
-&nbsp;  < mat-expansion-panel-header>  
-&nbsp; &nbsp; < mat-panel-title> AAA < /mat-panel-title>   
-&nbsp; &nbsp; < mat-panel-decription> BBB < /mat-panel-description>   
+  
+&nbsp;  < mat-expansion-panel-header>            
+&nbsp; &nbsp; < mat-panel-title> AAA < /mat-panel-title>                                           
+&nbsp; &nbsp; < mat-panel-description> BBB < /mat-panel-description>                   
 &nbsp;  < /mat-expansion-panel-header>   
 &nbsp;  PANEL BODY內容區  
 &nbsp;  PANEL BODY內容區  
