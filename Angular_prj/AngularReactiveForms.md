@@ -131,8 +131,8 @@ app.use(cors());
 [影片 ngForm](https://youtu.be/iyabqUWYsz4?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi&t=124)  
 [官方 API](https://angular.io/api/forms/NgForm)  
 
-import { FormModule } from '@angular/forms';  
-imports: [ FormModule ]  
+import { FormsModule } from '@angular/forms';  
+imports: [ FormsModule ]  
 
 < form #ZZZ="ngForm">  
 < div ngModelGroup="ZZZ">  
