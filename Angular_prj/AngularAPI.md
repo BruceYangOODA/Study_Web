@@ -47,7 +47,15 @@ http://localhost:4200/opendata/aaa 就會自動轉發到  http://localhost:3333/
 npm install socket.io-client  
 npm install @types/socket.io-client  
 
-import * as io from "socket.io-client";  
+import { io, Socket } from 'socket.io-client';  
+private socket: Socket;  
+  private url = 'http://localhost:3000'; // your server local path  
+
+  constructor() {   
+    this.socket = io(this.url, {transports: ['websocket', 'polling', 'flashsocket']});  
+  }  
+  
+  
 
 connect(): Rx.Subject<MessageEvent> {  
 &nbsp; this.socket. = io(environment.ws_url);    
