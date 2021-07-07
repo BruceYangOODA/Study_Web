@@ -2,6 +2,7 @@
 ## [index]  
 ### MongoDb  
 ### Socket.io-client    
+### simple-peer  
 ### Angular WebSockets Tutorial   
 
 
@@ -69,6 +70,16 @@ connect(): Rx.Subject<MessageEvent> {
 &nbsp; &nbsp; &nbsp; this.socket.emit("mesage", JSON.stringfy(data));  },};  
 &nbsp; &nbsp; return Rx.subject.create(observer, observable);  
 &nbsp; }
+
+### simple-peer  
+$ npm install simple-peer @types/simple-peer --save  
+
+@angular.json  
+"scripts": ["./node_modules/simple-peer/simplepeer.min.js"],  
+
+//import * as SimplePeer from 'simple-peer';  
+import { Instance, SignalData } from 'simple-peer';  
+peer: Instance;  
 
 ### Angular WebSockets Tutorial  
 [Youtube Angular WebSockets Tutorial](https://youtu.be/8CNVYWiR5fg?list=PLzUGFf4GhXBLlWgVXafxrXRQWhGQr2lKQ&t=49)  
