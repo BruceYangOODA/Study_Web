@@ -14,7 +14,7 @@ $ conda env list 可以查看目前環境列表
 $ conda create -n webscrap python=3.7 建立名為 webscrap 的python package環境  
 $ activate webscrap 激活 剛才建立的 package環境  
 $ conda install lxml requests bs4 安裝 網頁應用 package  
-$ conda install numpy pandas xlsxwriter 安裝 數據應用 package  
+$ conda install numpy pandas xlsxwriter openpyxl  安裝 數據應用 package  
 $ conda install jupyter  安裝 jupyer package  
 $ jupyter notebook  開啟 編碼處理器網頁  
 $ python -m notebook  開啟 編碼處理器網頁 另一種命令列寫法   
