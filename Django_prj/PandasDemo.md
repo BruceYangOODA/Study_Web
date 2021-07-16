@@ -3,10 +3,17 @@
 
 ## [Pandas API](https://pandas.pydata.org/pandas-docs/stable/reference/index.html)  
 
-
-
 [sample data](https://insights.stackoverflow.com/survey)  
 
+[index]  
+### Indexes  
+### Update Row  
+### Add Remove Row  
+### Sort Data  
+### Data Explore  
+### Date Data  
+
+$ conda install xlwt xlrd openpyxl  
 
 import pandas as pd  
 
@@ -29,6 +36,8 @@ type(df['key'])  -> pandas.core.series.Series
 
 df[['key','key2']]  
 
+
+### Indexes  
 
 [影片](https://www.youtube.com/watch?v=Lw2rlcxScZY&list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS&index=4&ab_channel=CoreySchafer)  
 
@@ -59,6 +68,9 @@ df.loc[filter]  回傳 filter為True 的陣列
 filter = df['key'].str.contains('Python', na=False)  
 df.loc[filter, 'key']  回傳 filter為True 的陣列    
 
+
+### Update Row  
+
 [影片](https://www.youtube.com/watch?v=DCDe29sIKcE&list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS&index=5&ab_channel=CoreySchafer)  
 
 df.columns = [x.upper() for x in df.columns]  操作修改標題   
@@ -83,3 +95,77 @@ df['key'] = df['key'].map({'AAA':'BBB'})  把'AAA' 修改為 'BBB'
 df['key'] = df['key'].replace({'AAA':'BBB'})  把'AAA' 修改為 'BBB'  
 
 df['key'] = df['key'].map({'Yes': True, 'No': False})  ex.  
+
+
+### Add Remove Row  
+
+[影片](https://www.youtube.com/watch?v=HQ6XO9eT-fc&list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS&index=6&ab_channel=CoreySchafer)  
+
+df['full_name'] = df['first'] + ' ' +df['last']  
+
+df.drop(columns=['first', 'last'], inplace=True)  刪除欄位  
+df.drop(index=N)   刪除第N列  
+
+row_data = { 'first':'AAA', 'email':'N/A' }  
+df.append(row_data, ignore_index=True) 新增一列    
+row_data 可以換成 陣列 變成新增N列    
+
+
+### Sort Data  
+
+[影片](https://www.youtube.com/watch?v=T11QYVfZoD0&list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS&index=7&ab_channel=CoreySchafer)  
+
+df.sort_values(by='key', asending=False)  
+df.sort_values(by=['key', 'key2'], asending=[False, True])   
+
+df.sort_index()  
+df['key'].sort_values()  回傳 index, key欄位 排序後的陣列  
+df.sort_values(by='key', inplace=True)  
+
+
+### Data Explore  
+
+[影片](https://www.youtube.com/watch?v=txMdrV1Ut64&list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS&index=8&ab_channel=CoreySchafer)  
+
+df.shape  
+df.describe()  
+df['key'].count()  
+df['key'].value_counts()   回傳 (值, 出現次數) 的 陣列  
+
+country_grp = df.groupby(['Country'])  以欄位值為key,製作 陣列物件  
+country_grp.get_group('China')  
+
+df.dropna()  捨棄 空值的 row  
+df.fillna('MISSING')  
+
+
+### Date Data  
+
+[影片](https://www.youtube.com/watch?v=UFuo7EHI8zc&list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS&index=10&ab_channel=CoreySchafer)  
+
+df['Date'] = pd.to_datetime(df['Date', format='%Y-%m-%d %I-%p'])  
+df.loc[0, 'Date'].day_name()   回傳 'Friday'  
+
+d_parser = lambda x: pd.datetime.strptime(x, '%Y-%m-%d %I-%p')  
+df = pd.read_csv('file_uri', parse_dates=['Date'], date_parser=d_parser)   
+
+
+### R/W Data  
+
+[影片](https://www.youtube.com/watch?v=N6hyN6BW6ao&list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS&index=11&ab_channel=CoreySchafer)  
+
+df.to_csv('file_uri', sep='\t')  
+
+df.to_excel('file_uri')  
+
+df.to_json('file_uri', orient='records', lines=True)  
+
+test = pd.read_csv('file_uri')  
+test = pd.read_excel('file_uri', index_col='key')  
+
+test = df.read_json('file_uri', orient='records', lines=True)  
+
+[test = pd.read_sql(.........)](https://youtu.be/N6hyN6BW6ao?list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS&t=1561)  
+
+
+
