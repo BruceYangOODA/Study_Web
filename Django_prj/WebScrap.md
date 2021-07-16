@@ -19,6 +19,8 @@ $ conda install jupyter  安裝 jupyer package
 $ jupyter notebook  開啟 編碼處理器網頁  
 $ python -m notebook  開啟 編碼處理器網頁 另一種命令列寫法   
 
+$ pip install fake-useragent  
+
 在 編碼處理器網頁 點選 new 選擇 python3  
 在 新開的網頁,把 Untitled 重新命名為 webscrap  
 在 下面輸入格輸入  
