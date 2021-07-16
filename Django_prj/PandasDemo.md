@@ -6,12 +6,12 @@
 [sample data](https://insights.stackoverflow.com/survey)  
 
 [index]  
-### Indexes  
-### Update Row  
-### Add Remove Row  
-### Sort Data  
-### Data Explore  
-### Date Data  
+#### Indexes  
+#### Update Row  
+#### Add Remove Row  
+#### Sort Data  
+#### Data Explore  
+#### Date Data  
 
 $ conda install xlwt xlrd openpyxl  
 
