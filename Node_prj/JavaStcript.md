@@ -1,5 +1,6 @@
 
 ### [Youtube Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg&ab_channel=freeCodeCamp.org)  
+### [Youtube JavaScript Course for Beginners 2020 - Learn JavaScript from Scratch](https://www.youtube.com/watch?v=2qDywOS7VAc&ab_channel=Academind)
 ### [Youtube JavaScript Programming - Full Course](https://www.youtube.com/watch?v=jS4aFq5-91M&ab_channel=freeCodeCamp.org)  
 ### [Youtube Advanced JavaScript Tutorial - Complete Series](https://www.youtube.com/playlist?list=PLvZkOAgBYrsSZiL0L7T-CBGdiBUaHok4x)  
 ### [Youtube JavaScript Project Tutorial: Shopping Cart](https://www.youtube.com/watch?v=q_TZhCWbS3I&ab_channel=freeCodeCamp.org)  
