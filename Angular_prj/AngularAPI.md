@@ -12,9 +12,19 @@
 
 [Youtube Learn TypeScript - Full Course for Beginners](https://www.youtube.com/watch?v=gp5H0Vw39yw&ab_channel=freeCodeCamp.org)  
 
+[tsconfig.json API](https://www.tslang.cn/docs/handbook/tsconfig-json.html)  
+
+[影片](https://youtu.be/gp5H0Vw39yw?t=3265)  
+(Object as any).property  解決大部分 class property error  
+
+[影片](https://youtu.be/gp5H0Vw39yw?t=4430)  
+<T extends object> (a: T) 立馬將參數變成一種class  
+
+   
 
 
 
+### MongoDb  
 
 [How to Connect Angular and MongoDB to Build a Secure App](https://developer.okta.com/blog/2019/09/11/angular-mongodb)  
 
