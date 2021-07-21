@@ -1,5 +1,6 @@
 
-## [index]  
+### [index]  
+### TypeScript  
 ### MongoDb  
 ### Socket.io-client    
 ### simple-peer  
@@ -7,7 +8,9 @@
 
 
 
+### TypeScript  
 
+[Youtube Learn TypeScript - Full Course for Beginners](https://www.youtube.com/watch?v=gp5H0Vw39yw&ab_channel=freeCodeCamp.org)  
 
 
 
