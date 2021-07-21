@@ -20,7 +20,7 @@ online-mongo-db
 EventEmitter  
 WebSockets  
 Sequelize  
-
+mongoose  
 
 
 
@@ -197,9 +197,11 @@ $ npm install swquelize  pg sequelize-cli --save
 $ echo "" > .sequelizerc  
 
 
+### mongoose  
 
+[影片](https://youtu.be/7CqJlxBYj-M?t=1153)  
 
-
+.env  
 
 
 
