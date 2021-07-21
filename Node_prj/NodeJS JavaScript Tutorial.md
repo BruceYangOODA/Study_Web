@@ -5,7 +5,7 @@
 ### [Youtube WebSockets Tutorial (Node & Socket.io Chat App)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9i4V-_ZVwLmOusj8YAUhj_9)  
 ### [Youtube Express.js & Node.js Course for Beginners - Full Tutorial](https://www.youtube.com/watch?v=G8uL0lFFoN0&ab_channel=freeCodeCamp.org)  
 ### [Youtube Asynchronous JavaScript Course (Async/Await, Promises, Callbacks)](https://www.youtube.com/watch?v=ZYb_ZU8LNxs&ab_channel=freeCodeCamp.org)  
-
+### [Youtube Learn the MERN Stack - Full Tutorial (MongoDB, Express, React, Node.js)](https://www.youtube.com/watch?v=7CqJlxBYj-M&ab_channel=freeCodeCamp.org)  
 
 [http-video-stream](https://github.com/Abdisalan/blog-code-examples/tree/master/http-video-stream)  
 ## [index] 
