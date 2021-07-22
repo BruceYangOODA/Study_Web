@@ -1,4 +1,5 @@
 
+### [Youtube Learn HTML5 and CSS3 From Scratch - Full Course](https://www.youtube.com/watch?v=mU6anWqZJcc&ab_channel=freeCodeCamp.org)  
 ### [Youtube Build 15 JavaScript Projects - Vanilla JavaScript Course](https://www.youtube.com/watch?v=3PHXvlpOkf4&ab_channel=freeCodeCamp.org)  
 ### [Youtube Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg&ab_channel=freeCodeCamp.org)  
 ### [Youtube JavaScript Course for Beginners 2020 - Learn JavaScript from Scratch](https://www.youtube.com/watch?v=2qDywOS7VAc&ab_channel=Academind)  
@@ -10,10 +11,19 @@
 ### [Youtube E-Commerce JavaScript Tutorial - Shopping Cart from Scratch](https://www.youtube.com/watch?v=023Psne_-_4&ab_channel=freeCodeCamp.org)  
 
 
-[index]
+[index]  
+VsCodeExtension   
 Basic  
 Object  
 WebSocket  
+
+
+### VsCodeExtension   
+
+[影片](https://youtu.be/mU6anWqZJcc?t=718)  
+JavaScript (ES6) code snippets  
+JavaScript and TypeScript Nightly  
+Live Server  
 
 
 ### Basic
