@@ -24,6 +24,7 @@ WebSocket
 JavaScript (ES6) code snippets  
 JavaScript and TypeScript Nightly  
 Live Server  
+Prettier formatter  
 
 
 ### Basic
