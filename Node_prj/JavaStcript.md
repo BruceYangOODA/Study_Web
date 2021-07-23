@@ -26,6 +26,8 @@ JavaScript and TypeScript Nightly
 Live Server  
 Prettier formatter  
 
+[影片 VsCodeShortCut](https://youtu.be/mU6anWqZJcc?t=8193)  
+
 
 ### Basic
 
