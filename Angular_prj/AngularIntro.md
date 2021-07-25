@@ -6,10 +6,21 @@ ANGULAR 學習文檔
 ### [Youtube Angular 6 tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj)  
 
 ## [index]  
+install 
 base href  
 
 
 
+
+
+### install  
+
+[影片](https://youtu.be/7MD9n0yg1y0?list=PLEjh-YiSBCDLC_zhXQ2J5SkHrLHdmV8qc&t=195)  
+[NodeJsDownload](https://nodejs.org/en/)  
+$ npm install -g @angular/cli  
+$ ng new [SiteName]  
+$ cd [SiteName]  
+$ ng serve  
 
 
 ### base href  
