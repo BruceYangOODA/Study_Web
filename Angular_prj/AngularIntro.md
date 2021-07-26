@@ -10,7 +10,7 @@ ANGULAR 學習文檔
 ## [index]  
 install 
 base href  
-
+decorator  
 
 
 
@@ -32,11 +32,31 @@ index.html
 < base href="/">
 可以改變網站基礎 URI  
 
+### decorator  
+
+[影片](https://youtu.be/2OHbjep_WjQ?t=1122)  
+  
+使用 decorator 會自動傳參數,  
+第一參數 使用這個decorator 的物件,  
+第二參數 這個物件的名稱,  
+第三參數 這個物件傳入的參數  
+
+
+
+
+
+
+
+
+----------
 
 $ ng add @ng-bootstrap/ng-bootstrap
 $ ng add @ng-bootstrap/ng-bootstrap --project myProject
 
 https://www.youtube.com/watch?v=xgc1vnEcPCw&ab_channel=TechieOcean
+
+
+
 
 
 
