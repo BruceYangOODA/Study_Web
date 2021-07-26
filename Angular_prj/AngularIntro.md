@@ -11,7 +11,7 @@ ANGULAR 學習文檔
 install 
 base href  
 decorator  
-
+proxy  
 
 
 
@@ -42,8 +42,9 @@ index.html
 第三參數 這個物件傳入的參數  
 
 
+### proxy  
 
-
+[影片](https://youtu.be/2OHbjep_WjQ?t=6230)  
 
 
 
