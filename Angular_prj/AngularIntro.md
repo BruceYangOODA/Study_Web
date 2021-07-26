@@ -2,7 +2,9 @@ https://www.kancloud.cn/jony_ii/angular/945658
 ANGULAR 學習文檔
 
 
-### [Youtube Angular Course Online Free - Tutorial for Beginners](https://www.youtube.com/watch?v=N4MF3mDPFww&list=PLEjh-YiSBCDLC_zhXQ2J5SkHrLHdmV8qc&index=1&ab_channel=MonsterlessonsAcademy)  
+### [Youtube Angular Course Online Free - Tutorial for Beginners](https://www.youtube.com/watch?v=N4MF3mDPFww&list=PLEjh-YiSBCDLC_zhXQ2J5SkHrLHdmV8qc&index=1&ab_channel=MonsterlessonsAcademy) 
+### [Youtube Angular Crash Course 2021](https://www.youtube.com/watch?v=3dHNOWTI7H8&ab_channel=TraversyMedia)  
+### [Youtube Learn Angular - Full Tutorial Course](https://www.youtube.com/watch?v=2OHbjep_WjQ&t=15184s&ab_channel=freeCodeCamp.org)  
 ### [Youtube Angular 6 tutorial for beginners](https://www.youtube.com/playlist?list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj)  
 
 ## [index]  
