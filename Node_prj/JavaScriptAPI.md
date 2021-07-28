@@ -7,6 +7,7 @@
 ### Angular WebSockets Tutorial   
 ### needle  
 ### node-json-db  
+### discord.js  
 
 [Youtube MongoDB Tutorial - CRUD app from scratch using Node.js](https://www.youtube.com/watch?v=CyTWPr_WwdI&ab_channel=freeCodeCamp.org)  
 
@@ -131,3 +132,9 @@ http client module
 ### node-json-db
    
 [影片](https://youtu.be/KQya9i6czhM?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&t=414)  
+
+
+### discord.js  
+
+[影片 discord bot](https://youtu.be/BmKXBVdEV0g?&ab_channel=TraversyMedia&t=316)  
+[影片 discord.js](https://youtu.be/BmKXBVdEV0g?&ab_channel=TraversyMedia&t=704) 
