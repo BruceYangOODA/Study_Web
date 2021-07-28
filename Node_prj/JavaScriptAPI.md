@@ -5,7 +5,7 @@
 ### Socket.io-client    
 ### simple-peer  
 ### Angular WebSockets Tutorial   
-
+### needle  
 
 [Youtube MongoDB Tutorial - CRUD app from scratch using Node.js](https://www.youtube.com/watch?v=CyTWPr_WwdI&ab_channel=freeCodeCamp.org)  
 
@@ -121,3 +121,11 @@ constructor() {
 }  
 
 
+###  needle  
+
+http client module  
+[影片](https://youtu.be/PjjjhGW4ceM?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&t=648)  
+
+
+
+   
