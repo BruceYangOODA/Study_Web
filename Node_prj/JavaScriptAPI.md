@@ -57,10 +57,12 @@ http://localhost:4200/opendata/aaa 就會自動轉發到  http://localhost:3333/
 
 
 
-### Socket.io-client
+### Socket.io-client  
+[Youtube Realtime Chat With Users & Rooms - Socket.io, Node & Express](https://www.youtube.com/watch?v=jD7FnbI76Hg&list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&index=29)    
 [Youtube Building a chat application with Angular, Node js and Socket.IO](https://www.youtube.com/watch?v=h39ZhR7PUts&t=1826s&ab_channel=TheSwagCoder)  
 [Youtube Angular Socket.IO Tutorial](https://www.youtube.com/watch?v=n7OKfVwClE4&ab_channel=TutorialEdge)  
 [Youtube Socket.io - Angular :: How to connect to a Socket.io Server with Angular](https://youtu.be/66T2A2dvplY?t=123)  
+   
 
 npm install socket.io-client  
 npm install @types/socket.io-client  
