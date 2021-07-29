@@ -4,8 +4,20 @@
 [Loading IO 線上CCS樣式](https://loading.io/)  
 
 ##[index]  
+header fields  
+status codes  
 物件置中  
 改變滑鼠指標樣式  
+
+
+### header fields  
+
+[影片](https://youtu.be/iYM2zFP3Zn0?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&t=320)  
+
+
+### status codes  
+
+[影片](https://youtu.be/iYM2zFP3Zn0?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&t=585)  
 
 
 ### 物件置中  
