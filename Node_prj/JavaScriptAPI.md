@@ -8,6 +8,7 @@
 ### needle  
 ### node-json-db  
 ### discord.js  
+### couchdb  
 
 [Youtube MongoDB Tutorial - CRUD app from scratch using Node.js](https://www.youtube.com/watch?v=CyTWPr_WwdI&ab_channel=freeCodeCamp.org)  
 
@@ -140,3 +141,25 @@ http client module
 
 [影片 discord bot](https://youtu.be/BmKXBVdEV0g?&ab_channel=TraversyMedia&t=316)  
 [影片 discord.js](https://youtu.be/BmKXBVdEV0g?&ab_channel=TraversyMedia&t=704) 
+
+$ npm install discord.js  
+
+
+### couchdb  
+
+[影片](https://youtu.be/R6LUMXrAoCE?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&t=368)  
+
+$ npm install node-couchdb --save  
+
+
+
+
+
+
+
+
+
+
+
+
+
