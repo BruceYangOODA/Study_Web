@@ -13,6 +13,7 @@ mongoDB online
 gridfs-stream  
 koa  
 nodemailer  
+redis  
   
   
 [Youtube MongoDB Tutorial - CRUD app from scratch using Node.js](https://www.youtube.com/watch?v=CyTWPr_WwdI&ab_channel=freeCodeCamp.org)  
@@ -179,3 +180,9 @@ $ npm install node-couchdb --save
 ### nodemailer  
 
 [影片](https://youtu.be/nF9g1825mwk?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&t=101)  
+
+
+### redis  
+
+[影片](https://youtu.be/oaJq1mQ3dFI?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&t=376)  
+
