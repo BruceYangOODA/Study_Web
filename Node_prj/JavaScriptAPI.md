@@ -12,6 +12,7 @@ couchdb
 mongoDB online  
 gridfs-stream  
 koa  
+nodemailer  
   
   
 [Youtube MongoDB Tutorial - CRUD app from scratch using Node.js](https://www.youtube.com/watch?v=CyTWPr_WwdI&ab_channel=freeCodeCamp.org)  
@@ -173,3 +174,8 @@ $ npm install node-couchdb --save
 ### koa  
 
 [影片](https://youtu.be/z84uTk5zmak?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&t=607)  
+
+
+### nodemailer  
+
+[影片](https://youtu.be/nF9g1825mwk?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&t=101)  
