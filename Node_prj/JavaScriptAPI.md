@@ -9,6 +9,8 @@ needle
 node-json-db  
 discord.js  
 couchdb  
+mongoDB online  
+gridfs-stream  
   
   
 [Youtube MongoDB Tutorial - CRUD app from scratch using Node.js](https://www.youtube.com/watch?v=CyTWPr_WwdI&ab_channel=freeCodeCamp.org)  
@@ -154,13 +156,17 @@ $ npm install node-couchdb --save
 
 
 
+### mongoDB online  
+
+[影片](https://youtu.be/3f5Q9wDePzY?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&t=281)  
+[影片2](https://youtu.be/3f5Q9wDePzY?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&t=1160)  
+[WEB連結](https://mlab.com/welcome/)  
 
 
+### gridfs-stream  
 
-
-
-
-
+[影片](https://youtu.be/3f5Q9wDePzY?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&t=444)  
+[影片2](https://youtu.be/3f5Q9wDePzY?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&t=1299)  
 
 
 
