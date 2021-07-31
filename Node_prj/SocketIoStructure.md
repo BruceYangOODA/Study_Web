@@ -1,5 +1,12 @@
 
 
+### parseuri  
+[index.js](https://github.com/galkn/parseuri/blob/master/index.js)  
+
+### engine.io-client  
+[socket.js](https://github.com/socketio/engine.io-client/blob/master/lib/socket.js)  
+
+
 ### socket.io-client  
 [index.ts](https://github.com/socketio/socket.io-client/blob/master/lib/index.ts)  
 [socket.ts](https://github.com/socketio/socket.io-client/blob/master/lib/socket.ts)  
@@ -17,7 +24,6 @@ export interface DefaultEventsMap {
 
 export class Manager{  
 &nbsp; &nbsp; public engine: any;  
-&nbsp; &nbsp; private readonly uri: string;  
 &nbsp; &nbsp; constructor(uri?: string | Partial<ManagerOptions>,opts?: Partial<ManagerOptions>)  
 
 &nbsp; &nbsp; 
