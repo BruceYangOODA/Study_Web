@@ -10,6 +10,8 @@
 ### [Youtube JavaScript Project Tutorial: Shopping Cart](https://www.youtube.com/watch?v=q_TZhCWbS3I&ab_channel=freeCodeCamp.org)  
 ### [Youtube Javascript Project Tutorial: Budget App](https://www.youtube.com/watch?v=m_HJ3juuFvo&ab_channel=freeCodeCamp.org)  
 ### [Youtube E-Commerce JavaScript Tutorial - Shopping Cart from Scratch](https://www.youtube.com/watch?v=023Psne_-_4&ab_channel=freeCodeCamp.org)  
+### [Youtube Node Projects - Task Manager API](https://www.youtube.com/watch?v=jIsj0upCBAM&list=PLnHJACx3NwAdl4yeJF6LzjDiLyW1yF9Ds)  
+
 
 ### [HTML 标签参考手册](https://www.w3school.com.cn/tags/index.asp)  
 
