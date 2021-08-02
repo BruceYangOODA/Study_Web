@@ -1,17 +1,17 @@
 
-### [Youtube Learn HTML5 and CSS3 From Scratch - Full Course](https://www.youtube.com/watch?v=mU6anWqZJcc&ab_channel=freeCodeCamp.org)  
-### [Youtube Node.js Crash Course Tutorial](https://www.youtube.com/watch?v=zb3Qk8SG5Ms&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&ab_channel=TheNetNinja)  
-### [Youtube Introduction To Responsive Web Design - HTML & CSS Tutorial](https://www.youtube.com/watch?v=srvUrASNj0s&t=11s&ab_channel=freeCodeCamp.org)  
-### [Youtube Build 15 JavaScript Projects - Vanilla JavaScript Course](https://www.youtube.com/watch?v=3PHXvlpOkf4&ab_channel=freeCodeCamp.org)  
-### [Youtube Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg&ab_channel=freeCodeCamp.org)  
-### [Youtube JavaScript Course for Beginners 2020 - Learn JavaScript from Scratch](https://www.youtube.com/watch?v=2qDywOS7VAc&ab_channel=Academind)  
-### [Youtube Learn JavaScript by Building 7 Games - Full Course](https://www.youtube.com/watch?v=lhNdUVh3qCc&ab_channel=freeCodeCamp.org)   
-### [Youtube JavaScript Programming - Full Course](https://www.youtube.com/watch?v=jS4aFq5-91M&ab_channel=freeCodeCamp.org)  
-### [Youtube Advanced JavaScript Tutorial - Complete Series](https://www.youtube.com/playlist?list=PLvZkOAgBYrsSZiL0L7T-CBGdiBUaHok4x)  
-### [Youtube JavaScript Project Tutorial: Shopping Cart](https://www.youtube.com/watch?v=q_TZhCWbS3I&ab_channel=freeCodeCamp.org)  
-### [Youtube Javascript Project Tutorial: Budget App](https://www.youtube.com/watch?v=m_HJ3juuFvo&ab_channel=freeCodeCamp.org)  
-### [Youtube E-Commerce JavaScript Tutorial - Shopping Cart from Scratch](https://www.youtube.com/watch?v=023Psne_-_4&ab_channel=freeCodeCamp.org)  
-### [Youtube Node Projects - Task Manager API](https://www.youtube.com/watch?v=jIsj0upCBAM&list=PLnHJACx3NwAdl4yeJF6LzjDiLyW1yF9Ds)  
+[Youtube Learn HTML5 and CSS3 From Scratch - Full Course](https://www.youtube.com/watch?v=mU6anWqZJcc&ab_channel=freeCodeCamp.org)  
+[Youtube Node.js Crash Course Tutorial](https://www.youtube.com/watch?v=zb3Qk8SG5Ms&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&ab_channel=TheNetNinja)  
+[Youtube Introduction To Responsive Web Design - HTML & CSS Tutorial](https://www.youtube.com/watch?v=srvUrASNj0s&t=11s&ab_channel=freeCodeCamp.org)  
+[Youtube Build 15 JavaScript Projects - Vanilla JavaScript Course](https://www.youtube.com/watch?v=3PHXvlpOkf4&ab_channel=freeCodeCamp.org)  
+[Youtube Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg&ab_channel=freeCodeCamp.org)  
+[Youtube JavaScript Course for Beginners 2020 - Learn JavaScript from Scratch](https://www.youtube.com/watch?v=2qDywOS7VAc&ab_channel=Academind)  
+[Youtube Learn JavaScript by Building 7 Games - Full Course](https://www.youtube.com/watch?v=lhNdUVh3qCc&ab_channel=freeCodeCamp.org)   
+[Youtube JavaScript Programming - Full Course](https://www.youtube.com/watch?v=jS4aFq5-91M&ab_channel=freeCodeCamp.org)  
+[Youtube Advanced JavaScript Tutorial - Complete Series](https://www.youtube.com/playlist?list=PLvZkOAgBYrsSZiL0L7T-CBGdiBUaHok4x)  
+[Youtube JavaScript Project Tutorial: Shopping Cart](https://www.youtube.com/watch?v=q_TZhCWbS3I&ab_channel=freeCodeCamp.org)  
+[Youtube Javascript Project Tutorial: Budget App](https://www.youtube.com/watch?v=m_HJ3juuFvo&ab_channel=freeCodeCamp.org)  
+[Youtube E-Commerce JavaScript Tutorial - Shopping Cart from Scratch](https://www.youtube.com/watch?v=023Psne_-_4&ab_channel=freeCodeCamp.org)  
+[Youtube Node Projects - Task Manager API](https://www.youtube.com/watch?v=jIsj0upCBAM&list=PLnHJACx3NwAdl4yeJF6LzjDiLyW1yF9Ds)  
 
 
 ### [HTML 标签参考手册](https://www.w3school.com.cn/tags/index.asp)  
@@ -21,6 +21,7 @@ VsCodeExtension
 Basic  
 Object  
 WebSocket  
+Request  
 
 
 ### VsCodeExtension   
@@ -96,7 +97,9 @@ socket.onmessage = ({ data }) => { console.log("msg", data); }
 document.querySelector('button').onclick = () => { socket.send('hello'); }  
 
 
+### Request  
 
+[影片](https://youtu.be/Pm28JXFAu4Y?list=PLyuRouwmQCjnr-rRrhbPrS4YQ0brDQ-14&t=226)  
 
 
 
