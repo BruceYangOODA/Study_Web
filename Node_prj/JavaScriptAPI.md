@@ -15,7 +15,7 @@ koa
 nodemailer  
 redis  
 multer  
-
+puppeteer  
 
 
 [Youtube MongoDB Tutorial - CRUD app from scratch using Node.js](https://www.youtube.com/watch?v=CyTWPr_WwdI&ab_channel=freeCodeCamp.org)  
@@ -194,3 +194,6 @@ $ npm install node-couchdb --save
 [影片](https://youtu.be/9Qzmri1WaaE?list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&t=972)  
 
 
+### puppeteer  
+
+[影片 node 爬蟲 | puppeteer js](https://youtu.be/m25RkljTUfY?t=202)  
