@@ -149,7 +149,7 @@ http client module
 
 [影片 discord bot](https://youtu.be/BmKXBVdEV0g?&ab_channel=TraversyMedia&t=316)  
 [影片 discord.js](https://youtu.be/BmKXBVdEV0g?&ab_channel=TraversyMedia&t=704) 
-
+[影片 Code a Discord Bot with Python](https://www.youtube.com/watch?v=SPTfmiYiuok&pp=sAQA)  
 $ npm install discord.js  
 
 
