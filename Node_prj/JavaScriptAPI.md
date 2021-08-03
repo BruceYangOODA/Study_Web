@@ -197,3 +197,4 @@ $ npm install node-couchdb --save
 ### puppeteer  
 
 [影片 node 爬蟲 | puppeteer js](https://youtu.be/m25RkljTUfY?t=202)  
+[影片 Puppeteer Tutorial ](https://www.youtube.com/watch?v=lv316WcAVEQ&list=PL-hNDoK1-od_-4jX3ZL8LMpvlxmZ4cp10&ab_channel=KanielOutis)  
