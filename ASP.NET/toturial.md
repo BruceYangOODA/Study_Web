@@ -9,7 +9,7 @@
 
 ### Index  
 建立新專案  
-
+Sql Connection  
 
 
 
@@ -20,4 +20,20 @@
 Create a new project 建立新專案(N)  
 ASP.NET Core Web Application  
 (next)  
+
+
+### Sql Connection  
+
+[影片](https://youtu.be/Lrr66APUwBk?list=PL6n9fhu94yhVm6S8I2xd6nYz2ZORd7X2v&t=114)  
+
+安裝套件 EntityFramework  
+在Models 新增資料模型class, 資料庫連接class  
+Employee.cs  
+EmployeeContext.cs  
+
+using System.Data.Entity;  
+public class EmployeeContext : DbContext{  
+&nbsp; &nbsp; public DbSet<Employee> Employees { get; set; }  
+}  
+
 
