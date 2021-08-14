@@ -36,4 +36,8 @@ public class EmployeeContext : DbContext{
 &nbsp; &nbsp; public DbSet<Employee> Employees { get; set; }  
 }  
 
+Web.config  
+<connectionStrings>  
+<add name="EmployeeContext" connectionString="server=.; database=Sample; integrated security=SSPI" providerName="System.Data.SqlClient"/>
+</connectionStrings>  
 
