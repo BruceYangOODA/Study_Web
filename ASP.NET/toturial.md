@@ -11,9 +11,10 @@
 
 ### Index  
 建立新專案  
+Extension Package  
+CSS  
+RouteConfig  
 Sql Connection  
-
-
 
 
 ### 建立新專案  
@@ -23,6 +24,28 @@ Create a new project 建立新專案(N)
 ASP.NET Core Web Application  
 (next)  
 
+
+### Extension Package  
+
+[影片](https://youtu.be/E7Voso411Vs?t=369)  
+
+Productivity Power Tools  
+Web Essentials  
+
+
+### CSS  
+
+[影片](https://youtu.be/E7Voso411Vs?t=1312)  
+[bootswatch](https://bootswatch.com/)  
+
+App_Start -> BundleConfig.cs  
+
+### RouteConfig  
+
+[影片](https://youtu.be/E7Voso411Vs?t=2292)  
+App_Start -> RouteConfig.cs  
+routes.MapMvcAttributeRoutes();  
+routes.MapRoute();  
 
 ### Sql Connection  
 
