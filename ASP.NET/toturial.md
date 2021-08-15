@@ -1,8 +1,8 @@
 
+
+[Youtube Learn MVC Model view controller Step by Step](https://www.youtube.com/watch?v=_323VsR-Th0&list=PL33C9E91F8CDD2BF7&index=1&ab_channel=.NETInterviewPreparationvideos)  
 [Youtube Step-by-step ASP.NET MVC Tutorial for Beginners](https://www.youtube.com/watch?v=E7Voso411Vs&ab_channel=ProgrammingwithMosh)  
-
 [Youtube ASP.NET MVC Tutorial](https://www.youtube.com/watch?v=-pzwRwYlXMw&list=PL6n9fhu94yhVm6S8I2xd6nYz2ZORd7X2v&ab_channel=kudvenkat)  
-
 [Youtube Learn ASP.NET Core 3.1 - Full Course for Beginners](https://www.youtube.com/watch?v=C5cnZ-gZy2I&ab_channel=freeCodeCamp.org)  
 
 
@@ -15,6 +15,7 @@ Extension Package
 CSS  
 RouteConfig  
 Sql Connection  
+Sql Connection2  
 
 
 ### 建立新專案  
@@ -74,4 +75,16 @@ Web.config
 < connectionStrings>  
 < add name="EmployeeContext" connectionString="server=.; database=Sample; integrated security=SSPI" providerName="System.Data.SqlClient"/>
 < /connectionStrings>  
+
+
+### Sql Connection2  
+
+[影片](https://youtu.be/3pEax-5wXG8?t=191)  
+
+App_Data -> Add Item -> Sql Server -> add new table  
+
+Models -> Add Item -> ADO.NET Entity Data Model -> EF Designer from database   
+
+
+
 
