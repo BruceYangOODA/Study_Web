@@ -123,4 +123,11 @@ public static int SaveData<T>(string sql, T data) {
 &nbsp; &nbsp; return cnn.Execute(sql, data);  
 }  }  
 
+Add Item -> class ModelClassDataPiper    
+
+public static class ModelClassDataPiper {  
+&nbsp; public static List<Employee> LoadEmployees() {  
+&nbsp; &nbsp; string sql = "select Id, Name, Gender, City from dbo.tblEmployee;";  
+&nbsp; &nbsp; return SqlDataAccess.LoadData<Employee>(sql);  
+}  }  
 
