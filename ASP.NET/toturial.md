@@ -76,6 +76,9 @@ Web.config
 < add name="EmployeeContext" connectionString="server=.; database=Sample; integrated security=SSPI" providerName="System.Data.SqlClient"/>
 < /connectionStrings>  
 
+Global.asax  
+
+Database.SetInitialLizer<PACKAGE.Models.XXXContext>(null);  
 
 ### Sql Connection2  
 
