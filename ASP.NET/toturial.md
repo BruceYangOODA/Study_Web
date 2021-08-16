@@ -17,6 +17,7 @@ CSS
 RouteConfig  
 Sql Connection  
 Sql Connection2  
+Sql Connection3  
 
 
 ### 建立新專案  
@@ -90,5 +91,36 @@ App_Data -> Add Item -> Sql Server -> add new table
 Models -> Add Item -> ADO.NET Entity Data Model -> EF Designer from database   
 
 
+### Sql Connection3  
+
+[影片](https://youtu.be/bIiEv__QNxw?t=210)  
+Solution -> Add -> add project -> SQL Server Database project -> DB_NAME -> Create   
+
+[影片](https://youtu.be/bIiEv__QNxw?t=2010)  
+DB_NAME -> Add document -> DOCUMENT_NAME ->  Add Table -> TABLE_NAME -> SQL_SCHEMA   
+
+[影片](https://youtu.be/bIiEv__QNxw?t=2321)  
+ConnectionStrings -> 
+< add name="DB_NAME" connectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DB_NAME;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"/>  
+
+[影片](https://youtu.be/bIiEv__QNxw?t=2724)  
+Add Item -> class SqlDataAccess  
+
+using System.Configuration;  
+using System.Data;  
+using System.Data.SqlClient;  
+
+public static string GetConnectionString(string connectionName = DB_NAME) {  
+&nbsp; return ConfigurationManager.ConnectionStrings[connectionName].ConnectionString;  }  
+
+public static List<T> LoadData<T>(string sql) {  
+&nbsp; using (IDbConnection cnn = new SqlConnection(GetConnectionString())) {  
+&nbsp; &nbsp; return cnn.Query<T>(sql).ToList();
+}  }  
+
+public static int SaveData<T>(string sql, T data) {  
+&nbsp; using (IDbConnection cnn = new SqlConnection(GetConnectionString())) {  
+&nbsp; &nbsp; return cnn.Execute(sql, data);  
+}  }  
 
 
