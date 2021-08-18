@@ -19,6 +19,7 @@ RouteConfig
 Sql Connection  
 Sql Connection2  
 Sql Connection3  
+Html Helper  
 
 
 ### 建立新專案  
@@ -132,3 +133,15 @@ public static class ModelClassDataPiper {
 &nbsp; &nbsp; return SqlDataAccess.LoadData<Employee>(sql);  
 }  }  
 
+
+### Html Helper  
+
+[影片](https://youtu.be/QVLYMsYbtEw?list=PLaFzfwmPR7_JuVN71I9pEpN8JadDTh0rg&t=217)  
+Html.ActionLink   
+Html.TextBox  
+Html.CheckBox  
+Html.RadioButton  
+Html.DropDownList  
+Html.Hidden  
+Html.BeginForm  
+Html.EndForm  
