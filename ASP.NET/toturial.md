@@ -1,5 +1,6 @@
 
 
+[Youtube Asp.Net MVC Tutorial For Beginners](https://www.youtube.com/watch?v=fN0PZMI5VhU&list=PLaFzfwmPR7_JuVN71I9pEpN8JadDTh0rg&index=1&ab_channel=WebGentle)  
 [Youtube ASP.NET MVC Data Access in C#](https://www.youtube.com/watch?v=bIiEv__QNxw&ab_channel=IAmTimCorey)  
 [Youtube Learn MVC Model view controller Step by Step](https://www.youtube.com/watch?v=_323VsR-Th0&list=PL33C9E91F8CDD2BF7&index=1&ab_channel=.NETInterviewPreparationvideos)  
 [Youtube Step-by-step ASP.NET MVC Tutorial for Beginners](https://www.youtube.com/watch?v=E7Voso411Vs&ab_channel=ProgrammingwithMosh)  
