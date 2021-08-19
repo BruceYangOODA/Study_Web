@@ -16,7 +16,7 @@ nodemailer
 redis  
 multer  
 puppeteer  
-mssql  
+msnodesqlv8    
 
 [Youtube MongoDB Tutorial - CRUD app from scratch using Node.js](https://www.youtube.com/watch?v=CyTWPr_WwdI&ab_channel=freeCodeCamp.org)  
 
@@ -200,12 +200,20 @@ $ npm install node-couchdb --save
 [影片 Puppeteer Tutorial ](https://www.youtube.com/watch?v=lv316WcAVEQ&list=PL-hNDoK1-od_-4jX3ZL8LMpvlxmZ4cp10&ab_channel=KanielOutis)  
 
 
-### mssql  
+### msnodesqlv8  
 
-[影片](https://youtu.be/ReK0kscoF8o?t=1209)  
+[API](https://www.npmjs.com/package/msnodesqlv8)  
 
-$ npm install mssql -s  
+$ npm install msnodesqlv8 --save  
 
+const sql = require('msnodesqlv8')  
+const connectionString = "server=(LocalDb)\\MSSQLLocalDB;Database=Sample;Trusted_Connection=Yes;Driver={SQL Server Native Client 11.0}";  
+const query = "SELECT * FROM tblDepartment";  
+sql.open(connectionString, (err, con) =>{  
+&nbsp; con.query(query, (err, rows) => {  
+&nbsp; console.log(`rows.length ${rows.length} `)   
+&nbsp; console.log(rows)  
+})  })  
 
 
 
