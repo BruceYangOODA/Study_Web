@@ -16,7 +16,7 @@ nodemailer
 redis  
 multer  
 puppeteer  
-
+mssql  
 
 [Youtube MongoDB Tutorial - CRUD app from scratch using Node.js](https://www.youtube.com/watch?v=CyTWPr_WwdI&ab_channel=freeCodeCamp.org)  
 
@@ -198,3 +198,20 @@ $ npm install node-couchdb --save
 
 [影片 node 爬蟲 | puppeteer js](https://youtu.be/m25RkljTUfY?t=202)  
 [影片 Puppeteer Tutorial ](https://www.youtube.com/watch?v=lv316WcAVEQ&list=PL-hNDoK1-od_-4jX3ZL8LMpvlxmZ4cp10&ab_channel=KanielOutis)  
+
+
+### mssql  
+
+[影片](https://youtu.be/ReK0kscoF8o?t=1209)  
+
+$ npm install mssql -s  
+
+
+
+
+
+
+
+
+
+
