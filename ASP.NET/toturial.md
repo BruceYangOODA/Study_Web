@@ -19,6 +19,7 @@ RouteConfig
 Sql Connection  
 Sql Connection2  
 Sql Connection3  
+Sql Connection4  
 Html Helper  
 
 
@@ -133,6 +134,10 @@ public static class ModelClassDataPiper {
 &nbsp; &nbsp; return SqlDataAccess.LoadData<Employee>(sql);  
 }  }  
 
+
+### Sql Connection4   
+
+[影片](https://www.youtube.com/watch?v=K4x6eoG7hwY&ab_channel=SeeSharpCode)  
 
 ### Html Helper  
 
