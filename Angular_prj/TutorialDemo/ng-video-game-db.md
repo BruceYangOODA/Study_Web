@@ -30,8 +30,7 @@ body * {
 @ home.component.scss  
 
 ::ng-deep {  
-        .mat-form-field-infix { background-color: #3f51b5; }  
-
+        .mat-form-field-infix { background-color: #3f51b5; }    
         .mat-select-value,  
         .mat-select-arror,  
         .mat-form-field-hide-placeholder  
@@ -40,19 +39,16 @@ body * {
         .mat-form-field-label {  
             color: #fff !important;  
             opacity:1;  
-        }  
-  
+        }    
         .mat-form-field-infix {  
             color: #fff !important;  
             border-top: none;  
             padding-left: 5px !important;  
-        }  
-  
+        }    
         .mat-form-field-appearance-legacy  
         .mat-form-field-label {  
             padding-left: 5px;  
-        }  
-  
+        }    
         .mat-form-field-appearance-legacy  
         .mat-form-field-underline {  
             background-color: #fff !important;  
