@@ -1,5 +1,6 @@
 
-[Angular 11 Tutorial - Code a Project from Scratch](https://www.youtube.com/watch?v=LiOzTQAz13Q&ab_channel=freeCodeCamp.org)  
+[Youtube Angular 11 Tutorial - Code a Project from Scratch](https://www.youtube.com/watch?v=LiOzTQAz13Q&ab_channel=freeCodeCamp.org)  
+[Github NgVideoGameDb](https://github.com/bobangajicsm/ng-video-games-db)  
 
 $ ng new ng-video-game-db  
 $ ng add @angular/material  
