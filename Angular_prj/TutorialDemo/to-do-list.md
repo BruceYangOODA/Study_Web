@@ -5,9 +5,18 @@
 
 [Web 從本地JSON檔案撈資料](https://www.techiediaries.com/angular-local-json-files/)  
 
+@ proxyconfig.json  
+{  
+    "/api":{  
+        "target": "http://localhost:3000",  
+        "secure": false,  
+        "changeOrigin": true  
+    }  
+}  
+
 @ service.ts  
 getTodo(): Observable<Todo[]> {  
-    return this.http.get<Todo[]>("assets/todo.json");  
+    return this.http.get<Todo[]>("/api");  
   }  
 
 @ component.ts  
