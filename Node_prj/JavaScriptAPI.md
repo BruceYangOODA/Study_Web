@@ -225,5 +225,9 @@ const upload = require('express-fileupload')
 const app = require('express')()  
 app.use(upload())  
 
-if (req.files) { }  
+if (req.files) {  
+&nbsp; let file = req.files.file  
+&nbsp; file.mv('./uploads'+file.name, (err) => {  
+&nbsp; &nbsp; if(err) console.log(err)
+})  }  
 
