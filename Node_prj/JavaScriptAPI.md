@@ -17,6 +17,7 @@ redis
 multer  
 puppeteer  
 msnodesqlv8    
+express-fileupload  
 
 [Youtube MongoDB Tutorial - CRUD app from scratch using Node.js](https://www.youtube.com/watch?v=CyTWPr_WwdI&ab_channel=freeCodeCamp.org)  
 
@@ -216,10 +217,13 @@ sql.open(connectionString, (err, con) =>{
 })  })  
 
 
+### express-fileupload  
 
+[Youtube How to Upload Files to Node.js Express Server Using Express FileUpload Library](https://youtu.be/ymO_r1hcIXk?t=235)  
 
+const upload = require('express-fileupload')  
+const app = require('express')()  
+app.use(upload())  
 
-
-
-
+if (req.files) { }  
 
