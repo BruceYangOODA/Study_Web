@@ -15,7 +15,7 @@ InjectionToken
 
 import { InjectionToken } from '@angular/core';  
 export let ROUTES_CONFIG = new InjectionToken('這個檔案的名稱');  
-export const 物件名稱: 類型 = {}  
+const 物件名稱: 類型 = {}  
 
 引用:  
 import { RoutesConfig } from './configs/routes.config';  
