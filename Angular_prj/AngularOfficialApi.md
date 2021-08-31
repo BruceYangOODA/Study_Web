@@ -1,12 +1,16 @@
 
 ## index
 
+i18n 國際化方案  
+
 InjectionToken  
 
 
 
+### i18n 國際化方案  
 
-
+[介紹](https://segmentfault.com/a/1190000015311981)  
+[Angular i18n 教學](https://jimmyswebnote.com/angular-i18n/)  
 
 
 
