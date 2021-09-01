@@ -2,7 +2,7 @@
 ## index
 
 i18n 國際化方案  
-
+Flex-Layout  
 InjectionToken  
 
 
@@ -64,6 +64,21 @@ public selectLanguage(event: any) {
     "title": "國際化",  
     "welcome": "歡迎"  
 }  
+
+
+### Flex-Layout  
+
+[介紹](https://blog.poychang.net/use-angular-flex-layout-package/)  
+
+$ npm install @angular/flex-layout  
+
+import {FlexLayoutModule} from '@angular/flex-layout';  
+ @NgModule({  
+   imports: [FlexLayoutModule],  
+   ...  
+ })  
+
+
 
 ### InjectionToken  
 [官方API](https://angular.io/api/core/InjectionToken)  
