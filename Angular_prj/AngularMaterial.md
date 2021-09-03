@@ -686,6 +686,11 @@ const MaterailComponents = [ MatTableModule ]
 [STACK How to use MatPaginatorIntl](https://stackoverflow.com/questions/46869616/how-to-use-matpaginatorintl)  
 [STACK Change MatPaginatorIntl itemsPerPageLabel dynamically](https://stackoverflow.com/questions/59354256/change-matpaginatorintl-itemsperpagelabel-dynamically)    
 
-
+translateLabels() {
+    super.itemsPerPageLabel = this.translate.instant('paginator.items_per_page');
+    super.nextPageLabel = this.translate.instant('paginator.next_page');
+    super.previousPageLabel = this.translate.instant('paginator.previous_page');
+    this.changes.next();
+  }
 
 
