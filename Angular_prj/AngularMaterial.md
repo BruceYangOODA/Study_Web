@@ -32,6 +32,7 @@ MatSnackBar
 dialog  
 mat-table  
 cdk-virtual-scroll  
+mat-paginator  
 
 
 ### install  
@@ -680,8 +681,5 @@ const MaterailComponents = [ MatTableModule ]
 [影片 Virtual Scrolling](https://youtu.be/jo2Gvw8tC_s?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&t=94)  
 
 
+### mat-paginator  
 
-
-
-
-< mat-divider>< /mat-divider> 等同於 hr  
