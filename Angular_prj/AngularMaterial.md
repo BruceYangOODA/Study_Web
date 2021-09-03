@@ -684,3 +684,8 @@ const MaterailComponents = [ MatTableModule ]
 ### mat-paginator  
 
 [STACK How to use MatPaginatorIntl](https://stackoverflow.com/questions/46869616/how-to-use-matpaginatorintl)  
+[STACK Change MatPaginatorIntl itemsPerPageLabel dynamically](https://stackoverflow.com/questions/59354256/change-matpaginatorintl-itemsperpagelabel-dynamically)    
+
+
+
+
