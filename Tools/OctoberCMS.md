@@ -4,6 +4,7 @@
 [Youtube Install XAMPP In Windows 7](https://www.youtube.com/watch?v=zZ6NQRUYR2E&ab_channel=TraversyMedia)  
 [Youtube How to Install Composer on Windows](https://www.youtube.com/watch?v=BGyuKpfMB9E&ab_channel=TubeMint)  
 
+[Github Installation Wizard for October CMS v1.0](https://github.com/octobercms/install)   
 [XAMPP Apache MariaDB PHP Perl Download](https://www.apachefriends.org/download.html)  
 [Composer Download](https://getcomposer.org/download/)  
 
