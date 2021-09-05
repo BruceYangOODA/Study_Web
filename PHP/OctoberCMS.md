@@ -10,13 +10,11 @@
 
 [Web xampp設定mysql密碼後phpmyadmin無法登入的解決方法](http://wordpress.bestdaylong.com/blog/archives/5753)  
 
-[Composer Download](https://getcomposer.org/download/)  
+
 $ cd c:\\xampp\htdocs\myoctober   
 unzip [Github Installation Wizard for October CMS v1.0](https://github.com/octobercms/install)    
 XAMPP Control Panel   start Apache    
 localhost:$PORT/myoctober/install.php      
-$ cd c:\\xampp\htdocs\myoctober\vendor\composer\installers       
-$ composer install    
 
 
 
@@ -24,4 +22,8 @@ $ composer install
 
 //$ composer create-project october/october testoctober dev-master   
 //$ cd myoctober    
-//$ php artisan october:instal    
+//$ php artisan october:instal   
+//$ cd c:\\xampp\htdocs\myoctober\vendor\composer\installers  
+//$ composer install    
+
+[Composer Download](https://getcomposer.org/download/)  
