@@ -10,7 +10,7 @@
 
 [Web xampp設定mysql密碼後phpmyadmin無法登入的解決方法](http://wordpress.bestdaylong.com/blog/archives/5753)  
 
-$ cd c:\\xampp\htdocs\testoctober   
+$ cd c:\\xampp\htdocs\myoctober   
 unzip [Github Installation Wizard for October CMS v1.0](https://github.com/octobercms/install)    
 XAMPP Control Panel   start Apache    
 localhost:$PORT/testoctober/install.php      
