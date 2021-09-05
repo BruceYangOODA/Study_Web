@@ -15,8 +15,8 @@ $ cd c:\\xampp\htdocs\myoctober
 unzip [Github Installation Wizard for October CMS v1.0](https://github.com/octobercms/install)    
 XAMPP Control Panel   start Apache    
 localhost:$PORT/myoctober/install.php      
-
-
+$ cd c:\\xampp\htdocs\myoctober\vendor\composer\installers       
+$ composer install    
 
 
 
