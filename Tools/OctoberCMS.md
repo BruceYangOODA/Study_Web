@@ -6,10 +6,11 @@
 
 [Github Installation Wizard for October CMS v1.0](https://github.com/octobercms/install)   
 [XAMPP Apache MariaDB PHP Perl Download](https://www.apachefriends.org/download.html)  
-[Composer Download](https://getcomposer.org/download/)  
+
 
 [Web xampp設定mysql密碼後phpmyadmin無法登入的解決方法](http://wordpress.bestdaylong.com/blog/archives/5753)  
 
+[Composer Download](https://getcomposer.org/download/)  
 $ cd c:\\xampp\htdocs\myoctober   
 unzip [Github Installation Wizard for October CMS v1.0](https://github.com/octobercms/install)    
 XAMPP Control Panel   start Apache    
