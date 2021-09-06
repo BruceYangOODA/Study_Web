@@ -6,3 +6,10 @@
 [Web Laravel 入门指南](https://learnku.com/laravel/wikis/7227)    
 
 
+
+
+Installation    
+$ cd C:/xampp/htdocs
+$ composer create-project laravel/laravel example-app   
+
+
