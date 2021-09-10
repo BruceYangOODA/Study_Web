@@ -13,6 +13,6 @@ color 顏色
 :visited    
 
 ### selector    
-\>   子元素   
+\>   子元素   例如 ul > li   
 
 
