@@ -12,5 +12,7 @@ color 顏色
 :link   
 :visited    
 
+### selector    
+>   子元素   
 
 
