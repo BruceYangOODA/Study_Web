@@ -1,6 +1,8 @@
 
 [Youtube CSS Tutorial - Zero to Hero](https://www.youtube.com/watch?v=1Rs2ND1ryYc&ab_channel=freeCodeCamp.org)   
-
+[Youtube Build Glass Website with HTML and CSS Tutorial](https://www.youtube.com/watch?v=O7WbVj5apxU&ab_channel=DevEd)        
+[Youtube Learn HTML5 and CSS3 For Beginners - Crash Course](https://www.youtube.com/watch?v=vQWlgd7hV4A&ab_channel=DevEd)   
+[Youtube CSS Crash Course For Absolute Beginners](https://www.youtube.com/watch?v=yfoY53QXEnI&ab_channel=TraversyMedia)   
 CSS => Cascading Style Sheet    
 
 
