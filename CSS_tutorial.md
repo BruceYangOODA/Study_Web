@@ -32,6 +32,7 @@ text-decoration: underline;底線 line-through;畫線 overline;頂線 none;
 text-transform: uppercase;大寫 lowercase;小寫       
 text-align: center; left; right; justify;         
 
+
 ### box-model           
 
 border: 2px solid rgb(123, 123, 123);           
@@ -43,18 +44,86 @@ float: left; right;
 display: none;消失          
 display: inline-block;排成橫排             
 
+
 ### flex-box            
 
 display: flex;box內容會自動排成橫排    
 flex-direction: row;預設 -reverse 內容物從尾開始放置          
 flex-direction: column-reverse;           
 flex-wrap: wrap;推疊的時候往下排 wrap-reverse;堆疊的時候往上排   
+
+flex-grow: 1; 5;  當畫面變大時，比其他元素大 5倍;    
+flex-shrink: 0; 當畫面變小時，不要改變這個元素的比例大小 3; 當畫面變小時，縮小3倍    
+flex-basis: 200px; flex-box初始值    
+flex: 1 3 200px;  1 -> flex-grow; 3 -> flex-shrink; 200px -> flex-basis;    
+
 justify-content: center;置中 flex-end;靠右 space-between; space-around;       
 align-items: center;上下左右置中 flex-start;靠上 flex-end;置底 stretch;元素拉長至底部        
 order: 1; 2; 3; 4; 自訂元素排序           
 
+align-self: flex-start; 只有這個元素靠上 flex-end;置底  center;置中   
 
 
+### Grid    
+
+display: grid;box內容會自動排成表格     display: flex;box內容會自動排成橫排   
+grid-template-colimns: 10px 50px 20px; C1寬10px C2寬50px C3寬20px    
+grid-template-rows: 50px 250px; R1長50px R2長250px   
+grid-template-colimns: auto auto auto;    
+grid-template-rows: auto auto;    
+
+justify-content: start;靠左 end;靠右 center;置中 space-evenly; space-around;      
+align-content: start;置頂 end;置底 center;置中 space-between; space-evenly;     
+
+grid-row-gap: 300px; row之間隔300px    
+gird-gap: 300px 150px; row隔300px col隔150px    
+
+grid-column: 1 / 3; col範圍起自2,結束於3(佔col兩格)      
+grid-row: 2 / 4; row範圍起自2,結束於4(佔row兩格)    
+grid-column: 1 / span 2; col範圍起自1,結束於3(佔col兩格)      
+grid-row: 2 / span 2; row範圍起自2,結束於4(佔row兩格)    
+
+grid-area: 2 / 1 / span 2 / span 2;   
+row範圍起自2,結束於4(佔row兩格)    
+col範圍起自1,結束於3(佔col兩格)      
+
+### transition    
+
+[影片](https://youtu.be/1Rs2ND1ryYc?t=17345)    
+
+.submit-button {    
+transition: background 2s ease-in-out 1s;2秒後變色  離開:hover1秒後變色     
+transition: background 3s ease;   
+transition: all 500ms ease;   
+}   
+
+.submit-button:hover {    
+background: rgb(147,187,255);   
+}   
+
+### transform   
+
+[影片](https://youtu.be/1Rs2ND1ryYc?t=18015)    
+
+.submit-button{   
+transform: translate(50px ,30px);拉長x,y 50px,30px   
+transform: scale(2.5);變大2.5倍    
+transform: rotate(-45deg);向左選轉45度    
+transform: skewY(-45deg);向左斜轉45度,以Y軸為基準       
+}   
+
+
+### side-bar    
+
+[影片](https://youtu.be/1Rs2ND1ryYc?t=20854)    
+display: grid;    
+grid-template-columns: 70% 30%;主頁70% side-bar30%   
+grid-gap: 50px;   
+
+### animation   
+
+[影片](https://youtu.be/1Rs2ND1ryYc?t=19018)    
+[影片2](https://youtu.be/1Rs2ND1ryYc?t=19797)   
 
 ### pseudo-class 虛擬類別    
 
