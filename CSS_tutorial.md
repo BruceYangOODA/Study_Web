@@ -187,8 +187,12 @@ background: rgb(147,187,255);
 ### video   
 
 [影片](https://youtu.be/vQWlgd7hV4A?t=2416)    
+[影片2](https://youtu.be/pQN-pnXPaVg?t=4616)   
 
 < video controls 播放鍵,時間條      
+poster="thumbs.jpg" 影片預設縮圖    
+loop 影片重複      
+
 < source src="./video.mp4"
 
-
+< iframe 
