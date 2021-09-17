@@ -1,9 +1,19 @@
 
 
+-webkit- Chrome等瀏覽器   
+-moz- Firefox   
+-ms- Microsoft Internet Explorer    
+
+
 ### Index   
 box   
 font    
 img   
+table   
+transform   
+
+
+
 
 ### box   
 
@@ -80,8 +90,25 @@ vertical-align: top;
 }   
 
 
+### table   
+
+border-spacing: 0;邊界    
+border-collapse: separate;預設,有雙重邊線        
+border-collapse: collapse;沒有雙重邊線,消除間隙  
+empty-cells: hide;隱藏無資料空格  
+text-align: left; center; right; justified;    
+vertical-align: top; middle; bottom; baseline;    
 
 
+### transform    
 
+transform: rotate(角度);旋轉    
+transform: scale(倍率);縮放   
+transform: translate(x, y);位移   
+transform: skew(角度, 角度);傾斜    
+transform-origin: 0 0; left top; 0% 0%; 水平位置 垂直位置   
 
+transition-duration: .5s;過場時間   
+transition-timing-function: linear; ease; ease-in; ease-put; ease-in-out;   
+transition-delay: .5s;    
 
