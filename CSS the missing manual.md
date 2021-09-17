@@ -56,7 +56,9 @@ p::first-line {} 首行
 
 ### img   
 
+background-blend-mode: screen;混合複數背景圖   
 background-image: url('images/bg.png');   
+background-image: linear-gradient();漸層背景    
 background-repeat: repeat 重複; no-repeat; repeat-x; repeat-y;      
 background-repeat: round; 重複加延展 space; 重複加間距    
 background-position: left center;   
@@ -64,11 +66,18 @@ background-position: 6px 8px;
 background-attachment: scroll; fixed;拉動滾軸背景圖不動    
 background-origin: 圖像呈現起始點 border-box; 邊線左上角 padding-box;從padding區開始    
 background-origin: content-box;內容區    
+background-size: contain;填滿元素背景區域,並維持圖像比例   
+
 border-radius: 50%;以圓形呈現    
 
+< figue> < img src="">       
+< figcaption>圖片說明< /figcaption>   
+< /figue>
 
-
-
+figure {  
+display: inline-block;    
+vertical-align: top;    
+}   
 
 
 
