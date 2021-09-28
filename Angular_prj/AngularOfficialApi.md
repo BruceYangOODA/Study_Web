@@ -2,6 +2,7 @@
 ## index
 
 i18n 國際化方案  
+ngx-translate  
 Flex-Layout  
 InjectionToken  
 
@@ -10,17 +11,24 @@ InjectionToken
 ### i18n 國際化方案  
 
 [官方 API](https://angular.io/guide/i18n)  
-[Youtube Angular Internationalization i18n - Using ngx-translate](https://www.youtube.com/watch?v=jCvsy4XSOEQ&ab_channel=Genka)  
-[Multilingual angular 8 apps with ngx-translate](https://www.youtube.com/watch?v=KCC5-PKBg4M&t=577s&ab_channel=BlackBoxTech)  
 [介紹](https://segmentfault.com/a/1190000015311981)  
 [Angular i18n 教學](https://jimmyswebnote.com/angular-i18n/)  
+
+-- $ ng extract-i18n --output-path src/locale  
+-- $ ng xi18n
+-- $ ng add @angular/localize  
+
+
+### ngx-translate  
+
+[Youtube Angular Internationalization i18n - Using ngx-translate](https://www.youtube.com/watch?v=jCvsy4XSOEQ&ab_channel=Genka)  
+[Multilingual angular 8 apps with ngx-translate](https://www.youtube.com/watch?v=KCC5-PKBg4M&t=577s&ab_channel=BlackBoxTech)  
+[TranslateModule.forRoot should not be put in SharedModule](https://github.com/ngx-translate/core/issues/209)   
 
 
 $ npm install @ngx-translate/core  
 $ npm install @ngx-translate/http-loader  
--- $ ng extract-i18n --output-path src/locale  
--- $ ng xi18n
--- $ ng add @angular/localize  
+
 
 @ shared.module.ts  
 import { HttpClientModule, HttpClient } from '@angular/common/http';  
@@ -90,8 +98,5 @@ const 物件名稱: 類型 = {}
 引用:  
 import { RoutesConfig } from './configs/routes.config';  
 ROUTES_CONFIG.物件名稱  
-
-
-
 
 
