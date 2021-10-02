@@ -4,6 +4,7 @@
 viewport    
 media query   
 grid-system   
+text-effect   
 
 
 ### viewport    
@@ -35,6 +36,32 @@ user-scalable=no"   是否允許使用者進行縮放
 
 .col-md-9 col-md-push-3  將前面3格往後推 3:9   
 .col-md-3 col-md-pull-9  將後面9格往前拉 3:9    
+
+
+### text-effect    
+
+< mark>  標記文字,底光    
+< del> 刪除文字區塊    
+< s> 刪除線效果    
+< ins> 插入文字   
+< u> 底線   
+< small> 較小文字   
+< strong> 粗體    
+< em> 斜體    
+
+< text-left>      
+< text-center>    
+< text-right>   
+< text-justify>  平均對齊文字   
+< text-nowrap>   不換行文字    
+
+< text-lowercase>   
+< text-uppercase>   
+< text-capitalize>    
+
+< blockquote> 引用   
+
+
 
 
 
