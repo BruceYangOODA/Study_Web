@@ -38,7 +38,8 @@ Navigation
 --資料物件刪除 
 NgContent  
 HttpClient  
-catchError  
+catchError    
+Http Interceptor request錯誤攔截     
 
 </br>  
 ### Angular 6 tutorial for beginners
@@ -1140,5 +1141,10 @@ click方法() : void {
 
 ### Grouping routes and creating component less route in angular  
 [影片 Grouping routes and creating component less route in angular](https://www.youtube.com/watch?v=BkLqyr4VHmw&list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj&index=35&ab_channel=kudvenkatkudvenkat%E5%B7%B2%E9%A9%97%E8%AD%89)  
+
+
+### Http Interceptor    
+[Youtube Modify Headers, Catch Errors and Trace Requests](https://www.youtube.com/watch?v=Q8hm0vilhUU&ab_channel=RomanianCoder)    
+
 
 
