@@ -6,6 +6,11 @@
 Output decorator  
 ViewChild decorator  
 Host selector  
+ng-content  
+pipe  
+
+
+
 
 
 
@@ -51,6 +56,39 @@ C.css
 
 C.html  
 < div class="theme-light"> < app-child class="active">< /app-child> < /div>  
+
+
+### ng-content  
+[影片](https://youtu.be/AAu8bjj6-UI?t=1478)  
+佔位符  
+
+ChildC.html  
+< ng-content [question]>< /ng-content>  
+< ng-content  [answer]>< /ng-content>  
+
+ParentC.html 
+< app-child>  
+< p question> Is this a book?  < /p>  
+< p answer> This is a pen. < /p>  
+< /app-child>  
+
+
+### pipe  
+[影片](https://youtu.be/AAu8bjj6-UI?t=1891)  
+
+$ ng g p test-pipe  
+
+import { Pipe, PipeTransform } from '@angular/core';  
+
+@Pipe({ name: 'testPipe' })  
+export class TestPipe implements PipeTransfrom {  
+  transform(value: string, ...args: unknown[]): string {   
+  return `Hero ${value}`; }
+} 
+
+
+
+
 
 
 
