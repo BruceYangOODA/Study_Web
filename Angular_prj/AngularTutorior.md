@@ -8,7 +8,7 @@ ViewChild decorator
 Host selector  
 ng-content  
 pipe  
-
+attr class style biding  
 
 
 
@@ -87,10 +87,19 @@ export class TestPipe implements PipeTransfrom {
 } 
 
 
+### attr class style biding  
+[影片](https://youtu.be/AAu8bjj6-UI?t=2211)  
 
+C.html  
+<td [attr.colspan]="1+1"> TEST < /td>  
+<div [class.sale]="onSale"> TEST < /div>  
+<div [class]= "{ classOne: true, classTwo: false }">< /div>  
+<div [class]="['classOne', 'classTwo']">< /div>  
+<div [style.background-color]="'red'">< /div>  
+<div [style]="'width: 200px; height:200px;'">< /div>  
+<div [style]="{ width: '50px', height: '50px'}">< /div>    
 
-
-
-
+C.ts  
+onSale = true;  
 
 
