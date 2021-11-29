@@ -9,6 +9,12 @@ Host selector
 ng-content  
 pipe  
 attr class style biding  
+template variables #  
+ngClass  
+ngModel  
+Directive @HostListener  
+
+
 
 
 
@@ -101,5 +107,135 @@ C.html
 
 C.ts  
 onSale = true;  
+
+
+### template variables #  
+[影片](https://youtu.be/AAu8bjj6-UI?t=2719)  
+
+C.html  
+< input #phone placeholder="phone" />  
+< button (click)="callPhone(phone.value)">< /button>  
+
+C.ts  
+callPhone(value: string) {  
+console.log(value)  }  
+
+========  
+
+C.html  
+< input #ref type="text" [(ngModel)]="firstExample" />  
+< ng-template>  < span> {{ ref.value }} < /span>  
+< /ng-template>  
+
+C.ts  
+firstExample='';  
+  
+#ref 不能放在 ng-template 裡面(ng-template 裡面有 ref)  
+
+
+### ngClass  
+[影片](https://youtu.be/AAu8bjj6-UI?t=3063)  
+
+C.html  
+< div [ngClass]="currentClasses"> TEST < div>  
+
+C.ts  
+currentClasses = {};  
+ngOnInit() { this.setCurrentClasses();  }  
+setCurrentClasses() {  
+this.currentClasses = {  
+saveable: true,  
+modifiled: false,  
+special: true}  
+}  
+
+========
+
+C.html  
+< div [ngStyle]="currentStyle"> TEST < div>  
+
+C.ts  
+currentStyle = {}  
+ngOnInit() { this.setCurrentStyle();  }  
+setCurrentStyle() {  
+this.currentStyle = {  
+'font-style': 'italic',  
+'font-weight': 'bold'
+}  
+}
+
+
+### ngModel  
+[影片](https://youtu.be/AAu8bjj6-UI?t=3127)  
+
+module.ts  
+import { FormsModule } from '@angular/forms';  
+
+@NgModule({ imports: [FormsModule, ]})
+
+C.html  
+< input [(ngModel)]="name" id="test"/>  
+
+C.ts  
+name = 'test'
+
+
+### Directive @HostListener 
+[影片](https://youtu.be/AAu8bjj6-UI?t=3205)  
+
+module.ts  
+@NgModule({ declarations: [ TestDirective, ]})  
+export class AppModule { }   
+
+C.html  
+< p [test]="'red'"> for exmaple < /p>  
+
+Directive.ts  
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';  
+
+@Directive({ selector: '[test]'})
+export class TestDirective {  
+@Input() color;  
+construct(el: ElementRef)  {  
+el.nativeElement.style.backgroundColr = this.color  
+}  
+
+@HostListener('mouseenter') onMouserEnter() { this.highlight(this.color); }  
+@HostListener('mouseleave') onMouserLeave() { this.highlight(''); }  
+private highlight(color: string) {  
+this.el.nativeElement.style.backgroudColor = color;  
+}  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
