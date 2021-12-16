@@ -1,10 +1,130 @@
 
 ## index
 
+AGM (Angular Google Map)  
 i18n 國際化方案  
 ngx-translate  
 Flex-Layout  
 InjectionToken  
+
+
+
+
+### AGM (Angular Google Map)  
+[官方 API](https://angular-maps.com/)  
+[Angular4 - 不再踢鐵板的 Google Map 操作（AGM）](https://dotblogs.com.tw/explooosion/2017/07/17/212602)  
+
+$ npm install @agm/core --save  
+
+======  
+module.ts  
+
+import { AgmCoreModule } from '@agm/core';  
+<code>
+@NgModule({  
+  imports: [   
+    AgmCoreModule.forRoot({  
+      apiKey: 'YOUR_KEY',  
+      language: 'zh-TW'  
+    })  
+  ],  
+})</code>  
+
+======  
+component.ts  
+
+title: string = 'Angular4 AGM Demo';  
+lat: number = 24.1504536;  
+lng: number = 120.68325279999999;  
+zoomValue: number = 15;   
+
+// agm-info-window  
+isOpen:boolean = false;  
+
+// agm-marker  
+markerClick(e) { this.isOpen = true; e.open(); }  
+
+// agm-circle  
+radius: number = 500;  
+fillColor: string = 'rgba(194,60,172,1)';  
+
+======  
+HTML  
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoomValue">  
+<agm-data-layer [geoJson]="geoJson"></agm-data-layer>  
+<agm-circle [latitude]="lat" [longitude]="lng" [radius]="radius" [fillColor]="fillColor"></agm-circle>  
+<agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="iconUrl" (markerClick)="markerClick(theWindow)"></agm-marker>  紅色旗標  
+<agm-info-window #theWindow [latitude]="lat+0.0005" [longitude]="lng" [isOpen]="isOpen">  
+    <h5>國立臺中科技大學</h5>
+    <p>National Taichung University of Science and Technology.</p>
+  </agm-info-window>  點選旗標後出現的訊息  
+</agm-map>  
+
+======  
+CSS  
+agm-map { height: 80vh; }  
+
+======  ======  =======  
+agm-data-layer   
+
+$ npm install -g mapshaper
+$ mapshaper county.shp -o encoding=big5 format=geojson  county.json
+
+如果我們想要介接圖資，可利用 agm-data-layer，讀取圖資。  
+為了測試使用，我們可以利用 OpenData 中的 直轄市、縣市界線(TWD97經緯度)，  
+由於提供的檔案是 Shp（shapefile），我們要轉成 JSON 格式才可讀取  
+
+------  
+module.ts  
+
+import { HttpModule, JsonpModule } from '@angular/http';  
+  imports: [  
+    HttpModule,  
+    JsonpModule,  ], }  
+
+
+------  
+HTML  
+<agm-data-layer *ngIf="geoJsonReady" [geoJson]="geoJson" [style]="style"></agm-data-layer>  
+
+------  
+component.ts  
+
+getJson:any;  
+geoJsonReady:boolean=true;  
+
+
+ngOnInit() {  
+this.service.getGeoJsonLayer()  
+.subscribe( res =>  
+this.geoJson = res;  
+this.getJsonReady=true;  
+)}    
+
+style() { return {  
+fillColor:'green',  
+strokeColor:'green',  
+}}  
+
+======  動態產生方式，較為彈性  ======  
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoomValue" (mapReady)="onReady($event)">  
+
+map: any = null;  
+
+onReady(map) { this.map = map;  }    
+
+ngOnInit() {  
+    console.log('Start: ' + new Date());  
+    this.layerService.getGeoJsonLayer()  
+      .subscribe(  
+      result => {  
+        this.geoJson = result;  
+        this.map.data.addGeoJson(this.geoJson);  
+        this.map.data.setStyle(feature => this.style());  
+      });  
+  }  
+
+======  ======  ======  
 
 
 
