@@ -14,8 +14,10 @@ InjectionToken
 [官方 API](https://angular-maps.com/)  
 [官方 DOC](https://angular-maps.com/api-docs/agm-core/modules/agmcoremodule)  
 [Angular4 - 不再踢鐵板的 Google Map 操作（AGM）](https://dotblogs.com.tw/explooosion/2017/07/17/212602)  
+[Angular4 - Google Maps Directions 說好的路線規劃呢](https://dotblogs.com.tw/explooosion/2017/12/06/033925)  
 
 $ npm install @agm/core --save  
+$ npm install --save agm-direction  
 
 ---  
 module.ts  
@@ -127,7 +129,7 @@ ngOnInit() {
   }  
 
 ---  
-
+Agm-Direction
 
 ### i18n 國際化方案  
 
