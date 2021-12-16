@@ -74,7 +74,7 @@ $ mapshaper county.shp -o encoding=big5 format=geojson  county.json
 為了測試使用，我們可以利用 OpenData 中的 直轄市、縣市界線(TWD97經緯度)，  
 由於提供的檔案是 Shp（shapefile），我們要轉成 JSON 格式才可讀取  
 
-------  
+--  
 module.ts  
 
 import { HttpModule, JsonpModule } from '@angular/http';  
@@ -83,11 +83,11 @@ import { HttpModule, JsonpModule } from '@angular/http';
     JsonpModule,  ], }  
 
 
-------  
+---  
 HTML  
 <agm-data-layer *ngIf="geoJsonReady" [geoJson]="geoJson" [style]="style"></agm-data-layer>  
 
-------  
+----  
 component.ts  
 
 getJson:any;  
