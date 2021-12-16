@@ -12,6 +12,7 @@ InjectionToken
 
 ### AGM (Angular Google Map)  
 [官方 API](https://angular-maps.com/)  
+[官方 DOC](https://angular-maps.com/api-docs/agm-core/modules/agmcoremodule)  
 [Angular4 - 不再踢鐵板的 Google Map 操作（AGM）](https://dotblogs.com.tw/explooosion/2017/07/17/212602)  
 
 $ npm install @agm/core --save  
