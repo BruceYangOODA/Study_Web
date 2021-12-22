@@ -1,12 +1,38 @@
 
 ## index
-
+Angular Google Maps component  
 AGM (Angular Google Map)  
 i18n 國際化方案  
 ngx-translate  
 Flex-Layout  
 InjectionToken  
 
+
+### Angular Google Maps component  
+[GITHUB ANGULAR MATERIAL](https://github.com/angular/components/tree/master/src/google-maps)  
+[Angular 如何整合 Google Maps 設定篇](https://medium.com/jason-read-code/angular-%E5%A6%82%E4%BD%95%E6%95%B4%E5%90%88-google-maps-%E8%A8%AD%E5%AE%9A%E7%AF%87-1a83290ef71b)  
+
+[Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/reference)  
+
+$ npm install @angular/google-maps  
+
+
+<google-map 
+   (mapDragstart)="onDragStart()"
+   (mapDragend)="onDragEnd()"
+   #googleMap>
+</google-map>
+
+export class AppComponent {
+   @ViewChild("googleMap",{static: false}) public googleMap: any;
+   onDragStart(){
+      console.log(this.googleMap.getClickableIcons());
+   }
+
+   onDragEnd(){
+      console.log(this.googleMap.data);
+   }
+}
 
 
 
