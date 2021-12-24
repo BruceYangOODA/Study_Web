@@ -14,9 +14,51 @@ InjectionToken
 
 [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/reference)  
 
-$ npm install @angular/google-maps --save --legacy-peer-deps  
+$ npm install @angular/cli --save //--legacy-peer-deps     
+$ ng n testMap --skip-tests  
+$ npm install @angular/google-maps --save //--legacy-peer-deps  
+
+---  
+/*  
+tsconfig.json   
+"typeRoots": [  
+      "../node_modules/@types"  
+ ]  
+*/  
+---  
+package.json  
+    "@googlemaps/markerwithlabel": "^1.3.8",
+    "@types/googlemaps": "^3.43.3",
+    "@types/node": "^17.0.2",
+---  
+module.ts  
+import { GoogleMapsModule } from '@angular/google-maps'  
+
+imports: [  
+GoogleMapsModule,  
+HttpClientModule,  
+HttpClientJsonpModule,],  
+
+---  
+component.ts  
+constructor(httpClient: HttpClient) {  
+    this.apiLoaded = httpClient.jsonp('https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE', 'callback')  
+        .pipe(  
+          map(() => true),  
+          catchError(() => of(false)),  
+        );  
+  }  
+
+---  
+html  
+<div *ngIf="apiLoaded | async">
+  <google-map></google-map>
+</div>
 
 
+
+
+---  
 <google-map 
    (mapDragstart)="onDragStart()"
    (mapDragend)="onDragEnd()"
