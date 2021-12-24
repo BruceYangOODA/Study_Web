@@ -14,7 +14,7 @@ InjectionToken
 
 [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/reference)  
 
-$ npm install @angular/google-maps  
+$ npm install @angular/google-maps --save --legacy-peer-deps  
 
 
 <google-map 
