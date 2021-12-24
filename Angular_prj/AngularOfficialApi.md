@@ -15,8 +15,9 @@ InjectionToken
 [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/reference)  
 
 $ npm install @angular/cli --save //--legacy-peer-deps     
-$ ng n testMap --skip-tests  
+$ ng new testMap --skip-tests  
 $ npm install @angular/google-maps --save //--legacy-peer-deps  
+$ npm install @types/google-maps --save 
 
 ---  
 /*  
@@ -33,6 +34,7 @@ package.json
 ---  
 module.ts  
 import { GoogleMapsModule } from '@angular/google-maps'  
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';  
 
 imports: [  
 GoogleMapsModule,  
