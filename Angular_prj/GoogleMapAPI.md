@@ -50,12 +50,37 @@ agm-map {  height: 300px; }
 
 
 
+---  
+[Adding Google Maps to an Angular PWA - Angular PWAs & Google Maps: Episode 1](https://youtu.be/ZBLrwThHKyM)  
+[Displaying Route Polylines on a Google Map - Angular PWAs & Google Maps: Episode 2](https://www.youtube.com/watch?v=5UrKo-j2fzc&ab_channel=RomanJustCodes)  
 
+---  
+component.ts  
 
+center: google.maps.LatLngLiteral;  
+source: google.maps.LatLngLiteral;  
+destination: google.maps.LatLngLiteral;  
+options: google.maps.MapOptions = {  
+mapTypeId: google.maps.MapTypeId.ROADMAP,  
+scrollwheel: false,  
+disableDefaultUI: true,  
+disableDoubleClickZoom: true,  
+zoom: 16  }  
+directionsService: google.DirectionsService;  
+directionsRenderer: google.DirectionsRenderer;    
 
+ngOnInit() {  
+this.directionsService = new google.maps.DirectionsService();  
+this.directionsRenderer = new google.maps.DirectionsRenderer({  
+map: null, suppressMarkers: true  });  
 
+navigator.geolocation.getCurrentPosition(position => {  
+this.source = { lat: 37.4220656, lng: -122.0840897 }  
+this.d
+})  
 
-
+this.map = new google.maps.Map(document.get)
+}  
 
 
 
