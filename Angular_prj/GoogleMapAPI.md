@@ -1,11 +1,79 @@
 
+[Angular Google Maps with Places Search, Draggable Marker using Angular Google Maps (@agm/core)](https://www.freakyjolly.com/angular-google-maps-using-agm-core/#more-2316)  
+$ ng new ProjectName --skip-tests  
+$ npm install --legacy-peer-deps  
+$ npm install @agm/core --save --legacy-peer-deps   
+$ npm install @types/googlemaps --save-dev  
+
+@tsconfig.app.json  
+"compilerOptions": {  
+    "types": ["googlemaps"]  
+  }  
+
+$ npm install @angular/google-maps@11.0.0 --save     
+
+@package.json  
+"dependencies": {
+    "@agm/core": "^1.1.0", }  
+$ npm i --save --legacy-peer-deps   
+
+---  
+module.ts  
+import { AgmCoreModule } from '@agm/core';   
+imports: [  
+     AgmCoreModule.forRoot({  
+      apiKey: 'YOUR-API-KEY-HERE',  
+      libraries: ['places']  
+    }),  
+  ]  
+
+---  
+html  
+<code>
+<agm-map  
+[latitude]="latitude" [longitude]="longitude" [zoom]="zoom">  
+</agm-map>  
+</code>
+
+CSS  
+agm-map { height: 300px; }  
+
+---  
+component.ts  
+
+navigator.geolocation.getCurrentPosition((position) => {  
+          this.latitude = position.coords.latitude;  
+          this.longitude = position.coords.longitude;  
+          this.zoom = 15;  
+        });  
+
+---  
+---  
+[JS FAIL]
+[Adding Google Maps to an Angular PWA - Angular PWAs & Google Maps: Episode 1](https://www.youtube.com/watch?v=ZBLrwThHKyM)  
+
+index.html  
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>   
+
+
+HTML  
+<div class="app-page"><div #map id="mpa-canvas"></div></div>  
+
+
+
+
+
+
+---  
+---  
+
 
 [Angular 7 Google Maps Tutorial with IPAPI (Plotting a User's Location)](https://www.youtube.com/watch?v=-IwTQgKIjCQ&ab_channel=DesignCourse)  
 
 $ npm install @agm/core  
 $ npm install @angular/google-maps  
 $ npm install @types/google-maps  
-$ npm install @types/googlemaps 
+$ npm install @types/googlemaps --save  
 npm i @types/googlemaps@3.39.13 --save-dev  
  
 ---  
