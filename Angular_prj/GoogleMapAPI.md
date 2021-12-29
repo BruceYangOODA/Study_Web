@@ -1,4 +1,10 @@
 
+[LazyMapsAPILoader](https://angular-maps.com/api-docs/agm-core/injectables/lazymapsapiloader#source)  
+
+
+
+
+
 [Angular Google Maps with Places Search, Draggable Marker using Angular Google Maps (@agm/core)](https://www.freakyjolly.com/angular-google-maps-using-agm-core/#more-2316)  
 $ ng new ProjectName --skip-tests  
 $ npm install --legacy-peer-deps  
