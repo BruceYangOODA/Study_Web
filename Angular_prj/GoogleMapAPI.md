@@ -1,4 +1,10 @@
 
+
+### Components AgmMap  
+### Directives AgmPolyline  
+
+
+
 [LazyMapsAPILoader](https://angular-maps.com/api-docs/agm-core/injectables/lazymapsapiloader#source)  
 
 
@@ -161,6 +167,153 @@ this.map = new google.maps.Map(document.get)
 
 
 
+---  
+---  
+### Components AgmMap  
+[Components AgmMap](https://angular-maps.com/api-docs/agm-core/components/agmmap#info)  
+
+#### Inputs  
+
+latitude = 0;  
+longitude = 0;  
+zoom = 8;  
+
+backgroundColor: string;      
+clickableIcons = true;  ICON可以點選  
+controlSize: number;  
+disableDefaultUI = false;  預設控制介面  
+disableDoubleClickZoom = false;  預設雙擊重設zoom & center  
+draggableCursor: string;  ex: [draggableCursor]="'url(http://www.example.com/icon.png), auto;'"  
+draggingCursor: string;  ex: [draggableCursor]="'url(http://www.example.com/icon.png), auto;'"  
+fitBounds: google.maps.LatLngBoundsLiteral | google.maps.LatLngBounds | boolean = false;  
+fitBoundsPadding: number | google.maps.Padding;  
+gestureHandling: google.maps.GestureHandlingOptions = 'auto';  
+keyboardShortcuts = true;  
+@Input('mapDraggable') draggable = true;  
+mapTypeId: keyof typeof google.maps.MapTypeId = 'ROADMAP';  
+maxZoom: number;  
+restriction: google.maps.MapRestriction;  鎖定地圖範圍  
+scrollwheel = true;  滾輪控制zoom  
+showDefaultInfoWindow = true;  
+styles: google.maps.MapTypeStyle[] = [];  附加CSS  
+tilt = 0;  
+usePanning = false;  
+
+#### 需要設定的inputs  
+latitude = 0;  
+longitude = 0;  
+zoom = 8;  
+disableDefaultUI = true,  
+disableDoubleClickZoom = true,  
+maxZoom: 14;  
+minZoom: 14;  
+scrollwheel = false;  
+
+#### Outputs  
+boundsChange: EventEmitter<google.maps.LatLngBounds> = new EventEmitter<google.maps.LatLngBounds>();  
+centerChange: EventEmitter<google.maps.LatLngLiteral> = new EventEmitter<google.maps.LatLngLiteral>();  
+idle: EventEmitter<void> = new EventEmitter<void>();   This event is fired when the map becomes idle after panning or zooming.   
+mapClick: EventEmitter<google.maps.MouseEvent | google.maps.IconMouseEvent> = new EventEmitter<google.maps.MouseEvent | google.maps.IconMouseEvent>();    
+mapDblClick: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mapReady: EventEmitter<any> = new EventEmitter<any>();    
+mapRightClick: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mapTypeIdChange: EventEmitter<google.maps.MapTypeId> = new EventEmitter<google.maps.MapTypeId>();  
+tilesLoaded: EventEmitter<void> = new EventEmitter<void>();  This event is fired when the visible tiles have finished loading.  
+zoomChange: EventEmitter<number> = new EventEmitter<number>();  
+
+#### Method   
+toString(): string { return 'AgmMarker-' + this._id.toString(); }    
+
+---  
+---  
+### Directives AgmMarker  
+[Directives AgmMarker](https://angular-maps.com/api-docs/agm-core/directives/agmmarker)  
+
+#### Properties   
+@ContentChildren(AgmInfoWindow) infoWindow: QueryList<AgmInfoWindow> = new QueryList<AgmInfoWindow>();  
+
+#### Inputs  
+
+latitude: number;  
+longitude: number;  
+
+animation: keyof typeof google.maps.Animation;  
+iconUrl: string | google.maps.Icon | google.maps.Symbol;  
+label: string | google.maps.MarkerLabel;  
+@Input('markerClickable') clickable = true;  
+@Input('markerDraggable') draggable = false;  
+opacity = 1;  
+openInfoWindow = true;  
+title: string;  
+visible = true;  
+zIndex = 1;
+
+#### 需要設定的inputs  
+latitude: 0,  
+longitude: 0,  
+iconUrl:  
+label: ''   
+title: ''  
+
+#### Outputs  
+animationChange = new EventEmitter<keyof typeof google.maps.Animation>();  
+drag: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+dragEnd: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+dragStart: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+markerClick: EventEmitter<AgmMarker> = new EventEmitter<AgmMarker>();  
+markerDblClick: EventEmitter<AgmMarker> = new EventEmitter<AgmMarker>();
+markerRightClick: EventEmitter<void> = new EventEmitter<void>();  
+mouseOut: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseOver: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+
+
+#### Method  
+
+
+---  
+---  
+### Directives AgmPolyline  
+[Directives AgmPolyline](https://angular-maps.com/api-docs/agm-core/directives/agmpolyline#info)  
+
+
+#### Properties  
+@ContentChildren(AgmPolylinePoint) points: QueryList<AgmPolylinePoint>;  
+@ContentChildren(AgmPolylineIcon) iconSequences: QueryList<AgmPolylineIcon>;  
+
+#### Inputs  
+clickable = true;  
+editable = false; 線條中間出現控制點    
+geodesic = false;  
+@Input('polylineDraggable') draggable = false;  
+strokeColor: string;  
+strokeOpacity: number;  
+strokeWeight: number;  
+visible = true;  
+zIndex: number;  
+
+#### 需要設定的inputs  
+strokeColor: 'red',  
+strokeOpacity: 1,  
+strokeWeight: 3px, 
+
+#### Outputs  
+lineClick: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
+lineDblClick: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
+lineDrag: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+lineDragEnd: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+lineDragStart: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+lineMouseDown: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
+lineMouseMove: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
+lineMouseOut: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
+lineMouseOver: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
+lineMouseUp: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
+lineRightClick: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
+polyPathChange = new EventEmitter<MVCEvent<google.maps.LatLng>>();  
+
+#### Method  
+getPath(): Promise<google.maps.LatLng[]> {
+    return this._polylineManager.getPath(this);
+  }  
 
 
 
