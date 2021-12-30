@@ -1,12 +1,12 @@
 
 
-### Components AgmMap  
-### Directives AgmMarker  
-### Directives AgmPolygon    
-### Directives AgmPolyline  
-### Directives AgmPolylineIcon  
-### Directives AgmPolylinePoint  
-### Directives AgmCircle  
+#### Components AgmMap  
+#### Directives AgmMarker  
+#### Directives AgmPolygon    
+#### Directives AgmPolyline  
+#### Directives AgmPolylineIcon  
+#### Directives AgmPolylinePoint  
+#### Directives AgmCircle  
 
 
 
@@ -174,7 +174,7 @@ this.map = new google.maps.Map(document.get)
 
 ---  
 ---  
-### Components AgmMap  
+#### Components AgmMap  
 [Components AgmMap](https://angular-maps.com/api-docs/agm-core/components/agmmap#info)  
 
 #### Inputs  
@@ -277,7 +277,7 @@ mouseOver: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.M
 
 ---  
 ---  
-### Directives AgmPolygon  
+#### Directives AgmPolygon  
 [Directives AgmPolygon](https://angular-maps.com/api-docs/agm-core/directives/agmpolygon)  
 
 #### Properties  
@@ -328,7 +328,7 @@ getPath(): Promise<google.maps.LatLng[]> {
 
 ---  
 ---  
-### Directives AgmPolyline  
+#### Directives AgmPolyline  
 [Directives AgmPolyline](https://angular-maps.com/api-docs/agm-core/directives/agmpolyline#info)  
 
 
@@ -399,7 +399,7 @@ path: keyof typeof google.maps.SymbolPath | string;
 
 ---  
 ---  
-### Directives AgmPolylinePoint
+#### Directives AgmPolylinePoint
 [Directives AgmPolylinePoint](https://angular-maps.com/api-docs/agm-core/directives/agmpolylinepoint)  
 
 #### Inputs  
@@ -413,7 +413,7 @@ positionChanged: EventEmitter<google.maps.LatLngLiteral> = new EventEmitter<goog
 
 ---  
 ---  
-### Directives AgmCircle  
+#### Directives AgmCircle  
 [Directives AgmCircle](https://angular-maps.com/api-docs/agm-core/directives/agmcircle)  
 
 #### Properties  
