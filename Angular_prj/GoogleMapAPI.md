@@ -7,7 +7,7 @@
 #### Directives AgmPolylineIcon  
 #### Directives AgmPolylinePoint  
 #### Directives AgmCircle  
-
+#### Directives AgmRectangle  
 
 
 [LazyMapsAPILoader](https://angular-maps.com/api-docs/agm-core/injectables/lazymapsapiloader#source)  
@@ -306,6 +306,7 @@ strokeWeight: number;
 #### Outputs  
 polyClick: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
 polyDblClick: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
+polyPathsChange = new EventEmitter<MVCEvent<google.maps.LatLng[] | google.maps.LatLngLiteral[]>>();  
 drag: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
 dragEnd: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
 dragStart: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
@@ -315,7 +316,6 @@ mouseOut: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.Mo
 mouseOver: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
 mouseUp: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();
 rightClick: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();
-polyPathsChange = new EventEmitter<MVCEvent<google.maps.LatLng[] | google.maps.LatLngLiteral[]>>();  
 
 #### Method  
 getPath(): Promise<google.maps.LatLng[]> {
@@ -355,6 +355,7 @@ strokeWeight: 3px,
 #### Outputs  
 lineClick: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
 lineDblClick: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
+polyPathChange = new EventEmitter<MVCEvent<google.maps.LatLng>>();  
 lineDrag: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
 lineDragEnd: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
 lineDragStart: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
@@ -364,7 +365,7 @@ lineMouseOut: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google
 lineMouseOver: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
 lineMouseUp: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
 lineRightClick: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
-polyPathChange = new EventEmitter<MVCEvent<google.maps.LatLng>>();  
+
 
 #### Method  
 getPath(): Promise<google.maps.LatLng[]> {
@@ -442,9 +443,9 @@ strokeColor: 'black',
 strokeWeight = 3,   
 
 #### Outputs  
-centerChange: EventEmitter<google.maps.LatLngLiteral> = new EventEmitter<google.maps.LatLngLiteral>();  
 circleClick: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
 circleDblClick: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+centerChange: EventEmitter<google.maps.LatLngLiteral> = new EventEmitter<google.maps.LatLngLiteral>();  
 drag: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
 dragEnd: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
 dragStart: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
@@ -460,8 +461,53 @@ radiusChange: EventEmitter<number> = new EventEmitter<number>();
 getBounds(): Promise<google.maps.LatLngBounds> { return this._manager.getBounds(this); }  
 getCenter(): Promise<google.maps.LatLng> { return this._manager.getCenter(this); }  
 
+---  
+---  
+#### Directives AgmRectangle  
+[Directives AgmRectangle](https://angular-maps.com/api-docs/agm-core/directives/agmrectangle)  
+
+#### Properties  
+#### Inputs  
+north: number;  
+east: number;  
+south: number;  
+west: number;  
+ 
+clickable = true;    
+editable = false;  
+fillColor: string;  
+fillOpacity: number;  
+@Input('rectangleDraggable') draggable = false;  
+strokeColor: string;  
+strokeOpacity: number;  
+strokeWeight = 0;  
+visible = true;  
+zIndex: number;  
+
+#### 需要設定的inputs  
+north: number;  
+east: number;  
+south: number;  
+west: number;  
+
+#### Outputs  
+rectangleClick: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+rectangleDblClick: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+boundsChange: EventEmitter<google.maps.LatLngBoundsLiteral> = new EventEmitter<
+    google.maps.LatLngBoundsLiteral
+  >();  
+drag: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+dragEnd: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+dragStart: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseDown: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseMove: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseOut: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseOver: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();    
+mouseUp: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+rightClick: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
 
 
+#### Method  
 
 
 ---  
