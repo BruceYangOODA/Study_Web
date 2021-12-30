@@ -1,8 +1,9 @@
 
 
 ### Components AgmMap  
+### Directives AgmMarker  
 ### Directives AgmPolyline  
-
+### Directives AgmCircle  
 
 
 [LazyMapsAPILoader](https://angular-maps.com/api-docs/agm-core/injectables/lazymapsapiloader#source)  
@@ -173,7 +174,6 @@ this.map = new google.maps.Map(document.get)
 [Components AgmMap](https://angular-maps.com/api-docs/agm-core/components/agmmap#info)  
 
 #### Inputs  
-
 latitude = 0;  
 longitude = 0;  
 zoom = 8;  
@@ -233,7 +233,6 @@ toString(): string { return 'AgmMarker-' + this._id.toString(); }
 @ContentChildren(AgmInfoWindow) infoWindow: QueryList<AgmInfoWindow> = new QueryList<AgmInfoWindow>();  
 
 #### Inputs  
-
 latitude: number;  
 longitude: number;  
 
@@ -315,5 +314,59 @@ getPath(): Promise<google.maps.LatLng[]> {
     return this._polylineManager.getPath(this);
   }  
 
+---  
+---  
+### Directives AgmCircle  
+[Directives AgmCircle](https://angular-maps.com/api-docs/agm-core/directives/agmcircle)  
+
+#### Properties  
+
+#### Inputs  
+latitude: number;  
+longitude: number;  
+
+@Input('circleDraggable') draggable = false;  
+clickable = true;  
+editable = false;  
+fillColor: string;  
+fillOpacity: number;  
+radius = 0;  The radius in meters on the Earth's surface.  
+strokeColor: string;  
+strokeOpacity: number;
+strokeWeight = 0;  
+visible = true;  
+zIndex: number;  
+
+#### 需要設定的inputs  
+fillColor: 'red', 
+fillOpacity: ,
+radius = 0,
+strokeColor: 'black',  
+strokeWeight = 3,  
+
+#### Outputs  
+centerChange: EventEmitter<google.maps.LatLngLiteral> = new EventEmitter<google.maps.LatLngLiteral>();  
+circleClick: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+circleDblClick: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+drag: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+dragEnd: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+dragStart: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseDown: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseMove: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseOut: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseOver: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseUp: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();
+radiusChange: EventEmitter<number> = new EventEmitter<number>();  
+rightClick: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();
+
+#### Method  
+getBounds(): Promise<google.maps.LatLngBounds> { return this._manager.getBounds(this); }  
+getCenter(): Promise<google.maps.LatLng> { return this._manager.getCenter(this); }  
 
 
+---  
+#### Properties  
+#### Inputs  
+#### 需要設定的inputs  
+#### Outputs  
+#### Method  
