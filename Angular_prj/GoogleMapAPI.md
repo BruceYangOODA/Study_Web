@@ -338,11 +338,11 @@ visible = true;
 zIndex: number;  
 
 #### 需要設定的inputs  
-fillColor: 'red', 
-fillOpacity: ,
-radius = 0,
-strokeColor: 'black',  
-strokeWeight = 3,  
+fillColor: 'red',  
+fillOpacity: ,  
+radius = 0,  
+strokeColor: 'black',   
+strokeWeight = 3,   
 
 #### Outputs  
 centerChange: EventEmitter<google.maps.LatLngLiteral> = new EventEmitter<google.maps.LatLngLiteral>();  
