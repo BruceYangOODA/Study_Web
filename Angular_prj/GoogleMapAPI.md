@@ -2,8 +2,12 @@
 
 ### Components AgmMap  
 ### Directives AgmMarker  
+### Directives AgmPolygon    
 ### Directives AgmPolyline  
+### Directives AgmPolylineIcon  
+### Directives AgmPolylinePoint  
 ### Directives AgmCircle  
+
 
 
 [LazyMapsAPILoader](https://angular-maps.com/api-docs/agm-core/injectables/lazymapsapiloader#source)  
@@ -226,6 +230,10 @@ toString(): string { return 'AgmMarker-' + this._id.toString(); }
 
 ---  
 ---  
+
+
+---  
+---  
 ### Directives AgmMarker  
 [Directives AgmMarker](https://angular-maps.com/api-docs/agm-core/directives/agmmarker)  
 
@@ -265,9 +273,58 @@ markerRightClick: EventEmitter<void> = new EventEmitter<void>();
 mouseOut: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
 mouseOver: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
 
-
 #### Method  
 
+---  
+---  
+### Directives AgmPolygon  
+[Directives AgmPolygon](https://angular-maps.com/api-docs/agm-core/directives/agmpolygon)  
+
+#### Properties  
+#### Inputs  
+clickable = true;  
+editable = false;  
+fillColor: string;  
+fillOpacity: number;
+@Input() paths: google.maps.LatLng[] | google.maps.LatLng[][] |
+      google.maps.MVCArray<google.maps.LatLng> | google.maps.MVCArray<google.maps.MVCArray<google.maps.LatLng>> |
+      google.maps.LatLngLiteral[] | google.maps.LatLngLiteral[][] = [];  
+@Input('polyDraggable') draggable = false;  
+strokeColor: string;  
+strokeOpacity: number;  
+strokeWeight: number;  
+visible: boolean;
+zIndex: number;  
+
+#### 需要設定的inputs  
+fillColor: string;  
+fillOpacity: number;  
+paths: 'fn'
+strokeColor: string;  
+strokeWeight: number;   
+
+#### Outputs  
+polyClick: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
+polyDblClick: EventEmitter<google.maps.PolyMouseEvent> = new EventEmitter<google.maps.PolyMouseEvent>();  
+drag: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+dragEnd: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+dragStart: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseDown: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseMove: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseOut: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseOver: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
+mouseUp: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();
+rightClick: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();
+polyPathsChange = new EventEmitter<MVCEvent<google.maps.LatLng[] | google.maps.LatLngLiteral[]>>();  
+
+#### Method  
+getPath(): Promise<google.maps.LatLng[]> {
+    return this._polygonManager.getPath(this);
+  }  
+
+  getPaths(): Promise<google.maps.LatLng[][]> {
+    return this._polygonManager.getPaths(this);
+  }  
 
 ---  
 ---  
@@ -315,6 +372,46 @@ getPath(): Promise<google.maps.LatLng[]> {
   }  
 
 ---  
+---   
+#### Directives AgmPolylineIcon  
+[Directives AgmPolylineIcon](https://angular-maps.com/api-docs/agm-core/directives/agmpolylineicon)  
+
+#### Properties  
+#### Inputs  
+anchorX: number;  
+anchorY: number;  
+fillColor: string;  
+fillOpacity: number;  
+fixedRotation: boolean;  
+fixedRotation: boolean;  
+offset: string;  
+path: keyof typeof google.maps.SymbolPath | string;  
+repeat: string;  
+strokeColor: string;  
+strokeOpacity: number;  
+strokeWeight: number;  
+
+#### 需要設定的inputs  
+path: keyof typeof google.maps.SymbolPath | string;    
+
+#### Outputs  
+#### Method  
+
+---  
+---  
+### Directives AgmPolylinePoint
+[Directives AgmPolylinePoint](https://angular-maps.com/api-docs/agm-core/directives/agmpolylinepoint)  
+
+#### Inputs  
+latitude: 0,  
+longitude: 0,  
+
+#### Outputs    
+positionChanged: EventEmitter<google.maps.LatLngLiteral> = new EventEmitter<google.maps.LatLngLiteral>();  
+
+
+
+---  
 ---  
 ### Directives AgmCircle  
 [Directives AgmCircle](https://angular-maps.com/api-docs/agm-core/directives/agmcircle)  
@@ -356,12 +453,15 @@ mouseMove: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.M
 mouseOut: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
 mouseOver: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();  
 mouseUp: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();
-radiusChange: EventEmitter<number> = new EventEmitter<number>();  
 rightClick: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.MouseEvent>();
+radiusChange: EventEmitter<number> = new EventEmitter<number>();    
 
 #### Method  
 getBounds(): Promise<google.maps.LatLngBounds> { return this._manager.getBounds(this); }  
 getCenter(): Promise<google.maps.LatLng> { return this._manager.getCenter(this); }  
+
+
+
 
 
 ---  
