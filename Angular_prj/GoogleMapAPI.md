@@ -10,7 +10,9 @@
 #### Directives AgmPolylinePoint  
 #### Directives AgmCircle  
 #### Directives AgmRectangle  
-
+### DirectionsService  
+### DistanceMatrixService  
+### geometry.poly.containsLocation  
 
 [LazyMapsAPILoader](https://angular-maps.com/api-docs/agm-core/injectables/lazymapsapiloader#source)  
 
@@ -94,7 +96,11 @@ $ npm install @angular/google-maps  --legacy-peer-deps
 $ npm install @types/google-maps --legacy-peer-deps  
 $ npm install @types/googlemaps --save --legacy-peer-deps   
 npm i @types/googlemaps@3.39.13 --save-dev --legacy-peer-deps   
- 
+npm i @agm/core@1.1.0 --legacy-peer-deps  
+
+@googlemaps/index.d.ts  
+declare module 'googlemaps';  
+
 ---  
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';   
 import { AgmCoreModule } from '@agm/core';  
@@ -512,6 +518,61 @@ rightClick: EventEmitter<google.maps.MouseEvent> = new EventEmitter<google.maps.
 #### Method  
 
 
+---  
+### DirectionsService  
+
+let directionsService = new google.maps.DirectionsService();
+        let request = {
+            origins: [{ lat: 25.038935, lng: 121.5018988 }],
+            destinations: [{ lat: 25.04081, lng: 121.506566 }],
+            origin: { lat: 25.038935, lng: 121.5018988 },
+            destination: { lat: 25.04081, lng: 121.506566 },
+            travelMode: google.maps.TravelMode.BICYCLING,
+        };
+        directionsService.route(request, function (response) {
+            if (response["status"] == "OK") {
+                console.log(response);
+            }
+        });
+
+---  
+### DistanceMatrixService  
+
+let service = new google.maps.DistanceMatrixService();
+        let display = new google.maps.DirectionsRenderer();
+        //display.setMap(this.map)
+        service.getDistanceMatrix(
+            {
+                origins: [{ lat: 25.038935, lng: 121.5018988 }],
+                destinations: [{ lat: 25.04081, lng: 121.506566 }],
+                travelMode: google.maps.TravelMode.DRIVING,
+                unitSystem: google.maps.UnitSystem.METRIC,
+            },
+            function (response, status) {
+                if (status !== google.maps.DistanceMatrixStatus.OK) {
+                    window.alert("Error was" + status);
+                } else {
+                    console.log(response);
+                }
+            }
+        );
+
+---  
+### geometry.poly.containsLocation  
+
+mapClick(e) {
+        console.log("mapCLick ", e);
+        let newMarker = {};
+        newMarker["lat"] = e.coords.lat;
+        newMarker["lng"] = e.coords.lng;
+        this.markers.push(newMarker);
+        console.log("HERE");
+        let startShape = new google.maps.Polygon({ paths: this.polyPath });
+        let curPosition = new google.maps.LatLng(e.coords.lat, e.coords.lng);
+        let locationContains = google.maps.geometry.poly.containsLocation(curPosition, startShape);
+        console.log("locationContains ", locationContains);
+    }
+---  
 ---  
 #### Properties  
 #### Inputs  
