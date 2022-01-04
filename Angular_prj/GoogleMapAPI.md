@@ -89,11 +89,11 @@ HTML
 
 [Angular 7 Google Maps Tutorial with IPAPI (Plotting a User's Location)](https://www.youtube.com/watch?v=-IwTQgKIjCQ&ab_channel=DesignCourse)  
 
-$ npm install @agm/core  
-$ npm install @angular/google-maps  
-$ npm install @types/google-maps  
-$ npm install @types/googlemaps --save  
-npm i @types/googlemaps@3.39.13 --save-dev  
+$ npm install @agm/core  --legacy-peer-deps  
+$ npm install @angular/google-maps  --legacy-peer-deps  
+$ npm install @types/google-maps --legacy-peer-deps  
+$ npm install @types/googlemaps --save --legacy-peer-deps   
+npm i @types/googlemaps@3.39.13 --save-dev --legacy-peer-deps   
  
 ---  
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';   
