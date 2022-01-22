@@ -2,8 +2,8 @@
 
 [Echats API DOC](https://www.runoob.com/echarts/echarts-setup.html)  
 
-### 圖表類型
-
+### 圖表類型  
+### 各个配置项详细说明总结  
 
 
 
@@ -32,10 +32,11 @@ type: 'themeRiver'：主题河流
 type: 'custom'：自定义系列  
 
 
+### 各个配置项详细说明总结  
+[echarts 各个配置项详细说明总结](https://www.runoob.com/echarts/echarts-setup.html)  
 
 
-
-
+https://www.youtube.com/watch?v=d515vZfCOvg
 
 
 
