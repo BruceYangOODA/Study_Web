@@ -50,7 +50,7 @@ https://www.twblogs.net/a/5b82b5202b717766a1e98ba6
 https://juejin.cn/post/6844903698313773064
 
 
-
+http://47.96.180.253/bld/public/static/echart/doc.html#Scatter
 
 
 
