@@ -1,6 +1,8 @@
 
 [node 爬蟲 | puppeteer js | 來抓網頁的圖 | 實際案例 | 抓正妹的圖](https://www.youtube.com/watch?v=m25RkljTUfY&t=2s&ab_channel=BigBoyCanCode)  20220222  
 [node 爬蟲 | puppeteer js | Pixnet 轉 Worpdress | 商業價值 | 抓Pixnet文章跟圖片](https://www.youtube.com/watch?v=HQLd9NYCC0U&ab_channel=BigBoyCanCode)  
+[使用 Node.js 來爬蟲吧！[PTT 股票板]](https://b-l-u-e-b-e-r-r-y.github.io/post/PTTCrawler/)  
+
 
 ### Puppeteer API (https://github.com/puppeteer/puppeteer)  
 https://developers.google.com/web/tools/puppeteer/get-started  
