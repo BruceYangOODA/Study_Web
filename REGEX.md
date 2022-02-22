@@ -2,11 +2,14 @@
 
 [Learn Regular Expressions In 20 Minutes](https://www.youtube.com/watch?v=rhzKDrUiJVk&t=809s&ab_channel=WebDevSimplified)  2022-02-21
 
-https://youtu.be/rhzKDrUiJVk?t=816
+[Regular Expressions (Regex) Tutorial: How to Match Any Pattern of Text](https://www.youtube.com/watch?v=sa-TUpSx1JA)  2022-02-22  
+
+[Python Tutorial: re Module - How to Write and Match Regular Expressions (Regex)](https://www.youtube.com/watch?v=K8L6KVGG-7o)  2022-02-22
+
 
 ### Learn Regular Expressions In 20 Minutes  
-
-
+### Regular Expressions (Regex) Tutorial: How to Match Any Pattern of Text
+### Python Tutorial: re Module - How to Write and Match Regular Expressions (Regex)  
 
 
 ### Learn Regular Expressions In 20 Minutes  
@@ -58,5 +61,12 @@ look behind
 (0944)123456   
 
 
+### Python Tutorial: re Module - How to Write and Match Regular Expressions (Regex)  
+[import re](https://youtu.be/K8L6KVGG-7o?t=283)  
+
+pattern = re.compile(r'cba')  
+matches = pattern.finditer(text_to_search)  
+
+for match in matches: pring(match)  
 
 
