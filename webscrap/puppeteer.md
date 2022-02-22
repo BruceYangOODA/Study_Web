@@ -69,6 +69,19 @@ else { console.log('Write operation complete') }
 })  
 }  
 
+let headingText = await page.evaluate(() => {  
+const headingElement = document.querySelectorAll('h2')[1]  
+return headingElement.innerText  
+})  
+
+let descriptionText = await page.evaluate(() => {  
+const descriptionText = document.querySelector('.article-content')  
+return descriptionText.innerText  
+})  
+
+createFolder(headingText, descriptionText)  
+
+
 
 
 
