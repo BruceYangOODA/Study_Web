@@ -2,7 +2,7 @@
 
 [Learn Regular Expressions In 20 Minutes](https://www.youtube.com/watch?v=rhzKDrUiJVk&t=809s&ab_channel=WebDevSimplified)  2022-02-21
 
-
+https://youtu.be/rhzKDrUiJVk?t=816
 
 ### Learn Regular Expressions In 20 Minutes  
 
@@ -35,4 +35,28 @@
 /(c|a|t){2,3}/g  找所有的 cc ca ct aa ....
 
 /^The/g  以The 開頭  
+/\.$/g  以 . 結尾  (只有最後一個. )
+/\.$/gm  以 . 結尾  (複數行, 以 . 結尾)  
+
+look behind  
+/(?<=[tT]he)/g 找 The and the 後面第一個字符(The_ _ = 目標)  
+/(?<![tT]he)/g 找 The and the 後面第一個字符(The_ _ = 目標) 以外的所有字符    
+/.(?=at)/g  找 bat cat dat ...  目標 = b c d  
+/.(?!at)/g  找 bat cat dat ...  除了 b c d 以外所有字符  
+
+
+手機號碼 regex  
+/(\d{4})[ -]?(\d{3})[ -]?(\d{3})/gm  
+0944123456  
+0944 123 456  
+0944-123-456  
+
+/\(?(\d{4})\)?[ -]?(\d{3})[ -]?(\d{3})/gm  
+(0944)123456   
+
+/\(?(\d{4})\)?[ -]?(\d{3})[ -]?(\d{3})/gm  
+(0944)123456   
+
+
+
 
