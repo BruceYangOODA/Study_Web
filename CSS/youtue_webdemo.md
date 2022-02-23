@@ -14,18 +14,19 @@
   < /div>
 </code>
 
+<code>
 .card {  
-background-color: white;  
-border: 1px solid #333;  
-border-radius: .5rem;  
-padding: .5rem;  
+  background-color: white;  
+  border: 1px solid #333;  
+  border-radius: .5rem;  
+  padding: .5rem;  
 }  
 
 .form-group {  
-display: flex;  
-flex-direction: column;  
-margin-bottom: .5rem;  
-gap: .25em;  
+  display: flex;  
+  flex-direction: column;  
+  margin-bottom: .5rem;  
+  gap: .25em;  
 }  
 
 .form-group:last-child {  
@@ -44,7 +45,7 @@ border-radius: .25em;
 font-size: 1rem;  
 padding: .23em;  
 }  
-
+</code>
 
 
 
