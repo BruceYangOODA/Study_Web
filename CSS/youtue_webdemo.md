@@ -10,8 +10,8 @@
 ### Can I Create This Complex Animated Multistep Form  
 
 <code>
-  <div class="card" data-step="1">
-  </div>
+  < div class="card" data-step="1">
+  < /div>
 </code>
 
 .card {  
