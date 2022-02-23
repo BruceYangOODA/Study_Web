@@ -4,6 +4,10 @@
 [使用 Node.js 來爬蟲吧！[PTT 股票板]](https://b-l-u-e-b-e-r-r-y.github.io/post/PTTCrawler/)  20220222  
 [Web Scraping with Puppeteer & Node.js: Chrome Automation](https://www.youtube.com/watch?v=lgyszZhAZOI&ab_channel=LearnWebCode)  
 
+[A Guide to Web Scraping with Node.js](https://www.youtube.com/watch?v=dXjKh66BR2U&ab_channel=Fireship) 20220223  
+[WEB SCRAPING made simple with JAVASCRIPT tutorial](https://www.youtube.com/watch?v=TzZ3YOUhCxo&ab_channel=AaronJack) 20220223  
+[How to bypass reCAPTCHA with Puppeteer and Headless Chrome](https://www.youtube.com/watch?v=wsDRkAD6lPs&ab_channel=JarrodOverson)  20220223  
+[Web automation with JavaScript for beginners | Puppeteer](https://www.youtube.com/watch?v=wqRKEd0_suw&ab_channel=HiteshChoudhary)  20220223    
 
 ### [Puppeteer API ](https://github.com/puppeteer/puppeteer)  
 https://developers.google.com/web/tools/puppeteer/get-started  
@@ -84,7 +88,8 @@ return descriptionText.innerText
 
 createFolder(headingText, descriptionText)  
 
-
+### How to bypass reCAPTCHA with Puppeteer and Headless Chrome
+[How to bypass reCAPTCHA with Puppeteer and Headless Chrome](https://www.youtube.com/watch?v=wsDRkAD6lPs&ab_channel=JarrodOverson)  
 
 
 
