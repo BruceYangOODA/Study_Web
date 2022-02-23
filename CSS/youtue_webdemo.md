@@ -14,7 +14,7 @@
   < /div>
 </code>
 
-<code>
+
 .card {  
   background-color: white;  
   border: 1px solid #333;  
@@ -45,7 +45,7 @@ border-radius: .25em;
 font-size: 1rem;  
 padding: .23em;  
 }  
-</code>
+
 
 
 
