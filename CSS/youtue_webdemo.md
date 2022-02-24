@@ -2,8 +2,18 @@
 
 [Can I Create This Complex Animated Multistep Form?](https://www.youtube.com/watch?v=VdqtdKXxKhM&ab_channel=WebDevSimplified)  20220223    
 [Can I Create Accessible CSS Toggle Buttons?](https://www.youtube.com/watch?v=N8BZvfRD_eU&ab_channel=WebDevSimplified) 20220223  
+[How To Make Pricing Table Using HTML And CSS | Price Plan on Website In HTML & CSS](https://www.youtube.com/watch?v=LohRL_sw9N0)  20220224  
+[This Simple Trick Makes Your Website 83% Better Looking](https://www.youtube.com/watch?v=mxHoPYFsTuk) 20220224  
 
 
+
+
+
+
+
+### Can I Create This Complex Animated Multistep Form 表單樣式    
+### Can I Create Accessible CSS Toggle Buttons 自製 TOGGLE BUTTONS  
+### This Simple Trick Makes Your Website 83% Better Looking 3D背景卷軸滾動  
 
 
 
@@ -81,14 +91,13 @@ padding: .23em;
 }  
 
 
-### Can I Create Accessible CSS Toggle Buttons 
-自製 TOGGLE BUTTONS   
+### Can I Create Accessible CSS Toggle Buttons 自製 TOGGLE BUTTONS     
 [YOUTUBE](https://youtu.be/N8BZvfRD_eU?t=550)  
 
 
 
+### This Simple Trick Makes Your Website 83% Better Looking 3D背景卷軸滾動  
 
-
-
+補
 
 
