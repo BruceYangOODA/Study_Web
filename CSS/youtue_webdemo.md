@@ -6,7 +6,7 @@
 [This Simple Trick Makes Your Website 83% Better Looking](https://www.youtube.com/watch?v=mxHoPYFsTuk) 20220224  
 [How To Make A House Rental Website Part 3 | Make Compete Website Design Using HTML & CSS](https://www.youtube.com/watch?v=IOoWWr0si3s&ab_channel=EasyTutorials) 20220225  
 [Can I Create This Tricky CSS Button Animation?](https://www.youtube.com/watch?v=RDLg-p6PdTA)  20220225   
-
+[Coding Challenge SOLUTION #2 - Live Input Feedback](https://www.youtube.com/watch?v=nuve_s6yjcs&ab_channel=TheNetNinja)  20220225  
 
 
 
@@ -17,6 +17,15 @@
 ### This Simple Trick Makes Your Website 83% Better Looking 3D背景卷軸滾動  
 ### HTML & CSS Tutorial Learn HTML & CSS | Full Stack Training | Edureka Rewind 柵欄表格  
 ### Can I Create This Tricky CSS Button Animation  按鈕特效  
+### Coding Challenge SOLUTION #2 - Live Input Feedback 輸入框特效  
+
+
+
+
+
+
+
+
 
 ### Can I Create This Complex Animated Multistep Form  
 
@@ -109,6 +118,24 @@ padding: .23em;
 
 
 ### Can I Create This Tricky CSS Button Animation  按鈕特效  
+
+### Coding Challenge SOLUTION #2 - Live Input Feedback 輸入框特效  
+.valid form input {  
+border-color: #07cc81;  
+outline-color: #07cc81;  
+}  
+.tick {  input後面的pass ICON 起初看不見    
+opacity: 0;  
+color: #07cc81;  
+}  
+.valid .tick {  input加上valid class 後 pass ICON 可見  
+opacity: 1;  
+}  
+
+
+
+
+
 
 
 
