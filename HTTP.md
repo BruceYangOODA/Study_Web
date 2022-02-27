@@ -103,5 +103,5 @@ component.html
 < /div>  
 < /fieldset>  
 
-
-
+[CONFIG](https://youtu.be/n26StCRoeHA?t=5825)  
+"allowedCommonDependencies": ["file-saver"]  
