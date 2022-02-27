@@ -5,6 +5,15 @@
 [HTTP Crash Course & Exploration](https://www.youtube.com/watch?v=iYM2zFP3Zn0&ab_channel=TraversyMedia)  20220225   
 [Angular HTTP Client Quick Start Tutorial](https://www.youtube.com/watch?v=_05v0mrNLh0&ab_channel=Fireship)  20220226  
 [Angular 9 Tutorial For Beginners #64- HTTP Headers](https://www.youtube.com/watch?v=z83KBAoyNWw&ab_channel=ARCTutorials) 20220226  
+[Upload and Download Files with Progress | Spring Boot and Angular](https://www.youtube.com/watch?v=n26StCRoeHA&ab_channel=GetArrays)   20220227  
+
+
+
+npm install file-saver --save
+
+
+
+
 
 
 
@@ -12,7 +21,7 @@
 ### HTTP Crash Course & Exploration  
 ### Angular HTTP Client Quick Start Tutorial  
 ### Angular 9 Tutorial For Beginners #64- HTTP Headers  
-
+### Upload and Download Files with Progress | Spring Boot and Angular  
 
 
 
@@ -61,8 +70,24 @@ const headers = new HttpHeaders({
 })  
 
 
+### Upload and Download Files with Progress | Spring Boot and Angular  
+[upload](https://youtu.be/n26StCRoeHA?t=2366)  
+[API file-saver](https://www.npmjs.com/package/file-saver)  
 
+upload(formData: FormData): Observable<HttpEvent<string[]>> {  
+return this.http.post<string[]>(`${this.server}/file/upload`, formData, { observe: 'events', reportProgress: true})  
+}  
 
+component.ts  
 
+onUploadFiles(files: File[]): void {  
+const formData = new FormData();  
+for(const file of files) {  
+&nbsp; &nbsp; formData.append('files',file, file.name)  
+}  
+this.fileService.upload(formData).subscribe(  
+event => { console.log(event); }  
+)  
 
+}  
 
