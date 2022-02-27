@@ -91,3 +91,17 @@ event => { console.log(event); }
 
 }  
 
+component.html  
+< div class="progress">  
+< div [style.width.%]="fileStatus.percent" class="progress-bar">< /div>  
+< /div>  
+
+< from enctype="multipart/form-data">  
+< fieldset>  
+< div class="form-group">  
+< div>< input type="file" name="files" multiple class="form-control">< /div>  
+< /div>  
+< /fieldset>  
+
+
+
