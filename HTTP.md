@@ -6,7 +6,7 @@
 [Angular HTTP Client Quick Start Tutorial](https://www.youtube.com/watch?v=_05v0mrNLh0&ab_channel=Fireship)  20220226  
 [Angular 9 Tutorial For Beginners #64- HTTP Headers](https://www.youtube.com/watch?v=z83KBAoyNWw&ab_channel=ARCTutorials) 20220226  
 [Upload and Download Files with Progress | Spring Boot and Angular](https://www.youtube.com/watch?v=n26StCRoeHA&ab_channel=GetArrays)   20220227  
-
+[Angular HTTP API | FULL COURSE](https://www.youtube.com/watch?v=k8qDGBFPfXk&t=2926s&ab_channel=GetArrays)  20220228  
 
 
 npm install file-saver --save
@@ -22,7 +22,7 @@ npm install file-saver --save
 ### Angular HTTP Client Quick Start Tutorial  
 ### Angular 9 Tutorial For Beginners #64- HTTP Headers  
 ### Upload and Download Files with Progress | Spring Boot and Angular  
-
+### Angular HTTP API | FULL COURSE  
 
 
 
@@ -105,3 +105,8 @@ component.html
 
 [CONFIG](https://youtu.be/n26StCRoeHA?t=5825)  
 "allowedCommonDependencies": ["file-saver"]  
+
+
+### Angular HTTP API | FULL COURSE  
+
+
