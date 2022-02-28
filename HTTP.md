@@ -99,7 +99,7 @@ component.html
 < from enctype="multipart/form-data">  
 < fieldset>  
 < div class="form-group">  
-< div>< input type="file" name="files" multiple class="form-control">< /div>  
+< div>< input type="file" name="files" multiple class="form-control" (change)="onUploadFiles($event.target.files)">< /div>  
 < /div>  
 < /fieldset>  
 
@@ -108,5 +108,69 @@ component.html
 
 
 ### Angular HTTP API | FULL COURSE  
+[headers](https://youtu.be/k8qDGBFPfXk?t=5545)  
+
+getUsers(): {   // : Observable<HttpEvent<any>>  
+let myHeaders = new HttpHeaders({'myheader':'headervalue'})  
+myHeaders = myHeaders.set('id','1234')  // id = 1234  
+myHeaders = myHeaders.append('id','0000')  // id=[1234,0000]  
+myHeaders = myHeaders.set('id','1234')  // id = 1234  
+
+let myParams = new HttpParams().set('page','5').set('sort','true')    
+myParams = myParams.append('name','junior')  
+
+readonly moreParams = ['test','test2']  
+const objParams = {['testList']: this.moreParams}  
+let theParams = new HttpParams({fromObject: objParams})  // ?testList=test&testList=test2  
+let theParams = new HttpParams({fromString: 'name=Jhon&id=58'})  
+return this.http.get('api/users',  
+{  
+header: myHeaders,  
+params: myParams,  
+// params: theParams,    
+observe: 'events',  // 'events' 'body'    
+reportProgress: true,  
+})  
+}  
+
+===================
+
+onUploadFile(files: File[]): void {  
+const formData = new FormData()  
+for(const file of files) {  
+&nbsp; &nbsp; formData.append('files', file, file.name)}  
+
+this.userService.uploadFiles(formData).subscribe(  
+(event) => {  
+&nbsp; switch(event) {  
+&nbsp; case HttpEventType.UploadProgress || HttpEventType.DownloadProgress:  
+&nbsp; &nbsp; console.log(event); break;  
+&nbsp; case HttpEventType.Response:    
+&nbsp; &nbsp; console.log(event); break;  
+}}  
+)  
+
+
+}  
+
+https://youtu.be/k8qDGBFPfXk?t=7455
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
