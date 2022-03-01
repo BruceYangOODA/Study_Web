@@ -144,14 +144,35 @@ this.userService.uploadFiles(formData).subscribe(
 (event) => {  
 &nbsp; switch(event) {  
 &nbsp; case HttpEventType.UploadProgress || HttpEventType.DownloadProgress:  
-&nbsp; &nbsp; console.log(event); break;  
+&nbsp; &nbsp; console.log(event); 
+&nbsp; &nbsp; this.fileStatus.percentage = event.loaded / event.type  
+&nbsp; &nbsp; this.fileStatus.status = 'progress'  
+&nbsp; &nbsp; break;  
 &nbsp; case HttpEventType.Response:    
-&nbsp; &nbsp; console.log(event); break;  
+&nbsp; &nbsp; console.log(event);  
+&nbsp; &nbsp; if(event.status === 200) {  
+&nbsp; &nbsp; this.fileStatus.percentage = 0  
+&nbsp; &nbsp; this.fileStatus.status = 'done'
+}  
+&nbsp; &nbsp; break;  
 }}  
 )  
-
-
 }  
+
+component.html  
+
+< progress *ngIf="fileStatus.status === 'progress'" style="width: 500px; height: 25px;" [value]="fileStatus.percentage">< / progress>  
+
+===================
+
+getTextFile() : Observable<HttpResponse<Blob>> {  
+return this.http.get('assets/text.txt', {  
+responseType: 'blob',  
+observe: 'response'  
+})  
+}  
+
+
 
 https://youtu.be/k8qDGBFPfXk?t=7455
 
