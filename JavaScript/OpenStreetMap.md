@@ -1,5 +1,5 @@
 
-[API OpenStreetMap]()  
+[API OpenStreetMap](https://leafletjs.com/SlavaUkraini/)  
 [leaflet-color-markers](https://www.github.com/pointhi/leaflet-color-markers)  
 [Leaflet.markercluster]()  
 
@@ -7,6 +7,7 @@
 ### [Web 視覺化(四)：建立 OpenStreetMap 地圖](https://noob.tw/openstreetmap/)  
 ### [【Day 13】 淺談 OSM](https://ithelp.ithome.com.tw/articles/10273398)   
 ### [OSM + Leaflet 學習筆記1：建地圖、marker、事件、換圖層](https://www.letswrite.tw/leaflet-osm-basic/)  
+### [leaflet載入離線OSM(OpenStreetMap)](https://www.itread01.com/content/1541647275.html)   20220323    
 
 
 ### Leaflet + OpenStreetMap 地圖應用開發  
@@ -60,6 +61,7 @@ map.addLayer(markers);
 }
 
 
-
-
+### leaflet載入離線OSM(OpenStreetMap)  
+[離線leaflet download](https://leafletjs.com/SlavaUkraini/download.html)  
+[Maperitive OSM工具 地圖下載](http://maperitive.net/)   
 
