@@ -5,6 +5,10 @@
 
 [OpenStreetMap 離線地圖下載區](https://download.geofabrik.de/index.html)   
 [g0v/twgeojson](https://github.com/g0v/twgeojson/tree/master/json)  
+import * as L from 'leaflet';  
+import { Map, MapOptions, MarkerClusterGroup, MarkerClusterGroupOptions } from 'leaflet';  
+import 'leaflet.markercluster';  
+
 
 ### [Leaflet + OpenStreetMap 地圖應用開發](https://www.youtube.com/watch?v=pUizu62dlnY)  20220322      
 ### [Web 視覺化(四)：建立 OpenStreetMap 地圖](https://noob.tw/openstreetmap/)  
@@ -81,5 +85,9 @@ map.addLayer(markers);
 
 
 ### Using leaflet.markercluster  
-npm install @types/leaflet-markercluster
+[API](https://www.npmjs.com/package/leaflet.markercluster)  
+npm install @types/leaflet-markercluster  
+npm i leaflet.markercluster  
+
+[asymmetrik/ngx-leaflet-markercluster](https://github.com/Asymmetrik/ngx-leaflet-markercluster)    
 
