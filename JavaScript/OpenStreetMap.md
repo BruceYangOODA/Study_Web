@@ -14,7 +14,7 @@
 ### [將openstreemap圖資轉成地圖瓦片](https://longfamily.pixnet.net/blog/post/351665930-%E5%B0%87openstreemap%E5%9C%96%E8%B3%87%E8%BD%89%E6%88%90%E5%9C%B0%E5%9C%96%E7%93%A6%E7%89%87)  20220329   
 ### [下载OpenStreetMap离线地图数据并搭载瓦片服务器](https://blog.csdn.net/hopyGreat/article/details/100625385)  20220329    
 ### [Web 視覺化(四)：建立 OpenStreetMap 地圖](https://noob.tw/openstreetmap/)  20220329    
-
+### [Using leaflet.markercluster](https://github.com/Asymmetrik/ngx-leaflet/issues/39)   20220406   
 
 ### Leaflet + OpenStreetMap 地圖應用開發  
 [JS API](https://youtu.be/pUizu62dlnY?t=1787)  
@@ -78,3 +78,8 @@ map.addLayer(markers);
 可自選區域( Map-->Set Geometry Bounds )  
 在下方使用Command promat。輸入generate-tiles minzoom=8 maxzoom=17  
 數字表示地圖的縮放級別可以更換地圖的縮放級別可以更換。還可以在map菜單欄的switch to rules中選擇地圖的樣式。比如黑色或者精簡地圖。下載完成後在其軟件的目錄下面有個Tiles的文檔夾，這裏面存放的就是地圖的瓦片。  
+
+
+### Using leaflet.markercluster  
+npm install @types/leaflet-markercluster
+
