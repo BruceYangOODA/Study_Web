@@ -31,7 +31,7 @@ html, body { width: 100%; height: 100%; }
 #map { width: 100%; height: 100%; }  
 
 var map = L.map('map', { center:[22.604799, 120.2976256], zoom:16 })  
-L.titleLayer('https://{s}.title.openstreetmap.org/{z}/{x}/{y}.png',  
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',  
 { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreepMap</a> contributors'})  
 .addTo(map);  
 
