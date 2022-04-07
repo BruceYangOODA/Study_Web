@@ -23,6 +23,7 @@ import 'leaflet.markercluster';
 
 
 ### Leaflet + OpenStreetMap 地圖應用開發  
+npm i leaflet --save  
 [JS API](https://youtu.be/pUizu62dlnY?t=1787)  
 
 < link rel="stylesheet" href="https://unpkg.com/leafet@1.6.0/dist/leaflet.css" >< /link>  
@@ -35,6 +36,8 @@ import 'leaflet.markercluster';
 
 html, body { width: 100%; height: 100%; }  
 #map { width: 100%; height: 100%; }  
+
+import * as L from 'leaflet';  
 
 var map = L.map('map', { center:[22.604799, 120.2976256], zoom:16 })  
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',  
@@ -87,7 +90,7 @@ map.addLayer(markers);
 
 $ set-geo-bounds 119,21,123,26  
 $ generate-tiles minzoom=7 maxzoom=13  
-
+$ generate-tiles minzoom=14 maxzoom=15  
 
 ### Using leaflet.markercluster  
 // npm install @types/leaflet-markercluster  
