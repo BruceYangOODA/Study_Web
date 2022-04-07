@@ -19,6 +19,8 @@ import 'leaflet.markercluster';
 ### [下载OpenStreetMap离线地图数据并搭载瓦片服务器](https://blog.csdn.net/hopyGreat/article/details/100625385)  20220329    
 ### [Web 視覺化(四)：建立 OpenStreetMap 地圖](https://noob.tw/openstreetmap/)  20220329    
 ### [Using leaflet.markercluster](https://github.com/Asymmetrik/ngx-leaflet/issues/39)   20220406   
+### [Leaflet.markercluster](https://www.npmjs.com/package/leaflet.markercluster#enabled-by-default-boolean-options)   20220407    
+
 
 ### Leaflet + OpenStreetMap 地圖應用開發  
 [JS API](https://youtu.be/pUizu62dlnY?t=1787)  
@@ -80,14 +82,33 @@ map.addLayer(markers);
 [openstreemap圖資](http://download.geofabrik.de/asia/taiwan-latest.osm.pbf)    
 加載的離線地圖taiwan-latest.osm.pbf  
 可自選區域( Map-->Set Geometry Bounds )  
-在下方使用Command promat。輸入generate-tiles minzoom=8 maxzoom=17  
+在下方使用Command promat。輸入generate-tiles minzoom=7 maxzoom=17  
 數字表示地圖的縮放級別可以更換地圖的縮放級別可以更換。還可以在map菜單欄的switch to rules中選擇地圖的樣式。比如黑色或者精簡地圖。下載完成後在其軟件的目錄下面有個Tiles的文檔夾，這裏面存放的就是地圖的瓦片。  
+
+$ set-geo-bounds 119,21,123,26  
+$ generate-tiles minzoom=7 maxzoom=13  
 
 
 ### Using leaflet.markercluster  
-[API](https://www.npmjs.com/package/leaflet.markercluster)  
-npm install @types/leaflet-markercluster  
+// npm install @types/leaflet-markercluster  
 npm i leaflet.markercluster  
 
 [asymmetrik/ngx-leaflet-markercluster](https://github.com/Asymmetrik/ngx-leaflet-markercluster)    
 
+### Leaflet.markercluster  
+[API](https://www.npmjs.com/package/leaflet.markercluster)   
+#### method 1 [unpkg CDN](https://unpkg.com/browse/leaflet.markercluster@1.4.1/dist/)   
+using  [MarkerCluster.css](https://unpkg.com/browse/leaflet.markercluster@1.4.1/dist/MarkerCluster.css)   
+using  [MarkerCluster.Default.css](https://unpkg.com/browse/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css)  
+using  [leaflet.markercluster.js](https://unpkg.com/browse/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js)   
+#### method 2
+npm i leaflet.markercluster  
+
+import * as L from 'leaflet';  
+import { Map, MapOptions, MarkerClusterGroup, MarkerClusterGroupOptions } from 'leaflet';  
+import 'leaflet.markercluster';  
+
+  < link rel="stylesheet" type="text/css" media="screen" href="assets/Leaflet/MarkerCluster.css"/>  
+  < link rel="stylesheet" type="text/css" media="screen" href="assets/Leaflet/MarkerCluster.Default.css"/>  
+  <!--<script 
+    src="assets/Leaflet/leaflet.markercluster.js"></script>-->  
