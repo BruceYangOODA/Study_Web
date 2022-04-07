@@ -24,7 +24,8 @@ import 'leaflet.markercluster';
 
 ### Leaflet + OpenStreetMap 地圖應用開發  
 npm i leaflet --save  
-npm i --save-dev @types/leaflet  
+npm i -D @types/leaflet  
+// npm uninstall @types/leaflet  
 [JS API](https://youtu.be/pUizu62dlnY?t=1787)  
 
 < link rel="stylesheet" href="https://unpkg.com/leafet@1.6.0/dist/leaflet.css" >< /link>  
