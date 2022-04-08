@@ -97,6 +97,7 @@ $ generate-tiles minzoom=14 maxzoom=15
 ### Using leaflet.markercluster  
 // npm install @types/leaflet-markercluster  
 npm i leaflet.markercluster  
+npm i -D @types/leaflet.markercluster    
 
 [asymmetrik/ngx-leaflet-markercluster](https://github.com/Asymmetrik/ngx-leaflet-markercluster)    
 
