@@ -1,6 +1,7 @@
 
 ### [LEAFLET API](https://docs.eegeo.com/eegeo.js/v0.1.280/docs/leaflet/)  
 ### [TGOS(Taiwan Geospatial One Stop)全國門牌定位服務](https://www.tgos.tw/TGOS/Web/Address/TGOS_Address.aspx)  
+### [wms,wmts資源彙整(國土測繪圖資服務)](https://ithelp.ithome.com.tw/articles/10195607)  
 ### [leaflet.pm](https://www.npmjs.com/package/leaflet.pm)  
 ### [leaflet-geoman](https://github.com/geoman-io/leaflet-geoman) 
 ### [使用Leaflet及Folium開啟網頁地圖大門](https://ithelp.ithome.com.tw/users/20112552/ironman/2074)  
