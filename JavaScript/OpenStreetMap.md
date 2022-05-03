@@ -4,6 +4,7 @@
 ### [wms,wmts資源彙整(國土測繪圖資服務)](https://ithelp.ithome.com.tw/articles/10195607)  
 ### [搜尋和下載開放街圖資料](http://www.qgistutorials.com/zh_TW/docs/downloading_osm_data.html)  
 ### [Turf.js 空間資料運算及分析](http://turfjs.org/)  
+### [JSDC 2015 Turf.js - 地理資訊的分析與地圖視覺化](https://www.slideshare.net/kurotanshi/jsdc-2015-turfjs)  
 ### [leaflet.pm](https://www.npmjs.com/package/leaflet.pm)  
 ### [leaflet-geoman](https://github.com/geoman-io/leaflet-geoman) 
 ### [使用Leaflet及Folium開啟網頁地圖大門](https://ithelp.ithome.com.tw/users/20112552/ironman/2074)  
