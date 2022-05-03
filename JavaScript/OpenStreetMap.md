@@ -33,6 +33,7 @@ import 'leaflet.markercluster';
 ### [Web 視覺化(四)：建立 OpenStreetMap 地圖](https://noob.tw/openstreetmap/)  20220329    
 ### [Using leaflet.markercluster](https://github.com/Asymmetrik/ngx-leaflet/issues/39)   20220406   
 ### [Leaflet.markercluster](https://www.npmjs.com/package/leaflet.markercluster#enabled-by-default-boolean-options)   20220407    
+### [Leaflet + OpenStreetMap 地圖應用開發](https://www.bilibili.com/video/BV1Lt4y1X7Em)  20220503  
 
 
 ### Leaflet + OpenStreetMap 地圖應用開發  
