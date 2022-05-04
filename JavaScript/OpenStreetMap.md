@@ -35,7 +35,7 @@ import 'leaflet.markercluster';
 ### [Using leaflet.markercluster](https://github.com/Asymmetrik/ngx-leaflet/issues/39)   20220406   
 ### [Leaflet.markercluster](https://www.npmjs.com/package/leaflet.markercluster#enabled-by-default-boolean-options)   20220407    
 ### [Leaflet + OpenStreetMap 地圖應用開發](https://www.bilibili.com/video/BV1Lt4y1X7Em)  20220503  
-
+### [H5時代leaflet中還在用DivIcon？](https://iter01.com/560296.html)   20220504    
 
 ### Leaflet + OpenStreetMap 地圖應用開發  
 npm i leaflet --save  
