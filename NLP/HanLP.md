@@ -8,7 +8,7 @@ print(HanLP.segment(content))
 
 自然語言處理--用人工智慧看懂中文 鄭捷  
 
-NR>人名
+NR > 人名
 
 
 
