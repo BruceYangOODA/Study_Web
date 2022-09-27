@@ -17,7 +17,7 @@
 | 另開連結 | window.open(URL, name, features, replace) | name:新視窗名稱 |  |  
 | 滾動卷軸 | $(selector).scrollTop(offset) |  |  |  
 | 滾動卷軸 | $scrollTo(selector, speed) |  |  |  
-| 自動調整高度 | $(selector).height(length) | $(selector).load(function() { var vHeight = $(this).contents().find("body").height(); $(this).height(vHeight<300?300:vHeight); }) |  |  
+| 自動調整高度 | $(selector).height(length) | $(selector).load(function() { var vHeight = $(this).contents() .find("body").height(); $(this).height(vHeight<300?300:vHeight); }) |  |  
 | 取得滑鼠座標 | $(document).mousemove(function (e) { x=e.screenX; y=e.screenY;}) |  |  |  
 | 取得滑鼠視窗座標 | $(document).mousemove(function (e) { x=e.clientX; y=e.clientY; }) |  |  |  
 | 阻止文字換行 | str.replace(regexp, replacement) | str.replace(/\r\n/g, '\\n').replace(/\n/g, '') |  |  
