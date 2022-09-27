@@ -54,8 +54,19 @@
 | 防止頁面重複提交按鈕 | $(selector).click(function() { $("#submit").attr("disabled", "disabled"); return false; }) | 點擊後，立刻禁用 |  |  
 | 取得點選的select | $(selector).change(fucntion() { var str=""; $("select :selected").each(callback)}); | str += $(this).text() + "," |  |  
 | 禁止輸入空白 | onkeyup="value=value.replcae(/\s/g, "")" |  |  |  
+| 禁止元素的預設行為 | $("a").attr("href","#"); $("a").click(function(event) {}) | event.preventDefault(); | preventDefault() 阻止元素的預設行為; IE: window.event.returnValue=false |  
+| 測試某個元素是否可見 | if($(selector).is(":visible")) {...} |  |  |  
 |  |  |  |  |  
 |  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+
 
 
 
