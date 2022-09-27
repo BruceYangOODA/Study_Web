@@ -55,9 +55,9 @@
 | 取得點選的select | $(selector).change(fucntion() { var str=""; $("select :selected").each(callback)}); | str += $(this).text() + "," |  |  
 | 禁止輸入空白 | onkeyup="value=value.replcae(/\s/g, "")" |  |  |  
 | 禁止元素的預設行為 | $("a").attr("href","井"); $("a").click(function(event) {}) | event.preventDefault(); | preventDefault() 阻止元素的預設行為; IE: window.event.returnValue=false |  
-| 測試某個元素是否可見 | if($(selector).is(":visible")) {...} |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
+| 測試某個元素是否可見 | if($(selector).is(":visible")) {...} | is(":visible") 檢測一 display:none; 檢測二 type="hidden"表單元素; 檢測三 width=0 height=0; 檢測四 隱藏的父元素  |  |  
+| 禁用輸入框 | $(selector).attr("disabled","disabled") |  |  |  
+| 啟用輸入框 | $(selector).removeAttr("disabled") |  |  |  
 |  |  |  |  |  
 |  |  |  |  |  
 |  |  |  |  |  
