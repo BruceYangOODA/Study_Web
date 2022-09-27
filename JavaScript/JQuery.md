@@ -48,7 +48,7 @@
 | 禁用右鍵 | $(document).bind("contextmenu", function(e) { return false;}) |  |  |  
 | IE禁用文字選取 | $(document).bind("selectstart", function(e) { return false }) |  |  |  
 | 輸入框focus高亮 | window.onload = function() { for(var i=0; i<$("input").length; i++) { }} | $("input")[i].onfocus = function() { this.calssName="css-text-high"} | $("input")[i].onblur = function() { this.calssName="css-text"} |  
-| 輸入事件 | $(" :text").bind("keyup", function(e) { var theValue = $(this).val(); }) |  |  |  
+| 輸入事件 | $(selector).bind("keyup", function(e) { var theValue = $(this).val(); }) |  |  |  
 | 子物件點擊事件 | $(document).delegate("a", "click", callback) |  | var root = location.href.replace(location.pathname + loaction.search + location.hash, ''); window.open(this.href); return false; | $(selector).delegate(childSelector, event, data, callback) | 
 | 固定Table表頭 | $(selector).chromatable({ width: "900px", height: "400px", scrolling: "yes"}) |  |  |  
 | 防止頁面重複提交按鈕 | $(selector).click(function() { $("#submit").attr("disabled", "disabled"); return false; }) | 點擊後，立刻禁用 |  |  
