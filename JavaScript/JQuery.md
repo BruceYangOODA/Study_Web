@@ -22,7 +22,7 @@
 | 取得滑鼠視窗座標 | $(document).mousemove(function (e) { x=e.clientX; y=e.clientY; }) |  |  |  
 | 阻止文字換行 | str.replace(regexp, replacement) | str.replace(/\r\n/g, '\\n').replace(/\n/g, '') |  |  
 | 字數限制 | $(selector).charCount({ allowed:150, waring:120, counterText:"剩餘字數:"}) |  |  |  
-| 字數限制 | var type = this.tagName.toLowerCase(): null; var inputType = this.type?this.type.toLowerCase(): null; |  | if(type=='input' && inputType == 'text' or inputType == 'password') { this.maxLength=max; } | else if(type=='textarea') { this.onkeyup = function() { if(this.value.length > max) { this.value = this.value.substring(0,max)}}} | 
+| 字數限制 | var type = this.tagName.toLowerCase(): null; var inputType = this.type?this.type.toLowerCase(): null; | if(type=='input' && inputType == 'text' or inputType == 'password') { this.maxLength=max; } | else if(type=='textarea') { this.onkeyup = function() { if(this.value.length > max) { this.value = this.value.substring(0,max)}}} | 
 | 提示文字 | $(selector).focus(); $(selector).blur(); | $(selector).focus(function() { if($(this.val() == '搜索中...') { $(this).val("")} )}) | $(selector).blur(function() { if($(this.val() == "") { $(this).val("搜索中...")} )}) |  
 | 文字閃爍 | setInterval(code, millisec); clearInterval(id_of_setinterval); |  |  |  
 | 文字自動縮排 | $.elasticTextArea(selector) |  |  |  
