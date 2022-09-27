@@ -51,7 +51,7 @@
 | 輸入事件 | $(selector).bind("keyup", function(e) { var theValue = $(this).val(); }) |  |  |  
 | 子物件點擊事件 | $(document).delegate("a", "click", callback) |  | var root = location.href.replace(location.pathname + loaction.search + location.hash, ''); window.open(this.href); return false; | $(selector).delegate(childSelector, event, data, callback) | 
 | 固定Table表頭 | $(selector).chromatable({ width: "900px", height: "400px", scrolling: "yes"}) |  |  |  
-| 防止頁面重複提交按鈕 | $(selector).click(function() { $("#submit").attr("disabled", "disabled"); return false; }) | 點擊後，立刻禁用 |  |  
+| 防止頁面重複提交按鈕 | $(selector).click(function() { $(selector).attr("disabled", "disabled"); return false; }) | 點擊後，立刻禁用 |  |  
 | 取得點選的select | $(selector).change(fucntion() { var str=""; $("select :selected").each(callback)}); | str += $(this).text() + "," |  |  
 | 禁止輸入空白 | onkeyup="value=value.replcae(/\s/g, "")" |  |  |  
 | 禁止元素的預設行為 | $("a").attr("href","#"); $("a").click(function(event) {}) | event.preventDefault(); | preventDefault() 阻止元素的預設行為; IE: window.event.returnValue=false |  
