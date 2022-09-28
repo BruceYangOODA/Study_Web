@@ -66,14 +66,15 @@
 | hover延遲顯示 | fuction addMega() { $ (this).addClass("hovering"); }  function removeMega( ) { $ (this).removeClass("hovering"); } | var megaConfig = { interval:500, sensitivity:4, timeout:500, over:addMega, out:removeMega } | $(selector).hoverIntent(megaConfig); |  
 | 取得頁面載入時間 | var start_time = new Date(); var end_time=""; | var t = setInterval(function() { if(document.readyState == "complete") { calTotalTime(); }}, 500) | function calTotalTime() { end_time = new Date(); var vTotalTime = end_time.getTime() - start_time.getTime(); clearInterval(t); } |  
 | 用Enter鍵模擬Tab鍵 | < script type="text/javascript" for="document" event="onkeydown" > ... < /script> | if(event.keyCode==13 && event.srcElement.type!="buton" && event.srcElement.type!="reset" && event.srcElement.type!="textarea" && event.srcElement.type!="" ) { event.keyCode=9; } | widnow.onload=fucntion() { documenet.getElementById("thetest").focus(); } |  
-| DIV自動置中 | $(document).ready(function() { }) | $(selector).center( ); | $(window).bind("resize", function() { $(selector).center({transition:500}); }) |  
+| DIV自動置中 | $(document).ready(function() { }) | $(selector).center(); | $(window).bind("resize", function() { $(selector).center({transition:500}); }) |  
 | 新增hover類別 | $(selector).hover(handlerIn, handlerOut); | $("li").hover( function() {}, function() {}) |  |  
 | 自動完成autocomplete | var availableTags = {"A","B"}; | $(selector).autocomplete({ source:availableTags, scroll:true}) |  |  
 | 滑鼠拖曳 | var _move=false; var _x, _y; | $(selector).click(function() {}).mousedown(fucntion(e) { _move=true; _x=e.pageX-parseInt($(".drag").css("left"); _y=e.pageY-parseInt($(".drag").css("top")); $("drag").fadeTo(20, 0.5); )}) | $(document).mousemove(function(e) { if(_move) { var x=e.pageX - _x; y=e.pageY - _y; $(".drag").css({top:y, left:x}); }}).mouseup(function() { _move=false; $(".drag").fadeTo("fast", 1)}); |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
+| 滑鼠拖曳 | $(selector).draggable({ cursor:"move", cursorAt:{top:56, left:56}}); | $(selector).draggable("enable");啟用禁用的拖曳功能 $(selector).draggable("disable");禁用的拖曳功能 | $(selector).draggable("destroy");刪除拖曳功能 |  
+| 限制拖曳範圍 | $(selector).draggable({axis:"y"});只能垂直拖曳 | $(selector).draggable({axis:"x"});只能水平拖曳 | $(selector).draggable({containment: "idName or parent", scroll: false, distance:20 });只能在目標容器內,超過20像素才開始 |  
+| 拖曳到目標容器 | $("#draggable").draggable(); | $("#droppable").droppable({ drop: function(event, ui) {}}); | $("#droppable").droppable({ accept: "selectorName"});只允許accept拖曳至此 |  
+| 不能選擇文字 | $(selector).disableSelection(); |  |  |  
+| 可調整大小 | $(selector).resizable(); |  |  |  
 |  |  |  |  |  
 |  |  |  |  |  
 
