@@ -58,6 +58,16 @@
 | 測試某個元素是否可見 | if($(selector).is(":visible")) {...} | is(":visible") 檢測一 display:none; 檢測二 type="hidden"表單元素; 檢測三 width=0 height=0; 檢測四 隱藏的父元素  |  |  
 | 禁用輸入框 | $(selector).attr("disabled","disabled") |  |  |  
 | 啟用輸入框 | $(selector).removeAttr("disabled") |  |  |  
+| 監聽INPUT | $(selector).bind("input propertychange", callback) |  |  |  
+| 監聽INPUT | < input type="text" oninput=方法(event) onpropertychange=方法(event) /> |  |  |  
+| 雙擊不選取文字 | var clearSelection = function() { if(document.selection && document.selection.empty) { document.selection.empty(); }  else if(window.getSelection) { var sel = window.getSelection(); sel.removeAllRanges(); }} | $(selector).bind("dblclick", fucntion() { clearSelection(); }) |  |  
+| 設定時間間隔 | var int = self.setInterval("clock()",50); | function clock() { var t = new Data(); document.getElementById("clock").value = t; } |  |  
+| 設定時間延遲 | function timeMsg() { var t = setTimeout("log()", 1000); } | fuction log() { ... } | < input type="button" onclick="timeMsg()" / > |  
+| hover延遲顯示 | fuction addMega() { $(this).addClass("hovering"); }  function removeMega() { $(this).removeClass("hovering"); } | var megaConfig = { interval:500, sensitivity:4, timeout:500, over:addMega, out:removeMega } | $(selector).hoverIntent(megaConfig); |  
+| 取得頁面載入時間 | var start_time = new Date(); var end_time=""; | var t = setInterval(function() { if(document.readyState == "complete") { calTotalTime(); }}, 500) | function calTotalTime() { end_time = new Date(); var vTotalTime = end_time.getTime() - start_time.getTime(); clearInterval(t); } |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
 |  |  |  |  |  
 |  |  |  |  |  
 |  |  |  |  |  
