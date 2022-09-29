@@ -82,22 +82,17 @@
 | hover圖片特效 | $(document).ready(function() { $(" # img img").mouseover(function() { $(" # img img").not(this).animate({opacity:0.1},400); })  | .mouseout(function() {$(" # img img").animate({opacity:1}, 400)}); )} |  |  
 | 取得圖片顯示尺寸 | $(selector).append("寬度:"+($("img:first").width() )); | $(selector).append("高度:"+($("img:first").height() )); |  |  
 | 取得圖片原始尺寸 | $("< img / >").attr("src", "IMG_URL").load(fucntion() { CODE }) | var imgWidth=this.width; var imgHeight=this.height; |  |  
+| 切換陣列圖片 | var images=new Array(4); var n=0; images[0]="IMG_ONE_URL"; images[1]="IMG_TWO_URL"; | $(selector).click(function() { $(selector2).fadeOut(1000, callback) }) | $(selector2).css("backround-image", "url('+image[n]+')");  $(selector2).fadeIn(); if(n>3) { n=0; } else { n=n+1; } |  
+| 按比例縮放圖片 | $(window).bind("load", function() { $(selectors).each( function() { callback })}); | var maxWidth=200; var maxHeight=200; var ratio=0; var width=$(this).width(); var height=$(this).height(); | if(width>maxWidth) { ratio=maxWidth/width; $(this).css("width",maxWidth); $(this).css("height",height * ratio);  if(height>maxHeight) { ratio=maxHeight/height; $(this).css("height",maxHeight); $(this).css("width", width * ratio); }} |  
+| 圖片放大預覽 | 初始放大body區域 $("body").zoomTo();  | 點擊圖片放大 $(".zoom").click(function(evt) { evt.stopPropagation(); $(this).zoomTo(); }) | 點擊body恢復圖片大小 $("widnow").click(function(evt) { evt.stopPropagation(); $(body).zoomTo(); })  |  
+| 圖片動態縮放 | $(selector).imgZoom({ showOverlay: true}); |  |  |  
+| hover圖片放大 | 當滑鼠mouseover圖片,body新增一個div放圖片 | 當滑鼠mouseout圖片,body移除div圖片 |  |  
+| 畫廊淡出淡入圖片 | $(selector).hover(callback1, callback2) | $(this).find(selector2).fadeOut(); | $(selector2).attr("src", NEXT_IMG_URL); $(this).find(selector2).fadeIn(); |  
+| 拖曳圖片 | $(window).bind("mousemove", function(evt) { CODE }) | if(!move) return; var obj=$(selector); mouseX=evt.pageX; mouseY=evt.pageY; x=obj.position().left; y=obj.position().top; obj.css({left:x+(mouseX-currx), top:y+(mouseY-curry)}); currx=evt.pageX; curry=evt.pageY; | $(selector).mouseup(function() { move=false; }) |  
 |  |  |  |  |  
 |  |  |  |  |  
 |  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
+
 
 
 
