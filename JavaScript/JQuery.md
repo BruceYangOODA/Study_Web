@@ -75,8 +75,30 @@
 | 拖曳到目標容器 | $("#draggable").draggable(); | $("#droppable").droppable({ drop: function(event, ui) {}}); | $("#droppable").droppable({ accept: "selectorName"});只允許accept拖曳至此 |  
 | 不能選擇文字 | $(selector).disableSelection(); |  |  |  
 | 可調整大小 | $(selector).resizable(); |  |  |  
+| 無法顯示圖片 | $("img").error(function() { $("img").replaceWith(HTML_CODE)}) | $("img").error(function() { $("img").attr("src", "DEFAULT_IMG_URL")}) |  |  
+| 顯示loading圖直至頁面載入完成 | window.onload(function() { $(selector).fadeOut(); }) |  |  |  
+| 將圖片存入快取 | $.preloadImages('IMG_URL'); | function($) { var cache = []; $.preLoadImages = function() { var args_len = arguments.length; for(var i=arge_len; i--;) { var cacheImage = document.createElement('img'); cacheImage.src = arguments[i]; cache.push(cacheImage); } } } |  |  
+| 批次載入圖片 | window.setTimeout(function() { .CODE. }, 500) | var img = $("<img>").attr("src", NEXT_IMG_URL).load(function() { $("div").append(img)}); |  |  
 |  |  |  |  |  
 |  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+
 
 
 
