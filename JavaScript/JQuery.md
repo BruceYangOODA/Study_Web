@@ -79,7 +79,7 @@
 | 顯示loading圖直至頁面載入完成 | window.onload(function() { $(selector).fadeOut(); }) |  |  |  
 | 將圖片存入快取 | $.preloadImages('IMG_URL'); | function($) { var cache = []; $.preLoadImages = function() { var args_len = arguments.length; for(var i=arge_len; i--;) { var cacheImage = document.createElement('img'); cacheImage.src = arguments[i]; cache.push(cacheImage); } } } |  |  
 | 批次載入圖片 | window.setTimeout(function() { .CODE. }, 500) | var img = $("< img >").attr("src", NEXT_IMG_URL).load(function() { $("div").append(img)}); |  |  
-| hover圖片特效 | $(document).ready(function() { $("#img img").mouseover(function() { $("#img img").not(this).animate({opacity:0.1},400); }) .mouseout(function() {$("#img img").animate({opacity:1}, 400)}); )} |  |  |  
+| hover圖片特效 | $(document).ready(function() { $(" # img img").mouseover(function() { $(" # img img").not(this).animate({opacity:0.1},400); }) .mouseout(function() {$(" # img img").animate({opacity:1}, 400)}); )} |  |  |  
 | 取得圖片尺寸 | $() |  |  |  
 | 取得圖片原始尺寸 |  |  |  |  
 |  |  |  |  |  
