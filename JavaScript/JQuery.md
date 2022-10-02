@@ -90,6 +90,12 @@
 | 畫廊淡出淡入圖片 | $(selector).hover(callback1, callback2) | $(this).find(selector2).fadeOut(); | $(selector2).attr("src", NEXT_IMG_URL); $(this).find(selector2).fadeIn(); |  
 | 拖曳圖片 | $(window).bind("mousemove", function(evt) { CODE }) | if(!move) return; var obj=$(selector); mouseX=evt.pageX; mouseY=evt.pageY; x=obj.position().left; y=obj.position().top; obj.css({left:x+(mouseX-currx), top:y+(mouseY-curry)}); currx=evt.pageX; curry=evt.pageY; | $(selector).mouseup(function() { move=false; }) |  
 |  |  |  |  |  
+| 驗證Email | var mailExp = new RegExp(/^[\w\-\.]+@[\w\-\.]+[\.\w]+$/); | mailExp.test(targetSTR); |  |  
+| 自動調整螢幕寬度 | < meta name="viewport" content="width=device-width, initial-scale=1">|  |  |  
+| bind(type [,data], fn) | blur, foucus, load, resize, scroll, unload, click, dblckick, | mousedown, mouseup, mousemove, mouseover, mouseout, mouseenter, mouseleave, | change, select, submit, keydown, keypress, keyup, error, |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
 |  |  |  |  |  
 |  |  |  |  |  
 
