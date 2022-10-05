@@ -66,3 +66,22 @@
 |  |  |  |  
 |  |  |  |  
 |  |  |  |  
+| 導覽列 | < nav class="navbar navbar-default navbar-fixed-top" > < div class="navbar-header"> < a class="navbar-brand" href="#"> 導覽列 < /a> < button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false"> < span class="sr-only"> 切換導覽 < /span> < sapn class="icon-bar">< /sapn> < sapn class="icon-bar">< /sapn> < sapn class="icon-bar">< /sapn> < /button> < /div> < /nav> | < div id="nav-menu" class="collapse navbar-collapse navbar-right"> < ul class="nav navbar-nav" < li>< a href="#about"> 關於 < /a> < /li> < /ul> < /div> |
+| .navbar.fixed-top | 導覽列置頂 |  |  
+| .navbar.fixed-bottom | 導覽列置底 |  |  
+| .navbar-dark.bg-danger | 深色背景 底色紅色 |  |  
+| .navbar-light | 淺色背景 |  |  
+| 下拉選單 | <pre><button type="button">Button</button></pre> |  |  
+|  |  |  |  
+|  |  |  |  
+|  |  |  |  
+|  |  |  |  
+|  |  |  |  
+|  |  |  |  
+|  |  |  |  
+|  |  |  |  
+|  |  |  |  
+|  |  |  |  
+|  |  |  |  
+|  |  |  |  
+|  |  |  |  
