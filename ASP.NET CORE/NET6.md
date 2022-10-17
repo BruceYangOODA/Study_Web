@@ -12,8 +12,12 @@ SQLTools MySQL/MariaDB
 SQLTools PostgreSQL/Redshift Driver
 SQLTools Microsoft SQL Server/Azure
 
+Visiual Studion SDK 6(支援 CORE 6.0)
 
+cmd$ winget install Microsoft.DotNet.SDK.6
 
+https://dotnet.microsoft.com/en-us/download/dotnet
+https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 
 
 
