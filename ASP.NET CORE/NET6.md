@@ -29,5 +29,17 @@ namespace XXX.Controllers
 &emsp;&emsp;public class XXXControler : ControllerBase  {}
 }  
 
+資料庫連線設定 套件安裝  
+Microsoft.EntityFrameworkCore.SqlServer   
+Microsoft.EntityFrameworkCore.Tools  
+Microsoft.EntityFrameworkCore.Design   
+&emsp;&emsp;
+&emsp;&emsp;
+&emsp;&emsp;
+&emsp;&emsp;
+&emsp;&emsp;
+&emsp;&emsp;
+
+Scaffold-DbContext "Server=伺服器位置;Database=資料庫;Trusted_Connection=True;User ID=帳號;Password=密碼" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
 
 
