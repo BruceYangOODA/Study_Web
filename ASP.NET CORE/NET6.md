@@ -1,5 +1,9 @@
 
-
+[Learn Angular 10, .NET Core Web API & SQL Server by Creating a Web Application from Scratch](https://www.youtube.com/watch?v=Dpv6lUKNL9o&ab_channel=ArtofEngineer)
+[.NET 5 REST API Tutorial](https://www.youtube.com/watch?v=Jvu60R-AWQc&ab_channel=kudvenkat)
+[Asp.Net Core Web API and Angular 7 CRUD](https://www.youtube.com/watch?v=fom80TujpYQ&ab_channel=CodAffection)
+[CRUD with a .NET 6 Web API & Entity Framework Core 🚀 Full Course](https://www.youtube.com/watch?v=Fbf_ua2t6v4)
+[Learn ASP.NET Core MVC (.NET 6) - Full Course](https://www.youtube.com/watch?v=hZ1DASYd9rk&ab_channel=freeCodeCamp.org)
 [How to Use VS Code to Run SQL on a Database](https://www.youtube.com/watch?v=C0y35FpiLRA&ab_channel=DatabaseStar)  
 [ASP.NET Core Web API 入門教學](https://www.youtube.com/watch?v=dXUfZuf1Wp4&list=PLneJIGUTIItsqHp_8AbKWb7gyWDZ6pQyz&ab_channel=%E5%87%B1%E5%93%A5%E5%AF%AB%E7%A8%8B%E5%BC%8F)  
 [ASP.NET CORE 入门](https://www.youtube.com/watch?v=ToUut_LBZbs&list=PL_ejO7vn7l2358FsVgNZI944kEIn4NNJ8&ab_channel=TongmingLiang)  
@@ -41,5 +45,25 @@ Microsoft.EntityFrameworkCore.Design
 &emsp;&emsp;
 
 Scaffold-DbContext "Server=伺服器位置;Database=資料庫;Trusted_Connection=True;User ID=帳號;Password=密碼" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+
+void ConfigureServices(IServiceCollection services)
+{
+    services.AddControllers();
+    services.AddDbContext<TodoContext>(options =>
+options.UseSqlServer(Configuration.GetConnectionString("TodoDatabase")));
+}
+
+// CORS  
+builder.Services.AddCors(c => {  
+    c.AddPolicy("AllowOrigin", options =>  
+        options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());  
+    });  
+0//  JSON Serializer  不一定需要, 已內置
+套件 Microsoft.AspNetCore.Mvc.NewtonsoftJson    
+builder.Services.AddControllersWithViews()
+       .AddNewtonsoftJson(options => 
+       options.SerializerSettings.ReferenceLoopHandling=Newtonsoft.Json.ReferenceLoopHandling.Ignore)
+       .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver=new DefaultContractResolver());
+
 
 
