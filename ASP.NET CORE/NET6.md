@@ -21,3 +21,13 @@ https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 
 
 
+API 基本架構
+namespace XXX.Controllers 
+{  
+&emsp;&emsp;[Route("api/[controller]")]  
+&emsp;&emsp;[ApiController]  
+&emsp;&emsp;public class XXXControler : ControllerBase  {}
+}  
+
+
+
