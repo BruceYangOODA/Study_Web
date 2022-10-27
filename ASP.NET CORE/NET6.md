@@ -89,4 +89,10 @@ builder.Services.AddDbContext<DataContext>(options => {
   
 $ dotnet ef migrations add CreateInitial   
 $ dotnet ef database update  
+  
+  
+  
+Scaffold-DbContext "Server=(localdb)\MSSQLLocalDB;Database=PTT;Trusted_Connection=True;User=test;Password=test1234" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force  
+  
 
+     
