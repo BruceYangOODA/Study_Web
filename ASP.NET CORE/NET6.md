@@ -87,6 +87,9 @@ builder.Services.AddDbContext<DataContext>(options => {
 &emsp;&emsp;options.UseSqlServer(builder.Configuration.GetConnectionString("TodoDatabase"));  
 });  
   
+&emsp;&emsp;public DataContext(DbContextOptions<DataContext> options) : base(options) { }  
+  
+  
 $ dotnet ef migrations add CreateInitial   
 $ dotnet ef database update  
   
