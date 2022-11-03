@@ -1,3 +1,6 @@
+
+
+https://www.youtube.com/watch?v=f2IdQqpjR0c  
 https://www.youtube.com/watch?v=7d2UMAIgOLQ  
 [https://www.youtube.com/watch?v=BfEjDD8mWYg&ab_channel=freeCodeCamp.org](https://youtu.be/BfEjDD8mWYg)  
 [Learn Angular 10, .NET Core Web API & SQL Server by Creating a Web Application from Scratch](https://www.youtube.com/watch?v=Dpv6lUKNL9o&ab_channel=ArtofEngineer)  
