@@ -1,4 +1,5 @@
 
+[1/13-M8f6Pkz36 ASP.NET 6.0 – Build Hands-On Web Projects](https://www.youtube.com/watch?v=vsjElvix7Tg&list=PLZZILhclahE_czgO8kchIviaQtRhOsAew&ab_channel=StarFreelancer%28dot%29Eu)  
 [1/22-Z6fXN165q Building Applications With React 17 And ASP.NET Core 6](https://www.youtube.com/watch?v=oZ1AJRMctCU&ab_channel=StarFreelancer%28dot%29Eu)  
 https://www.youtube.com/watch?v=f2IdQqpjR0c  
 https://www.youtube.com/watch?v=7d2UMAIgOLQ  
