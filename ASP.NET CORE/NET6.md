@@ -107,3 +107,16 @@ Scaffold-DbContext "Server=(localdb)\MSSQLLocalDB;Database=PTT;Trusted_Connectio
 [HttpGet("/allgenres")]  絕對路徑   
 [HttpGet("{Id:int/param2=felipe}")]  參數  
      
+非同步  
+[HttpGet]  
+public async Task<ActionResult<List<Genre>>> Get()  
+{  
+    return await repository.GetAllGenres();  
+}  
+    
+public async Task<List<Genre>> GetAllGenres()  
+{  
+    await Task.Delay(3000);  
+    return _genres;  
+}  
+    
