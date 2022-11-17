@@ -109,7 +109,8 @@ Scaffold-DbContext "Server=(localdb)\MSSQLLocalDB;Database=PTT;Trusted_Connectio
      
 非同步  
 [HttpGet]  
-public async Task<ActionResult<List<Genre>>> Get()  
+[HttpGet("{Id:int/param2=felipe}")]  
+public async Task<ActionResult<List<Genre>>> Get(int Id, [FromHeader] string params)  
 {  
     return await repository.GetAllGenres();  
 }  
@@ -119,4 +120,9 @@ public async Task<List<Genre>> GetAllGenres()
     await Task.Delay(3000);  
     return _genres;  
 }  
+[FromBody]  
+[FromForm]  
+[FromHeader]  
+[FromQuery]  
+[FromRoute]  
     
