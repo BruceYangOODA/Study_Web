@@ -126,3 +126,6 @@ public async Task<List<Genre>> GetAllGenres()
 [FromQuery]  
 [FromRoute]  
     
+service.addControllers();  
+service.AddSingleton<class, class>();  單一物件  
+service.AddTransient<class, class>();  同類別物件  
