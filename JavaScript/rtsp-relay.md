@@ -3,6 +3,7 @@
 [github](https://github.com/k-yle/rtsp-relay)  
 
 npm i rtsp-relay  
+npm i jsmpeg  
 
 
 
