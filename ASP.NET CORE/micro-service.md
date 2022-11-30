@@ -6,6 +6,7 @@ $ dotnet new {ApiName} -n packageName
 啟動package  
 $ dotnet run  
 
+$ dotnet dev-certs https --trust  
 
 
 
