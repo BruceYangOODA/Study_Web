@@ -5,6 +5,7 @@
 [Angular-Cesium API](https://articodeltd.github.io/angular-cesium/)  
 [Cesium.js tutorial: My tips how to start learn cesium](https://www.youtube.com/watch?v=TQxTBNFrDvQ&list=PLzxF7WV4IZssEyDEhK5KtA1Pn7X-pmUuf&index=1)  
 [[3D地圖－CesiumJS系列]](https://ithelp.ithome.com.tw/users/20130604/ironman/3749)    
+[*CesiumJS Quickstart](https://cesium.com/learn/cesiumjs-learn/cesiumjs-quickstart/)  
 
 
 相較於ArcGIS，Cesium具有較輕量的優勢，所需記憶體空間較少，速度較快，並支援WebGL，在行動裝置上不需安裝外掛應用程式。    
