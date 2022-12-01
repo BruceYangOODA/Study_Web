@@ -147,6 +147,45 @@ let line = this.viewer.entities.add({
 class Viewer  
 options  
 
-
-
+| options | desc | values | API |  
+| :---- | :---- | :----: | :--- |  
+| sceneMode  | Indicates if the scene is viewed in 3D, 2D, or 2.5D Columbus view. | SCENE2D: number, SCENE3D: number, COLUMBUS_VIEW: number(2.5D) | [SceneMode](https://cesium.com/learn/cesiumjs/ref-doc/global.html#SceneMode)  |  
+| terrainProvider | The terrain provider providing surface geometry for the globe. | new Cesium.TerrainProvider() | [TerrainProvider](https://cesium.com/learn/cesiumjs/ref-doc/TerrainProvider.html) |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
 
