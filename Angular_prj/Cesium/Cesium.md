@@ -60,9 +60,72 @@ window['CESIUM_BASE_URL'] = '/assets/cesium/';
 (window as Record<string, any>)['CESIUM_BASE_URL'] = '/assets/cesium/';   
 
 
+====================================================  
+地圖作畫
+[[3D地圖－CesiumJS系列]　一、快速上手](https://ithelp.ithome.com.tw/articles/10252460)  
 
+點  
+    this.viewer.entities.add({  
+      position: Cesium.Cartesian3.fromDegrees(121, 23.5),  
+      point: {  
+        pixelSize: 10,  
+        color: Cesium.Color.YELLOW,  
+      },  
+    });  
 
+線  
+let line = this.viewer.entities.add({  
+      name: "line",  
+      polyline: {  
+        positions: Cesium.Cartesian3.fromDegreesArray([121.523333, 25.15, 120.3508, 23]),  
+        width: 5,  // 線寬度  
+        material: Cesium.Color.RED,　　// 紅色  
+        clampToGround: true,  // 虛線  
+      },  
+    });  
 
+高度線  
+    let lineHeight = this.viewer.entities.add({  
+      name: "lineHeight",  
+      polyline: {  
+        positions: Cesium.Cartesian3.fromDegreesArrayHeights([121.523333, 25.15, 3000, 120.3508, 23, 12000]),  
+        width: 5,  // 線寬度  
+        material: new Cesium.PolylineOutlineMaterialProperty({  
+          color: Cesium.Color.ORANGE,  // 橘色  
+          outlineWidth: 2,  // 線外框寬度  
+          outlineColor: Cesium.Color.BLACK,  // 線外框顏色  
+        }),  
+      },  
+    });  
+
+面  
+    let polygon = this.viewer.entities.add({  
+      name: "polygon",  
+      polygon: {  
+        hierarchy: Cesium.Cartesian3.fromDegreesArray([  
+          120.6, 22.8,  
+          120.7, 22.6,  
+          120.5, 22.5,  
+        ]),  
+        material: Cesium.Color.RED,  
+      },  
+    });  
+
+3D  
+    let polygon3D = this.viewer.entities.add({  
+      name: "polygon3D",  
+      polygon: {  
+        hierarchy: Cesium.Cartesian3.fromDegreesArray([  
+          121, 23.5,  
+          121.5, 23.5,  
+          121.2, 23,  
+        ]),  
+        extrudedHeight: 5000,  // 拉伸高度(m)  
+        material: Cesium.Color.GREEN,  // 綠色  
+        closeTop: false,  // 頂部是否密合  
+        closeBottom: false,  // 底部是否密合  
+      },  
+    });  
 
 
 
