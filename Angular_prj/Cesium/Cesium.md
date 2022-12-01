@@ -7,6 +7,7 @@
 [Cesium.js tutorial: My tips how to start learn cesium](https://www.youtube.com/watch?v=TQxTBNFrDvQ&list=PLzxF7WV4IZssEyDEhK5KtA1Pn7X-pmUuf&index=1)  
 [[3D地圖－CesiumJS系列]](https://ithelp.ithome.com.tw/users/20130604/ironman/3749)    
 [* CesiumJS Quickstart](https://cesium.com/learn/cesiumjs-learn/cesiumjs-quickstart/)  
+[*** CesiumJS中文基础教程](https://github.com/hujiulin/CesiumJS-tutorial)  
 
 
 相較於ArcGIS，Cesium具有較輕量的優勢，所需記憶體空間較少，速度較快，並支援WebGL，在行動裝置上不需安裝外掛應用程式。    
@@ -44,8 +45,12 @@ export class CesiumDirective implements OnInit {
  constructor(private el: ElementRef) { }  
 
  ngOnInit() {  
-   const viewer = new Viewer(this.el.nativeElement);  
- }  
+ Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZDdmZWViMS0xZDVjLTRhYTUtYWI4Yy0yOGFkZmI4YjNmZGIiLCJpZCI6NTI3ODIsImlhdCI6MTYyMjU1NTY4M30.2Qry6HDCock7YrMi8GQaStykhvfbCfuJ-TDs7IRglmY';  
+   this.viewer = new Viewer(this.el.nativeElement,{  
+   terrainProvider: Cesium.createWorldTerrain(),  //使用預設地貌資料  
+   });  
+ };  
+ const buildingTileset = this.viewer.scene.primitives.add(Cesium.createOsmBuildings());  // 使用 OSM 建築物資料  
 }  
 
 ====================================================  
@@ -67,7 +72,9 @@ window['CESIUM_BASE_URL'] = '/assets/cesium/';
 [[3D地圖－CesiumJS系列]　一、快速上手](https://ithelp.ithome.com.tw/articles/10252460)  
 
 點  
+  dataPoint= { longitude: 121, latitude:23.5 }     
     this.viewer.entities.add({  
+    description: `這個點位於 (${dataPoint.longitude}, ${dataPoint.latitude})`,  
       position: Cesium.Cartesian3.fromDegrees(121, 23.5),  
       point: {  
         pixelSize: 10,  
