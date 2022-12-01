@@ -8,7 +8,14 @@
 [[3D地圖－CesiumJS系列]](https://ithelp.ithome.com.tw/users/20130604/ironman/3749)    
 [* CesiumJS Quickstart](https://cesium.com/learn/cesiumjs-learn/cesiumjs-quickstart/)  
 [*** CesiumJS中文基础教程](https://github.com/hujiulin/CesiumJS-tutorial)  
+[* Cesium中文网社区](http://cesiumcn.org/)  
 
+===============================
+*** DOC  
+[class Viewer](https://cesium.com/learn/cesiumjs/ref-doc/Viewer.html)  
+
+
+===============================
 
 相較於ArcGIS，Cesium具有較輕量的優勢，所需記憶體空間較少，速度較快，並支援WebGL，在行動裝置上不需安裝外掛應用程式。    
 
@@ -136,7 +143,9 @@ let line = this.viewer.entities.add({
       },  
     });  
 
-
+=====================================================   '
+class Viewer  
+options  
 
 
 
