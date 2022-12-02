@@ -188,8 +188,7 @@ Cesium.Viewer.Member
 | camera | Camera | new Cesium.Camera(scene) | The camera is defined by a position, orientation, and view frustum. | [Camera](https://cesium.com/learn/cesiumjs/ref-doc/Camera.html)  |  
 | canvas  | HTMLCanvasElement |  |  |   |  
 | cesiumWidget | CesiumWidget |  | A widget containing a Cesium scene | [CesiumWidget](https://cesium.com/learn/cesiumjs/ref-doc/CesiumWidget.html)  |  
-| clock | Clock |  | A simple clock for keeping track of simulated time.
- | [Clock](https://cesium.com/learn/cesiumjs/ref-doc/Clock.html)  |  
+| clock | Clock |  | A simple clock for keeping track of simulated time. | [Clock](https://cesium.com/learn/cesiumjs/ref-doc/Clock.html)  |  
 | clockTrackedDataSource | DataSource |  | Defines the interface for data sources, which turn arbitrary data into a EntityCollection for generic consumption. | [DataSource](https://cesium.com/learn/cesiumjs/ref-doc/DataSource.html)  |  
 | clockViewModel | ClockViewModel |  |  | [ClockViewModel](https://cesium.com/learn/cesiumjs/ref-doc/ClockViewModel.html)  |  
 | container | Element |  | Gets the parent container. |   |  
