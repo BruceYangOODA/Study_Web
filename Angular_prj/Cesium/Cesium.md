@@ -177,12 +177,35 @@ Cesium.Viewer.ConstructorOptions
 | globe | Globe or false | new Globe(mapProjection.ellipsoid) | The globe to use in the scene. If set to false, no globe will be added | [Globe](https://cesium.com/learn/cesiumjs/ref-doc/Globe.html) |  
 |  |  |  |  |   |  
 |  |  |  |  |   |  
+  
+class Viewer  
+Cesium.Viewer.Member  
+| name | type | default | Description | DOC | 
+| :---- | :---- | :----: | :--- | :--- |   
+| animation  | Animation | new Cesium.Animation(container, viewModel) | The Animation widget provides buttons for play, pause, and reverse, along with the current time and date, surrounded by a "shuttle ring" for controlling the speed of animation. | [Animation](https://cesium.com/learn/cesiumjs/ref-doc/Animation.html)  |  
+| baseLayerPicker | BaseLayerPicker | new Cesium.BaseLayerPicker(container, options)widgets/Sour | The BaseLayerPicker is a single button widget that displays a panel of available imagery and terrain providers. | [baseLayerPicker](https://cesium.com/learn/cesiumjs/ref-doc/BaseLayerPicker.html)  |  
+| bottomContainer | Element |  | Gets the DOM element for the area at the bottom of the window containing the CreditDisplay and potentially other things. |   |  
+| camera | Camera | new Cesium.Camera(scene) | The camera is defined by a position, orientation, and view frustum. | [Camera](https://cesium.com/learn/cesiumjs/ref-doc/Camera.html)  |  
 |  |  |  |  |   |  
 |  |  |  |  |   |  
 |  |  |  |  |   |  
-|  |  |  |  |   |  
-|  |  |  |  |   |  
-|  |  |  |  |   |  
-|  |  |  |  |   |  
-|  |  |  |  |   |  
-|  |  |  |  |   |  
+  
+  
+class Camera  
+Cesium.Camera.flyTo  
+| name | type | default | Description | DOC | 
+| :---- | :---- | :----: | :--- | :--- |   
+| destination |  |  |  |   |  
+| orientation |  |  |  |   |  
+| duration |  |  |  |   |  
+| complete |  |  |  |   |  
+| cancel |  |  |  |   |  
+| endTransform |  |  |  |   |  
+| maximumHeight |  |  |  |   |  
+| pitchAdjustHeight |  |  |  |   |  
+| flyOverLongitude |  |  |  |   |  
+| flyOverLongitudeWeight |  |  |  |   |  
+| convert |  |  |  |   |  
+| easingFunction |  |  |  |   |  
+
+  
