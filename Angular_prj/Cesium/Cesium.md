@@ -145,47 +145,44 @@ let line = this.viewer.entities.add({
 
 =====================================================   '
 class Viewer  
-options  
-
-| options | desc | values | API |  
-| :---- | :---- | :----: | :--- |  
-| sceneMode  | Indicates if the scene is viewed in 3D, 2D, or 2.5D Columbus view. | SCENE2D: number, <br> SCENE3D: number, <br> COLUMBUS_VIEW: number(2.5D) | [SceneMode](https://cesium.com/learn/cesiumjs/ref-doc/global.html#SceneMode)  |  
-| terrainProvider | The terrain provider providing surface geometry for the globe. | new Cesium.TerrainProvider() <br> Cesium.createWorldTerrain() | [TerrainProvider](https://cesium.com/learn/cesiumjs/ref-doc/TerrainProvider.html) |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
+Cesium.Viewer.ConstructorOptions  
+| name | type | default | Description | DOC | 
+| :---- | :---- | :----: | :--- | :--- |   
+| animation | Boolean | true | 	If set to false, the Animation widget will not be created. |   |  
+| baseLayerPicker | Boolean | true | If set to false, the BaseLayerPicker widget will not be created. |   |  
+| fullscreenButton | Boolean | true | If set to false, the FullscreenButton widget will not be created. |   |  
+| vrButton | Boolean | false | If set to true, the VRButton widget will be created. |   |  
+| geocoder | Boolean | Array.<GeocoderService> | true | If set to false, the Geocoder widget will not be created. |   |  
+| homeButton | Boolean | true | If set to false, the HomeButton widget will not be created. |   |  
+| infoBox | Boolean | true | If set to false, the InfoBox widget will not be created. |   |  
+| sceneModePicker | Boolean | true | If set to false, the SceneModePicker widget will not be created. |   |  
+| selectionIndicator | Boolean | true | If set to false, the SelectionIndicator widget will not be created. |   |  
+| timeline | Boolean | true | If set to false, the Timeline widget will not be created. |   |  
+| navigationHelpButton | Boolean | true | If set to false, the navigation help button will not be created. |   |  
+| scene3DOnly | Boolean | false | When true, each geometry instance will only be rendered in 3D to save GPU memory. |   |  
+| shouldAnimate | Boolean | false | true if the clock should attempt to advance simulation time by default, false otherwise. |   |  
+| clockViewModel | ClockViewModel | new ClockViewModel(clock) | The clock view model to use to control current time | [ClockViewModel](https://cesium.com/learn/cesiumjs/ref-doc/ClockViewModel.html)  |  
+| selectedImageryProviderViewModel | ProviderViewModel |  | The view model for the current base imagery layer, if not supplied the first available base layer is used. | [ProviderViewModel](https://cesium.com/learn/cesiumjs/ref-doc/ProviderViewModel.html)  |  
+| selectedTerrainProviderViewModel | ProviderViewModel |  | The view model for the current base terrain layer |   |  
+| imageryProvider | ImageryProvider | createWorldImagery() | 	The imagery provider to use. | [imageryProvider](https://cesium.com/learn/cesiumjs/ref-doc/ImageryProvider.html)  |  
+| terrainProvider | TerrainProvider | new EllipsoidTerrainProvider() | The terrain provider to use |  [TerrainProvider](https://cesium.com/learn/cesiumjs/ref-doc/TerrainProvider.html) |  
+| skyBox | SkyBox or false |  | The skybox used to render the stars. If set to false, no skyBox, Sun, or Moon will be added. | [SkyBox](https://cesium.com/learn/cesiumjs/ref-doc/SkyBox.html) |  
+| skyAtmosphere | SkyAtmosphere or false |  | Blue sky, and the glow around the Earth's limb. Set to false to turn it off. |  [SkyAtmosphere](https://cesium.com/learn/cesiumjs/ref-doc/SkyAtmosphere.html) |  
+| useDefaultRenderLoop | Boolean | true | True if this widget should control the render loop, false otherwise. |   |  
+| targetFrameRate | Number |  | The target frame rate when using the default render loop. |   |  
+| showRenderLoopErrors | Boolean | true | If true, this widget will automatically display an HTML panel to the user containing the error, if a render loop error occurs. |   |  
+| automaticallyTrackDataSourceClocks | Boolean | true | If true, this widget will automatically track the clock settings of newly added DataSources, updating if the DataSource's clock changes. Set this to false if you want to configure the clock independently. |   |  
+| sceneMode | SceneMode | SceneMode.SCENE3D | 2D 2.5D 3D | [SceneMode](https://cesium.com/learn/cesiumjs/ref-doc/global.html#SceneMode) |  
+| mapProjection | MapProjection | new GeographicProjection() | The map projection to use in 2D and Columbus View modes. | [MapProjection](https://cesium.com/learn/cesiumjs/ref-doc/MapProjection.html) |  
+| globe | Globe or false | new Globe(mapProjection.ellipsoid) | The globe to use in the scene. If set to false, no globe will be added | [Globe](https://cesium.com/learn/cesiumjs/ref-doc/Globe.html) |  
+|  |  |  |  |   |  
+|  |  |  |  |   |  
+|  |  |  |  |   |  
+|  |  |  |  |   |  
+|  |  |  |  |   |  
+|  |  |  |  |   |  
+|  |  |  |  |   |  
+|  |  |  |  |   |  
+|  |  |  |  |   |  
+|  |  |  |  |   |  
 
