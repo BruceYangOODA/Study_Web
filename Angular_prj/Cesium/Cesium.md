@@ -144,7 +144,7 @@ let line = this.viewer.entities.add({
     });  
 
 =====================================================   '
-class Viewer  
+class [Viewer](https://cesium.com/learn/cesiumjs/ref-doc/Camera.html)  
 Cesium.Viewer.ConstructorOptions  
 | name | type | default | Description | DOC | 
 | :---- | :---- | :----: | :--- | :--- |   
@@ -178,7 +178,7 @@ Cesium.Viewer.ConstructorOptions
 |  |  |  |  |   |  
 |  |  |  |  |   |  
   
-class Viewer  
+class [Viewer](https://cesium.com/learn/cesiumjs/ref-doc/Camera.html)  
 Cesium.Viewer.Member  
 | name | type | default | Description | DOC | 
 | :---- | :---- | :----: | :--- | :--- |   
@@ -186,26 +186,53 @@ Cesium.Viewer.Member
 | baseLayerPicker | BaseLayerPicker | new Cesium.BaseLayerPicker(container, options)widgets/Sour | The BaseLayerPicker is a single button widget that displays a panel of available imagery and terrain providers. | [baseLayerPicker](https://cesium.com/learn/cesiumjs/ref-doc/BaseLayerPicker.html)  |  
 | bottomContainer | Element |  | Gets the DOM element for the area at the bottom of the window containing the CreditDisplay and potentially other things. |   |  
 | camera | Camera | new Cesium.Camera(scene) | The camera is defined by a position, orientation, and view frustum. | [Camera](https://cesium.com/learn/cesiumjs/ref-doc/Camera.html)  |  
+| canvas  | HTMLCanvasElement |  |  |   |  
+| cesiumWidget | CesiumWidget |  | A widget containing a Cesium scene | [CesiumWidget](https://cesium.com/learn/cesiumjs/ref-doc/CesiumWidget.html)  |  
+| clock | Clock |  | A simple clock for keeping track of simulated time.
+ | [Clock](https://cesium.com/learn/cesiumjs/ref-doc/Clock.html)  |  
+| clockTrackedDataSource | DataSource |  | Defines the interface for data sources, which turn arbitrary data into a EntityCollection for generic consumption. | [DataSource](https://cesium.com/learn/cesiumjs/ref-doc/DataSource.html)  |  
+| clockViewModel | ClockViewModel |  |  | [ClockViewModel](https://cesium.com/learn/cesiumjs/ref-doc/ClockViewModel.html)  |  
+| container | Element |  | Gets the parent container. |   |  
+| dataSourceDisplay | DataSourceDisplay |  | Visualizes a collection of DataSource instances. | [DataSourceDisplay](https://cesium.com/learn/cesiumjs/ref-doc/DataSourceDisplay.html)  |  
+| dataSources | DataSourceCollection |  | A collection of DataSource instances | [DataSourceCollection](https://cesium.com/learn/cesiumjs/ref-doc/DataSourceCollection.html)  |  
+| entities | EntityCollection |  | An observable collection of Entity instances where each entity has a unique id. | [EntityCollection](https://cesium.com/learn/cesiumjs/ref-doc/EntityCollection.html)  |  
+| geocoder | Geocoder |  | A widget for finding addresses and landmarks, and flying the camera to them. Geocoding is performed using Cesium ion. | [Geocoder](https://cesium.com/learn/cesiumjs/ref-doc/Geocoder.html)  |  
+| imageryLayers | ImageryLayerCollection |  | An ordered collection of imagery layers. | [ImageryLayerCollection](https://cesium.com/learn/cesiumjs/ref-doc/ImageryLayerCollection.html)  |  
+| infoBox | InfoBox |  | A widget for displaying information or a description. | [InfoBox](https://cesium.com/learn/cesiumjs/ref-doc/InfoBox.html) |  
+| resolutionScale | Number | 1.0 |  | Gets or sets a scaling factor for rendering resolution. Values less than 1.0 can improve performance on less powerful devices while values greater than 1.0 will render at a higher resolution and then scale down, resulting in improved visual fidelity. For example, if the widget is laid out at a size of 640x480, setting this value to 0.5 will cause the scene to be rendered at 320x240 and then scaled up while setting it to 2.0 will cause the scene to be rendered at 1280x960 and then scaled down.  |  
+| scene | Scene |  | The container for all 3D graphical objects and state in a Cesium virtual scene. Generally, a scene is not created directly; instead, it is implicitly created by CesiumWidget. | [Scene](https://cesium.com/learn/cesiumjs/ref-doc/Scene.html)  |  
+| sceneModePicker | SceneModePicker |  | The SceneModePicker is a single button widget for switching between scene modes; shown to the left in its expanded state. | [SceneModePicker](https://cesium.com/learn/cesiumjs/ref-doc/SceneModePicker.html) |  
+| screenSpaceEventHandler | ScreenSpaceEventHandlerwidgets/Source |  | Handles user input events. Custom functions can be added to be executed on when the user enters input. | [ScreenSpaceEventHandlerwidgets/Source](https://cesium.com/learn/cesiumjs/ref-doc/ScreenSpaceEventHandler.html)  |  
+| selectedEntity | Entity or undefined |  | Gets or sets the object instance for which to display a selection indicator. If a user interactively picks a Cesium3DTilesFeature instance, then this property will contain a transient Entity instance with a property named "feature" that is the instance that was picked. | [Entity](https://cesium.com/learn/cesiumjs/ref-doc/Entity.html)  |  
+| selectedEntityChanged | Event |  | A generic utility class for managing subscribers for a particular event. | [Event](https://cesium.com/learn/cesiumjs/ref-doc/Event.html)  |  
+| selectionIndicator | SelectionIndicator |  | A widget for displaying an indicator on a selected object. | [SelectionIndicator](https://cesium.com/learn/cesiumjs/ref-doc/SelectionIndicator.html)  |  
+| shadows |  |  | Determines if shadows are cast by light sources. |   |  
+| targetFrameRate |  |  | Gets or sets the target frame rate of the widget when useDefaultRenderLoop is true. |   |  
+| terrainProvider | TerrainProvider |  | The terrain provider providing surface geometry for the globe. | [TerrainProvider](https://cesium.com/learn/cesiumjs/ref-doc/TerrainProvider.html)  |  
+| timeline |  |  | The Timeline is a widget for displaying and controlling the current scene time. | [Timeline](https://cesium.com/learn/cesiumjs/ref-doc/Timeline.html)  |  
+| trackedEntity | Entity or undefined |  | Gets or sets the Entity instance currently being tracked by the camera |  [Entity](https://cesium.com/learn/cesiumjs/ref-doc/Entity.html) |  
+| trackedEntityChanged |  |  | Gets the event that is raised when the tracked entity changes. | [Event](https://cesium.com/learn/cesiumjs/ref-doc/Event.html)   |  
+| useBrowserRecommendedResolution | Boolean | true |  |   |  
+| useDefaultRenderLoop  | Boolean |  | Gets or sets whether or not this widget should control the render loop. If true the widget will use requestAnimationFrame to perform rendering and resizing of the widget, as well as drive the simulation clock. If set to false, you must manually call the resize, render methods as part of a custom render loop. If an error occurs during rendering, Scene's renderError event will be raised and this property will be set to false. It must be set back to true to continue rendering after the error. |   |  
 |  |  |  |  |   |  
 |  |  |  |  |   |  
 |  |  |  |  |   |  
-  
-  
-class Camera  
+    
+class [Camera](https://cesium.com/learn/cesiumjs/ref-doc/Camera.html)  
 Cesium.Camera.flyTo  
 | name | type | default | Description | DOC | 
 | :---- | :---- | :----: | :--- | :--- |   
-| destination |  |  |  |   |  
-| orientation |  |  |  |   |  
-| duration |  |  |  |   |  
-| complete |  |  |  |   |  
-| cancel |  |  |  |   |  
-| endTransform |  |  |  |   |  
-| maximumHeight |  |  |  |   |  
-| pitchAdjustHeight |  |  |  |   |  
-| flyOverLongitude |  |  |  |   |  
-| flyOverLongitudeWeight |  |  |  |   |  
-| convert |  |  |  |   |  
-| easingFunction |  |  |  |   |  
+| destination | Cartesian3 or Rectangle |  | 	The final position of the camera in WGS84 (world) coordinates or a rectangle that would be visible from a top-down view. |   |  
+| orientation | Object |  | An object that contains either direction and up properties or heading, pitch and roll properties. By default, the direction will point towards the center of the frame in 3D and in the negative z direction in Columbus view. |   |  
+| duration | Number |  | The duration of the flight in seconds. |   |  
+| complete | Camera.FlightCompleteCallback |  | The function to execute when the flight is complete |   |  
+| cancel | Camera.FlightCancelledCallback |  | The function to execute if the flight is cancelled. |   |  
+| endTransform | Matrix4 |  | Transform matrix representing the reference frame the camera will be in when the flight is completed. |  [Matrix4](https://cesium.com/learn/cesiumjs/ref-doc/Matrix4.html) |  
+| maximumHeight | Number |  |  | The maximum height at the peak of the flight.  |  
+| pitchAdjustHeight | Number |  | If camera flyes higher than that value, adjust pitch duiring the flight to look down, and keep Earth in viewport. |   |  
+| flyOverLongitude | Number |  | There are always two ways between 2 points on globe. This option force camera to choose fight direction to fly over that longitude. |   |  
+| flyOverLongitudeWeight | Number |  | Fly over the lon specifyed via flyOverLongitude only if that way is not longer than short way times flyOverLongitudeWeight. |   |  
+| convert | Boolean | true |  |   |  
+| easingFunction | EasingFunction.Callback |  | Controls how the time is interpolated over the duration of the flight | [EasingFunction.Callback](https://cesium.com/learn/cesiumjs/ref-doc/EasingFunction.html#.Callback)  |  
 
   
