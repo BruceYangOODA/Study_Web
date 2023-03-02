@@ -15,6 +15,10 @@ https://www.youtube.com/watch?v=7d2UMAIgOLQ
 [深入 ASP․NET Core 6.0 專案範本的各種技術細節](https://www.youtube.com/watch?v=EWhFj-w4YVc&ab_channel=Will%E4%BF%9D%E5%93%A5)   
 [ASP.NET 6 Core CRUD operations using SQL stored procedure and Dapper in Hindi](https://www.youtube.com/watch?v=wSUprBNgsCo&ab_channel=QuizzToday)  
 
+[[ASP.NET Core]如何使用SwaggerAPI說明文件](https://bryanyu.github.io/2019/12/29/AspNetCoreSwagger/)  
+[[Day13] ASP.NET Core 2 系列 - Web API 文件產生器 (Swagger)](https://ithelp.ithome.com.tw/articles/10195190)  
+
+
 VSCODE EXTENSIONS:
 SQLTools 
 
