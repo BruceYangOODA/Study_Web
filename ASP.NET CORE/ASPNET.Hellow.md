@@ -27,7 +27,27 @@ ctor + Tab (快捷建立 constructor)
 
 public Dbset<_NAME_> 欄位 { get; set; }
 
+=====資料庫連線=========  
+appsettings.json -> ConnectionStrings  
 
+Server=(LocalDb)\\MSSQLLocalDB;  
+Database=NZWalksDb;  
+Trusted_Connection=True;  
+TrustServerCertificate=True;  CORE7  
+
+Program.cs -> builder.Services.AddDbContext<_NAME_DbContext>(options =>  
+    options.UseSqlServer(builder.Configuration.GetConnectionString("NZWalksConnectionString")));     
+=====資料庫MIGRATION=======  
+Tools -> NuGet Package Manager -> Package Manager Console  
+$ Add-Migration "Name Of Migration"  ex. "Initial Migraion"  
+  
+_PACKAGENAME_.API 自動新增資料夾 Migraions  
+  
+$ Update-Database  
+  
+MSSQLLocalDB 自動建立資料庫 
+
+==============  
 
 
 
