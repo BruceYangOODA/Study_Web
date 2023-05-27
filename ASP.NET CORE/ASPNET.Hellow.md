@@ -65,7 +65,7 @@ public IActionResult GetAll() {
   var regionDomain = dbContext.Regions.ToList();  
   var regionsDto = new List<>(RegionDto);  
   foreach(var region in regionDomain) { regionsDto.Add(new RegionDto() { Id=region.Id, Code=region.Code, Name=region.Name, RegionImagUrl=region.RegionImagUrl}); }
-  return Ok(regionDomain);
+  return Ok(regionsDto);
 }  
   
 [HttpGet]  
