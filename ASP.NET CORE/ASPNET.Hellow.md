@@ -74,10 +74,43 @@ public IActionResult GetById([FromRoute] Guid id) {
   // var region = dbContext.Regions.Find(id);  
   var regionDomain = dbContext.Regions.FirstOrDefault(x => x.Id == id);  
   if(region == null) { return NotFound(); }  
-  return Ok(region);
+          var regionDto = new RegionDto  
+            {  
+                Id = regionDomain.Id,  
+                Code = regionDomain.Code,  
+                Name = regionDomain.Name,  
+                RegionImagUrl = regionDomain.RegionImagUrl  
 
+            };  
+            return Ok(regionDto);  
+  //return Ok(region);  
 }  
   
+  
+[HttpPost]
+        public IActionResult Create([FromBody] AddRegionDto addRegionRequestdto) {  
+            var regionDomain = new Region  
+            {  
+                Code = addRegionRequestdto.Code,  
+                Name = addRegionRequestdto.Name,  
+                RegionImagUrl = addRegionRequestdto.RegionImagUrl  
+            };  
+  
+            dbContext.Regions.Add(regionDomain);  
+            dbContext.SaveChanges();  
+            var regionDto = new RegionDto  
+            {  
+                Id = regionDomain.Id,  
+                Code = regionDomain.Code,  
+                Name = regionDomain.Name,  
+                RegionImagUrl = regionDomain.RegionImagUrl  
+            };  
+            return CreatedAtAction(  
+                nameof(GetById),   
+                new {  id=regionDomain.Id},  
+                regionDto  
+                );  
+        }  
 
 ==============  
 
