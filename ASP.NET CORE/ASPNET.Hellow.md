@@ -25,7 +25,9 @@ using _PACKAGENAME_.API.Models.Domain;
 ctor + Tab (快捷建立 constructor)  
 參數 (DbContextOptions dbContextOptions) : base(dbContextOptions)  
 
-public Dbset<_NAME_> 欄位 { get; set; }
+public Dbset<_NAME_> 欄位 { get; set; }  
+
+
 
 =====資料庫連線=========  
 appsettings.json -> ConnectionStrings  
@@ -36,7 +38,8 @@ Trusted_Connection=True;
 TrustServerCertificate=True;  CORE7  
 
 Program.cs -> builder.Services.AddDbContext<_NAME_DbContext>(options =>  
-    options.UseSqlServer(builder.Configuration.GetConnectionString("NZWalksConnectionString")));     
+options.UseSqlServer(builder.Configuration.GetConnectionString("NZWalksConnectionString")));       
+  
 =====資料庫MIGRATION=======  
 Tools -> NuGet Package Manager -> Package Manager Console  
 $ Add-Migration "Name Of Migration"  ex. "Initial Migraion"  
@@ -46,6 +49,35 @@ _PACKAGENAME_.API 自動新增資料夾 Migraions
 $ Update-Database  
   
 MSSQLLocalDB 自動建立資料庫 
+  
+
+========= DTO ==================  
+新增資料夾 Models / DTO  
+新增CLASS RegionDto.cs  
+資料結構與   Models.Domain._NAME_ Region  一樣  
+  
+=======Controler dbconnection=========  
+private readonly  _NAME_DbContext dbContext;  
+  
+public _NAME_Controler(_NAME_DbContext dbContext) { this.dbContext = dbContext; }  
+  
+public IActionResult GetAll() {  
+  var regionDomain = dbContext.Regions.ToList();  
+  var regionsDto = new List<>(RegionDto);  
+  foreach(var region in regionDomain) { regionsDto.Add(new RegionDto() { Id=region.Id, Code=region.Code, Name=region.Name, RegionImagUrl=region.RegionImagUrl}); }
+  return Ok(regionDomain);
+}  
+  
+[HttpGet]  
+[Route("{id:Guid}")]  
+public IActionResult GetById([FromRoute] Guid id) {  
+  // var region = dbContext.Regions.Find(id);  
+  var regionDomain = dbContext.Regions.FirstOrDefault(x => x.Id == id);  
+  if(region == null) { return NotFound(); }  
+  return Ok(region);
+
+}  
+  
 
 ==============  
 
