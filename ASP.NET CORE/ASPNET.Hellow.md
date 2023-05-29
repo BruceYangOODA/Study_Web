@@ -27,6 +27,7 @@ ctor + Tab (快捷建立 constructor)
 
 public Dbset<_NAME_> 欄位 { get; set; }  
 
+把Dbset 註冊到 DbContext 裡面, 資料庫連線時會把 dbset 轉換成 table  
 
 
 =====資料庫連線=========  
