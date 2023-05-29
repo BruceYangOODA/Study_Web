@@ -81,7 +81,7 @@ public IActionResult GetById([FromRoute] Guid id) {
                 Name = regionDomain.Name,  
                 RegionImagUrl = regionDomain.RegionImagUrl  
 
-            };  
+            };
             return Ok(regionDto);  
   //return Ok(region);  
 }  
