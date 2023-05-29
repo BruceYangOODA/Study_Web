@@ -94,8 +94,7 @@ public IActionResult GetById([FromRoute] Guid id) {
                 Code = addRegionRequestdto.Code,  
                 Name = addRegionRequestdto.Name,  
                 RegionImagUrl = addRegionRequestdto.RegionImagUrl  
-            };  
-  
+            };    
             dbContext.Regions.Add(regionDomain);  
             dbContext.SaveChanges();  
             var regionDto = new RegionDto  
