@@ -7,7 +7,7 @@ CSS 大全
 
 縮排文字  
 text-indent  
-數值  <length> | <percentage>  
+數值  length | percentage  
 ex. text-indent: 3em  
 ex. text-indent: 10%  
 
@@ -18,13 +18,13 @@ text-align
 
 行高  
 line-height  
-數值 <number> | <length> | <percentage> | normal  
+數值 number | length | percentage | normal  
 初始值 normal  
 normal 1.2倍 font-size  
 
 垂直對齊文字  
 vertical-align  
-數值  baseline | sub | super | top | text-top | middle | bottom | textbottom | <length> | <percentage>  
+數值  baseline | sub | super | top | text-top | middle | bottom | textbottom | length | percentage  
 初始值 baseline    
 適用於行內元素與表格欄   
 備註 表格內只能使用 baseline, top, middle, bottom  
@@ -36,7 +36,7 @@ word-spacing
 
 字元間隔  
 letter-spacing  
-數值 <length> | normal  
+數值 length | normal  
 備註 w o r d  
 
 文字修飾  
@@ -88,13 +88,13 @@ sideways  向右旋轉 90度
 
 設定Tab大小  
 tab-size  
-數值  <length> | <integer>  
+數值  length | integer  
 初始值  8  
   
 ==============基本視覺格式==========================   
 元素顯示方式  
 display  
-數值  [ <display-outside> | <display-inside> | <display-listitem> | <display-internal> | <display-box> | <display-legacy> ] 
+數值  [ display-outside | display-inside | display-listitem | display-internal | display-box | display-legacy ] 
 初始值  inline  
 
 區塊方框  
@@ -107,7 +107,7 @@ border-box 包含 padding margin
 
 全域邊框  
 border  
-數值  [ <border-width> | <border-style> | <border-color> ]  
+數值  [ border-width | border-style | border-color ]  
 ex. border: thick solid silver;   
 
 
