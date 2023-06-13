@@ -90,4 +90,24 @@ sideways  向右旋轉 90度
 tab-size  
 數值  <length> | <integer>  
 初始值  8  
+  
+==============基本視覺格式==========================   
+元素顯示方式  
+display  
+數值  <display-outside> | <display-inside> | <display-listitem> | <display-internal> | <display-box> | <display-legacy>  
+初始值  inline  
+
+區塊方框  
+box-sizing  
+數值  content-box | padding-box | border-box  
+初始值 content-box  
+備註  
+content-box 不包含 padding margin  
+border-box 包含 padding margin  
+
+全域邊框  
+border  
+數值  [ <border-width> | <border-style> | <border-color> ]  
+ex. border: thick solid silver;   
+
 
