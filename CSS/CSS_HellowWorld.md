@@ -46,7 +46,7 @@ text-decoration
 
 文字陰影  
 text-shadow  
-數值  none | [ <length>, <length> <length> <length>? ]  
+數值  none | [ length, length length length? ]  
 備註 第一個length 水平位移, 第二個length 垂直位移, 第三個length 模糊半徑  
 ex. text-shadow: 0 0 4px black;  
 
