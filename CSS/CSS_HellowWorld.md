@@ -94,7 +94,7 @@ tab-size
 ==============基本視覺格式==========================   
 元素顯示方式  
 display  
-數值  <display-outside> | <display-inside> | <display-listitem> | <display-internal> | <display-box> | <display-legacy>  
+數值  [ <display-outside> | <display-inside> | <display-listitem> | <display-internal> | <display-box> | <display-legacy> ] 
 初始值  inline  
 
 區塊方框  
