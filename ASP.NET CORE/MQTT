@@ -10,3 +10,9 @@ https://www.youtube.com/watch?v=iQ4kENLfaNI&list=PLalrWAGybpB-UHbRDhFsBgXJM1g6T4
 NuGet
 MQTTNET 4.2.0.706
 Microsoft.Extensions.ApiDescription.Server
+
+
+dotnet new console
+dotnet add package RabbitMQ.Client
+dotnet add package MQTTnet
+dotnet add package MQTTnet.Extensions.ManagedClient
