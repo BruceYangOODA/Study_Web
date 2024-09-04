@@ -9,6 +9,8 @@ https://www.youtube.com/watch?v=iQ4kENLfaNI&list=PLalrWAGybpB-UHbRDhFsBgXJM1g6T4
 
 https://www.rabbitmq.com/tutorials/tutorial-one-dotnet
 
+https://github.com/dotnet/MQTTnet/blob/master/Samples/Server/Server_ASP_NET_Samples.cs
+
 NuGet
 MQTTNET 4.2.0.706
 Microsoft.Extensions.ApiDescription.Server
