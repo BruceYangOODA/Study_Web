@@ -15,6 +15,8 @@ https://www.cnblogs.com/qq2806933146xiaobai/articles/15850366.html
 
 [MqttDemo.WPFServer](https://github.com/ludewig/MqttDemo/blob/master/MqttDemo.WPFServer/MainWindow.xaml.cs)
 
+[保姆级别的RabbitMQ教程！一看就懂](https://www.cnblogs.com/ZhuChangwu/p/14093107.html)
+
 NuGet
 MQTTNET 4.2.0.706
 Microsoft.Extensions.ApiDescription.Server
