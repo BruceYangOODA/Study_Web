@@ -9,6 +9,7 @@
 > 1. Install VMware.PowerCLI.
 
 <https://www.python.org/downloads/>
+
 安裝Python 3.7.0 以上版本
 環境變數 Path 新增 
 C:\Users\user\AppData\Local\Programs\Python\Python38
