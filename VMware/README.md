@@ -46,8 +46,11 @@ PS $> winget search Microsoft.PowerShell
 PS $> winget install --id Microsoft.Powershell --source winget
 
 5.1版本與7.X版本可以共存
+
 Windows PowerShell ISE 仍是 5.1版
+
 執行 C:\Program Files\PowerShell\7\pwsh.exe
+
 或是把 C:\Users\user\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\Windows PowerShell 捷徑 目標改為 C:\Program Files\PowerShell\7\pwsh.exe
 
 PS $> Install-Module -Name VMware.PowerCLI
