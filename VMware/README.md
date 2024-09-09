@@ -68,6 +68,8 @@ Code -> Download ZIP -> 解壓縮檔案 -> 複製解壓縮資料夾路徑
 
 PS $> Set-PowerCLIConfiguration -PythonPath C:\Users\user\AppData\Local\Programs\Python\Python38\python.exe -Scope User
 
+> 3. Creating custom ESXi Image
+
 PS $> cd 解壓縮資料夾路徑(C:\Users\user\Downloads\ESXi-Customizer-PS-master\ESXi-Customizer-PS-master)
 
 PS $> .\ESXi-Customizer-PS.ps1 -help
@@ -78,6 +80,11 @@ PS $> .\ESXi-Customizer-PS.ps1 -v80 -vft -load sata-xahci,net55-r8168 -nsc
 
 R enter
 
+> 4. Create a bootable VMware ESXi installer USB flash drive
+<https://rufus.ie/zh_TW/>
+
+
+[Youtube All in one 系列 - 开篇 : ESXi的安装](https://www.youtube.com/watch?v=WSFW8iA7sfU)
 
 
 
