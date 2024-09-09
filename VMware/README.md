@@ -51,15 +51,18 @@ Windows PowerShell ISE 仍是 5.1版
 
 執行 C:\Program Files\PowerShell\7\pwsh.exe
 
-或是把 C:\Users\user\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\Windows PowerShell 捷徑 目標改為 C:\Program Files\PowerShell\7\pwsh.exe
+或是把 C:\Users\user\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\Windows PowerShell 
+捷徑 目標改為 C:\Program Files\PowerShell\7\pwsh.exe
 
 PS $> Install-Module -Name VMware.PowerCLI
 
 Y enter
+
 PS $> Set-ExecutionPolicy Unrestricted
 
 > 2. Download ESXi-Customizer-PS.ps1
-<https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbHpzdmR2OFg0NTRrY212ZHd2cW1YQmhNaWFKZ3xBQ3Jtc0ttbkhKbjFTQ2UzbGoxQ0E5Y0hXYTNTeUtZekJYam9qRnhrVkV0MGFtN3ZwaU9mX3JKOUdJclJqREtEbVlpUFFHY3RtMzZKN3VKWXhwUzVNekFhR0RFMWdHQ0xtVUhtMll1UGJRRThoaVdDZzN4RGFMZw&q=https%3A%2F%2Fgithub.com%2FVFrontDe%2FESXi-Customizer-PS&v=MVBGDx0AvcE>
+
+<https://github.com/VFrontDe-Org/ESXi-Customizer-PS>
 
 Code -> Download ZIP -> 解壓縮檔案 -> 複製解壓縮資料夾路徑
 
@@ -69,7 +72,7 @@ PS $> cd 解壓縮資料夾路徑(C:\Users\user\Downloads\ESXi-Customizer-PS-mas
 
 PS $> .\ESXi-Customizer-PS.ps1 -help
 R enter
-PS $> .\ESXi-Customizer-PS.ps1 -v60 -vft -load sata-xahci,net55-r8168 -nsc
+PS $> .\ESXi-Customizer-PS.ps1 -v80 -vft -load sata-xahci,net55-r8168 -nsc
 R enter
 
 
