@@ -12,11 +12,17 @@
 
 安裝Python 3.7.0 以上版本
 環境變數 Path 新增 
+
 C:\Users\user\AppData\Local\Programs\Python\Python38
+
 C:\Users\user\AppData\Local\Programs\Python\Python38\Scripts
+
 搜尋 Manage app execution aliases
+
 關閉 App Installer (python.exe python3.exe) 
+
 $> pip install six psutil lxml pyopenssl pyOpenSSL
+
 
 [在 Windows 上安裝 PowerShell](https://learn.microsoft.com/zh-tw/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.2)
 
@@ -28,10 +34,15 @@ $> dotnet tool install --global PowerShell --version 7.2.19
 執行 Windows PowerShell ISE
 
 確認版本
+
 PS $> $PSVersionTable.PSVersion
+
 搜尋版本
+
 PS $> winget search Microsoft.PowerShell
+
 更新版本
+
 PS $> winget install --id Microsoft.Powershell --source winget
 
 5.1版本與7.X版本可以共存
@@ -40,6 +51,7 @@ Windows PowerShell ISE 仍是 5.1版
 或是把 C:\Users\user\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\Windows PowerShell 捷徑 目標改為 C:\Program Files\PowerShell\7\pwsh.exe
 
 PS $> Install-Module -Name VMware.PowerCLI
+
 Y enter
 PS $> Set-ExecutionPolicy Unrestricted
 
