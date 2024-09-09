@@ -71,8 +71,11 @@ PS $> Set-PowerCLIConfiguration -PythonPath C:\Users\user\AppData\Local\Programs
 PS $> cd 解壓縮資料夾路徑(C:\Users\user\Downloads\ESXi-Customizer-PS-master\ESXi-Customizer-PS-master)
 
 PS $> .\ESXi-Customizer-PS.ps1 -help
+
 R enter
+
 PS $> .\ESXi-Customizer-PS.ps1 -v80 -vft -load sata-xahci,net55-r8168 -nsc
+
 R enter
 
 
