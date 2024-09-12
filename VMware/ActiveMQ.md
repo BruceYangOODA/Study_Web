@@ -45,11 +45,18 @@ $ bin/activemq start  啟動服務
 
 $ netstat -nl|grep 61616  確認端口監聽中
 
-$ bin/activemq status
+$ bin/activemq status 確認啟動服務
+
+$ bin/activemq console
 
 http://127.0.0.1:8161/admin/
 
 預設 admin/admin
+
+1883 端口被占用
+
+$ lsof -i:端口號
+
 
 [ActiveMQ 文件](https://activemq.apache.org/components/classic/documentation/getting-started)
 
