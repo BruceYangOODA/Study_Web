@@ -27,9 +27,18 @@ Oracle VM VirtualBox 介面
 
 REBOOT -> 
 
+裝置.插入 GuestAd......
+
 desktop -> Vbox_GAs_7.0.20 -> click
 
 裝置.升級Guset addition
+
+restart now
+
+黑屏
+
+Virtubox.顯示.畫面.視訊記憶體 : 60MB
+
 
 
 
