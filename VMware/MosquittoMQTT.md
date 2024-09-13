@@ -28,11 +28,11 @@ $> sudo service mosquitto start 啟動MQTT服務
 
 // 確認server運作
 
-$> mosquitto_sub -t "/test"
+$> sudo mosquitto_sub -t "/test"
 
 另一執行序
 
-$> mosquitto_pub -t "/test" -m 'Hellow World'
+$> sudo mosquitto_pub -t "/test" -m 'Hellow World'
 
 
 
