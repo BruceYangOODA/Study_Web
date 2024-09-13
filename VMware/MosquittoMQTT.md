@@ -13,7 +13,7 @@ $> sudo systemctl status mosquitto  可以確認伺服器資訊
 
 $> sudo apt install net-tools 檢查網路狀態
 
-$> netstat -nltp 檢查網路狀態
+$> sudo netstat -nltp 檢查網路狀態
 
 $> sudo ufw allow 1883  開啟預設端口
 
@@ -33,6 +33,9 @@ $> sudo mosquitto_sub -t "/test"
 另一執行序
 
 $> sudo mosquitto_pub -t "/test" -m 'Hellow World'
+
+
+
 
 
 
