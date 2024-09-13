@@ -45,22 +45,210 @@ $ sudo mosquitto -c /etc/mosquitto/mosquitto.conf 將新的配置寫入系統設
 
 https://github.com/eclipse/mosquitto/blob/master/mosquitto.conf
 
-# default true, 是否允許clientid 為空,  false 啟用 session功能
+# default true。 是否允許clientid 為空, false 啟用 session功能
 allow_zero_length_clientid false
+# default false。是否允許username 為空。true 只有local machine 可以連伺服器
+allow_anonymous false
+
+# default auto-, 匿名ID 自動累加
+#auto_id_prefix auto-
 
 # default 65535, 最大值 65535秒 = 18小時12分15秒, 超過這個時間客戶端沒有傳送封包, 伺服器會自動斷開
 # 這個值, 會由客戶端傳過來的 keepalive 複寫過去
 # 設定為 0, 伺服器不會去檢查 keepalive, 當客戶端斷開沒有再傳送封包, 伺服器不會自動斷開
 # V5
-max_keepalive 65535
+#max_keepalive 65535
 
 # default 0, 不限制客戶端的封包大小
 # V5
-max_packet_size 0
+#max_packet_size 0
 
 # default 0, 0 不限制。 當處理封包總量大於此值時,將後續的封包放置 queue區 
-max_queued_bytes 0
+#max_queued_bytes 0
 
 # default 1000, 0 不限制。 每個客戶端 queue區的 message 暫存數量
-max_queued_messages 1000
+#max_queued_messages 1000
+
+# default 0, 0 不限制。 伺服器最多占用多少記憶體空間
+#memory_limit 0
+
+# default 0, 0 不限制。 payload最大封包限制。 物理限制是 268435455 bytes
+#message_size_limit 0
+
+# persistent_client_expiration 2m
+# persistent_client_expiration 14d
+# persistent_client_expiration 1y
+# default 空。伺服器保存客戶端 session時效。
+#persistent_client_expiration
+
+# default true。客戶端不是正常斷開，連接後沒有收到的訂閱訊息將陸續 發送給客戶端
+#retain_available true
+
+# =================================================================
+# Listeners
+# =================================================================
+
+# default 1883。伺服器監聽端口
+listener 1883
+
+# default 空。ipv4 ipv6 可以設定，設定後只能監聽其中一邊的端口
+#socket_domain
+
+# default 空。兩張網卡以上，可以指定監聽哪一張
+#bind_interface
+
+# default 空。設定 websockets取用檔案時的資料夾
+#http_dir
+
+# default -1。不限制客戶端總數。客戶端物理限制 1024
+#max_connections -1
+
+# default websockets。
+# Protocol V3 websockets
+# Protocol V5 mqtt
+protocol mqtt
+
+# -----------------------------------------------------------------
+# Certificate based SSL/TLS support
+# -----------------------------------------------------------------
+# The following options can be used to enable certificate based SSL/TLS support
+# for this listener. Note that the recommended port for MQTT over TLS is 8883,
+# but this must be set manually.
+
+# Path to the PEM encoded server certificate.
+#certfile
+
+# Path to the PEM encoded keyfile.
+#keyfile
+
+#ciphers
+#ciphers_tls1.3
+#crlfile
+#dhparamfile
+#require_certificate false
+#cafile
+#capath
+
+# =================================================================
+# Persistence
+# =================================================================
+
+# default 1800。每隔1800秒，自動儲存伺服器資料至自建資料庫。
+#autosave_interval 1800
+# default false。有客戶端訂閱時，自動儲存。
+#autosave_on_changes false
+
+# default false。persistent message 存到記憶體。 true -> persistent message 存到資料庫
+persistence true
+
+# 預設資料庫檔名
+#persistence_file mosquitto.db
+
+# 資料庫檔案Path。 Linux 預設 /var/lib/mosquitto
+persistence_location /var/lib/mosquitto
+
+# =================================================================
+# Logging
+# =================================================================
+
+# log檔案PATH。 /var/log/mosquitto/mosquitto.log
+log_dest file /var/log/mosquitto/mosquitto.log
+
+# log紀錄類型。多行代表都記錄。
+#log_type error
+#log_type warning
+#log_type notice
+#log_type information
+
+# default true。把連線訊息寫入log。
+#connection_messages true
+
+# default true。log訊息放入時間戳 ex 1726209922: New client connected....
+#log_timestamp true
+
+# default 空。時間戳格式，預設為 秒數(1970/01/01)
+log_timestamp_format %Y-%m-%dT%H:%M:%S
+
+# 是否紀錄 websockets 訊息
+#log_type websockets
+#websockets_log_level 0
+
+# -----------------------------------------------------------------
+# Default authentication and topic access control
+# -----------------------------------------------------------------
+
+# 帳密檔案，用於伺服器客戶端驗證。格式為一行username:password
+#password_file
+
+# 主題，客戶端ID限制。只有檔案內有敘述到的格式可以連線
+# topic [read|write|readwrite|deny] <topic>
+# user <username>
+# pattern [read|write|readwrite] <topic>
+#acl_file
+
+# -----------------------------------------------------------------
+# External authentication and topic access plugin options
+# -----------------------------------------------------------------
+
+#plugin
+#plugin_opt_db_host
+#plugin_opt_db_port
+#plugin_opt_db_username
+#plugin_opt_db_password
+
+# =================================================================
+# Bridges 伺服器與伺服器間的橋接
+# =================================================================
+
+#connection <name>
+#address <host>[:<port>] [<host>[:<port>]]
+#topic <topic> [[[out | in | both] qos-level] local-prefix remote-prefix]
+#bridge_bind_address
+#bridge_attempt_unsubscribe true
+
+# default mqttv311。mqttv50, mqttv311 or mqttv31。
+#bridge_protocol_version mqttv311
+
+#cleansession false
+#idle_timeout 60
+#keepalive_interval 60
+#local_clientid
+
+# 限定特別Topic才能向橋接伺服器發訊
+#notifications true
+
+# 註明特別Topic
+#notification_topic
+#remote_clientid
+#remote_password
+#remote_username
+
+# 橋接重新連線間隔秒。
+#restart_timeout 20
+
+# default false。true 有複數的橋接伺服器
+#round_robin false
+
+#start_type automatic
+#threshold 10
+
+# -----------------------------------------------------------------
+# Certificate based SSL/TLS support 橋接器之間的SSL
+# -----------------------------------------------------------------
+#bridge_cafile
+#bridge_capath
+
+# -----------------------------------------------------------------
+# PSK based SSL/TLS support 橋接器之間的SSL
+# -----------------------------------------------------------------
+#bridge_identity
+#bridge_psk
+
+# =================================================================
+# External config files
+# =================================================================
+# 外部設定檔位置
+#include_dir
+
+
 
