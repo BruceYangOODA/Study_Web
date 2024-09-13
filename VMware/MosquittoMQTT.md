@@ -35,7 +35,13 @@ $> sudo mosquitto_sub -t "/test"
 $> sudo mosquitto_pub -t "/test" -m 'Hellow World'
 
 
+修改配置
 
+$ sudo vi /etc/mosquitto/mosquitto.conf
+
+$ sudo cd /usr/sbin
+
+$ sudo mosquitto -c /etc/mosquitto/mosquitto.conf 將新的配置寫入系統設定
 
 
 
