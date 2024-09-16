@@ -7,6 +7,8 @@ $> sudo apt update
 
 $> sudo apt install mosquitto
 
+$ sudo mosquitto -h
+
 $> sudo apt install mosquitto-clients
 
 $> sudo systemctl status mosquitto  可以確認伺服器資訊
@@ -14,6 +16,10 @@ $> sudo systemctl status mosquitto  可以確認伺服器資訊
 $> sudo apt install net-tools 檢查網路狀態
 
 $> sudo netstat -nltp 檢查網路狀態
+
+$ sudo netstat -nl|grep 1883 確認端口監聽中
+
+$ sudo lsof -i:1883
 
 $> sudo ufw allow 1883  開啟預設端口
 
@@ -25,6 +31,14 @@ $> sudo service mosquitto stop  關閉MQTT服務
 
 $> sudo service mosquitto start 啟動MQTT服務
 
+$ cd /etc/mosquitto  創建帳密資訊
+
+$ sudo touch accountPass.txt
+
+$ sudo apt-get install vim
+
+$ sudo vim accountPass.txt
+
 
 // 確認server運作
 
@@ -33,6 +47,10 @@ $> sudo mosquitto_sub -t "/test"
 另一執行序
 
 $> sudo mosquitto_pub -t "/test" -m 'Hellow World'
+
+查看LOG 
+
+$ cd /var/log/mosquitto/
 
 
 修改配置
@@ -75,6 +93,8 @@ allow_anonymous false
 # default 0, 0 不限制。 payload最大封包限制。 物理限制是 268435455 bytes
 #message_size_limit 0
 
+pid_file /var/run/mosquitto/mosquitto.pid
+
 # persistent_client_expiration 2m
 # persistent_client_expiration 14d
 # persistent_client_expiration 1y
@@ -106,7 +126,7 @@ listener 1883
 # default websockets。
 # Protocol V3 websockets
 # Protocol V5 mqtt
-protocol mqtt
+protocol websockets
 
 # -----------------------------------------------------------------
 # Certificate based SSL/TLS support
