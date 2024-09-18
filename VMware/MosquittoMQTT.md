@@ -73,6 +73,7 @@ $ sudo mosquitto_pub -t "/test" -m 'Hellow World' -u admin -P [password]
 
 $ cd /var/log/mosquitto/
 
+$ cat mosquitto.log
 
 修改配置
 
