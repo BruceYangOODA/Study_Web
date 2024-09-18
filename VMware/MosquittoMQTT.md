@@ -79,8 +79,6 @@ $ cat mosquitto.log
 
 $ sudo vi /etc/mosquitto/mosquitto.conf
 
-$ sudo cd /usr/sbin
-
 $ sudo mosquitto -c /etc/mosquitto/mosquitto.conf 將新的配置寫入系統設定
 
 https://github.com/eclipse/mosquitto/blob/master/mosquitto.conf
