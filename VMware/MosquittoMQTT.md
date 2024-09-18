@@ -23,7 +23,7 @@ $ sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
 
 $ sudo apt-get update
 
-$ sudo apt install mosquitto 
+$ sudo apt-get install mosquitto 
 
 > 
 
@@ -31,9 +31,9 @@ $ sudo apt install mosquitto
 
 $ sudo mosquitto -h
 
-$ sudo systemctl status mosquitto  可以確認伺服器資訊
+$ sudo service mosquitto status 可以確認伺服器資訊
 
-$> sudo apt install mosquitto-clients
+$> sudo apt-get install mosquitto-clients
 
 $> sudo apt install net-tools 檢查網路狀態
 
