@@ -3,15 +3,37 @@
 
 更新 apt 並安裝 mosquitto MQTT
 
+
+
 $> sudo apt update
+
+$ sudo apt-get install vim
+
+> 
+
+a. 正常安裝(依ubuntu 版本,只能到1.4.5)
 
 $> sudo apt install mosquitto
 
+> 
+
+b. 從線上資料庫安裝(修改安裝參照位置)
+
+$ sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa 
+
+$ sudo apt-get update
+
+$ sudo apt install mosquitto 
+
+> 
+
+確認伺服器資訊
+
 $ sudo mosquitto -h
 
-$> sudo apt install mosquitto-clients
+$ sudo systemctl status mosquitto  可以確認伺服器資訊
 
-$> sudo systemctl status mosquitto  可以確認伺服器資訊
+$> sudo apt install mosquitto-clients
 
 $> sudo apt install net-tools 檢查網路狀態
 
@@ -33,20 +55,19 @@ $> sudo service mosquitto start 啟動MQTT服務
 
 $ cd /etc/mosquitto  創建帳密資訊
 
-$ sudo touch accountPass.txt
+$ sudo mosquitto_passwd -c accountPass.txt admin
+-> 輸入密碼
 
-$ sudo apt-get install vim
-
-$ sudo vim accountPass.txt
-
+$ sudo mosquitto_passwd accountPass.txt test
+-> 輸入密碼
 
 // 確認server運作
 
-$> sudo mosquitto_sub -t "/test"
+$ sudo mosquitto_sub -t "/test" -u admin -P [password]
 
 另一執行序
 
-$> sudo mosquitto_pub -t "/test" -m 'Hellow World'
+$ sudo mosquitto_pub -t "/test" -m 'Hellow World' -u admin -P [password] 
 
 查看LOG 
 
@@ -123,10 +144,10 @@ listener 1883
 # default -1。不限制客戶端總數。客戶端物理限制 1024
 #max_connections -1
 
-# default websockets。
+# default both。版本2.0以上。1.x 只有V3
 # Protocol V3 websockets
 # Protocol V5 mqtt
-protocol websockets
+# protocol mqtt
 
 # -----------------------------------------------------------------
 # Certificate based SSL/TLS support
@@ -198,7 +219,7 @@ log_timestamp_format %Y-%m-%dT%H:%M:%S
 # -----------------------------------------------------------------
 
 # 帳密檔案，用於伺服器客戶端驗證。格式為一行username:password
-#password_file
+password_file /etc/mosquitto/accountPass.txt
 
 # 主題，客戶端ID限制。只有檔案內有敘述到的格式可以連線
 # topic [read|write|readwrite|deny] <topic>
