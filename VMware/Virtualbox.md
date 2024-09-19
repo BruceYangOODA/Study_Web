@@ -40,5 +40,7 @@ restart now
 Virtubox.顯示.畫面.視訊記憶體 : 60MB
 
 
+[VirtualBox使用SSH連線](https://snoopy30485.github.io/2018/06/30/VirtualBox%E4%BD%BF%E7%94%A8SSH%E9%80%A3%E7%B7%9A/)
+
 
 
