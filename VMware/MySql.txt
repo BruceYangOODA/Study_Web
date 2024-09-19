@@ -34,7 +34,11 @@ $ sudo mysql -u [mysql User] -p mysql < [sql file]
 
 windows 搜尋列  mysql 8.0 command line client
 
-
+windows 命列列
+$ cd /Program Files/MySQL/MySQL Server 8.0/bin 
+$ mysql -u root -p
+$ show databases;
+$ select user();
 
 
 
