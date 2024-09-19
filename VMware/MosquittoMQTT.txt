@@ -9,6 +9,8 @@ $> sudo apt update
 
 $ sudo apt-get install vim
 
+$ sudo apt-get install openssh-server
+
 > 
 
 a. 正常安裝(依ubuntu 版本,只能到1.4.5)
