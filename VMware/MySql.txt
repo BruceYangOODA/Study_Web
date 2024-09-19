@@ -22,7 +22,22 @@ $ sudo mysql_secure_installation # y, n, y, y
 
 $ sudo mysql -u root -p  登入mysql
 
-mysql> SELECT user,authentication_string,plugin,host FROM mysql.user WHERE user="root";
+mysql> show databases;
+
+# 灌入 sql 備份
+
+$ cd [備份檔案資料夾]
+
+$ sudo mysql -u [mysql User] -p mysql < [sql file]
+
+>>> 使用 window 登入命令列
+
+windows 搜尋列  mysql 8.0 command line client
+
+
+
+
+
 
 
 
