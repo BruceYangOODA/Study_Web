@@ -9,9 +9,13 @@ $> sudo apt update
 
 $ sudo apt-get install vim
 
-$ sudo apt-get install openssh-server
+$ sudo apt-get install openssh-server  設置 ssh 遠端伺服器服務
 
 $ dpkg -l | grep ssh
+
+沒有自動開啟,手段開啟服務
+
+$ sudo /etc/init.d/ssh start
 
 > 
 
