@@ -3,17 +3,26 @@
 
 $ sudo apt install mysql-server
 
-$ sudo systemctl status mysql.service 確認資料庫狀態
+$ sudo service mysql status 確認資料庫狀態
 
 q enter
 
 如果資料庫狀態是 notactive 
 
-$ sudo systemctl start mysql.service 開啟資料庫服務
+$ sudo service mysql start 開啟資料庫服務
 
+$ sudo mysql_secure_installation # y, n, y, y
+# 這邊稍做解釋一下：
+# 不使用 valid_password 插件。
+# 為 root 用戶設置密碼。
+# 刪除匿名帳號。
+# 開啟 root 用戶遠端登入。
+# 刪除 test 資料庫和對 test 資料庫的訪問權限。
+# 刷新授權表使修改生效。
 
+$ sudo mysql -u root -p  登入mysql
 
-
+mysql> SELECT user,authentication_string,plugin,host FROM mysql.user WHERE user="root";
 
 
 
