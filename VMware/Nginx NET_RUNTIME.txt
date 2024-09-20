@@ -73,8 +73,22 @@ $ sudo apt-get install -y aspnetcore-runtime-3.1
 $ sudo apt-get install -y dotnet-runtime-3.1
 
 
+>>> 產生 GIT SSH KEY
 
+[Create and Configure BitBucket SSH keys for Git](https://www.youtube.com/watch?v=ZY_C76uNJKQ)
 
+$ sudo cd ~/.ssh
+$ sudo ssh-keygen -t rsa -C "bruce.yang@pitl.com.hk"
+-> id_rsa
+
+$ sudo cat id_rsa.pub
+複製內容
+
+https://bitbucket.org/account/settings/ssh-keys/
+Add key(click)
+Key* 貼上內容
+
+$ sudo ssh -T git@bitbucket.org
 
 
 
