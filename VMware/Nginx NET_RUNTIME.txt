@@ -46,7 +46,7 @@ $ sudo service nginx status
 http://localhost:81 
 
 >>> 安裝 .NET環境
-
+/* 無效
 #20.04
 $sudo wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 #18.04
@@ -56,8 +56,12 @@ $sudo wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft
 
 $ sudo dpkg -i packages-microsoft-prod.deb 執行暫存檔
 $ sudo rm packages-microsoft-prod.deb  刪除暫存檔
+*/
 
 #執行安裝SDK
+
+$ sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.04/prod
+$ sudo apt-get update
 $ sudo apt install -y dotnet-sdk-6.0
 $ sudo apt install -y dotnet-sdk-5.0
 $ sudo apt install -y dotnet-sdk-3.1
@@ -77,10 +81,12 @@ $ sudo apt-get install -y dotnet-runtime-3.1
 
 [Create and Configure BitBucket SSH keys for Git](https://www.youtube.com/watch?v=ZY_C76uNJKQ)
 
-$ sudo cd ~/.ssh
-$ sudo ssh-keygen -t rsa -C "bruce.yang@pitl.com.hk"
--> id_rsa
+$ sudo apt install geomview
 
+$ sudo cd ~/.ssh
+$ sudo ssh-keygen
+$ sudo ssh-add
+$ sudo ssh -T git@bitbucket.org
 $ sudo cat id_rsa.pub
 複製內容
 
@@ -88,8 +94,40 @@ https://bitbucket.org/account/settings/ssh-keys/
 Add key(click)
 Key* 貼上內容
 
-$ sudo ssh -T git@bitbucket.org
+$ sudo ssh -t -vvv git@bitbucket.org 測試連接
 
+# 無法連接時 使用 su 登入root 連接
+$ cd [projectDir]
+$ git clone git@bitbucket.org:pitl/[projectName].git
+
+$ cd [projectDir]/[dotnet.programe.cs]
+$ sudo dotnet restore
+$ sudo dotnet build
+$ sudo dotnet publish -o jpmed-ai-apiserver
+$ sudo mv jpmed-ai-apiserver /usr/share/nginx/html/
+
+#service運行設定
+$ cd /etc/systemd/system
+$ sudo nano jpmed-ai-apiserver.service
+
+[Service]
+WorkingDirectory=/usr/share/nginx/html/jpmed-ai-apiserver
+ExecStart=/usr/bin/dotnet /usr/share/nginx/html/jpmed-ai-apiserver/Jpmed.dll
+Restart=always
+# Restart service after 10 seconds if the dotnet service crashes;
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=dotnet-jpmed-ai-apiserver
+User=root
+Environment=ASPNETCORE_ENVIRONMENT=Staging
+Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+
+[Install]
+WantedBy=multi-user.target
+
+
+$ sudo systemctl enable jpmed-ai-apiserver
+$ sudo systemctl start jpmed-ai-apiserver
 
 
 
