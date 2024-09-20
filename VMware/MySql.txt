@@ -24,6 +24,19 @@ $ sudo mysql -u root -p  登入mysql
 
 mysql> show databases;
 
+# 遠端複製檔案
+scp <source> <destination>
+
+To copy a file from B to A while logged into B:
+scp /path/to/file username@a:/path/to/destination
+$ sudo scp /var/www/techweb.com/index.html ubuntu@192.168.31.117:/tmp
+
+To copy a file from B to A while logged into A:
+scp username@b:/path/to/file /path/to/destination
+$ sudo scp ubuntu@192.168.31.117:/tmp/index.html /tmp
+
+
+
 # 灌入 sql 備份
 
 $ cd [備份檔案資料夾]
