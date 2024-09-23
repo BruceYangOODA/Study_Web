@@ -12,7 +12,7 @@ $ sudo apt-get install curl -y
 
 $ sudo curl -fsSl https://packages.gitlab.cn/repository/raw/scripts/setup.sh | /bin/bash
 
-$ sudo EXTERNAL_URL="http://192.168.31.119" apt install -y gitlab-jh
+$ sudo EXTERNAL_URL="http://192.168.31.119:8081" apt install -y gitlab-jh
 
 #sudo gitlab-ctl start # 啟動所有 gitlab 組件
 
@@ -24,7 +24,9 @@ $ sudo EXTERNAL_URL="http://192.168.31.119" apt install -y gitlab-jh
 
 #sudo gitlab-ctl reconfigure #  啟動服務
 
-#sudo vi /etc/gitlab/gitlab.rb # 修改配置文件
+#sudo nano /etc/gitlab/gitlab.rb # 修改配置文件 修改完後要執行此命令 配置才會寫入
+
+external_url "http://192.168.31.119"
 
 #sudo gitlab-ctl tail # 查看日誌
 
@@ -37,6 +39,8 @@ windows
 https://www.jenkins.io/zh/
 
 ubuntu
+
+$ cd /tmp
 
 $ sudo apt-get update
 
@@ -55,6 +59,19 @@ $ sudo wget http://ftp.kr.debian.org/debian/pool/main/i/init-system-helpers/init
 $ sudo apt-get install ./init-system-helpers_1.60_all.deb
 
 $ sudo apt-get install jenkins -y
+
+$ sudo service jenkins status
+
+$ sudo ufw status
+
+$ sudo ufw allow 8080
+
+$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+http://192.168.31.119:8080/
+
+登入預設密碼
+
 
 
 
