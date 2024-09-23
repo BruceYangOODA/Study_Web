@@ -1,4 +1,6 @@
 
+[Learn Jenkins! Complete Jenkins Course - Zero to Hero](https://www.youtube.com/watch?v=6YZvp2GwT0A)
+
 [【Jenkins】01 Jenkins教程简介](https://www.youtube.com/watch?v=q9QXhpo1B2s&list=PLmOn9nNkQxJH7_AY3ZDTWgD5FIodz1Loh&index=6)
 
 $> sudo apt update
@@ -73,7 +75,11 @@ http://192.168.31.119:8080/
 登入預設密碼
 
 
+>>> Jenkins 配置
 
+Plugin Manager
+
+Maven Integration
 
 
 
