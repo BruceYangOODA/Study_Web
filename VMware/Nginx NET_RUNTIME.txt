@@ -4,6 +4,7 @@
 
 [Youtube How to Install and Configure NGINX Web Server in Ubuntu 22.04 LTS](https://www.youtube.com/watch?v=7YqlP7HYU1g)
 
+[Nginx 教程](https://www.hxstrive.com/subject/nginx/750.htm)
 
 $ sudo apt install nginx
 
