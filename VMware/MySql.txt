@@ -24,9 +24,22 @@ $ sudo mysql -u root -p  登入mysql
 
 mysql> show databases;
 mysql> select user();
+mysql> select user, host, plugin from mysql.user;
 
 ## 建立遠端 root user
-mysql> create user 'root'@'%' identified by 'yourpassword'
+mysql> SHOW VARIABLES LIKE 'validate_password%';
+mysql> SET GLOBAL validate_password_length = 8;
+mysql> SET GLOBAL validate_password_mixed_case_count = 0;
+mysql> SET GLOBAL validate_password_special_char_count = 0;
+mysql> SET GLOBAL validate_password_policy = 'low';
+
+## 暴力移除 validate
+mysql> uninstall plugin validate_password;
+
+mysql> create user 'root'@'%' identified with mysql_native_password by 'yourpassword'
+mysql> grant all privileges on *.* to 'root'@'%' with grant option;
+mysql> flush privileges;
+mysql> select user, host, plugin from mysql.user;
 
 # 遠端複製檔案
 scp <source> <destination>
@@ -52,17 +65,18 @@ bind-address = [remote-address]
 
 $ cd [備份檔案資料夾]
 
-$ sudo mysql -u [mysql User] -p mysql < [sql file]
+$ sudo mysql -u [mysql User] -p --default-character-set=utf8 mysql < [sql file]
 
 >>> 使用 window 登入命令列
 
 windows 搜尋列  mysql 8.0 command line client
 
 windows 命列列
-$ cd /Program Files/MySQL/MySQL Server 8.0/bin 
+$ cd C:\Program Files\MySQL\MySQL Server 8.0\bin 
 $ mysql -u root -p
 $ show databases;
-$ select user();
+$ select user, host, plugin from mysql.user;
+$ mysql -u [my_name] -p --default-character-set=utf8 [database_name] < [sql file]
 
 
 
