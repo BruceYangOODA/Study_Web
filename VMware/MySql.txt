@@ -25,6 +25,9 @@ $ sudo mysql -u root -p  登入mysql
 mysql> show databases;
 mysql> select user();
 
+## 建立遠端 root user
+mysql> create user 'root'@'%' identified by 'yourpassword'
+
 # 遠端複製檔案
 scp <source> <destination>
 
