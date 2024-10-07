@@ -23,6 +23,7 @@ $ sudo mysql_secure_installation # y, n, y, y
 $ sudo mysql -u root -p  登入mysql
 
 mysql> show databases;
+mysql> select user();
 
 # 遠端複製檔案
 scp <source> <destination>
