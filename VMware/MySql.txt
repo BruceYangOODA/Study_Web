@@ -35,7 +35,14 @@ To copy a file from B to A while logged into A:
 scp username@b:/path/to/file /path/to/destination
 $ sudo scp ubuntu@192.168.31.117:/tmp/index.html /tmp
 
+# 開放PORT防火牆
+$ sudo ufw allow 3306
 
+## 修改 URL 與 PORT
+$ cd /etc/mysql/mysql.conf.d/
+$ sudo nano mysqld.cnf
+
+bind-address = [remote-address]
 
 # 灌入 sql 備份
 
