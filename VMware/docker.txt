@@ -1,0 +1,35 @@
+FREECODECAMP Learn Docker - DevOps with Node.js & Express
+https://www.youtube.com/watch?v=9zUHg7xjIqQ&t=634s&ab_channel=freeCodeCamp.org
+
+https://docs.docker.com/engine/install/ubuntu/
+
+
+將帳號加入docker群組，不須再用 sudo
+sudo usermod -aG docker 帳號
+
+# 取得docker資訊
+docker info
+
+# 取得 container 詳細資訊
+docker container inspect CONTAINER_ID
+
+# docker hollow world
+docker run -it alpine ash
+
+# 以Dockerfile 檔案建立 image 並用 -t 參數命名此 image
+docker build . -t node-app-image
+
+docker run -p 3001:3000 -d --name node-app node-app-image 
+
+# 以 root 進入 linux 檢測
+docker exec -it node-app bash
+exit
+
+curl http://localhost:3001
+
+# 將 家目錄的文檔同步更新到 執行中的 container 
+docker run -v %cd%:/app -p 3001:3000 --env-file ./.env -d --name node-app node-app-image
+
+# 新增檔案 docker-compose.yml
+docker-compose up -d
+
