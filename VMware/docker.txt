@@ -31,5 +31,22 @@ curl http://localhost:3001
 docker run -v %cd%:/app -p 3001:3000 --env-file ./.env -d --name node-app node-app-image
 
 # 新增檔案 docker-compose.yml
-docker-compose up -d
+docker-compose up -d --build
+docker-compose down -v
 
+docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+docker-compose -f docker-compose.yml -f docker-compose.dev.yml down -v
+
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+
+
+# 使用mongoDB image
+docker exec -it node-docker-mongo-1 bash
+-> mongosh -u "使用者" -p "密碼"
+-> use mydb
+-> show dbs
+-> db.books.insert({"name": "harry potter"})
+-> db.books.find()
+
+# 清除沒有關聯的 volume
+docker volume prune
