@@ -1,0 +1,25 @@
+使用 psql 命令列 建立使用者，並賦予其對資料庫進行 新增 / 刪除 / 修改（CRUD） 的權限
+
+psql -U postgres
+CREATE USER app_user WITH PASSWORD 'strong_password';
+CREATE DATABASE app_db OWNER app_user;
+GRANT CONNECT ON DATABASE app_db TO app_user;
+GRANT USAGE ON SCHEMA public TO app_user;
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON ALL TABLES IN SCHEMA public
+TO app_user;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON TABLES
+TO app_user;
+GRANT USAGE, SELECT, UPDATE
+ON ALL SEQUENCES IN SCHEMA public
+TO app_user;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA public
+GRANT USAGE, SELECT, UPDATE
+ON SEQUENCES
+TO app_user;
+\du app_user
+\dp
+
