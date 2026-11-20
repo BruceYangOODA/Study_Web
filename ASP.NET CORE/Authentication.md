@@ -7,8 +7,11 @@
 
 套件安裝
 Microsoft.AspNetCore.Identity
+
 Microsoft.EntityFrameworkCore.InMemory
+
 Microsoft.EntityFrameworkCore.SqlServer
+
 Microsoft.EntityFrameworkCore.Tools
 
 
