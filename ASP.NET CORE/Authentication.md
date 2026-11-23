@@ -15,13 +15,13 @@ DbContext.cs
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;  
 namespace XXX  
 {  
-&nbsp;&nbsp;public class 名稱Conext : IdentityDbContext  
-&nbsp;&nbsp;{  
-&nbsp;&nbsp;&nbsp;public 名稱Context(DbContextOptions<名稱Context> options) : base(options)      
-&nbsp;&nbsp;&nbsp;{    
+&ensp;public class 名稱Conext : IdentityDbContext  
+&ensp;{  
+&ensp;&ensp;public 名稱Context(DbContextOptions<名稱Context> options) : base(options)      
+&ensp;&ensp;{    
     
-&nbsp;&nbsp;&nbsp;}  
-&nbsp;&nbsp;}  
+&ensp;&ensp;}  
+&ensp;}  
 }  
 
 Program.cs  
