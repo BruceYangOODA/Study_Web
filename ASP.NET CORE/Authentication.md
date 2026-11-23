@@ -17,7 +17,7 @@ namespace XXX
 {  
   public class 名稱Conext : IdentityDbContext  
   {  
-    public 名稱Context(DbContextOptions<名稱Context> options) : base(options) {}   
+    public 名稱Context(DbContextOptions<名稱Context> options) : base(options)    
     {  
     
     }  
