@@ -17,10 +17,10 @@ namespace XXX
 {  
 &nbsp;&nbsp;public class 名稱Conext : IdentityDbContext  
 &nbsp;&nbsp;{  
-&nbsp;&nbsp;public 名稱Context(DbContextOptions<名稱Context> options) : base(options)      
-&nbsp;&nbsp;{    
+&nbsp;&nbsp;&nbsp;public 名稱Context(DbContextOptions<名稱Context> options) : base(options)      
+&nbsp;&nbsp;&nbsp;{    
     
-&nbsp;&nbsp;}  
+&nbsp;&nbsp;&nbsp;}  
 &nbsp;&nbsp;}  
 }  
 
