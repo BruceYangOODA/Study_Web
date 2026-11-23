@@ -28,9 +28,15 @@ Program.cs
 //配置DB連線 My_SQL
 if (builder.Configuration.GetConnectionString("SqlType").Equals("MySQL"))  
 {  
-    builder.Services.AddDbContext<【名稱Context】>(options =>   options.UseMySQL(builder.Configuration.GetConnectionString("【ConnectionStrings標記字串】")));
+&ensp; builder.Services.AddDbContext<【名稱Context】>(options =>   options.UseMySQL(builder.Configuration.GetConnectionString("【ConnectionStrings標記字串】")));  
 }  
+&ensp; builder.Services.AddAuthorization();    
+&ensp; builder.Services.AddIdentityApiEndpoints<IdentityUser>();  
+&ensp;&ensp; .AddEntityFrameworkStores<名稱Context>();  
 
+&ensp;
+var app = builder.Build();  
+app.MapIdentityApi<IdentityUser>();  
 
 
 
