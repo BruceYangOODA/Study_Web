@@ -21,8 +21,8 @@ appsettings.json
 JWTConfig.cs  
     public class JWTConfig
     {  
-        //<summary> Token釋出者 </summary>  
-        public string? Issuer { get; set; }  
+    //<summary> Token釋出者 </summary>  
+    public string? Issuer { get; set; }  
         //<summary> Token接受者 </summary>  
         public string? Audience { get; set; }  
         //<summary> 密鑰 </summary>  
