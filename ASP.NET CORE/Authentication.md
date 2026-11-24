@@ -25,13 +25,13 @@ public class JWTConfig
 &ensp; public string? Issuer { get; set; }  
 &ensp; // Token接受者  
 &ensp; public string? Audience { get; set; }  
-        //<summary> 密鑰 </summary>  
-        public string? IssuerSigningKey { get; set; }  
-        //<summary> 過期時間 </summary>  
-        public int AccessTokenExpiresMinutes { get; set; }  
-        //<summary> token 過期後，可重刷時效 </summary>   
-        public int AccessRefershTokenExpiresMinutes { get; set; }   
-    }  
+&ensp; // 密鑰   
+&ensp; public string? IssuerSigningKey { get; set; }  
+&ensp; // 過期時間  
+&ensp; public int AccessTokenExpiresMinutes { get; set; }  
+&ensp; // token 過期後，可重刷時效  
+&ensp; public int AccessRefershTokenExpiresMinutes { get; set; }   
+}  
 
 
 Users.cs  
