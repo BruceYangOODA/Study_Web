@@ -19,12 +19,12 @@ appsettings.json
     "AccessRefershTokenExpiresMinutes": "60" }  
 
 JWTConfig.cs  
-    public class JWTConfig
-    {  
-    //Token釋出者
-    public string? Issuer { get; set; }  
-        //<summary> Token接受者 </summary>  
-        public string? Audience { get; set; }  
+public class JWTConfig  
+{  
+&ensp; // Token釋出者  
+&ensp; public string? Issuer { get; set; }  
+&ensp; // Token接受者  
+&ensp; public string? Audience { get; set; }  
         //<summary> 密鑰 </summary>  
         public string? IssuerSigningKey { get; set; }  
         //<summary> 過期時間 </summary>  
