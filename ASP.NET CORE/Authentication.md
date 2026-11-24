@@ -57,6 +57,8 @@ builder.Services.AddIdentity<Users, IdentityRole>(options =>
 &ensp; .AddEntityFrameworkStores<StockInfoContext>()  
 &ensp; .AddDefaultTokenProviders();  
 
+var app = builder.Build();  
+await SeedService.SeedDatabase(app.Services);  
 app.UseAuthentication();  
 app.UseAuthorization();  
 
