@@ -2,16 +2,40 @@
 
 [Udemy-ASP.NET Core-身份验证和授权](https://www.bilibili.com/video/BV1Pk4y1W7FC/?vd_source=688a8e9add56d9ae61219650e0c33c65)  
 
-[.NET 8 Authentication with Identity in a Web API with Bearer Tokens & Cookies](https://www.youtube.com/watch?v=8J3nuUegtL4)  
-
-[Create Custom Role Based Authentication In Asp.net Core MVC Application - Complete Tutorial](https://www.youtube.com/watch?v=p6X-dDx6nQY&list=PLTOaik4iw-qUzTx82QuAso1NktusoyJ9J&index=15)  
-
+[ ASP.NET Core WebAPI Authentication And Authorization Made EASY](https://youtu.be/auGpCZRiEtA)  
 
 套件安裝
 Microsoft.AspNetCore.Identity.EntityFramewokCore
 Microsoft.EntityFrameworkCore.Design  
 Microsoft.EntityFrameworkCore.SqlServer  
 Microsoft.EntityFrameworkCore.Tools  
+
+
+appsettings.json  
+"JWTConfig": { "Issuer": "發行人",  
+    "Audience": "EveryOne",  
+    "IssuerSigningKey": "發行密鑰",  
+    "AccessTokenExpiresMinutes": "60",  
+    "AccessRefershTokenExpiresMinutes": "60" }  
+
+JWTConfig.cs  
+    public class JWTConfig
+    {
+        /// <summary> Token釋出者 </summary>  
+        public string? Issuer { get; set; }  
+
+        /// <summary> Token接受者 </summary>  
+        public string? Audience { get; set; }  
+
+        /// <summary> 密鑰 </summary>  
+        public string? IssuerSigningKey { get; set; }  
+
+        /// <summary> 過期時間 </summary>  
+        public int AccessTokenExpiresMinutes { get; set; }  
+        /// <summary> token 過期後，可重刷時效 </summary>  
+        public int AccessRefershTokenExpiresMinutes { get; set; }  
+    }  
+
 
 Users.cs  
 using Microsoft.AspNetCore.Identity;  
