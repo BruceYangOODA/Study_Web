@@ -11,12 +11,6 @@ Microsoft.EntityFrameworkCore.SqlServer
 Microsoft.EntityFrameworkCore.Tools  
 
 
-appsettings.json  
-"JWTConfig": { "Issuer": "發行人",  
-    "Audience": "EveryOne",  
-    "IssuerSigningKey": "發行密鑰",  
-    "AccessTokenExpiresMinutes": "60",  
-    "AccessRefershTokenExpiresMinutes": "60" }  
 
 JWTConfig.cs  
 public class JWTConfig  
