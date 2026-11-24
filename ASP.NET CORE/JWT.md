@@ -1,10 +1,13 @@
-[JWT Authentication with .NET 9 🚀 Full Course with Roles, JSON Web Tokens & Refresh Tokens](https://www.youtube.com/watch?v=6EEltKS8AwA)  
+[Asp.Net Core Web API with JWT Authentication & Refresh Tokens using SQL Server + Identity Server](https://www.youtube.com/watch?v=ZBKJZyccwcE)  
 
 
 套件安裝  
+Microsoft.AspNetCore.Identity.EntityFramewokCore  
 Microsoft.AspNetCore.Authentication.JwtBearer  
 System.IdentityModel.Tokens.Jwt  
-
+Microsoft.EntityFrameworkCore.SqlServer  
+Microsoft.EntityFrameworkCore.Tools  
+Microsoft.EntityFrameworkCore.Design  
 
 appsettings.json  
 "JWTConfig": { "Issuer": "發行人",  
@@ -14,7 +17,13 @@ appsettings.json
     "AccessRefershTokenExpiresMinutes": 60 }  
 
 
+Program.cs  
+
 #region jwt配置
+var jwtConfig = new JWTConfig();
+builder.Configuration.GetSection("JWTConfig").Bind(jwtConfig);
+builder.Services.AddSingleton(jwtConfig);
+
 builder.Services.AddTransient<ITokenHelper, TokenHelper>();
 
 //啟用JWT            
@@ -70,4 +79,11 @@ builder.Services.AddAuthentication(Options =>
         }
     };
 });
+builder.Services.AddAuthorization();
 #endregion
+
+
+var app = builder.Build();
+app.UseAuthentication();
+app.UseAuthorization();
+
