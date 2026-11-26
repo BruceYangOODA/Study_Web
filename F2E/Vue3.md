@@ -2,7 +2,7 @@
 
 cmd  
 npm init vite@latest copilot --template vue  
-npm install  
+npm install --no-audit --no-fund --legacy-peer-deps  
 npm run dev  
 
 套件安裝  
